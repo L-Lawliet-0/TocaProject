@@ -10,6 +10,7 @@ public class GlobalParameter : MonoBehaviour
     public static float ReachTime = .15f;
 
     public static float MaxLimbSpeed = 150, MinLimbSpeed = 10;
+    public static float Gravity = 100;
 
     private void Awake()
     {
