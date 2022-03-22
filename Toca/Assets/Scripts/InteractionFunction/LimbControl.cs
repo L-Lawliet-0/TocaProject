@@ -5,7 +5,7 @@ using UnityEngine;
 public class LimbControl : MonoBehaviour
 {
     public bool Active;
-    private ISelectable Selectable;
+    private MoveControl Selectable;
 
     public float H_UpperLimit = -30;
     public float H_LowerLimit = 10;
@@ -15,7 +15,7 @@ public class LimbControl : MonoBehaviour
 
     private void Awake()
     {
-        Selectable = GetComponentInParent<ISelectable>();
+        Selectable = GetComponentInParent<MoveControl>();
         Active = true;
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     public bool InSelection; // the input is currently selecting something
-    public ISelectable SelectedObject; // the object this input is selected
+    public TouchHandler SelectedObject; // the object this input is selected
 
     private void Awake()
     {
@@ -20,16 +20,20 @@ public class InputManager : MonoBehaviour
         {
             Vector3 pos = GlobalParameter.Instance.ScreenPosToGamePos(Input.mousePosition);
 
-            Collider2D collider = Physics2D.OverlapBox(pos, Vector2.one, 0, 1 << LayerMask.NameToLayer("Player"));
+            Collider2D collider = Physics2D.OverlapBox(pos, Vector2.one, 0, 1 << LayerMask.NameToLayer("Selection"));
             if (collider)
-                SelectedObject = collider.GetComponentInParent<ISelectable>();
+            {
+                SelectedObject = collider.GetComponentInParent<TouchHandler>();
+                if (!SelectedObject)
+                    SelectedObject = collider.GetComponent<TouchHandler>();
+            }
             else
                 SelectedObject = null;
 
             if (Input.GetMouseButtonDown(0) && SelectedObject)
             {
-                // used to fire up onselect event
-                SelectedObject.OnSelect(pos);
+                // finger touched object
+                SelectedObject.OnTouch(pos);
                 InSelection = true;
             }
         }
@@ -37,14 +41,14 @@ public class InputManager : MonoBehaviour
         {
             if (Input.GetMouseButtonUp(0))
             {
-                // used to fire up ondeselect event
-                SelectedObject.OnDeSelect();
+                // finger lifted up
+                SelectedObject.OnDeTouch();
                 InSelection = false;
             }
             else if (Input.GetMouseButton(0))
             {
-                // calculate follow position of currently selected object
-                SelectedObject.UpdateTargetPosition(GlobalParameter.Instance.ScreenPosToGamePos(Input.mousePosition));
+                // finger position changed
+                SelectedObject.OnTouchPositionChanged(GlobalParameter.Instance.ScreenPosToGamePos(Input.mousePosition));
             }
         }
     }

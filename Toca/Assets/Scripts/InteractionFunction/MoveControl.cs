@@ -2,16 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ISelectable : MonoBehaviour
+public class MoveControl : MonoBehaviour
 {
     public Vector3 TargetPosition;
     public Vector3 PositionOffset;
     public bool Selected { get; private set; }
     public bool Snapping { get; private set; }
-
+    public bool Shaking { get; private set; }
     public Vector3 Direction;
     public float Speed;
     public Transform Bottom;
+    public float InteractionRadius;
+
+    private FindControl FindControl;
+
+    private void Start()
+    {
+        // register event
+        TouchHandler touch = GetComponent<TouchHandler>();
+        touch.OntouchCallbacks.Add(OnSelect);
+        touch.DetouchCallbacks.Add(OnDeSelect);
+        touch.OnpositionchangeCallbacks.Add(UpdateTargetPosition);
+
+        // if there's find control, assign it
+        FindControl = GetComponentInChildren<FindControl>();
+    }
 
     // function called when gameobject is being selected by player
     public void OnSelect(Vector3 initalPosition)
@@ -20,6 +35,7 @@ public class ISelectable : MonoBehaviour
         PositionOffset = TargetPosition - transform.position;
         Selected = true;
         Snapping = false;
+        Shaking = false;
     }
 
     // function called when gameobject is deselected by player
@@ -29,13 +45,11 @@ public class ISelectable : MonoBehaviour
         Speed = 0;
         Direction = Vector3.zero;
 
-        // do a ray cast toward the bottom to detect ground
-        RaycastHit2D hit = Physics2D.Raycast(Bottom.transform.position, -Vector2.up, 9999, 1 << LayerMask.NameToLayer("Ground"));
-        if (hit)
+        // if object has findcontrol, snap object to find base
+        if (FindControl)
         {
             Snapping = true;
-
-            TargetPosition = hit.point;
+            TargetPosition = FindControl.FindBase(Bottom);
             TargetPosition.z = GlobalParameter.Depth;
             PositionOffset = Bottom.position - transform.position;
 
@@ -49,10 +63,11 @@ public class ISelectable : MonoBehaviour
     {
         // update target position
         // get new direction
+        TargetPosition = position;
         Direction = (TargetPosition - (transform.position + PositionOffset)).normalized;
         Speed = (TargetPosition - (transform.position + PositionOffset)).magnitude / GlobalParameter.ReachTime;
-        Debug.LogError(Speed);
-        TargetPosition = position;
+        Debug.Log(Direction);
+        //TargetPosition = position;
     }
 
     private void Update()
@@ -60,27 +75,56 @@ public class ISelectable : MonoBehaviour
         // if the object is selected, update the position to slerp toward target position
         if (Selected && Vector3.Distance(transform.position + PositionOffset, TargetPosition) > .1f)
         {
+            transform.position += Direction * Speed * Time.deltaTime;
             Vector3 localDir = (TargetPosition - (transform.position + PositionOffset)).normalized;
-            if (Vector3.Dot(localDir, Direction) < 0)
+            if (Vector3.Dot(localDir, Direction) <= 0)
                 transform.position = TargetPosition - PositionOffset;
-            else
-                transform.position += Direction * Speed * Time.deltaTime;
         }
         else if (Snapping)
         {
             Vector3 localDir = (TargetPosition - (transform.position + PositionOffset)).normalized;
-            if (Vector3.Dot(localDir, Direction) < 0)
+            if (Vector3.Dot(localDir, Direction) <= 0)
             {
                 transform.position = TargetPosition - PositionOffset;
                 Snapping = false;
                 Direction = Vector3.zero;
                 Speed = 0;
+
+                Debug.LogError("Init shake");
+                Shaking = true;
+                StartCoroutine("Shake");
             }
             else
             {
                 transform.position += Direction * Speed * Time.deltaTime;
-                Speed += Time.deltaTime * GlobalParameter.Gravity;
+                Speed += Time.deltaTime * GlobalParameter.Acceleration;
             }
         }
+    }
+
+    private IEnumerator Shake()
+    {
+        Vector3 returnPos = transform.position;
+        float speedUp = 10;
+        float counter = .1f;
+
+        while (counter > 0 && Shaking)
+        {
+            transform.position += Vector3.up * speedUp * Time.deltaTime;
+            counter -= Time.deltaTime;
+
+            yield return null;
+        }
+        counter = .1f;
+
+        while (counter > 0 && Shaking)
+        {
+            transform.position -= Vector3.up * speedUp * Time.deltaTime;
+            counter -= Time.deltaTime;
+
+            yield return null;
+        }
+
+        transform.position = returnPos;
     }
 }
