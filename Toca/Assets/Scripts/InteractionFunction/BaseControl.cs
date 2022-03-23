@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseControl : MonoBehaviour
+public class BaseControl : TocaFunction
 {
     public bool SnapWithHuman, SnapWithProp;
     public SnapType HumanHorizontalSnapType, HumanVerticalSnapType;
     public SnapType PropHorizontalSnapType, PropVerticalSnapType;
+    public List<FindControl> Attachments; // objects currently being attached on this object
+
+    public int SnapLimit;
 
     public enum SnapType
     {
@@ -15,6 +18,7 @@ public class BaseControl : MonoBehaviour
     }
 
     public Transform HumanPointSnap, PropPointSnap;
+    public bool IgnoreLimit, IgnoreWidth, IgnoreHeight;
 
     private void Awake()
     {
@@ -22,9 +26,19 @@ public class BaseControl : MonoBehaviour
             HumanPointSnap = transform;
         if (!PropPointSnap)
             PropPointSnap = transform;
+        Attachments = new List<FindControl>();
     }
 
-    public Vector3 FindSnapPosition(Vector3 bottomCenter, bool isHuman, Bounds boundingBox)
+    public bool CanbeSnapped(FindControl finder)
+    {
+        // can not have more than limit amount of attachment
+        bool limit = IgnoreLimit || Attachments.Count < SnapLimit;
+        bool width = IgnoreWidth || GetComponent<Collider2D>().bounds.extents.x > finder.GetComponent<Collider2D>().bounds.extents.x;
+        bool height = IgnoreHeight || GetComponent<Collider2D>().bounds.extents.y > finder.GetComponent<Collider2D>().bounds.extents.y;
+        return limit && width && height;
+    }
+
+    public Transform FindSnapPosition(Vector3 bottomCenter, bool isHuman, Bounds boundingBox)
     {
         if (!GetComponent<Collider2D>().OverlapPoint(bottomCenter))
         {
@@ -43,7 +57,12 @@ public class BaseControl : MonoBehaviour
             x = GetSnapValue(bottomCenter.x, bottomCenter, PropPointSnap.position.x, PropHorizontalSnapType == SnapType.PointSnap, boundingBox, Vector2.right);
             y = GetSnapValue(bottomCenter.y, bottomCenter, PropPointSnap.position.y, PropVerticalSnapType == SnapType.PointSnap, boundingBox, Vector2.up);
         }
-        return new Vector3(x, y, GlobalParameter.Depth);
+
+        // create an empty gameobject for attachment
+        GameObject snap = new GameObject();
+        snap.transform.position = new Vector3(x, y, GlobalParameter.Depth);
+        snap.transform.SetParent(transform);
+        return snap.transform;
     }
 
     public float GetSnapValue(float objectValue, Vector3 objectPos, float snapValue, bool isPoint, Bounds boundingBox, Vector2 direction)
@@ -81,5 +100,15 @@ public class BaseControl : MonoBehaviour
             gameObject.layer = saveLayer;
         }
         return value;
+    }
+
+    public void Attach(FindControl find)
+    {
+        Attachments.Add(find);
+    }
+
+    public void Detach(FindControl find)
+    {
+        Attachments.Remove(find);
     }
 }

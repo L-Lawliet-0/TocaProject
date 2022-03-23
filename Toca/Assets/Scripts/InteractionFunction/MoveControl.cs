@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveControl : MonoBehaviour
+public class MoveControl : TocaFunction
 {
     public Vector3 TargetPosition;
+    public Transform SnapTransform;
     public Vector3 PositionOffset;
     public bool Selected { get; private set; }
     public bool Snapping { get; private set; }
@@ -14,8 +15,6 @@ public class MoveControl : MonoBehaviour
     public Transform Bottom;
     public float InteractionRadius;
 
-    private FindControl FindControl;
-
     private void Start()
     {
         // register event
@@ -23,14 +22,18 @@ public class MoveControl : MonoBehaviour
         touch.OntouchCallbacks.Add(OnSelect);
         touch.DetouchCallbacks.Add(OnDeSelect);
         touch.OnpositionchangeCallbacks.Add(UpdateTargetPosition);
-
-        // if there's find control, assign it
-        FindControl = GetComponentInChildren<FindControl>();
     }
 
     // function called when gameobject is being selected by player
     public void OnSelect(Vector3 initalPosition)
     {
+        if (SnapTransform)
+        {
+            SnapTransform.parent.GetComponent<BaseControl>().Detach((FindControl)TocaObject.GetTocaFunction(typeof(FindControl)));
+            TocaObject.transform.parent = null;
+            Destroy(SnapTransform.gameObject);
+        }
+
         TargetPosition = initalPosition;
         PositionOffset = TargetPosition - transform.position;
         Selected = true;
@@ -46,10 +49,12 @@ public class MoveControl : MonoBehaviour
         Direction = Vector3.zero;
 
         // if object has findcontrol, snap object to find base
-        if (FindControl)
+        FindControl find = (FindControl)TocaObject.GetTocaFunction(typeof(FindControl));
+        if (find)
         {
             Snapping = true;
-            TargetPosition = FindControl.FindBase(Bottom);
+            SnapTransform = find.FindBase();
+            TargetPosition = SnapTransform.position;
             TargetPosition.z = GlobalParameter.Depth;
             PositionOffset = Bottom.position - transform.position;
 
@@ -82,6 +87,7 @@ public class MoveControl : MonoBehaviour
         }
         else if (Snapping)
         {
+            TargetPosition = SnapTransform.position;
             Vector3 localDir = (TargetPosition - (transform.position + PositionOffset)).normalized;
             if (Vector3.Dot(localDir, Direction) <= 0)
             {
@@ -90,6 +96,8 @@ public class MoveControl : MonoBehaviour
                 Direction = Vector3.zero;
                 Speed = 0;
 
+                SnapTransform.parent.GetComponent<BaseControl>().Attach((FindControl)TocaObject.GetTocaFunction(typeof(FindControl)));
+                TocaObject.transform.parent = SnapTransform;
                 Debug.LogError("Init shake");
                 Shaking = true;
                 StartCoroutine("Shake");

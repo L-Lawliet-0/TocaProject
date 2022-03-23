@@ -5,7 +5,7 @@ using UnityEngine;
 /*
  * touch handler is used to handle touch and stop touching event from input system
  */
-public class TouchHandler : MonoBehaviour
+public class TouchHandler : TocaFunction
 {
     public List<V3callback> OntouchCallbacks, OnpositionchangeCallbacks;
     public List<Voidcallback> DetouchCallbacks;
