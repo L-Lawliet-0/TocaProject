@@ -12,13 +12,12 @@ public class MoveControl : TocaFunction
     public bool Shaking { get; private set; }
     public Vector3 Direction;
     public float Speed;
-    public Transform Bottom;
     public float InteractionRadius;
 
     private void Start()
     {
         // register event
-        TouchHandler touch = GetComponent<TouchHandler>();
+        TouchHandler touch = (TouchHandler)TocaObject.GetTocaFunction<TouchHandler>();
         touch.OntouchCallbacks.Add(OnSelect);
         touch.DetouchCallbacks.Add(OnDeSelect);
         touch.OnpositionchangeCallbacks.Add(UpdateTargetPosition);
@@ -29,10 +28,15 @@ public class MoveControl : TocaFunction
     {
         if (SnapTransform)
         {
-            SnapTransform.parent.GetComponent<BaseControl>().Detach((FindControl)TocaObject.GetTocaFunction(typeof(FindControl)));
+            SnapTransform.parent.GetComponent<BaseControl>().Detach((FindControl)TocaObject.GetTocaFunction<FindControl>());
             TocaObject.transform.parent = null;
             Destroy(SnapTransform.gameObject);
+            SnapTransform = null;
         }
+
+        LayerControl lc = (LayerControl)TocaObject.GetTocaFunction<LayerControl>();
+        if (lc)
+            lc.TouchCallback(initalPosition);
 
         TargetPosition = initalPosition;
         PositionOffset = TargetPosition - transform.position;
@@ -49,18 +53,22 @@ public class MoveControl : TocaFunction
         Direction = Vector3.zero;
 
         // if object has findcontrol, snap object to find base
-        FindControl find = (FindControl)TocaObject.GetTocaFunction(typeof(FindControl));
+        FindControl find = (FindControl)TocaObject.GetTocaFunction<FindControl>();
         if (find)
         {
             Snapping = true;
             SnapTransform = find.FindBase();
             TargetPosition = SnapTransform.position;
             TargetPosition.z = GlobalParameter.Depth;
-            PositionOffset = Bottom.position - transform.position;
+            PositionOffset = TocaObject.Bottom.position - transform.position;
 
             Direction = (TargetPosition - (transform.position + PositionOffset)).normalized;
             Speed = 0;
         }
+
+        LayerControl lc = (LayerControl)TocaObject.GetTocaFunction<LayerControl>();
+        if (lc)
+            lc.DetouchCallback();
     }
 
     // called when target position is changed by player
@@ -71,7 +79,6 @@ public class MoveControl : TocaFunction
         TargetPosition = position;
         Direction = (TargetPosition - (transform.position + PositionOffset)).normalized;
         Speed = (TargetPosition - (transform.position + PositionOffset)).magnitude / GlobalParameter.ReachTime;
-        Debug.Log(Direction);
         //TargetPosition = position;
     }
 
@@ -96,7 +103,7 @@ public class MoveControl : TocaFunction
                 Direction = Vector3.zero;
                 Speed = 0;
 
-                SnapTransform.parent.GetComponent<BaseControl>().Attach((FindControl)TocaObject.GetTocaFunction(typeof(FindControl)));
+                SnapTransform.parent.GetComponent<BaseControl>().Attach((FindControl)TocaObject.GetTocaFunction<FindControl>());
                 TocaObject.transform.parent = SnapTransform;
                 Debug.LogError("Init shake");
                 Shaking = true;

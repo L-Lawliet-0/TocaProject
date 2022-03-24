@@ -26,7 +26,10 @@ public class TouchHandler : TocaFunction
     public void OnDeTouch()
     {
         foreach (Voidcallback callback in DetouchCallbacks)
+        {
+            Debug.LogError(callback.Target.ToString());
             callback();
+        }
     }
 
     public void OnTouchPositionChanged(Vector3 worldPosition)

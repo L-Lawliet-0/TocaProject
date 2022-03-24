@@ -26,4 +26,18 @@ public class GlobalParameter : MonoBehaviour
 
         return pos;
     }
+
+    public static T[] GetComponentAndChildren<T>(Transform root)
+    {
+        T[] functions1 = root.GetComponents<T>();
+        T[] functions2 = root.GetComponentsInChildren<T>();
+
+        T[] AllFunctions = new T[functions1.Length + functions2.Length];
+        int i = 0;
+        for (; i < functions1.Length; i++)
+            AllFunctions[i] = functions1[i];
+        for (; i < AllFunctions.Length; i++)
+            AllFunctions[i] = functions2[i - functions1.Length];
+        return AllFunctions;
+    }
 }
