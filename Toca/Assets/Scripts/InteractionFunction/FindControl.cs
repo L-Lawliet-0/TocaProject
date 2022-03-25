@@ -12,8 +12,38 @@ public class FindControl : TocaFunction
     public float InteractionRadius;
     public bool IsHuman;
     public BaseControl CurrentAttachment; // the base this object is currently attaching
+    private MoveControl MoveControl;
+    private ArmControl NearByArm;
 
-    public Transform FindBase()
+    private void Start()
+    {
+        MoveControl = (MoveControl)TocaObject.GetTocaFunction<MoveControl>();
+    }
+
+    private void Update()
+    {
+        // used to notific nearby hand to reach this toca object
+        // must be selected to reach object
+        if (MoveControl.Selected)
+        {
+            TocaObject p = TocaObject.AttachedObject();
+            if (!p)
+            {
+                // only detect hand when it's selected and no attaching parent
+                Transform hand = FindBase(true);
+                if (hand)
+                {
+                    Destroy(hand.gameObject);
+                    hand = hand.parent;
+
+                    NearByArm = hand.parent.parent.GetComponent<ArmControl>();
+                }
+
+            }
+        }
+    }
+
+    public Transform FindBase(bool findHand = false)
     {
         // when selection is over, when finger leaves the touch screen
         // first try to find the basecontrol to snap to
@@ -29,7 +59,7 @@ public class FindControl : TocaFunction
         foreach (Collider2D collider in colliders)
         {
             baseControl = collider.GetComponentInParent<BaseControl>();
-            if (BaseConditionCheck(baseControl))
+            if (BaseConditionCheck(baseControl) && (!findHand || baseControl.IsHand))
                 break;
             else
                 baseControl = null;
@@ -42,7 +72,7 @@ public class FindControl : TocaFunction
             foreach (RaycastHit2D hit in hits)
             {
                 baseControl = hit.collider.GetComponentInParent<BaseControl>();
-                if (BaseConditionCheck(baseControl))
+                if (BaseConditionCheck(baseControl) && (!findHand || baseControl.IsHand))
                     break;
                 else
                     baseControl = null;
@@ -56,7 +86,7 @@ public class FindControl : TocaFunction
             foreach (RaycastHit2D hit in hits)
             {
                 baseControl = hit.collider.GetComponentInParent<BaseControl>();
-                if (BaseConditionCheck(baseControl))
+                if (BaseConditionCheck(baseControl) && (!findHand || baseControl.IsHand))
                     break;
                 else
                     baseControl = null;

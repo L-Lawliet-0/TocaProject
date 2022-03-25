@@ -19,6 +19,7 @@ public class BaseControl : TocaFunction
 
     public Transform HumanPointSnap, PropPointSnap;
     public bool IgnoreLimit, IgnoreWidth, IgnoreHeight;
+    public bool IsHand;
 
     private void Awake()
     {
