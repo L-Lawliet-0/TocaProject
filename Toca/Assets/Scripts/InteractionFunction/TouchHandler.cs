@@ -27,7 +27,6 @@ public class TouchHandler : TocaFunction
     {
         foreach (Voidcallback callback in DetouchCallbacks)
         {
-            Debug.LogError(callback.Target.ToString());
             callback();
         }
     }

@@ -9,6 +9,30 @@ using System;
  */
 public class TocaObject : MonoBehaviour
 {
+    [System.Serializable]
+    public class ObjectSaveData
+    {
+        public float x, y; // the position of the object
+        public int ObjectID; // the unique id of this tocaobject
+
+        public bool Attaching; // this toca object is attaching to another toca object
+        public int ParentObjectID; // the toca object this current object is attaching
+    }
+    public ObjectSaveData TocaSave;
+
+    public void InitalizeSave()
+    {
+        TocaSave.x = transform.position.x;
+        TocaSave.y = transform.position.y;
+        TocaSave.ObjectID = this.GetHashCode();
+    }
+
+    public void SaveData()
+    {
+        TocaSave.x = transform.position.x;
+        TocaSave.y = transform.position.y;
+    }
+
     public TocaFunction[] AllFunctions;
     public Transform Bottom;
     private void Awake()
@@ -40,5 +64,14 @@ public class TocaObject : MonoBehaviour
                 values.Add(function);
         }
         return values;
+    }
+
+    public TocaObject AttachedObject()
+    {
+        MoveControl mc = (MoveControl)GetTocaFunction<MoveControl>();
+        if (mc && mc.SnapTransform && mc.SnapTransform.parent.GetComponent<TocaObject>())
+            return mc.SnapTransform.parent.GetComponent<TocaObject>();
+
+        return null;
     }
 }

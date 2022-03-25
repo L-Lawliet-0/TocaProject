@@ -64,6 +64,8 @@ public class MoveControl : TocaFunction
 
             Direction = (TargetPosition - (transform.position + PositionOffset)).normalized;
             Speed = 0;
+
+            SnapTransform.parent.GetComponent<BaseControl>().Attach((FindControl)TocaObject.GetTocaFunction<FindControl>());
         }
 
         LayerControl lc = (LayerControl)TocaObject.GetTocaFunction<LayerControl>();
@@ -103,9 +105,8 @@ public class MoveControl : TocaFunction
                 Direction = Vector3.zero;
                 Speed = 0;
 
-                SnapTransform.parent.GetComponent<BaseControl>().Attach((FindControl)TocaObject.GetTocaFunction<FindControl>());
+                //SnapTransform.parent.GetComponent<BaseControl>().Attach((FindControl)TocaObject.GetTocaFunction<FindControl>());
                 TocaObject.transform.parent = SnapTransform;
-                Debug.LogError("Init shake");
                 Shaking = true;
                 StartCoroutine("Shake");
             }
@@ -119,27 +120,24 @@ public class MoveControl : TocaFunction
 
     private IEnumerator Shake()
     {
-        Vector3 returnPos = transform.position;
         float speedUp = 10;
         float counter = .1f;
 
         while (counter > 0 && Shaking)
         {
-            transform.position += Vector3.up * speedUp * Time.deltaTime;
-            counter -= Time.deltaTime;
+            transform.position += Vector3.up * speedUp * Time.fixedDeltaTime;
+            counter -= Time.fixedDeltaTime;
 
-            yield return null;
+            yield return new WaitForFixedUpdate();
         }
         counter = .1f;
 
         while (counter > 0 && Shaking)
         {
-            transform.position -= Vector3.up * speedUp * Time.deltaTime;
-            counter -= Time.deltaTime;
+            transform.position -= Vector3.up * speedUp * Time.fixedDeltaTime;
+            counter -= Time.fixedDeltaTime;
 
-            yield return null;
+            yield return new WaitForEndOfFrame();
         }
-
-        transform.position = returnPos;
     }
 }

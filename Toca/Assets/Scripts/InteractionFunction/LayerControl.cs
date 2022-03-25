@@ -95,14 +95,19 @@ public class LayerControl : TocaFunction
         {
             AllRenderers[i].sortingLayerName = layer.ToString();
             AllRenderers[i].sortingOrder = order + DefaultValues[i];
+            if (transform.name.Equals("can1"))
+                Debug.LogError("sorting order: " + AllRenderers[i].sortingOrder);
         }
         OrderValue = order;
         CurrentObjectLayer = layer;
+
+        if (transform.name.Equals("can1"))
+            Debug.LogError("can1 layer is set to: " + CurrentObjectLayer.ToString() + " : " + OrderValue);
     }
 
     public int CalculateBaseLayerOrder()
     {
         // this order is based on height(depth) of the object bottom
-        return -(int)(TocaObject.Bottom.position.y * 10000);
+        return -(int)(TocaObject.Bottom.position.y * 1000);
     }
 }
