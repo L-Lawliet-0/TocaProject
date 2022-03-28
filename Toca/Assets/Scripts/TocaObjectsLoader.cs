@@ -22,7 +22,7 @@ public class TocaObjectsLoader : MonoBehaviour
         for (int i = transform.childCount - 1; i >= 0; i--)
         {
             TocaObject obj = transform.GetChild(i).GetComponent<TocaObject>();
-            TouchHandler touch = (TouchHandler)obj.GetTocaFunction<TouchHandler>();
+            TouchControl touch = (TouchControl)obj.GetTocaFunction<TouchControl>();
             if (touch)
                 touch.OnDeTouch();
         }

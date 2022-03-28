@@ -40,6 +40,7 @@ public class TocaObject : MonoBehaviour
         AllFunctions = GlobalParameter.GetComponentAndChildren<TocaFunction>(transform);
         foreach (TocaFunction function in AllFunctions)
             function.TocaObject = this;
+        Bottom = transform.GetChild(0);
     }
 
     public TocaFunction GetTocaFunction<T>()
@@ -64,14 +65,5 @@ public class TocaObject : MonoBehaviour
                 values.Add(function);
         }
         return values;
-    }
-
-    public TocaObject AttachedObject()
-    {
-        MoveControl mc = (MoveControl)GetTocaFunction<MoveControl>();
-        if (mc && mc.SnapTransform && mc.SnapTransform.parent.GetComponent<TocaObject>())
-            return mc.SnapTransform.parent.GetComponent<TocaObject>();
-
-        return null;
     }
 }

@@ -7,7 +7,7 @@ public class BaseControl : TocaFunction
     public bool SnapWithHuman, SnapWithProp;
     public SnapType HumanHorizontalSnapType, HumanVerticalSnapType;
     public SnapType PropHorizontalSnapType, PropVerticalSnapType;
-    public List<FindControl> Attachments; // objects currently being attached on this object
+    public Dictionary<FindControl, AttachData> Attachments; // objects currently being attached on this object
 
     public int SnapLimit;
 
@@ -21,13 +21,61 @@ public class BaseControl : TocaFunction
     public bool IgnoreLimit, IgnoreWidth, IgnoreHeight;
     public bool IsHand;
 
+    public class AttachData
+    {
+        public MoveControl mc;
+        public Vector2 offset;
+
+        public AttachData(FindControl find, Vector3 snapPos, Transform me)
+        {
+            mc = (MoveControl)find.TocaObject.GetTocaFunction<MoveControl>();
+            if (mc)
+            {
+                offset = snapPos - me.position;
+            }
+        }
+    }
+
     private void Awake()
     {
         if (!HumanPointSnap)
             HumanPointSnap = transform;
         if (!PropPointSnap)
             PropPointSnap = transform;
-        Attachments = new List<FindControl>();
+        Attachments = new Dictionary<FindControl, AttachData>();
+    }
+
+    private void Update()
+    {
+        foreach (KeyValuePair<FindControl, AttachData> pair in Attachments)
+        {
+            if (pair.Value.mc)
+            {
+                pair.Value.mc.UpdateTargetPosition(CalculateTargetPos(pair.Key, pair.Value));
+            }
+        }
+    }
+
+    public Vector3 CalculateTargetPos(FindControl find, AttachData attach)
+    {
+        return transform.position + new Vector3(attach.offset.x, attach.offset.y) - Vector3.up * find.transform.localPosition.y;
+    }
+
+    public void Attach(FindControl find)
+    {
+        AttachData data = new AttachData(find, FindSnapPosition(find.transform.position, find.IsHuman, find.GetComponent<Collider2D>().bounds), transform);
+        Attachments.Add(find, data);
+        if (data.mc)
+        {
+            Debug.LogError("Snapped position : " + FindSnapPosition(find.transform.position, find.IsHuman, find.GetComponent<Collider2D>().bounds));
+            Debug.LogError("Calculated postiion : " + CalculateTargetPos(find, data));
+            data.mc.UpdateTargetPosition(CalculateTargetPos(find, data));
+        }
+    }
+
+    public void Detach(FindControl find)
+    {
+        Attachments.Remove(find);
     }
 
     public bool CanbeSnapped(FindControl finder)
@@ -39,10 +87,11 @@ public class BaseControl : TocaFunction
         return limit && width && height;
     }
 
-    public Transform FindSnapPosition(Vector3 bottomCenter, bool isHuman, Bounds boundingBox)
+    public Vector3 FindSnapPosition(Vector3 bottomCenter, bool isHuman, Bounds boundingBox)
     {
         if (!GetComponent<Collider2D>().OverlapPoint(bottomCenter))
         {
+            Debug.LogError("!Not over lap");
             bottomCenter = GetComponent<Collider2D>().ClosestPoint(bottomCenter);
         }
         // now bottom center is on the border or inside the polygon collider2d
@@ -59,11 +108,7 @@ public class BaseControl : TocaFunction
             y = GetSnapValue(bottomCenter.y, bottomCenter, PropPointSnap.position.y, PropVerticalSnapType == SnapType.PointSnap, boundingBox, Vector2.up);
         }
 
-        // create an empty gameobject for attachment
-        GameObject snap = new GameObject();
-        snap.transform.position = new Vector3(x, y, GlobalParameter.Depth);
-        snap.transform.SetParent(transform);
-        return snap.transform;
+        return new Vector3(x, y, GlobalParameter.Depth);
     }
 
     public float GetSnapValue(float objectValue, Vector3 objectPos, float snapValue, bool isPoint, Bounds boundingBox, Vector2 direction)
@@ -101,15 +146,5 @@ public class BaseControl : TocaFunction
             gameObject.layer = saveLayer;
         }
         return value;
-    }
-
-    public void Attach(FindControl find)
-    {
-        Attachments.Add(find);
-    }
-
-    public void Detach(FindControl find)
-    {
-        Attachments.Remove(find);
     }
 }

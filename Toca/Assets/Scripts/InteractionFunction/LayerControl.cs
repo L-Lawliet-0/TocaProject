@@ -62,11 +62,12 @@ public class LayerControl : TocaFunction
         SortingLayers myLayer = defaultLayer;
         int baseOrder = CalculateBaseLayerOrder();
 
-        MoveControl mc = (MoveControl)TocaObject.GetTocaFunction<MoveControl>();
+        FindControl find = (FindControl)TocaObject.GetTocaFunction<FindControl>();
         LayerControl parentLayer = null;
-        if (mc && mc.SnapTransform && mc.SnapTransform.parent.GetComponent<BaseControl>().TocaObject)
-            parentLayer = (LayerControl)mc.SnapTransform.parent.GetComponent<BaseControl>().TocaObject.GetTocaFunction<LayerControl>();
-        if (mc && mc.SnapTransform && parentLayer)
+        if (find && find.CurrentAttachment && find.CurrentAttachment.TocaObject)
+            parentLayer = (LayerControl)find.CurrentAttachment.TocaObject.GetTocaFunction<LayerControl>();
+
+        if (parentLayer)
         {
             if (inheirtLayer)
                 myLayer = parentLayer.CurrentObjectLayer;
@@ -81,11 +82,14 @@ public class LayerControl : TocaFunction
         foreach (TocaFunction toca in baseControls)
         {
             BaseControl bc = (BaseControl)toca;
-            foreach (FindControl fc in bc.Attachments)
+            
+            foreach (KeyValuePair<FindControl, BaseControl.AttachData> pair in bc.Attachments)
             {
-                LayerControl lc = (LayerControl)fc.TocaObject.GetTocaFunction<LayerControl>();
-                lc.ResetLayer(lc.CurrentObjectLayer, true, true);
+                LayerControl lc = (LayerControl)pair.Key.TocaObject.GetTocaFunction<LayerControl>();
+                if (lc)
+                    lc.ResetLayer(lc.CurrentObjectLayer, true, true);
             }
+            
         }
     }
 
@@ -108,6 +112,13 @@ public class LayerControl : TocaFunction
     public int CalculateBaseLayerOrder()
     {
         // this order is based on height(depth) of the object bottom
-        return -(int)(TocaObject.Bottom.position.y * 1000);
+        float y = TocaObject.Bottom.position.y;
+        FindControl find = (FindControl)TocaObject.GetTocaFunction<FindControl>();
+        if (find && find.CurrentAttachment)
+        {
+            y = find.CurrentAttachment.CalculateTargetPos(find, find.CurrentAttachment.Attachments[find]).y;
+        }
+
+        return -(int)(y * 1000);
     }
 }

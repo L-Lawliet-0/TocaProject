@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+    private static InputManager m_Instance;
+    public static InputManager Instance { get { return m_Instance; } }
     public bool InSelection; // the input is currently selecting something
-    public TouchHandler SelectedObject; // the object this input is selected
+    public TouchControl SelectedObject; // the object this input is selected
+
 
     private void Awake()
     {
+        m_Instance = this;
         InSelection = false;
     }
 
@@ -23,9 +27,9 @@ public class InputManager : MonoBehaviour
             Collider2D collider = Physics2D.OverlapBox(pos, Vector2.one, 0, 1 << LayerMask.NameToLayer("Selection"));
             if (collider)
             {
-                SelectedObject = collider.GetComponentInParent<TouchHandler>();
+                SelectedObject = collider.GetComponentInParent<TouchControl>();
                 if (!SelectedObject)
-                    SelectedObject = collider.GetComponent<TouchHandler>();
+                    SelectedObject = collider.GetComponent<TouchControl>();
             }
             else
                 SelectedObject = null;
@@ -53,5 +57,13 @@ public class InputManager : MonoBehaviour
         }
     }
 
-
+    public Vector3 GetTouchPosition(int id = -1, bool world = true)
+    {
+        if (world)
+        {
+            return GlobalParameter.Instance.ScreenPosToGamePos(Input.mousePosition);
+        }
+        else
+            return Input.mousePosition;
+    }
 }

@@ -12,8 +12,13 @@ public class FindControl : TocaFunction
     public float InteractionRadius;
     public bool IsHuman;
     public BaseControl CurrentAttachment; // the base this object is currently attaching
+    public BaseControl BasePreview;
+    public bool Arrived;
     private MoveControl MoveControl;
     private ArmControl NearByArm;
+
+    public BaseControl AttachBase;
+    public int AttachBaseID;
 
     private void Start()
     {
@@ -22,89 +27,80 @@ public class FindControl : TocaFunction
 
     private void Update()
     {
-        // used to notific nearby hand to reach this toca object
-        // must be selected to reach object
-        if (MoveControl.Selected)
-        {
-            TocaObject p = TocaObject.AttachedObject();
-            if (!p)
-            {
-                // only detect hand when it's selected and no attaching parent
-                Transform hand = FindBase(true);
-                if (hand)
-                {
-                    Destroy(hand.gameObject);
-                    hand = hand.parent;
-
-                    NearByArm = hand.parent.parent.GetComponent<ArmControl>();
-                }
-
-            }
-        }
+        
     }
 
-    public Transform FindBase(bool findHand = false)
+    public void TryAttach()
     {
-        // when selection is over, when finger leaves the touch screen
-        // first try to find the basecontrol to snap to
-        // if can snap
-        // do all of it attach object transform to become a child
-        // static object can be attached, because it doesn't move
-        // 
+        Arrived = false;
+        // find a good base to attach to
+        CurrentAttachment = BasePreview;
+        if (!CurrentAttachment)
+            CurrentAttachment = FindBaseNearBy();
+        if (!CurrentAttachment)
+            CurrentAttachment = FindBaseByDirection(Vector2.down);
+        if (!CurrentAttachment)
+            CurrentAttachment = FindBaseByDirection(Vector2.up);
 
-        BaseControl baseControl = null;
+        Attach(CurrentAttachment);
+    }
 
-        // try to find base control through interaction radius
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, InteractionRadius, 1 << LayerMask.NameToLayer("Base"));
+    public void TryDetach()
+    {
+        Detach();
+    }
+
+    public void Attach(BaseControl bc)
+    {
+        bc.Attach(this);
+    }
+
+    public void Detach()
+    {
+        if (CurrentAttachment)
+            CurrentAttachment.Detach(this);
+        CurrentAttachment = null;
+    }
+
+    public void SelectedUpdate()
+    {
+        BasePreview = FindBaseNearBy();
+    }
+
+    // return a base near by
+    public BaseControl FindBaseNearBy()
+    {
+        BaseControl bc = null;
+        Bounds bounds = GetComponent<Collider2D>().bounds;
+        float interactionRange = (bounds.extents.x + bounds.extents.y) * 1.5f;
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + Vector3.up * bounds.extents.y, interactionRange, 1 << LayerMask.NameToLayer("Base"));
         foreach (Collider2D collider in colliders)
         {
-            baseControl = collider.GetComponentInParent<BaseControl>();
-            if (BaseConditionCheck(baseControl) && (!findHand || baseControl.IsHand))
+            bc = collider.GetComponentInParent<BaseControl>();
+            if (BaseConditionCheck(bc))
                 break;
             else
-                baseControl = null;
+                bc = null;
         }
 
-        if (!baseControl)
-        {
-            // do a ray cast toward the bottom to detect ground
-            RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, -Vector2.up, 9999, 1 << LayerMask.NameToLayer("Base"));
-            foreach (RaycastHit2D hit in hits)
-            {
-                baseControl = hit.collider.GetComponentInParent<BaseControl>();
-                if (BaseConditionCheck(baseControl) && (!findHand || baseControl.IsHand))
-                    break;
-                else
-                    baseControl = null;
-            }
-        }
-
-        if (!baseControl)
-        {
-            // do a ray cast toward the bottom to detect ground
-            RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, Vector2.up, 9999, 1 << LayerMask.NameToLayer("Base"));
-            foreach (RaycastHit2D hit in hits)
-            {
-                baseControl = hit.collider.GetComponentInParent<BaseControl>();
-                if (BaseConditionCheck(baseControl) && (!findHand || baseControl.IsHand))
-                    break;
-                else
-                    baseControl = null;
-            }
-        }
-
-        if (!baseControl)
-        {
-            Debug.LogError("Critical Error, should not happen");
-            return null;
-        }
-
-        return baseControl.FindSnapPosition(transform.position, IsHuman, GetComponent<Collider2D>().bounds);
+        return bc;
     }
 
-    private void OnDrawGizmos()
+    public BaseControl FindBaseByDirection(Vector2 direction)
     {
-        //Gizmos.DrawSphere(transform.position, InteractionRadius);
+        BaseControl bc = null;
+        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, direction, 9999, 1 << LayerMask.NameToLayer("Base"));
+        foreach (RaycastHit2D hit in hits)
+        {
+            bc = hit.collider.GetComponentInParent<BaseControl>();
+            if (BaseConditionCheck(bc))
+                break;
+            else
+                bc = null;
+        }
+
+        return bc;
     }
 
     private bool BaseConditionCheck(BaseControl baseControl)
