@@ -30,6 +30,10 @@ public class LayerControl : TocaFunction
         for (int i = 0; i < AllRenderers.Length; i++)
         {
             DefaultValues[i] = AllRenderers[i].sortingOrder;
+
+            //Test code!!!!
+            if (DefaultValues[i] > 10)
+                DefaultValues[i] = 0;
         }
 
         ResetLayer(DefaultObjectLayer, false, false);
@@ -116,7 +120,7 @@ public class LayerControl : TocaFunction
         FindControl find = (FindControl)TocaObject.GetTocaFunction<FindControl>();
         if (find && find.CurrentAttachment)
         {
-            y = find.CurrentAttachment.CalculateTargetPos(find, find.CurrentAttachment.Attachments[find]).y;
+            y = find.CurrentAttachment.GetTargetPos(find, find.CurrentAttachment.Attachments[find]).y;
         }
 
         return -(int)(y * 1000);
