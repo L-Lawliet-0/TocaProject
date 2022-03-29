@@ -24,7 +24,16 @@ public class InputManager : MonoBehaviour
         {
             Vector3 pos = GlobalParameter.Instance.ScreenPosToGamePos(Input.mousePosition);
 
-            Collider2D collider = Physics2D.OverlapBox(pos, Vector2.one, 0, 1 << LayerMask.NameToLayer("Selection"));
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 999, 1 << LayerMask.NameToLayer("Selection"));
+            if (hit)
+            {
+                SelectedObject = hit.collider.GetComponentInParent<TouchControl>();
+            }
+            else
+                SelectedObject = null;
+
+            /*
+            Collider2D collider = Physics2D.OverlapPoint(pos, 1 << LayerMask.NameToLayer("Selection"));
             if (collider)
             {
                 SelectedObject = collider.GetComponentInParent<TouchControl>();
@@ -33,6 +42,7 @@ public class InputManager : MonoBehaviour
             }
             else
                 SelectedObject = null;
+            */
 
             if (Input.GetMouseButtonDown(0) && SelectedObject)
             {

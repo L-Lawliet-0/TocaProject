@@ -23,6 +23,7 @@ public class MoveControl : TocaFunction
     {
         Find = (FindControl)TocaObject.GetTocaFunction<FindControl>();
         Select = (SelectionControl)TocaObject.GetTocaFunction<SelectionControl>();
+        TargetPosition = transform.position;
     }
 
     public void UpdateTargetPosition(Vector3 targetPos)
@@ -59,6 +60,9 @@ public class MoveControl : TocaFunction
                 Find.Arrived = true;
                 TocaObject.transform.parent = Find.CurrentAttachment.transform;
                 Speed = 0;
+
+                StopCoroutine("ObjectShake");
+                StartCoroutine("ObjectShake");
             }
         }
     }
@@ -78,5 +82,25 @@ public class MoveControl : TocaFunction
         }
 
         return false;
+    }
+
+    private IEnumerator ObjectShake()
+    {
+        float speed = 10;
+        float count = .1f;
+        while (count > 0)
+        {
+            transform.position += Vector3.up * Time.fixedDeltaTime * speed;
+            count -= Time.fixedDeltaTime;
+            yield return new WaitForFixedUpdate();
+        }
+
+        count = .1f;
+        while (count > 0)
+        {
+            transform.position -= Vector3.up * Time.fixedDeltaTime * speed;
+            count -= Time.fixedDeltaTime;
+            yield return new WaitForFixedUpdate();
+        }
     }
 }

@@ -7,7 +7,10 @@ public class BaseControl : TocaFunction
     public bool SnapWithHuman, SnapWithProp;
     public SnapType HumanHorizontalSnapType, HumanVerticalSnapType;
     public SnapType PropHorizontalSnapType, PropVerticalSnapType;
+
     public Dictionary<FindControl, AttachData> Attachments; // objects currently being attached on this object
+
+    public List<FindControl> VisibleDatas;
 
     public int SnapLimit;
 
@@ -43,6 +46,7 @@ public class BaseControl : TocaFunction
         if (!PropPointSnap)
             PropPointSnap = transform;
         Attachments = new Dictionary<FindControl, AttachData>();
+        VisibleDatas = new List<FindControl>();
     }
 
     private void Update()
@@ -70,9 +74,9 @@ public class BaseControl : TocaFunction
     {
         AttachData data = new AttachData(find, FindSnapPosition(find.transform.position, find.IsHuman, find.GetComponent<Collider2D>().bounds), transform);
         Attachments.Add(find, data);
+        VisibleDatas.Add(find);
         if (data.mc)
         {
-            Debug.LogError("Snapped position : " + FindSnapPosition(find.transform.position, find.IsHuman, find.GetComponent<Collider2D>().bounds) + "at time frame: " + Time.time);
             data.mc.UpdateTargetPosition(CalculateTargetPos(find, data));
         }
     }
@@ -80,6 +84,7 @@ public class BaseControl : TocaFunction
     public void Detach(FindControl find)
     {
         Attachments.Remove(find);
+        VisibleDatas.Remove(find);
     }
 
     public bool CanbeSnapped(FindControl finder)
@@ -130,8 +135,11 @@ public class BaseControl : TocaFunction
             Vector3 checkPos = objectPos + new Vector3(direction.x, direction.y).normalized * extents;
             if (!Physics2D.OverlapBox(checkPos, Vector2.one * .1f, 0, 1 << LayerMask.NameToLayer("OnlyOne")))
             {
+                // use box cast instead
+                // Physics2D.BoxCast(checkPos, Vector2.one * .1f, 0, -direction, 9999, 1 << LayerMask.NameToLayer("OnlyOne"));
+
                 // space not enough
-                RaycastHit2D hit = Physics2D.Raycast(checkPos, -direction, 9999, 1 << LayerMask.NameToLayer("OnlyOne"));
+                RaycastHit2D hit = Physics2D.BoxCast(checkPos, Vector2.one * .1f, 0, -direction, 9999, 1 << LayerMask.NameToLayer("OnlyOne")); //Physics2D.Raycast(checkPos, -direction, 9999, 1 << LayerMask.NameToLayer("OnlyOne"));
                 if (hit)
                     value -= hit.distance;
                 Debug.LogError("Adjusted position because of right " + hit.distance);
@@ -140,7 +148,7 @@ public class BaseControl : TocaFunction
             checkPos = objectPos - new Vector3(direction.x, direction.y).normalized * extents;
             if (!Physics2D.OverlapBox(checkPos, Vector2.one * .1f, 0, 1 << LayerMask.NameToLayer("OnlyOne")))
             {
-                RaycastHit2D hit = Physics2D.Raycast(checkPos, direction, 9999, 1 << LayerMask.NameToLayer("OnlyOne"));
+                RaycastHit2D hit = Physics2D.BoxCast(checkPos, Vector2.one * .1f, 0, direction, 9999, 1 << LayerMask.NameToLayer("OnlyOne")); //Physics2D.Raycast(checkPos, direction, 9999, 1 << LayerMask.NameToLayer("OnlyOne"));
                 if (hit)
                     value += hit.distance;
                 Debug.LogError("Adjusted position because of left " + hit.distance);
