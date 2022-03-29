@@ -75,6 +75,7 @@ public class FindControl : TocaFunction
     // return a base near by
     public BaseControl FindBaseNearBy()
     {
+        List<BaseControl> cache = new List<BaseControl>();
         BaseControl bc = null;
         Bounds bounds = GetComponent<Collider2D>().bounds;
         float interactionRange = Mathf.Min(bounds.extents.x, bounds.extents.y);
@@ -84,12 +85,24 @@ public class FindControl : TocaFunction
         {
             bc = collider.GetComponentInParent<BaseControl>();
             if (BaseConditionCheck(bc))
-                break;
+                cache.Add(bc);
             else
                 bc = null;
         }
 
-        return bc;
+        BaseControl value = null;
+        float minDis = float.MaxValue;
+        foreach (BaseControl b in cache)
+        {
+            float dis = Vector3.Distance(transform.position, b.transform.position);
+            if (dis < minDis)
+            {
+                minDis = dis;
+                value = b;
+            }
+        }
+
+        return value;
     }
 
     public BaseControl FindBaseByDirection(Vector2 direction)
