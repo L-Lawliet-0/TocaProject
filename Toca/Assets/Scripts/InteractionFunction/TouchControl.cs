@@ -33,7 +33,6 @@ public class TouchControl : TocaFunction
 
     public void OnDeTouch()
     {
-        Debug.LogError("Positon when releasing the mouse: " + transform.position + "at time frame: " + Time.time);
         if (Move)
             Move.Speed = 0;
 
