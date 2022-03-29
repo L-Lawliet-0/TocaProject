@@ -63,6 +63,7 @@ public class BaseControl : TocaFunction
 
     public void Attach(FindControl find)
     {
+        Debug.LogError("Direct log: " + find.transform.position);
         AttachData data = new AttachData(find, FindSnapPosition(find.transform.position, find.IsHuman, find.GetComponent<Collider2D>().bounds), transform);
         Attachments.Add(find, data);
         if (data.mc)
@@ -89,6 +90,7 @@ public class BaseControl : TocaFunction
 
     public Vector3 FindSnapPosition(Vector3 bottomCenter, bool isHuman, Bounds boundingBox)
     {
+        Debug.LogError("Before snap value: " + bottomCenter);
         if (!GetComponent<Collider2D>().OverlapPoint(bottomCenter))
         {
             Debug.LogError("!Not over lap");
