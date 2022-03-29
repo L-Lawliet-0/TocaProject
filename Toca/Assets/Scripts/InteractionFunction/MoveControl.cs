@@ -33,6 +33,7 @@ public class MoveControl : TocaFunction
     // handle object movement logic, clsing to target every frame
     private void Update()
     {
+        
         if (!CanMove())
             return;
         Direction = (TargetPosition - transform.position).normalized;

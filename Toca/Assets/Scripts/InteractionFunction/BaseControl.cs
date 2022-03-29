@@ -58,7 +58,12 @@ public class BaseControl : TocaFunction
 
     public Vector3 CalculateTargetPos(FindControl find, AttachData attach)
     {
-        return transform.position + new Vector3(attach.offset.x, attach.offset.y) - Vector3.up * find.transform.localPosition.y;
+        return transform.position + new Vector3(attach.offset.x, attach.offset.y) - Vector3.up * find.transform.localPosition.y * find.transform.lossyScale.y;
+    }
+
+    public Vector3 GetTargetPos(FindControl find, AttachData attach)
+    {
+        return transform.position + new Vector3(attach.offset.x, attach.offset.y);
     }
 
     public void Attach(FindControl find)
@@ -68,8 +73,7 @@ public class BaseControl : TocaFunction
         Attachments.Add(find, data);
         if (data.mc)
         {
-            Debug.LogError("Snapped position : " + FindSnapPosition(find.transform.position, find.IsHuman, find.GetComponent<Collider2D>().bounds));
-            Debug.LogError("Calculated postiion : " + CalculateTargetPos(find, data));
+            Debug.LogError("Snapped position : " + FindSnapPosition(find.transform.position, find.IsHuman, find.GetComponent<Collider2D>().bounds) + "at time frame: " + Time.time);
             data.mc.UpdateTargetPosition(CalculateTargetPos(find, data));
         }
     }
@@ -93,11 +97,11 @@ public class BaseControl : TocaFunction
         Debug.LogError("Before snap value: " + bottomCenter);
         if (!GetComponent<Collider2D>().OverlapPoint(bottomCenter))
         {
-            Debug.LogError("!Not over lap");
             bottomCenter = GetComponent<Collider2D>().ClosestPoint(bottomCenter);
         }
         // now bottom center is on the border or inside the polygon collider2d
 
+        Debug.LogError("Incoming position: " + bottomCenter);
         float x, y;
         if (isHuman)
         {
