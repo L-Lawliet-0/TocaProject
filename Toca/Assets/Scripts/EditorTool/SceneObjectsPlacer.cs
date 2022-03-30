@@ -86,6 +86,7 @@ public class SceneObjectsPlacer : MonoBehaviour
             if (Template.GetChild(i).name.Equals(convertedName))
             {
                 tran.position = Template.GetChild(i).position;
+                tran.GetComponent<SpriteRenderer>().sortingOrder = Template.GetChild(i).GetComponent<SpriteRenderer>().sortingOrder;
                 break;
             }
         }
