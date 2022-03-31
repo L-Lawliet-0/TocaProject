@@ -9,6 +9,7 @@ public class InputManager : MonoBehaviour
     private static InputManager m_Instance;
     public static InputManager Instance { get { return m_Instance; } }
     public bool InSelection; // the input is currently selecting something
+    public Vector2 LastScreenPosition; // the last input scrren position, in pixel
     public TouchControl SelectedObject; // the object this input is selected
 
     private Dictionary<Touch, TouchInfo> Touches;
@@ -128,11 +129,25 @@ public class InputManager : MonoBehaviour
                     SelectedObject = null;
                 */
 
-                if (Input.GetMouseButtonDown(0) && SelectedObject)
+                if (Input.GetMouseButtonDown(0))
                 {
-                    // finger touched object
-                    SelectedObject.OnTouch(pos);
-                    InSelection = true;
+                    if (SelectedObject)
+                    {
+                        // finger touched object
+                        pos.z = GlobalParameter.Depth;
+                        SelectedObject.OnTouch(pos);
+                        InSelection = true;
+                    }
+                    else
+                    {
+                        LastScreenPosition = Input.mousePosition;
+                    }
+                }
+                else if (Input.GetMouseButton(0))
+                {
+                    CameraController.Instance.UpdateCameraX(Input.mousePosition.x - LastScreenPosition.x);
+
+                    LastScreenPosition = Input.mousePosition;
                 }
             }
             else

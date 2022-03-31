@@ -94,7 +94,7 @@ public class FindControl : TocaFunction
         float minDis = float.MaxValue;
         foreach (BaseControl b in cache)
         {
-            float dis = Vector3.Distance(transform.position, b.transform.position);
+            float dis = Vector3.Distance(transform.position, b.GetComponent<Collider2D>().ClosestPoint(transform.position)); //b.transform.position);
             if (dis < minDis)
             {
                 minDis = dis;

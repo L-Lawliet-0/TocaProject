@@ -51,7 +51,7 @@ public class MoveControl : TocaFunction
         transform.position += Direction * Speed * Time.deltaTime;
         Vector3 newDir = (TargetPosition - transform.position).normalized;
 
-        if (Vector3.Distance(transform.position, TargetPosition) < .1f || Vector3.Dot(Direction, newDir) <= 0)
+        if (Vector3.Distance(transform.position, TargetPosition) < 1f || Vector3.Dot(Direction, newDir) <= 0)
         {
             transform.position = TargetPosition;
 
