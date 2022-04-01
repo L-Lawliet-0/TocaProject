@@ -11,6 +11,17 @@ public class TouchControl : TocaFunction
     private FindControl Find;
     private MoveControl Move;
     private LayerControl Layer;
+
+    public delegate void VoidDelegate();
+    public List<VoidDelegate> TouchCallBacks; // used for register on click event
+    public List<VoidDelegate> DeTouchCallBacks; // used for register on release event
+
+    private void Awake()
+    {
+        TouchCallBacks = new List<VoidDelegate>();
+        DeTouchCallBacks = new List<VoidDelegate>();
+    }
+
     private void Start()
     {
         Selection = (SelectionControl)TocaObject.GetTocaFunction<SelectionControl>();
@@ -29,6 +40,9 @@ public class TouchControl : TocaFunction
             Selection.OnSelect(pos);
         if (Layer)
             Layer.TouchCallback(pos);
+
+        foreach (VoidDelegate dele in TouchCallBacks)
+            dele();
     }
 
     public void OnDeTouch()
@@ -44,6 +58,9 @@ public class TouchControl : TocaFunction
 
         if (Layer)
             Layer.DetouchCallback();
+
+        foreach (VoidDelegate dele in DeTouchCallBacks)
+            dele();
     }
 
     public void OnTouchPositionChanged(Vector3 worldPosition)

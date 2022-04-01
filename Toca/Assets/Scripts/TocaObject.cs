@@ -40,7 +40,9 @@ public class TocaObject : MonoBehaviour
         AllFunctions = GlobalParameter.GetComponentAndChildren<TocaFunction>(transform);
         foreach (TocaFunction function in AllFunctions)
             function.TocaObject = this;
-        Bottom = transform.GetChild(0);
+
+        if (transform.childCount > 0)
+            Bottom = transform.GetChild(0);
     }
 
     public TocaFunction GetTocaFunction<T>()

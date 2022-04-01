@@ -66,6 +66,6 @@ public class LimbControl : TocaFunction
         }
 
         //transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, TargetAngle, );
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(TargetAngle), 180 * Time.deltaTime);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(TargetAngle), 60 * Time.deltaTime);
     }
 }

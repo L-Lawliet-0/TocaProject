@@ -32,8 +32,8 @@ public class LayerControl : TocaFunction
             DefaultValues[i] = AllRenderers[i].sortingOrder;
 
             //Test code!!!!
-            if (DefaultValues[i] > 10)
-                DefaultValues[i] = 0;
+            // if (DefaultValues[i] > 10)
+            //    DefaultValues[i] = 0;
         }
 
         ResetLayer(DefaultObjectLayer, false, false);
