@@ -21,8 +21,10 @@ public class BaseControl : TocaFunction
     }
 
     public Transform HumanPointSnap, PropPointSnap;
-    public bool IgnoreLimit, IgnoreWidth, IgnoreHeight;
+    public float MaxObjectWidth = float.MaxValue, MaxObjectHeight = float.MaxValue;
+    public bool IgnoreLimit;
     public bool IsHand;
+    public int BaseID;
 
     public class AttachData
     {
@@ -91,8 +93,8 @@ public class BaseControl : TocaFunction
     {
         // can not have more than limit amount of attachment
         bool limit = IgnoreLimit || Attachments.Count < SnapLimit;
-        bool width = IgnoreWidth || GetComponent<Collider2D>().bounds.extents.x > finder.GetComponent<Collider2D>().bounds.extents.x;
-        bool height = IgnoreHeight || GetComponent<Collider2D>().bounds.extents.y > finder.GetComponent<Collider2D>().bounds.extents.y;
+        bool width = MaxObjectWidth > finder.GetComponent<Collider2D>().bounds.size.x;
+        bool height = MaxObjectHeight > finder.GetComponent<Collider2D>().bounds.size.y;
         return limit && width && height;
     }
 
@@ -155,6 +157,16 @@ public class BaseControl : TocaFunction
             }
 
             gameObject.layer = saveLayer;
+        }
+        else if (direction.y > 0)
+        {
+            // we know that the incoming bounding box must be smaller than the maxobject height
+            // we know that the incoming position will not drop below the bottom
+            // so we only check the top
+            float top = objectValue + boundingBox.size.y; // this is the top position of the incoming bounding box
+            float maxTop = GetComponent<Collider2D>().bounds.center.y - GetComponent<Collider2D>().bounds.extents.y + MaxObjectHeight; // this is the max height allowed
+            if (top > maxTop)
+                value -= (top - maxTop);
         }
         return value;
     }

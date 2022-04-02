@@ -6,32 +6,37 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class TocaObjectsLoader : MonoBehaviour
 {
+    private static TocaObjectsLoader m_Instance;
+    public static TocaObjectsLoader Instance { get { return m_Instance; } }
+
+    public Dictionary<int, TocaObject> TocaObjectsPool;
     public bool INITDATA;
-    public bool FirstFrame = true;
-    public void InitializeAllTocaObjects()
-    {
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            TocaObject obj = transform.GetChild(i).GetComponent<TocaObject>();
-            obj.InitalizeSave();
-        }
-    }
+    public bool Initialized;
 
-    private void LoadAllTocaObject()
-    {
-        for (int i = transform.childCount - 1; i >= 0; i--)
-        {
-            TocaObject obj = transform.GetChild(i).GetComponent<TocaObject>();
-            TouchControl touch = (TouchControl)obj.GetTocaFunction<TouchControl>();
-            if (touch)
-                touch.OnDeTouch();
-        }
-    }
-
-    private void Start()
+    private void Awake()
     {
         if (Application.isPlaying)
-            FirstFrame = true;
+        {
+            m_Instance = this;
+            TocaObjectsPool = new Dictionary<int, TocaObject>();
+            TocaObject[] all = FindObjectsOfType<TocaObject>();
+            foreach (TocaObject toca in all)
+            {
+                TocaObjectsPool.Add(toca.TocaSave.ObjectID, toca);
+            }
+            Initialized = false;
+        }
+    }
+
+    public void InitializeAllTocaObjects()
+    {
+        TocaObject[] all = FindObjectsOfType<TocaObject>();
+        foreach (TocaObject toca in all)
+            toca.InitalizeSave();
+
+        BaseControl[] bcs = FindObjectsOfType<BaseControl>();
+        foreach (BaseControl bc in bcs)
+            bc.BaseID = bc.GetHashCode();
     }
 
     private void Update()
@@ -42,10 +47,13 @@ public class TocaObjectsLoader : MonoBehaviour
             INITDATA = false;
         }
 
-        if (FirstFrame && Application.isPlaying)
+        if (Application.isPlaying && !Initialized)
         {
-            FirstFrame = false;
-            LoadAllTocaObject();
+            foreach (KeyValuePair<int, TocaObject> pair in TocaObjectsPool)
+            {
+                pair.Value.InitalizeTocaobject();
+            }
+            Initialized = true;
         }
     }
 }

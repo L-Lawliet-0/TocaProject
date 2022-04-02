@@ -32,8 +32,8 @@ public class LayerControl : TocaFunction
             DefaultValues[i] = AllRenderers[i].sortingOrder;
 
             //Test code!!!!
-            // if (DefaultValues[i] > 10)
-            //    DefaultValues[i] = 0;
+            if (DefaultValues[i] > 10)
+                DefaultValues[i] = 0;
         }
 
         ResetLayer(DefaultObjectLayer, false, false);
@@ -76,7 +76,11 @@ public class LayerControl : TocaFunction
             if (inheirtLayer)
                 myLayer = parentLayer.CurrentObjectLayer;
             if (inheirtValue)
-                baseOrder = parentLayer.OrderValue + 10; // my order has to be on top of the parenting object
+            {
+                //baseOrder = parentLayer.OrderValue + 10; // my order has to be on top of the parenting object
+                baseOrder = parentLayer.OrderValue + (int)((15.36f - TocaObject.Bottom.transform.position.y) * 10);
+
+            }
         }
 
         SetLayer(myLayer, baseOrder);

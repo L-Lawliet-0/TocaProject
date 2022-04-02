@@ -16,6 +16,11 @@ public class OpenControl : TocaFunction
         closeTouch.DeTouchCallBacks.Add(OnOpen);
 
         OnClose(); // close the objects first
+
+        if (OpenObj && OpenObj.GetComponent<SpriteRenderer>())
+            OpenObj.GetComponent<SpriteRenderer>().enabled = true;
+        if (CloseObj && CloseObj.GetComponent<SpriteRenderer>())
+            CloseObj.GetComponent<SpriteRenderer>().enabled = true;
     }
 
     // when this game object is "opened"
