@@ -9,7 +9,7 @@ public class GlobalParameter : MonoBehaviour
     public static int Depth = 50;
     public static float ReachTime = .05f;
 
-    public static float MaxLimbSpeed = 150, MinLimbSpeed = 10;
+    public static float MaxLimbSpeed = 100, MinLimbSpeed = 10;
     public static float Acceleration = 100, StartSpeed = 20;
 
     private void Awake()
@@ -39,5 +39,14 @@ public class GlobalParameter : MonoBehaviour
         for (; i < AllFunctions.Length; i++)
             AllFunctions[i] = functions2[i - functions1.Length];
         return AllFunctions;
+    }
+
+    public static float ClampAngle(float angle)
+    {
+        while (angle < 0)
+            angle += 360;
+        while (angle > 360)
+            angle -= 360;
+        return angle;
     }
 }

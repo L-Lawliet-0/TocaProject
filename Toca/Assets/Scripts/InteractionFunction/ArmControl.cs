@@ -26,7 +26,7 @@ public class ArmControl : LimbControl
 
             TargetAngle = transform.eulerAngles;
             transform.rotation = temp;
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(TargetAngle), 60 * Time.deltaTime);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(TargetAngle), 15 * Time.deltaTime);
         }
         else
             base.UpdateLimbRotation();

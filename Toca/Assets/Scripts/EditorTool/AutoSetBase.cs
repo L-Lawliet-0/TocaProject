@@ -34,6 +34,7 @@ public class AutoSetBase : MonoBehaviour
         }
     }
 
+    /*
     private void OnDrawGizmos()
     {
         if (Selection.activeGameObject == gameObject && Reference)
@@ -41,4 +42,5 @@ public class AutoSetBase : MonoBehaviour
             Gizmos.DrawSphere(Reference.transform.position, .3f);
         }
     }
+    */
 }
