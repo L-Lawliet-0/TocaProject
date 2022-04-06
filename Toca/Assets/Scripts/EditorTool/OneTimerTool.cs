@@ -39,10 +39,26 @@ public class OneTimerTool : MonoBehaviour
             */
 
             // this function reset bls position
+            /*
             BaseLimitSetter[] blss = GetComponentsInChildren<BaseLimitSetter>(true);
             foreach (BaseLimitSetter bls in blss)
             {
                 bls.transform.position = bls.transform.parent.position;
+            }
+            */
+
+            // this function try to set base for all find controls
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                Transform child = transform.GetChild(i);
+                if (child.GetComponentInChildren<FindControl>())
+                {
+                    if (!child.GetComponent<AutoSetBase>())
+                        child.gameObject.AddComponent<AutoSetBase>();
+                    // try to set a base for the object
+                    child.GetComponent<AutoSetBase>().SET = true; // auto set
+                }
+
             }
 
             EXECUTE = false;

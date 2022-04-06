@@ -20,7 +20,7 @@ public class InputManager : MonoBehaviour
         public bool InSelection;
         public Touch MyTouch;
 
-        public TouchInfo(Touch touch)
+        public TouchInfo(Touch touch) 
         {
             MyTouch = touch;
             InSelection = false;
