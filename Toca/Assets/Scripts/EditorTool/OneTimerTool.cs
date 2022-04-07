@@ -48,6 +48,7 @@ public class OneTimerTool : MonoBehaviour
             */
 
             // this function try to set base for all find controls
+            /*
             for (int i = 0; i < transform.childCount; i++)
             {
                 Transform child = transform.GetChild(i);
@@ -59,6 +60,13 @@ public class OneTimerTool : MonoBehaviour
                     child.GetComponent<AutoSetBase>().SET = true; // auto set
                 }
 
+            }
+            */
+
+            LayerControl[] lcs = FindObjectsOfType<LayerControl>();
+            foreach (LayerControl lc in lcs)
+            {
+                lc.DefaultObjectLayer = LayerControl.SortingLayers.Background;
             }
 
             EXECUTE = false;

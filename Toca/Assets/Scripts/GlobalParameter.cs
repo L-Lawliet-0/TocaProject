@@ -9,7 +9,7 @@ public class GlobalParameter : MonoBehaviour
     public static int Depth = 50;
     public static float ReachTime = .05f;
 
-    public static float MaxLimbSpeed = 100, MinLimbSpeed = 10;
+    public static float MaxLimbSpeed = 50, MinLimbSpeed = 1;
     public static float Acceleration = 100, StartSpeed = 20;
 
     private void Awake()
@@ -30,7 +30,7 @@ public class GlobalParameter : MonoBehaviour
     public static T[] GetComponentAndChildren<T>(Transform root)
     {
         T[] functions1 = root.GetComponents<T>();
-        T[] functions2 = root.GetComponentsInChildren<T>();
+        T[] functions2 = root.GetComponentsInChildren<T>(true);
 
         T[] AllFunctions = new T[functions1.Length + functions2.Length];
         int i = 0;

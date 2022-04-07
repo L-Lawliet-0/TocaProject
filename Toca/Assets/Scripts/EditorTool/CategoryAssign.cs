@@ -13,4 +13,9 @@ public class CategoryAssign : MonoBehaviour
     {
         m_Instance = this;
     }
+
+    private void Update()
+    {
+        m_Instance = this;
+    }
 }

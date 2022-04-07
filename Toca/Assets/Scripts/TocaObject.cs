@@ -68,6 +68,8 @@ public class TocaObject : MonoBehaviour
 
         if (transform.childCount > 0)
             Bottom = transform.GetChild(0);
+        else
+            Bottom = transform;
     }
 
     public TocaFunction GetTocaFunction<T>()

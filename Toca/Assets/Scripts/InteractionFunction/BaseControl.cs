@@ -93,8 +93,8 @@ public class BaseControl : TocaFunction
     {
         // can not have more than limit amount of attachment
         bool limit = IgnoreLimit || Attachments.Count < SnapLimit;
-        bool width = MaxObjectWidth > finder.GetComponent<Collider2D>().bounds.size.x;
-        bool height = MaxObjectHeight > finder.GetComponent<Collider2D>().bounds.size.y;
+        bool width = finder.IsHuman || MaxObjectWidth > finder.GetComponent<Collider2D>().bounds.size.x; // human automatically ignore width check
+        bool height = finder.IsHuman || MaxObjectHeight > finder.GetComponent<Collider2D>().bounds.size.y; // human automatically ignore height check
         return limit && width && height;
     }
 

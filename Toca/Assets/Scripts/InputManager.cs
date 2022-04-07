@@ -102,6 +102,8 @@ public class InputManager : MonoBehaviour
                     TouchControl tc = hit.collider.GetComponentInParent<TouchControl>();
                     LayerControl lc = (LayerControl)tc.TocaObject.GetTocaFunction<LayerControl>();
                     float layerValue = lc.OrderValue;
+                    if (tc.GetComponent<SpriteRenderer>())
+                        layerValue = tc.GetComponent<SpriteRenderer>().sortingOrder;
                     if (layerValue > maxLayer)
                     {
                         maxLayer = layerValue;

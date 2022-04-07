@@ -7,12 +7,7 @@ public class Assigner : MonoBehaviour
 {
     public enum Category
     {
-        Human,
-        NonInteractive,
-        Special,
-        StaticBase,
-        MoveableBase,
-        Moveable
+        StaticBase
     }
 
     public Category m_Category;

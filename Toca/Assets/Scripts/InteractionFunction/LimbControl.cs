@@ -64,7 +64,7 @@ public class LimbControl : TocaFunction
                 float newTarget = GlobalParameter.ClampAngle(thisX + thisY);
                 float currentTarget = GlobalParameter.ClampAngle(TargetAngle.z);
 
-                Debug.LogError("current z: " + currentAngle + " target z: " + newTarget);
+                // Debug.LogError("current z: " + currentAngle + " target z: " + newTarget);
 
                 if (!ReachedDesiredAngle)
                 {

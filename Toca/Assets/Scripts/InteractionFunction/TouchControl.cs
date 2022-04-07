@@ -16,6 +16,8 @@ public class TouchControl : TocaFunction
     public List<VoidDelegate> TouchCallBacks; // used for register on click event
     public List<VoidDelegate> DeTouchCallBacks; // used for register on release event
 
+    public bool CallbackOnly;
+
     private void Awake()
     {
         TouchCallBacks = new List<VoidDelegate>();
@@ -34,12 +36,15 @@ public class TouchControl : TocaFunction
     // need a collider to detech input
     public void OnTouch(Vector3 pos)
     {
-        if (Find)
-            Find.TryDetach();
-        if (Selection)
-            Selection.OnSelect(pos);
-        if (Layer)
-            Layer.TouchCallback(pos);
+        if (!CallbackOnly)
+        {
+            if (Find)
+                Find.TryDetach();
+            if (Selection)
+                Selection.OnSelect(pos);
+            if (Layer)
+                Layer.TouchCallback(pos);
+        }
 
         foreach (VoidDelegate dele in TouchCallBacks)
             dele();
@@ -47,24 +52,30 @@ public class TouchControl : TocaFunction
 
     public void OnDeTouch()
     {
-        if (Move)
-            Move.Speed = 0;
 
-        if (Find)
-            Find.TryAttach();
+        if (!CallbackOnly)
+        {
+            if (Move)
+                Move.Speed = 0;
 
-        if (Selection)
-            Selection.OnDeselect();
+            if (Find)
+                Find.TryAttach();
 
-        if (Layer)
-            Layer.DetouchCallback();
+            if (Selection)
+                Selection.OnDeselect();
 
+            if (Layer)
+                Layer.DetouchCallback();
+        }
         foreach (VoidDelegate dele in DeTouchCallBacks)
             dele();
     }
 
     public void OnTouchPositionChanged(Vector3 worldPosition)
     {
+        if (CallbackOnly)
+            return;
+
         if (Selection)
             Selection.UpdateSelectionPos(worldPosition);
         if (Find)
