@@ -48,10 +48,13 @@ public class TocaObject : MonoBehaviour
                 if (function.BaseID == TocaSave.ParentBaseID)
                 {
                     // found the mother fucker
-                    Debug.LogError("Mother fucker!");
                     ((FindControl)GetTocaFunction<FindControl>()).BasePreview = function;
                     ((FindControl)GetTocaFunction<FindControl>()).TryAttach();
                     //function.Attach((FindControl)GetTocaFunction<FindControl>());
+
+                    LayerControl lc = (LayerControl)GetTocaFunction<LayerControl>();
+                    if (lc)
+                        lc.DetouchCallback();
                     break;
                 }
             }

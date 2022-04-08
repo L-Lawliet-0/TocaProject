@@ -32,8 +32,8 @@ public class LayerControl : TocaFunction
             DefaultValues[i] = AllRenderers[i].sortingOrder;
 
             //Test code!!!!
-            if (DefaultValues[i] > 10)
-                DefaultValues[i] = 0;
+            //if (DefaultValues[i] > 10)
+            //    DefaultValues[i] = 0;
         }
 
         ResetLayer(DefaultObjectLayer, false, false);
@@ -60,6 +60,7 @@ public class LayerControl : TocaFunction
 
     public void ResetLayer(SortingLayers defaultLayer, bool inheirtLayer, bool inheirtValue)
     {
+        //Debug.LogError(transform.name);
         // reset object layer based on all information of this object
 
         // 1. check if this object is currently attached on another Toca object

@@ -61,10 +61,18 @@ public class MoveControl : TocaFunction
                 TocaObject.transform.parent = Find.CurrentAttachment.transform;
                 Speed = 0;
 
+                transform.position -= Vector3.up * GrandChange;
+                GrandChange = 0;
                 StopCoroutine("ObjectShake");
                 StartCoroutine("ObjectShake");
             }
         }
+    }
+
+    private void OnDisable()
+    {
+        transform.position -= Vector3.up * GrandChange;
+        GrandChange = 0;
     }
 
     public bool CanMove()
@@ -84,13 +92,16 @@ public class MoveControl : TocaFunction
         return false;
     }
 
+    private float GrandChange;
     private IEnumerator ObjectShake()
     {
         float speed = 10;
         float count = .1f;
+        GrandChange = 0;
         while (count > 0)
         {
             transform.position += Vector3.up * Time.fixedDeltaTime * speed;
+            GrandChange += Time.fixedDeltaTime * speed;
             count -= Time.fixedDeltaTime;
             yield return new WaitForFixedUpdate();
         }
@@ -99,6 +110,7 @@ public class MoveControl : TocaFunction
         while (count > 0)
         {
             transform.position -= Vector3.up * Time.fixedDeltaTime * speed;
+            GrandChange -= Time.fixedDeltaTime * speed;
             count -= Time.fixedDeltaTime;
             yield return new WaitForFixedUpdate();
         }

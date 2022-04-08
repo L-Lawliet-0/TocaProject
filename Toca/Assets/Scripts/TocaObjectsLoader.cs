@@ -10,6 +10,7 @@ public class TocaObjectsLoader : MonoBehaviour
     public static TocaObjectsLoader Instance { get { return m_Instance; } }
 
     public Dictionary<int, TocaObject> TocaObjectsPool;
+    public List<TocaObject> PublicPool;
     public bool INITDATA;
     public bool Initialized;
 
@@ -20,8 +21,10 @@ public class TocaObjectsLoader : MonoBehaviour
             m_Instance = this;
             TocaObjectsPool = new Dictionary<int, TocaObject>();
             TocaObject[] all = FindObjectsOfType<TocaObject>();
+            PublicPool = new List<TocaObject>();
             foreach (TocaObject toca in all)
             {
+                PublicPool.Add(toca);
                 TocaObjectsPool.Add(toca.TocaSave.ObjectID, toca);
             }
             Initialized = false;
@@ -49,11 +52,23 @@ public class TocaObjectsLoader : MonoBehaviour
 
         if (Application.isPlaying && !Initialized)
         {
+            /*
             foreach (KeyValuePair<int, TocaObject> pair in TocaObjectsPool)
             {
                 pair.Value.InitalizeTocaobject();
             }
+            */
+            StartCoroutine("Init");
             Initialized = true;
+        }
+    }
+
+    private IEnumerator Init()
+    {
+        yield return new WaitForSeconds(1);
+        foreach (KeyValuePair<int, TocaObject> pair in TocaObjectsPool)
+        {
+            pair.Value.InitalizeTocaobject();
         }
     }
 }

@@ -9,10 +9,14 @@ public class SelectionControl : TocaFunction
     private MoveControl MoveControl;
     private FindControl FindControl;
 
+    private Vector3 DefaultScale;
+
     private void Start()
     {
         MoveControl = (MoveControl)TocaObject.GetTocaFunction<MoveControl>();
         FindControl = (FindControl)TocaObject.GetTocaFunction<FindControl>();
+
+        DefaultScale = transform.localScale;
     }
 
     public void OnSelect(Vector3 initPos)
@@ -21,11 +25,22 @@ public class SelectionControl : TocaFunction
         // update position offset
         PositionOffset = initPos - transform.position;
         transform.parent = null;
+
+        StopAllCoroutines();
+        StartCoroutine("ScaleUp");
     }
 
     public void OnDeselect()
     {
         Selected = false;
+
+        StopAllCoroutines();
+        StartCoroutine("ScaleDown");
+    }
+
+    private void OnDisable()
+    {
+        transform.localScale = DefaultScale;
     }
 
     public void UpdateSelectionPos(Vector3 newPos)
@@ -42,5 +57,25 @@ public class SelectionControl : TocaFunction
                 MoveControl.UpdateTargetPosition(newPos - new Vector3(0, TocaObject.Bottom.localPosition.y * TocaObject.Bottom.lossyScale.y));
             }
         }
+    }
+
+    private IEnumerator ScaleUp()
+    {
+        while (transform.localScale.x < DefaultScale.x * 1.2f)
+        {
+            transform.localScale += Vector3.one * Time.deltaTime;
+            yield return null;
+        }
+        transform.localScale = DefaultScale * 1.2f;
+    }
+
+    private IEnumerator ScaleDown()
+    {
+        while (transform.localScale.x > DefaultScale.x)
+        {
+            transform.localScale -= Vector3.one * Time.deltaTime;
+            yield return null;
+        }
+        transform.localScale = DefaultScale;
     }
 }

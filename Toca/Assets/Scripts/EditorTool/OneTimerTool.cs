@@ -47,27 +47,33 @@ public class OneTimerTool : MonoBehaviour
             }
             */
 
+            
             // this function try to set base for all find controls
-            /*
-            for (int i = 0; i < transform.childCount; i++)
+            FindControl[] finds = FindObjectsOfType<FindControl>();
+            foreach (FindControl find in finds)
             {
-                Transform child = transform.GetChild(i);
-                if (child.GetComponentInChildren<FindControl>())
-                {
-                    if (!child.GetComponent<AutoSetBase>())
-                        child.gameObject.AddComponent<AutoSetBase>();
-                    // try to set a base for the object
-                    child.GetComponent<AutoSetBase>().SET = true; // auto set
-                }
-
+                if (!find.GetComponent<AutoSetBase>())
+                    find.gameObject.AddComponent<AutoSetBase>();
+                // try to set a base for the object
+                find.GetComponent<AutoSetBase>().SET = true; // auto set
             }
-            */
+            
 
-            LayerControl[] lcs = FindObjectsOfType<LayerControl>();
+            // this function try to reset layers
+            /*
+            LayerControl[] lcs = FindObjectsOfType<LayerControl>(true);
             foreach (LayerControl lc in lcs)
             {
                 lc.DefaultObjectLayer = LayerControl.SortingLayers.Background;
             }
+
+            SpriteRenderer[] srs = FindObjectsOfType<SpriteRenderer>(true);
+            foreach (SpriteRenderer sr in srs)
+            {
+                sr.sortingOrder = 0; // reset sorting order
+                sr.sortingLayerName = "Default";
+            }
+            */
 
             EXECUTE = false;
         }    

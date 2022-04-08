@@ -42,7 +42,7 @@ public class FindControl : TocaFunction
         if (!CurrentAttachment)
             CurrentAttachment = FindBaseByDirection(Vector2.up);
 
-        Debug.LogError("Reach!" + CurrentAttachment.name);
+        //Debug.LogError("Reach!" + CurrentAttachment.name);
         Attach(CurrentAttachment);
 
         BasePreview = null;
@@ -122,7 +122,7 @@ public class FindControl : TocaFunction
         return bc;
     }
 
-    private bool BaseConditionCheck(BaseControl baseControl)
+    public bool BaseConditionCheck(BaseControl baseControl)
     {
         bool selfCondition = baseControl && baseControl.TocaObject != TocaObject && ((baseControl.SnapWithHuman && IsHuman) || (baseControl.SnapWithProp && !IsHuman));
         if (!selfCondition)
