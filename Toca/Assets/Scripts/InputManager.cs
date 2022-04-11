@@ -12,13 +12,14 @@ public class InputManager : MonoBehaviour
     public Vector2 LastScreenPosition; // the last input scrren position, in pixel
     public TouchControl SelectedObject; // the object this input is selected
 
-    private Dictionary<Touch, TouchInfo> Touches;
+    private Dictionary<int, TouchInfo> Touches;
 
     private class TouchInfo
     {
         private TouchControl SelectedObject;
         public bool InSelection;
         public Touch MyTouch;
+        private Vector2 LastScreenPosition;
 
         public TouchInfo(Touch touch) 
         {
@@ -30,18 +31,25 @@ public class InputManager : MonoBehaviour
         public void FrameUpdate()
         {
             if (MyTouch.phase == TouchPhase.Began)
+            {
                 OnTouch();
+            }
             else if (MyTouch.phase == TouchPhase.Canceled || MyTouch.phase == TouchPhase.Ended)
+            {
                 Detouch();
+            }
             else
+            {
                 UpdatePos();
+            }
         }
 
         public void OnTouch()
         {
+            LastScreenPosition = MyTouch.position;
             Vector3 pos = GlobalParameter.Instance.ScreenPosToGamePos(MyTouch.position);
 
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 999, 1 << LayerMask.NameToLayer("Selection"));
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(MyTouch.position), Vector2.zero, 999, 1 << LayerMask.NameToLayer("Selection"));
             if (hit)
             {
                 SelectedObject = hit.collider.GetComponentInParent<TouchControl>();
@@ -54,6 +62,7 @@ public class InputManager : MonoBehaviour
                 // finger touched object
                 SelectedObject.OnTouch(pos);
                 InSelection = true;
+                Debug.LogError("selected object! " + InSelection);
             }
         }
 
@@ -68,9 +77,24 @@ public class InputManager : MonoBehaviour
 
         public void UpdatePos()
         {
+            Debug.LogError(InSelection);
             if (InSelection)
             {
+                Debug.LogError("UpdatePos: " + MyTouch.position);
                 SelectedObject.OnTouchPositionChanged(GlobalParameter.Instance.ScreenPosToGamePos(MyTouch.position));
+
+                // if the touch position is at the border, move the camera position
+                if (MyTouch.position.x > Screen.width * .95f)
+                    CameraController.Instance.UpdateCameraX(-Screen.width * .01f);
+                else if (MyTouch.position.x < Screen.width * .05f)
+                    CameraController.Instance.UpdateCameraX(Screen.width * .01f);
+            }
+            else
+            {
+                // not selecting object, update camera position
+                CameraController.Instance.UpdateCameraX(MyTouch.position.x - LastScreenPosition.x);
+
+                LastScreenPosition = MyTouch.position;
             }
         }
     }
@@ -80,7 +104,7 @@ public class InputManager : MonoBehaviour
         m_Instance = this;
         InSelection = false;
 
-        Touches = new Dictionary<Touch, TouchInfo>();
+        Touches = new Dictionary<int, TouchInfo>();
     }
 
     // The job of the input manager is to detect input and fire events
@@ -172,24 +196,25 @@ public class InputManager : MonoBehaviour
             Touch[] touches = Input.touches;
             foreach (Touch touch in touches)
             {
-                if (!Touches.ContainsKey(touch))
+                if (!Touches.ContainsKey(touch.fingerId))
                 {
                     TouchInfo info = new TouchInfo(touch);
-                    Touches.Add(touch, info);
+                    Touches.Add(touch.fingerId, info);
                 }
             }
 
             List<Touch> removeThisFrame = new List<Touch>();
             foreach (Touch touch in touches)
             {
-                Touches[touch].FrameUpdate();
+                Touches[touch.fingerId].MyTouch = touch;
+                Touches[touch.fingerId].FrameUpdate();
                 if (touch.phase == TouchPhase.Canceled || touch.phase == TouchPhase.Ended)
                     removeThisFrame.Add(touch);
             }
 
             foreach (Touch touch in removeThisFrame)
             {
-                Touches.Remove(touch);
+                Touches.Remove(touch.fingerId);
             }
         }
     }

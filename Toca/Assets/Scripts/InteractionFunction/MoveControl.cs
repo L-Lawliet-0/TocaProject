@@ -61,8 +61,8 @@ public class MoveControl : TocaFunction
                 TocaObject.transform.parent = Find.CurrentAttachment.transform;
                 Speed = 0;
 
-                transform.position -= Vector3.up * GrandChange;
-                GrandChange = 0;
+                //transform.position -= Vector3.up * GrandChange;
+                //GrandChange = 0;
                 StopCoroutine("ObjectShake");
                 StartCoroutine("ObjectShake");
             }
@@ -71,8 +71,8 @@ public class MoveControl : TocaFunction
 
     private void OnDisable()
     {
-        transform.position -= Vector3.up * GrandChange;
-        GrandChange = 0;
+        //transform.position -= Vector3.up * GrandChange;
+        //GrandChange = 0;
     }
 
     public bool CanMove()

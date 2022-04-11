@@ -64,7 +64,7 @@ public class BaseControl : TocaFunction
 
     public Vector3 CalculateTargetPos(FindControl find, AttachData attach)
     {
-        return transform.position + new Vector3(attach.offset.x, attach.offset.y) - Vector3.up * find.transform.localPosition.y * find.transform.lossyScale.y;
+        return transform.position + new Vector3(attach.offset.x, attach.offset.y) - Vector3.up * find.Yoffset;
     }
 
     public Vector3 GetTargetPos(FindControl find, AttachData attach)
@@ -74,7 +74,7 @@ public class BaseControl : TocaFunction
 
     public void Attach(FindControl find)
     {
-        AttachData data = new AttachData(find, FindSnapPosition(find.transform.position, find.IsHuman, find.GetComponent<Collider2D>().bounds), transform);
+        AttachData data = new AttachData(find, FindSnapPosition(find), transform);
         Attachments.Add(find, data);
         VisibleDatas.Add(find);
         if (data.mc)
@@ -93,35 +93,49 @@ public class BaseControl : TocaFunction
     {
         // can not have more than limit amount of attachment
         bool limit = IgnoreLimit || Attachments.Count < SnapLimit;
-        bool width = finder.IsHuman || MaxObjectWidth > finder.GetComponent<Collider2D>().bounds.size.x; // human automatically ignore width check
-        bool height = finder.IsHuman || MaxObjectHeight > finder.GetComponent<Collider2D>().bounds.size.y; // human automatically ignore height check
+        bool width = finder.IsHuman || MaxObjectWidth > finder.ObjectWidth; // human automatically ignore width check
+        bool height = finder.IsHuman || MaxObjectHeight > finder.ObjectHeight; // human automatically ignore height check
         return limit && width && height;
     }
 
-    public Vector3 FindSnapPosition(Vector3 bottomCenter, bool isHuman, Bounds boundingBox)
+    public Vector3 FindSnapPosition(FindControl find)
     {
-        if (!GetComponent<Collider2D>().OverlapPoint(bottomCenter))
+        Vector3 bottomCenter = find.transform.position;
+        if (!GetComponent<Collider2D>().OverlapPoint(find.transform.position))
         {
-            bottomCenter = GetComponent<Collider2D>().ClosestPoint(bottomCenter);
+            // the object should fall straight down
+            // do a ray cast downward first
+            int saveLayer = gameObject.layer;
+            gameObject.layer = LayerMask.NameToLayer("OnlyOne");
+
+            RaycastHit2D hit = Physics2D.Raycast(bottomCenter, Vector2.down, 99, 1 << LayerMask.NameToLayer("OnlyOne"));
+            if (hit)
+                bottomCenter = hit.point;
+            else
+                bottomCenter = GetComponent<Collider2D>().ClosestPoint(bottomCenter);
+
+
+            gameObject.layer = saveLayer;
+            
         }
         // now bottom center is on the border or inside the polygon collider2d
 
         float x, y;
-        if (isHuman)
+        if (find.IsHuman)
         {
-            x = GetSnapValue(bottomCenter.x, bottomCenter, HumanPointSnap.position.x, HumanHorizontalSnapType == SnapType.PointSnap, boundingBox, Vector2.right);
-            y = GetSnapValue(bottomCenter.y, bottomCenter, HumanPointSnap.position.y, HumanVerticalSnapType == SnapType.PointSnap, boundingBox, Vector2.up);
+            x = GetSnapValue(bottomCenter.x, bottomCenter, HumanPointSnap.position.x, HumanHorizontalSnapType == SnapType.PointSnap, find, Vector2.right);
+            y = GetSnapValue(bottomCenter.y, bottomCenter, HumanPointSnap.position.y, HumanVerticalSnapType == SnapType.PointSnap, find, Vector2.up);
         }
         else
         {
-            x = GetSnapValue(bottomCenter.x, bottomCenter, PropPointSnap.position.x, PropHorizontalSnapType == SnapType.PointSnap, boundingBox, Vector2.right);
-            y = GetSnapValue(bottomCenter.y, bottomCenter, PropPointSnap.position.y, PropVerticalSnapType == SnapType.PointSnap, boundingBox, Vector2.up);
+            x = GetSnapValue(bottomCenter.x, bottomCenter, PropPointSnap.position.x, PropHorizontalSnapType == SnapType.PointSnap, find, Vector2.right);
+            y = GetSnapValue(bottomCenter.y, bottomCenter, PropPointSnap.position.y, PropVerticalSnapType == SnapType.PointSnap, find, Vector2.up);
         }
 
         return new Vector3(x, y, GlobalParameter.Depth);
     }
 
-    public float GetSnapValue(float objectValue, Vector3 objectPos, float snapValue, bool isPoint, Bounds boundingBox, Vector2 direction)
+    public float GetSnapValue(float objectValue, Vector3 objectPos, float snapValue, bool isPoint, FindControl find, Vector2 direction)
     {
         float value = objectValue;
         if (isPoint)
@@ -129,7 +143,7 @@ public class BaseControl : TocaFunction
         else if (direction.x > 0)
         {
             // check position to right side
-            float extents = boundingBox.extents.x;
+            float extents = find.ObjectWidth / 2;
             int saveLayer = gameObject.layer;
             gameObject.layer = LayerMask.NameToLayer("OnlyOne");
 
@@ -163,7 +177,7 @@ public class BaseControl : TocaFunction
             // we know that the incoming bounding box must be smaller than the maxobject height
             // we know that the incoming position will not drop below the bottom
             // so we only check the top
-            float top = objectValue + boundingBox.size.y; // this is the top position of the incoming bounding box
+            float top = objectValue + find.ObjectHeight; // this is the top position of the incoming bounding box
             float maxTop = GetComponent<Collider2D>().bounds.center.y - GetComponent<Collider2D>().bounds.extents.y + MaxObjectHeight; // this is the max height allowed
             if (top > maxTop)
                 value -= (top - maxTop);

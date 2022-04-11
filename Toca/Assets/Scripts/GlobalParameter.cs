@@ -12,6 +12,8 @@ public class GlobalParameter : MonoBehaviour
     public static float MaxLimbSpeed = 50, MinLimbSpeed = 1;
     public static float Acceleration = 100, StartSpeed = 20;
 
+    public GameObject WaterParticle;
+
     private void Awake()
     {
         m_Instance = this;
@@ -48,5 +50,11 @@ public class GlobalParameter : MonoBehaviour
         while (angle > 360)
             angle -= 360;
         return angle;
+    }
+
+    public static void SetGlobalScale(Transform tran, Vector3 globalScale)
+    {
+        tran.localScale = Vector3.one;
+        tran.localScale = new Vector3(globalScale.x / tran.lossyScale.x, globalScale.y / tran.lossyScale.y, globalScale.z / tran.lossyScale.z);
     }
 }

@@ -19,6 +19,15 @@ public class FindControl : TocaFunction
 
     public BaseControl AttachBase;
     public int AttachBaseID;
+    public float ObjectWidth, ObjectHeight, Yoffset;
+
+    private void Awake()
+    {
+        Bounds bounds = GetComponent<Collider2D>().bounds;
+        ObjectWidth = bounds.size.x;
+        ObjectHeight = bounds.size.y;
+        Yoffset = transform.localPosition.y;
+    }
 
     private void Start()
     {
@@ -95,7 +104,7 @@ public class FindControl : TocaFunction
         float minDis = float.MaxValue;
         foreach (BaseControl b in cache)
         {
-            float dis = Vector3.Distance(transform.position, b.GetComponent<Collider2D>().ClosestPoint(transform.position)); //b.transform.position);
+            float dis = Vector3.Distance(transform.position, b.GetComponent<Collider2D>().bounds.center);//ClosestPoint(transform.position)); //b.transform.position);
             if (dis < minDis)
             {
                 minDis = dis;

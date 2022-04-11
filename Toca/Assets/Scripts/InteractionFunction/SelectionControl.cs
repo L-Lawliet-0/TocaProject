@@ -9,14 +9,27 @@ public class SelectionControl : TocaFunction
     private MoveControl MoveControl;
     private FindControl FindControl;
 
-    private Vector3 DefaultScale;
+    public Vector3 DefaultScale;
+    private float ZoomScale;
+
+    private void Awake()
+    {
+        DefaultScale = transform.lossyScale;
+        ZoomScale = 1.2f;
+        Collider2D collider = GetComponent<Collider2D>();
+        if (collider)
+        {
+            float zh = 2f / collider.bounds.size.y;
+            float zw = 2f / collider.bounds.size.x;
+            ZoomScale = Mathf.Min(zh, zw);
+            ZoomScale = ZoomScale < 1.2f ? 1.2f : ZoomScale;
+        }
+    }
 
     private void Start()
     {
         MoveControl = (MoveControl)TocaObject.GetTocaFunction<MoveControl>();
         FindControl = (FindControl)TocaObject.GetTocaFunction<FindControl>();
-
-        DefaultScale = transform.localScale;
     }
 
     public void OnSelect(Vector3 initPos)
@@ -40,7 +53,7 @@ public class SelectionControl : TocaFunction
 
     private void OnDisable()
     {
-        transform.localScale = DefaultScale;
+        GlobalParameter.SetGlobalScale(transform, DefaultScale);
     }
 
     public void UpdateSelectionPos(Vector3 newPos)
@@ -61,21 +74,25 @@ public class SelectionControl : TocaFunction
 
     private IEnumerator ScaleUp()
     {
-        while (transform.localScale.x < DefaultScale.x * 1.2f)
+        float zoomSpeed = (DefaultScale.x * ZoomScale - transform.lossyScale.x) / .2f;
+        while (transform.lossyScale.x < DefaultScale.x * ZoomScale)
         {
-            transform.localScale += Vector3.one * Time.deltaTime;
+            GlobalParameter.SetGlobalScale(transform, transform.lossyScale + Vector3.one * Time.deltaTime * zoomSpeed);
             yield return null;
         }
-        transform.localScale = DefaultScale * 1.2f;
+
+        GlobalParameter.SetGlobalScale(transform, DefaultScale * ZoomScale);
     }
 
     private IEnumerator ScaleDown()
     {
-        while (transform.localScale.x > DefaultScale.x)
+        float zoomSpeed = (transform.lossyScale.x - DefaultScale.x) / .2f;
+        while (transform.lossyScale.x > DefaultScale.x)
         {
-            transform.localScale -= Vector3.one * Time.deltaTime;
+            GlobalParameter.SetGlobalScale(transform, transform.lossyScale - Vector3.one * Time.deltaTime * zoomSpeed);
             yield return null;
         }
-        transform.localScale = DefaultScale;
+
+        GlobalParameter.SetGlobalScale(transform, DefaultScale);
     }
 }
