@@ -34,7 +34,6 @@ public class MoveControl : TocaFunction
     // handle object movement logic, clsing to target every frame
     private void Update()
     {
-        
         if (!CanMove())
             return;
         Direction = (TargetPosition - transform.position).normalized;
@@ -51,7 +50,7 @@ public class MoveControl : TocaFunction
         transform.position += Direction * Speed * Time.deltaTime;
         Vector3 newDir = (TargetPosition - transform.position).normalized;
 
-        if (Vector3.Distance(transform.position, TargetPosition) < 1f || Vector3.Dot(Direction, newDir) <= 0)
+        if (Vector3.Distance(transform.position, TargetPosition) < .1f || Vector3.Dot(Direction, newDir) <= 0)
         {
             transform.position = TargetPosition;
 
@@ -83,11 +82,15 @@ public class MoveControl : TocaFunction
             return true;
         }
         
-        if (Find && Find.CurrentAttachment && !Find.Arrived)
+        if (Find && Find.CurrentAttachment && (!Find.Arrived || Find.CurrentAttachment.TocaObject.GetTocaFunction<SlideControl>()))
         {
             CurrentMoveMode = MoveMode.Freefall;
             return true;
         }
+
+        float angle = GlobalParameter.ClampAngle(transform.eulerAngles.z);
+        if (angle > 10 && angle < 350)
+            return true;
 
         return false;
     }

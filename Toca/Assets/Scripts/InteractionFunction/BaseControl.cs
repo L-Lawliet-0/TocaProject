@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class BaseControl : TocaFunction
 {
+    public enum BaseType
+    {
+        Default,
+        Ground,
+        Cabinet,
+        DressingShelf
+    }
+    public BaseType MyBaseType;
+
     public bool SnapWithHuman, SnapWithProp;
     public SnapType HumanHorizontalSnapType, HumanVerticalSnapType;
     public SnapType PropHorizontalSnapType, PropVerticalSnapType;
@@ -55,7 +64,7 @@ public class BaseControl : TocaFunction
     {
         foreach (KeyValuePair<FindControl, AttachData> pair in Attachments)
         {
-            if (pair.Value.mc)
+            if (pair.Value.mc && !TocaObject.GetTocaFunction<SlideControl>())
             {
                 pair.Value.mc.UpdateTargetPosition(CalculateTargetPos(pair.Key, pair.Value));
             }

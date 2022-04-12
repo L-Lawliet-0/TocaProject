@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BottleControl : StateControl
 {
+    public int FXindex;
+
     private Transform FXref;
     private bool InControl;
 
@@ -37,7 +39,7 @@ public class BottleControl : StateControl
     private IEnumerator SelectionLoop()
     {
         // create particle effect
-        GameObject fx = Instantiate(GlobalParameter.Instance.WaterParticle);
+        GameObject fx = Instantiate(GlobalParameter.Instance.RunTimeEffects[FXindex]);
         fx.transform.SetParent(FXref);
         fx.transform.localPosition = Vector3.zero;
         fx.transform.localRotation = Quaternion.identity;

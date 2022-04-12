@@ -19,7 +19,26 @@ public class FindControl : TocaFunction
 
     public BaseControl AttachBase;
     public int AttachBaseID;
-    public float ObjectWidth, ObjectHeight, Yoffset;
+    public float ObjectWidth, ObjectHeight; 
+    public float Yoffset { get { return CalculateOffset(); } set { yoffset = value; } }
+    private float yoffset;
+
+    private float CalculateOffset()
+    {
+        float angle = GlobalParameter.ClampAngle(transform.eulerAngles.z);
+        if (angle < 10 || angle > 350)
+            return yoffset;
+
+        // do raycast
+        int temp = gameObject.layer;
+        gameObject.layer = LayerMask.NameToLayer("OnlyOne");
+        RaycastHit2D hit = Physics2D.Raycast(GetComponent<Collider2D>().bounds.center + Vector3.down * 20, Vector2.up, 99, 1 << LayerMask.NameToLayer("OnlyOne"));
+
+        gameObject.layer = temp;
+
+        
+        return -(20 - hit.distance);
+    }
 
     private void Awake()
     {

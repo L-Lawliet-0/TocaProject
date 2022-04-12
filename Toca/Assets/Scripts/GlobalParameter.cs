@@ -12,7 +12,8 @@ public class GlobalParameter : MonoBehaviour
     public static float MaxLimbSpeed = 50, MinLimbSpeed = 1;
     public static float Acceleration = 100, StartSpeed = 20;
 
-    public GameObject WaterParticle;
+    public GameObject[] RunTimeEffects;
+
 
     private void Awake()
     {
