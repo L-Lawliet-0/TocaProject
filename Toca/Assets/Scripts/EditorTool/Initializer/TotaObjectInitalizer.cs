@@ -19,11 +19,26 @@ public class TotaObjectInitalizer : MonoBehaviour
         {
             GameObject obj = gameObject;
 
-            // necessary component
             if (Tota)
             {
+                // necessary component
                 TryAddComponent<TocaObject>(obj);
                 TryAddComponent<LayerControl>(obj);
+
+                // add a bottom object
+                if (transform.childCount == 0 || !transform.GetChild(0).name.ToLower().Equals("bottom"))
+                {
+                    GameObject bottom = new GameObject();
+                    Bounds bounds;
+                    if (obj.GetComponent<Collider2D>())
+                        bounds = obj.GetComponent<Collider2D>().bounds;
+                    else
+                        bounds = new Bounds(obj.transform.position, Vector3.one);
+                    bottom.transform.position = bounds.center - bounds.extents.y * Vector3.up;
+                    bottom.transform.SetParent(obj.transform);
+                    bottom.transform.SetSiblingIndex(0);
+                    bottom.name = "Bottom";
+                }
             }
 
             // optional component
@@ -41,22 +56,18 @@ public class TotaObjectInitalizer : MonoBehaviour
             if (Find)
             {
                 // if there's a bottom attached to this gameobject
-                if (transform.childCount == 0 || !transform.GetChild(0).GetComponent<FindControl>())
+                GameObject bottom = transform.GetChild(0).gameObject;
+                if (!bottom.GetComponent<FindControl>())
                 {
-                    GameObject bottom = new GameObject();
                     Bounds bounds;
                     if (obj.GetComponent<Collider2D>())
                         bounds = obj.GetComponent<Collider2D>().bounds;
                     else
                         bounds = new Bounds(obj.transform.position, Vector3.one);
-                    bottom.transform.position = bounds.center - bounds.extents.y * Vector3.up;
-                    bottom.transform.SetParent(obj.transform);
-                    bottom.transform.SetSiblingIndex(0);
                     bottom.AddComponent<FindControl>();
                     bottom.AddComponent<BoxCollider2D>();
                     bottom.GetComponent<BoxCollider2D>().size = bounds.size;
                     bottom.GetComponent<BoxCollider2D>().offset = Vector2.up * bounds.extents.y;
-                    bottom.name = "Bottom";
                 }
             }
 
@@ -65,7 +76,7 @@ public class TotaObjectInitalizer : MonoBehaviour
             {
                 TryAddComponent<OpenControl>(obj);
                 int o = 0;
-                if (transform.GetChild(0).GetComponent<FindControl>())
+                if (transform.GetChild(0).name.ToLower().Equals("bottom"))
                     o = 1;
                 GameObject openObj = transform.GetChild(o).gameObject;
                 GameObject closeObj = transform.GetChild(o + 1).gameObject;
@@ -104,7 +115,7 @@ public class TotaObjectInitalizer : MonoBehaviour
     {
         obj.layer = LayerMask.NameToLayer("Selection");
         TryAddComponent<TouchControl>(obj);
-        TryAddComponent<PolygonCollider2D>(obj);
+        //TryAddComponent<PolygonCollider2D>(obj);
     }
 
     private void TryAddComponent<T>(GameObject obj) where T : Component

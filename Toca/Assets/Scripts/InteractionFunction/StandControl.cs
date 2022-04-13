@@ -6,12 +6,17 @@ using System.Linq;
 public class StandControl : StateControl
 {
     private FindControl FindControl;
-    public List<BaseControl.BaseType> StandingTypes;
+    public List<int> StandingParams;
 
     private void Start()
     {
         base.RegisterStateEvent();
         FindControl = (FindControl)TocaObject.GetTocaFunction<FindControl>();
+    }
+
+    private void Update()
+    {
+        Debug.LogError(TocaObject.GetTocaFunction<FindControl>().GetComponent<Collider2D>().bounds.extents.x);
     }
 
     public override void OnSelection()
@@ -33,7 +38,12 @@ public class StandControl : StateControl
     {
         if (FindControl.CurrentAttachment)
         {
-            return StandingTypes.Contains(FindControl.CurrentAttachment.MyBaseType);
+            bool val = false;
+            foreach (int index in StandingParams)
+            {
+                val |= FindControl.CurrentAttachment.MyBaseAttributes.Parameters[index];
+            }
+            return val;
         }
 
         return false;

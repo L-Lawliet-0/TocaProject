@@ -52,7 +52,6 @@ public class SlideControl : TocaFunction
             MoveControl mc = (MoveControl)sliderKeys[i].TocaObject.GetTocaFunction<MoveControl>();
             mc.UpdateTargetPosition(SlideTrack.GetChild(Sliders[sliderKeys[i]]).position);
 
-            Debug.LogError("Updating position!");
 
             if (Vector3.Distance(mc.TargetPosition, mc.transform.position) < .1f)
             {

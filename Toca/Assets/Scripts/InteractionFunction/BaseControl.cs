@@ -4,14 +4,27 @@ using UnityEngine;
 
 public class BaseControl : TocaFunction
 {
-    public enum BaseType
+    public BaseAttributes MyBaseAttributes;
+
+    [System.Serializable]
+    public class BaseAttributes
     {
-        Default,
-        Ground,
-        Cabinet,
-        DressingShelf
+        public bool[] Parameters;
+        public bool InheirtLayer, // does attached object inheirt from this layer value
+                    BookStand, // stand parameters
+                    BrushStand, // dressing brush stand
+                    HaveCover; // does this base has cover that needs to stand in front of the base layer
+
+        public void InitalizePara()
+        {
+            Parameters = new bool[]
+            {
+                InheirtLayer,
+                BookStand,
+                BrushStand
+            };
+        }       
     }
-    public BaseType MyBaseType;
 
     public bool SnapWithHuman, SnapWithProp;
     public SnapType HumanHorizontalSnapType, HumanVerticalSnapType;
@@ -34,6 +47,7 @@ public class BaseControl : TocaFunction
     public bool IgnoreLimit;
     public bool IsHand;
     public int BaseID;
+    public SpriteRenderer Cover;
 
     public class AttachData
     {
@@ -52,6 +66,7 @@ public class BaseControl : TocaFunction
 
     private void Awake()
     {
+        MyBaseAttributes.InitalizePara();
         if (!HumanPointSnap)
             HumanPointSnap = transform;
         if (!PropPointSnap)
@@ -66,6 +81,11 @@ public class BaseControl : TocaFunction
         {
             if (pair.Value.mc && !TocaObject.GetTocaFunction<SlideControl>())
             {
+                // recalculate if this base has cover
+                //if (MyBaseAttributes.HaveCover)
+                
+                pair.Value.offset = FindSnapPosition(pair.Key) - transform.position;
+
                 pair.Value.mc.UpdateTargetPosition(CalculateTargetPos(pair.Key, pair.Value));
             }
         }
@@ -190,7 +210,29 @@ public class BaseControl : TocaFunction
             float maxTop = GetComponent<Collider2D>().bounds.center.y - GetComponent<Collider2D>().bounds.extents.y + MaxObjectHeight; // this is the max height allowed
             if (top > maxTop)
                 value -= (top - maxTop);
+
+            // if there's cover, snap so that part of the top is showing
+            if (MyBaseAttributes.HaveCover)
+            {
+                float coverTop = Cover.bounds.center.y + Cover.bounds.extents.y;
+                float objectTop = value + find.ObjectHeight;
+                
+                if (objectTop - .1f < coverTop)
+                {
+                    value += (coverTop + .1f - objectTop);
+                }
+            }
         }
         return value;
+    }
+
+    public float GetMaxY()
+    {
+        return GetComponent<Collider2D>().bounds.center.y + GetComponent<Collider2D>().bounds.extents.y;
+    }
+
+    public float GetYRange()
+    {
+        return GetComponent<Collider2D>().bounds.size.y;
     }
 }

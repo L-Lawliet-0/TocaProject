@@ -19,7 +19,10 @@ public class FindControl : TocaFunction
 
     public BaseControl AttachBase;
     public int AttachBaseID;
-    public float ObjectWidth, ObjectHeight; 
+
+    private Collider2D ThisCollider;
+    public float ObjectWidth { get { return  ThisCollider.bounds.size.x / transform.lossyScale.x; } }
+    public float ObjectHeight{ get { return ThisCollider.bounds.size.y / transform.lossyScale.y; } }
     public float Yoffset { get { return CalculateOffset(); } set { yoffset = value; } }
     private float yoffset;
 
@@ -43,8 +46,9 @@ public class FindControl : TocaFunction
     private void Awake()
     {
         Bounds bounds = GetComponent<Collider2D>().bounds;
-        ObjectWidth = bounds.size.x;
-        ObjectHeight = bounds.size.y;
+        //ObjectWidth = bounds.size.x;
+        //ObjectHeight = bounds.size.y;
+        ThisCollider = GetComponent<Collider2D>();
         Yoffset = transform.localPosition.y;
     }
 

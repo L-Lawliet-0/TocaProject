@@ -72,14 +72,17 @@ public class LayerControl : TocaFunction
         if (find && find.CurrentAttachment && find.CurrentAttachment.TocaObject)
             parentLayer = (LayerControl)find.CurrentAttachment.TocaObject.GetTocaFunction<LayerControl>();
 
-        if (parentLayer)
+        if (parentLayer && find.CurrentAttachment.MyBaseAttributes.InheirtLayer)
         {
             if (inheirtLayer)
                 myLayer = parentLayer.CurrentObjectLayer;
             if (inheirtValue)
             {
                 //baseOrder = parentLayer.OrderValue + 10; // my order has to be on top of the parenting object
-                baseOrder = parentLayer.OrderValue + (int)((15.36f - TocaObject.Bottom.transform.position.y) * 10);
+                float maxY = find.CurrentAttachment.GetMaxY();
+                float rangY = find.CurrentAttachment.GetYRange();
+                float myY = find.CurrentAttachment.GetTargetPos(find, find.CurrentAttachment.Attachments[find]).y;
+                baseOrder = parentLayer.OrderValue + Mathf.Max(1, (int)((Mathf.Min(((maxY - myY) / rangY), 1) * 30)));
 
             }
         }
@@ -122,12 +125,18 @@ public class LayerControl : TocaFunction
     {
         // this order is based on height(depth) of the object bottom
         float y = TocaObject.Bottom.position.y;
+
+        
         FindControl find = (FindControl)TocaObject.GetTocaFunction<FindControl>();
         if (find && find.CurrentAttachment)
         {
             y = find.CurrentAttachment.GetTargetPos(find, find.CurrentAttachment.Attachments[find]).y;
         }
+        
 
+        // y is in range of 0 ~ 16
+        // so .1 = 100
+        // so base layer is in range -16000 ~ 0
         return -(int)(y * 1000);
     }
 }
