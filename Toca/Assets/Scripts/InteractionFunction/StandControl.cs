@@ -16,7 +16,7 @@ public class StandControl : StateControl
 
     private void Update()
     {
-        Debug.LogError(TocaObject.GetTocaFunction<FindControl>().GetComponent<Collider2D>().bounds.extents.x);
+
     }
 
     public override void OnSelection()
@@ -57,6 +57,11 @@ public class StandControl : StateControl
             yield return null;
         }
         transform.eulerAngles = Vector3.zero;
+
+        if (FindControl && FindControl.CurrentAttachment)
+        {
+            FindControl.CurrentAttachment.RecalculateSnapPos(FindControl);
+        }
     }
 
     private IEnumerator StandDown()
@@ -67,5 +72,10 @@ public class StandControl : StateControl
             yield return null;
         }
         transform.eulerAngles = Vector3.forward * 90;
+
+        if (FindControl && FindControl.CurrentAttachment)
+        {
+            FindControl.CurrentAttachment.RecalculateSnapPos(FindControl);
+        }
     }
 }

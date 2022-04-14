@@ -83,11 +83,16 @@ public class BaseControl : TocaFunction
             {
                 // recalculate if this base has cover
                 //if (MyBaseAttributes.HaveCover)
-                
-                pair.Value.offset = FindSnapPosition(pair.Key) - transform.position;
-
                 pair.Value.mc.UpdateTargetPosition(CalculateTargetPos(pair.Key, pair.Value));
             }
+        }
+    }
+
+    public void RecalculateSnapPos(FindControl find)
+    {
+        if (Attachments.ContainsKey(find))
+        {
+            Attachments[find].offset = FindSnapPosition(find) - transform.position;
         }
     }
 
@@ -129,8 +134,9 @@ public class BaseControl : TocaFunction
 
     public Vector3 FindSnapPosition(FindControl find)
     {
-        Vector3 bottomCenter = find.transform.position;
-        if (!GetComponent<Collider2D>().OverlapPoint(find.transform.position))
+
+        Vector3 bottomCenter = find.BottomCenter;
+        if (!GetComponent<Collider2D>().OverlapPoint(bottomCenter))
         {
             // the object should fall straight down
             // do a ray cast downward first

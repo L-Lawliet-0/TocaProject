@@ -21,10 +21,14 @@ public class FindControl : TocaFunction
     public int AttachBaseID;
 
     private Collider2D ThisCollider;
-    public float ObjectWidth { get { return  ThisCollider.bounds.size.x / transform.lossyScale.x; } }
-    public float ObjectHeight{ get { return ThisCollider.bounds.size.y / transform.lossyScale.y; } }
+    public float ObjectWidth { get { return ThisCollider.bounds.size.x / transform.lossyScale.x; } }
+    public float ObjectHeight { get { return ThisCollider.bounds.size.y / transform.lossyScale.y; } }
     public float Yoffset { get { return CalculateOffset(); } set { yoffset = value; } }
     private float yoffset;
+
+    public Vector3 BottomCenter { get { return ThisCollider.bounds.center + Yoffset * Vector3.up; } }
+
+
 
     private float CalculateOffset()
     {
@@ -35,12 +39,11 @@ public class FindControl : TocaFunction
         // do raycast
         int temp = gameObject.layer;
         gameObject.layer = LayerMask.NameToLayer("OnlyOne");
-        RaycastHit2D hit = Physics2D.Raycast(GetComponent<Collider2D>().bounds.center + Vector3.down * 20, Vector2.up, 99, 1 << LayerMask.NameToLayer("OnlyOne"));
+        RaycastHit2D hit = Physics2D.Raycast(ThisCollider.bounds.center + Vector3.down * 20, Vector2.up, 99, 1 << LayerMask.NameToLayer("OnlyOne"));
 
         gameObject.layer = temp;
-
         
-        return -(20 - hit.distance);
+        return -(20 - hit.distance) / transform.lossyScale.y;
     }
 
     private void Awake()
@@ -49,7 +52,7 @@ public class FindControl : TocaFunction
         //ObjectWidth = bounds.size.x;
         //ObjectHeight = bounds.size.y;
         ThisCollider = GetComponent<Collider2D>();
-        Yoffset = transform.localPosition.y;
+        Yoffset = transform.localPosition.y * transform.lossyScale.y;
     }
 
     private void Start()
