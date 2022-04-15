@@ -104,8 +104,10 @@ public class FindControl : TocaFunction
     {
         BasePreview = FindBaseNearBy();
 
-        if (BasePreview && BasePreview.transform.parent && BasePreview.transform.parent.parent && BasePreview.transform.parent.parent.GetComponent<ArmControl>())
-            BasePreview.transform.parent.parent.GetComponent<ArmControl>().PendingAttach = this;
+        if (BasePreview && BasePreview.transform.parent && BasePreview.transform.parent.GetComponent<SpineControl>())
+        {
+            BasePreview.transform.parent.GetComponent<SpineControl>().AssignAttach(BasePreview.MyBaseAttributes.IsLeftHand, this);
+        }
     }
 
     // return a base near by

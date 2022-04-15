@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Spine;
+using Spine.Unity;
 
 /*
  * layer control is used to control renderering layer of the object
@@ -21,11 +23,14 @@ public class LayerControl : TocaFunction
     public int OrderValue { get; private set; }
 
     SpriteRenderer[] AllRenderers;
+    SkeletonAnimation SkeletonAnimation;
+    
     int[] DefaultValues;
     
     private void Start()
     {
         AllRenderers = GlobalParameter.GetComponentAndChildren<SpriteRenderer>(TocaObject.transform);
+        SkeletonAnimation = GetComponent<SkeletonAnimation>();
         DefaultValues = new int[AllRenderers.Length];
         for (int i = 0; i < AllRenderers.Length; i++)
         {
@@ -37,6 +42,7 @@ public class LayerControl : TocaFunction
         }
 
         ResetLayer(DefaultObjectLayer, false, false);
+
 
         /*
         TouchHandler touch = (TouchHandler)TocaObject.GetTocaFunction<TouchHandler>();
@@ -114,6 +120,13 @@ public class LayerControl : TocaFunction
             if (transform.name.Equals("can1"))
                 Debug.LogError("sorting order: " + AllRenderers[i].sortingOrder);
         }
+
+        if (SkeletonAnimation)
+        {
+            SkeletonAnimation.GetComponent<MeshRenderer>().sortingLayerName = layer.ToString();
+            SkeletonAnimation.GetComponent<MeshRenderer>().sortingOrder = order;
+        }
+
         OrderValue = order;
         CurrentObjectLayer = layer;
 

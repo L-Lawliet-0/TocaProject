@@ -13,7 +13,10 @@ public class BaseControl : TocaFunction
         public bool InheirtLayer, // does attached object inheirt from this layer value
                     BookStand, // stand parameters
                     BrushStand, // dressing brush stand
-                    HaveCover; // does this base has cover that needs to stand in front of the base layer
+                    HaveCover, // does this base has cover that needs to stand in front of the base layer
+                    IsChair, // this base is a sittable thing
+                    IsLeftHand, // is this base left hand
+                    IsRightHand; // is this base right hand
 
         public void InitalizePara()
         {
@@ -66,6 +69,7 @@ public class BaseControl : TocaFunction
 
     private void Awake()
     {
+        SpineControl = GetComponentInParent<SpineControl>();
         MyBaseAttributes.InitalizePara();
         if (!HumanPointSnap)
             HumanPointSnap = transform;
@@ -106,6 +110,8 @@ public class BaseControl : TocaFunction
         return transform.position + new Vector3(attach.offset.x, attach.offset.y);
     }
 
+    public SpineControl SpineControl;
+
     public void Attach(FindControl find)
     {
         AttachData data = new AttachData(find, FindSnapPosition(find), transform);
@@ -115,12 +121,30 @@ public class BaseControl : TocaFunction
         {
             data.mc.UpdateTargetPosition(CalculateTargetPos(find, data));
         }
+
+        if (MyBaseAttributes.IsChair && find.TocaObject.GetComponent<SpineControl>())
+            find.TocaObject.GetComponent<SpineControl>().PlayAnimation(SpineControl.Animations.Sit);
+
+        if (MyBaseAttributes.IsLeftHand)
+            SpineControl.PlayAnimation(SpineControl.Animations.LeftHandRaise);
+
+        if (MyBaseAttributes.IsRightHand)
+            SpineControl.PlayAnimation(SpineControl.Animations.RightHandRaise);
     }
 
     public void Detach(FindControl find)
     {
         Attachments.Remove(find);
         VisibleDatas.Remove(find);
+
+        if (MyBaseAttributes.IsChair && find.TocaObject.GetComponent<SpineControl>())
+            find.TocaObject.GetComponent<SpineControl>().PlayAnimation(SpineControl.Animations.Stand);
+
+        if (MyBaseAttributes.IsLeftHand)
+            SpineControl.PlayAnimation(SpineControl.Animations.LeftHandDrop);
+
+        if (MyBaseAttributes.IsRightHand)
+            SpineControl.PlayAnimation(SpineControl.Animations.RightHandDrop);
     }
 
     public bool CanbeSnapped(FindControl finder)

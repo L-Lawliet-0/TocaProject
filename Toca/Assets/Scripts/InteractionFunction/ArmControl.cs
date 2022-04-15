@@ -1,21 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Spine;
+using Spine.Unity;
 
 public class ArmControl : LimbControl
 {
-    private BaseControl HandBase;
+    public BaseControl HandBase;
     public FindControl PendingAttach;
-    private void Start()
+   
+    public ArmControl(MoveControl move, float h_Upper, float h_Lower, float v_Upper, float v_Lower, Bone targetBone) : base(move, h_Upper, h_Lower, v_Upper, v_Lower, targetBone)
     {
-        base.Init();
-        HandBase = GetComponentInChildren<BaseControl>();
+
+    }
+
+    public override void UpdateLimbRotation()
+    {
+        if (PendingAttach && PendingAttach.BasePreview == HandBase)
+        {
+            // try to aim the hand at
+            Debug.LogError("Update in arm control");
+            Vector3 origin = TargetBone.GetWorldPosition(HandBase.transform.parent);
+            Vector2 offset = PendingAttach.transform.position - origin;
+            offset = offset.normalized;
+
+            // get an angle
+            float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
+            angle = GlobalParameter.ClampAngle(angle - 90);
+
+            if (HandBase.MyBaseAttributes.IsLeftHand)
+                angle = Mathf.Clamp(angle, 100, 170);
+            else
+                angle = Mathf.Clamp(angle, 190, 260);
+
+            TargetBone.Rotation = angle;
+            Debug.LogError(angle);
+        }
+        else
+            base.UpdateLimbRotation();
     }
 
     private void Update()
     {
         // see if theres any nearby object that this hand can reach
 
+        /*
         if (PendingAttach && PendingAttach.BasePreview == HandBase)
         {
             // calculate the target rotation value
@@ -30,5 +59,6 @@ public class ArmControl : LimbControl
         }
         else
             base.UpdateLimbRotation();
+            */
     }
 }
