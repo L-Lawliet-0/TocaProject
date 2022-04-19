@@ -26,9 +26,17 @@ public class FindControl : TocaFunction
     public float Yoffset { get { return CalculateOffset(); } set { yoffset = value; } }
     private float yoffset;
 
-    public Vector3 BottomCenter { get { return ThisCollider.bounds.center + Yoffset * Vector3.up; } }
+    public Vector3 BottomCenter { get { return GetBottomCenter(); } }
 
 
+    private Vector3 GetBottomCenter()
+    {
+        float angle = GlobalParameter.ClampAngle(transform.eulerAngles.z);
+        if (angle < 10 || angle > 350)
+            return transform.position;
+        else
+            return ThisCollider.bounds.center + Yoffset * Vector3.up;
+    }
 
     private float CalculateOffset()
     {

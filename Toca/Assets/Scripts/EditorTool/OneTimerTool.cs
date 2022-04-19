@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 [ExecuteInEditMode]
 public class OneTimerTool : MonoBehaviour
@@ -11,7 +12,7 @@ public class OneTimerTool : MonoBehaviour
     {
         if (EXECUTE)
         {
-            GroupBaseWithCover();
+            AdjustPositions();
             //ReinitializeAllTotas();
             EXECUTE = false;
         }    
@@ -157,6 +158,55 @@ public class OneTimerTool : MonoBehaviour
                 bottom.transform.SetParent(toca.transform);
                 bottom.transform.SetSiblingIndex(0);
                 bottom.name = "Bottom";
+            }
+        }
+    }
+
+    public Transform PSBtemplate;
+    private void ReplaceSprites()
+    {
+        Dictionary<string, Sprite> pairs = new Dictionary<string, Sprite>();
+        string path = Application.dataPath + "/Resources/RoomOfPrincess/419";
+        DirectoryInfo dir = new DirectoryInfo(path);
+        FileInfo[] info = dir.GetFiles("*.*");
+        foreach (FileInfo f in info)
+        {
+            // generate objects here
+            if (!f.Name.Contains("meta")) // ignore meta file
+            {
+                // trim name
+                string name = f.Name.Split('.')[0];
+                pairs.Add(name, Resources.Load<Sprite>("RoomOfPrincess/419/" + name));
+            }
+        }
+
+        // find all objects with sprite renderer in the current scene
+        SpriteRenderer[] sprites = FindObjectsOfType<SpriteRenderer>(true);
+
+        foreach (SpriteRenderer sprite in sprites)
+        {
+            if (pairs.ContainsKey(sprite.sprite.name))
+            {
+                sprite.sprite = pairs[sprite.sprite.name]; // swap sprite
+            }
+        }
+    }
+
+    private void AdjustPositions()
+    {
+        SpriteRenderer[] sprites = FindObjectsOfType<SpriteRenderer>();
+        foreach (SpriteRenderer sprite in sprites)
+        {
+            if (sprite.GetComponent<TocaObject>())
+            {
+                for (int i = 0; i < PSBtemplate.childCount; i++)
+                {
+                    if (PSBtemplate.GetChild(i).GetComponent<SpriteRenderer>().sprite == sprite.sprite)
+                    {
+                        sprite.transform.position = PSBtemplate.GetChild(i).position;
+                        break;
+                    }
+                }
             }
         }
     }

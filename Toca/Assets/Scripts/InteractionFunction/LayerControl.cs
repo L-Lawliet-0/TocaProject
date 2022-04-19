@@ -20,7 +20,7 @@ public class LayerControl : TocaFunction
     public SortingLayers DefaultObjectLayer;
     public SortingLayers CurrentObjectLayer { get; private set; }
 
-    public int OrderValue { get; private set; }
+    public int OrderValue { get; set; }
 
     SpriteRenderer[] AllRenderers;
     SkeletonAnimation SkeletonAnimation;

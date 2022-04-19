@@ -102,6 +102,12 @@ public class BaseControl : TocaFunction
 
     public Vector3 CalculateTargetPos(FindControl find, AttachData attach)
     {
+        if (MyBaseAttributes.IsChair && find.TocaObject.GetComponent<SpineControl>())
+        {
+            Debug.LogError(find.TocaObject.GetComponent<SpineControl>().HipOffset);
+            return transform.position + new Vector3(attach.offset.x, attach.offset.y) - find.TocaObject.GetComponent<SpineControl>().HipOffset * Vector3.up;
+            
+        }
         return transform.position + new Vector3(attach.offset.x, attach.offset.y) - Vector3.up * find.Yoffset;
     }
 

@@ -14,6 +14,8 @@ public class InputManager : MonoBehaviour
 
     private Dictionary<int, TouchInfo> Touches;
 
+    private float ClickingTime;
+
     private class TouchInfo
     {
         private TouchControl SelectedObject;
@@ -21,11 +23,15 @@ public class InputManager : MonoBehaviour
         public Touch MyTouch;
         private Vector2 LastScreenPosition;
 
+        private bool UpdateCamera;
+        private float ClickingTime;
+
         public TouchInfo(Touch touch) 
         {
             MyTouch = touch;
             InSelection = false;
             SelectedObject = null;
+            ClickingTime = 0;
         }
 
         public void FrameUpdate()
@@ -47,8 +53,15 @@ public class InputManager : MonoBehaviour
         public void OnTouch()
         {
             LastScreenPosition = MyTouch.position;
-            Vector3 pos = GlobalParameter.Instance.ScreenPosToGamePos(MyTouch.position);
+            UpdateSelectedObject();
+            UpdateCamera = SelectedObject == null;
 
+            if (SelectedObject)
+                SelectedObject.OnClick(GlobalParameter.Instance.ScreenPosToGamePos(MyTouch.position));
+        }
+
+        private void UpdateSelectedObject()
+        {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(MyTouch.position), Vector2.zero, 999, 1 << LayerMask.NameToLayer("Selection"));
             if (hit)
             {
@@ -56,14 +69,6 @@ public class InputManager : MonoBehaviour
             }
             else
                 SelectedObject = null;
-
-            if (SelectedObject)
-            {
-                // finger touched object
-                SelectedObject.OnTouch(pos);
-                InSelection = true;
-                Debug.LogError("selected object! " + InSelection);
-            }
         }
 
         public void Detouch()
@@ -72,29 +77,63 @@ public class InputManager : MonoBehaviour
             {
                 InSelection = false;
                 SelectedObject.OnDeTouch();
+
+                if (SelectedObject.TocaObject.GetTocaFunction<MoveControl>())
+                    ((MoveControl)SelectedObject.TocaObject.GetTocaFunction<MoveControl>()).InstantGo = false;
             }
         }
 
         public void UpdatePos()
         {
-            Debug.LogError(InSelection);
-            if (InSelection)
-            {
-                Debug.LogError("UpdatePos: " + MyTouch.position);
-                SelectedObject.OnTouchPositionChanged(GlobalParameter.Instance.ScreenPosToGamePos(MyTouch.position));
-
-                // if the touch position is at the border, move the camera position
-                if (MyTouch.position.x > Screen.width * .95f)
-                    CameraController.Instance.UpdateCameraX(-Screen.width * .01f);
-                else if (MyTouch.position.x < Screen.width * .05f)
-                    CameraController.Instance.UpdateCameraX(Screen.width * .01f);
-            }
-            else
+            if (UpdateCamera)
             {
                 // not selecting object, update camera position
                 CameraController.Instance.UpdateCameraX(MyTouch.position.x - LastScreenPosition.x);
-
                 LastScreenPosition = MyTouch.position;
+            }
+            else
+            {
+                if (!InSelection)
+                {
+                    UpdateSelectedObject();
+                    if (SelectedObject)
+                    {
+                        ClickingTime += Time.deltaTime;
+                        if (ClickingTime > .2f)
+                        {
+                            Vector3 pos = GlobalParameter.Instance.ScreenPosToGamePos(MyTouch.position);
+                            SelectedObject.OnTouch(pos);
+                            InSelection = true;
+                        }
+                    }
+                    else
+                    {
+                        UpdateCamera = true;
+                        LastScreenPosition = MyTouch.position;
+                    }
+                }
+                else
+                {
+                    SelectedObject.OnTouchPositionChanged(GlobalParameter.Instance.ScreenPosToGamePos(MyTouch.position));
+                    Debug.LogError("UpdatePos: " + MyTouch.position);
+                    bool instantGo = false;
+                    // if the touch position is at the border, move the camera position
+                    if (MyTouch.position.x > Screen.width * .95f)
+                    {
+                        float multiplier = (MyTouch.position.x - Screen.width * .9f) / (Screen.width * .1f) * .005f;
+                        CameraController.Instance.UpdateCameraX(-Screen.width * multiplier);
+                        instantGo = true;
+                    }
+                    else if (MyTouch.position.x < Screen.width * .1f)
+                    {
+                        float multiplier = ((Screen.width * .1f - MyTouch.position.x) / (Screen.width * .1f)) * .005f;
+                        CameraController.Instance.UpdateCameraX(Screen.width * multiplier);
+                        instantGo = true;
+                    }
+
+                    if (SelectedObject.TocaObject.GetTocaFunction<MoveControl>())
+                        ((MoveControl)SelectedObject.TocaObject.GetTocaFunction<MoveControl>()).InstantGo = instantGo;
+                }
             }
         }
     }
@@ -108,7 +147,7 @@ public class InputManager : MonoBehaviour
     }
 
     // The job of the input manager is to detect input and fire events
-
+    private bool UpdateCamera;
     private void Update()
     {
         if (!TouchMode)
@@ -157,23 +196,38 @@ public class InputManager : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
+                    LastScreenPosition = Input.mousePosition;
+                    UpdateCamera = SelectedObject == null;
                     if (SelectedObject)
-                    {
-                        // finger touched object
-                        pos.z = GlobalParameter.Depth;
-                        SelectedObject.OnTouch(pos);
-                        InSelection = true;
-                    }
-                    else
-                    {
-                        LastScreenPosition = Input.mousePosition;
-                    }
+                        SelectedObject.OnClick(GlobalParameter.Instance.ScreenPosToGamePos(Input.mousePosition));
                 }
                 else if (Input.GetMouseButton(0))
                 {
-                    CameraController.Instance.UpdateCameraX(Input.mousePosition.x - LastScreenPosition.x);
-
-                    LastScreenPosition = Input.mousePosition;
+                    if (SelectedObject && !UpdateCamera)
+                    {
+                        if (ClickingTime > .2f)
+                        {
+                            // finger touched object
+                            pos.z = GlobalParameter.Depth;
+                            SelectedObject.OnTouch(pos);
+                            InSelection = true;
+                            ClickingTime = 0;
+                        }
+                        else
+                            ClickingTime += Time.deltaTime;
+                        LastScreenPosition = Input.mousePosition;
+                    }
+                    else
+                    {
+                        UpdateCamera = true;
+                        ClickingTime = 0;
+                        CameraController.Instance.UpdateCameraX(Input.mousePosition.x - LastScreenPosition.x);
+                        LastScreenPosition = Input.mousePosition;
+                    }
+                }
+                else if (Input.GetMouseButtonUp(0))
+                {
+                    ClickingTime = 0;
                 }
             }
             else

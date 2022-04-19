@@ -7,6 +7,7 @@ public class MoveControl : TocaFunction
     public Vector3 TargetPosition;
     public Vector3 Direction;
     public float Speed;
+    public bool InstantGo;
 
     public enum MoveMode
     {
@@ -24,6 +25,7 @@ public class MoveControl : TocaFunction
         Find = (FindControl)TocaObject.GetTocaFunction<FindControl>();
         Select = (SelectionControl)TocaObject.GetTocaFunction<SelectionControl>();
         TargetPosition = transform.position;
+        InstantGo = false;
     }
 
     public void UpdateTargetPosition(Vector3 targetPos)
@@ -48,6 +50,8 @@ public class MoveControl : TocaFunction
         }
 
         transform.position += Direction * Speed * Time.deltaTime;
+        if (InstantGo)
+            transform.position = TargetPosition;
         Vector3 newDir = (TargetPosition - transform.position).normalized;
 
         if (Vector3.Distance(transform.position, TargetPosition) < .1f || Vector3.Dot(Direction, newDir) <= 0)

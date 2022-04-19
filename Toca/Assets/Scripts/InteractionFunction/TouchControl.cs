@@ -15,6 +15,7 @@ public class TouchControl : TocaFunction
     public delegate void VoidDelegate();
     public List<VoidDelegate> TouchCallBacks; // used for register on click event
     public List<VoidDelegate> DeTouchCallBacks; // used for register on release event
+    public List<VoidDelegate> ClickCallBacks;
 
     public bool CallbackOnly;
 
@@ -22,6 +23,7 @@ public class TouchControl : TocaFunction
     {
         TouchCallBacks = new List<VoidDelegate>();
         DeTouchCallBacks = new List<VoidDelegate>();
+        ClickCallBacks = new List<VoidDelegate>();
     }
 
     private void Start()
@@ -47,6 +49,12 @@ public class TouchControl : TocaFunction
         }
 
         foreach (VoidDelegate dele in TouchCallBacks)
+            dele();
+    }
+
+    public void OnClick(Vector3 pos)
+    {
+        foreach (VoidDelegate dele in ClickCallBacks)
             dele();
     }
 

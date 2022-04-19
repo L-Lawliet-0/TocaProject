@@ -12,8 +12,8 @@ public class OpenControl : TocaFunction
         // register open and close event on touch control
         TouchControl openTouch = OpenObj.GetComponent<TouchControl>();
         TouchControl closeTouch = CloseObj.GetComponent<TouchControl>();
-        openTouch.DeTouchCallBacks.Add(OnClose);
-        closeTouch.DeTouchCallBacks.Add(OnOpen);
+        openTouch.ClickCallBacks.Add(OnClose);
+        closeTouch.ClickCallBacks.Add(OnOpen);
 
         OnClose(); // close the objects first
 

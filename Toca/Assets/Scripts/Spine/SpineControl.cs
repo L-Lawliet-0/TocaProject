@@ -38,6 +38,8 @@ public class SpineControl : MonoBehaviour
 
     public Transform LeftHandBase, RightHandBase;
 
+    public float HipOffset;
+
     private void Start()
     {
         AllControls = new string[]
@@ -68,6 +70,8 @@ public class SpineControl : MonoBehaviour
 
         LeftHand = MySkeleton.FindBone("bone9");
         RightHand = MySkeleton.FindBone("bone12");
+
+        HipOffset = (MySkeleton.FindBone("bone2").GetWorldPosition(transform).y - transform.GetChild(0).transform.position.y) / transform.lossyScale.y * GetComponent<SelectionControl>().DefaultScale.y;
     }
 
     private LimbControl InitLimbControl(string slotName, string controlName, float hu, float hl, float vu, float vl, out Bone thisRef, bool isArm = false)
