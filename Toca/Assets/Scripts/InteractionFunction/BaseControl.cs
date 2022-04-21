@@ -83,7 +83,7 @@ public class BaseControl : TocaFunction
     {
         foreach (KeyValuePair<FindControl, AttachData> pair in Attachments)
         {
-            if (pair.Value.mc && !TocaObject.GetTocaFunction<SlideControl>())
+            if (pair.Value.mc && !TocaObject.GetTocaFunction<SlideControl>() && !TocaObject.GetTocaFunction<TrashBinControl>())
             {
                 // recalculate if this base has cover
                 //if (MyBaseAttributes.HaveCover)
@@ -253,9 +253,9 @@ public class BaseControl : TocaFunction
                 float coverTop = Cover.bounds.center.y + Cover.bounds.extents.y;
                 float objectTop = value + find.ObjectHeight;
                 
-                if (objectTop - .1f < coverTop)
+                if (objectTop - .2f < coverTop)
                 {
-                    value += (coverTop + .1f - objectTop);
+                    value += (coverTop + .2f - objectTop);
                 }
             }
         }

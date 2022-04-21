@@ -39,7 +39,7 @@ public class TocaObject : MonoBehaviour
     public void InitalizeTocaobject()
     {
         transform.position = new Vector3(TocaSave.x, TocaSave.y, GlobalParameter.Depth);
-        if (TocaSave.Attaching)
+        if (TocaSave.Attaching && TocaObjectsLoader.Instance.TocaObjectsPool.ContainsKey(TocaSave.ParentObjectID))
         {
             TocaObject toca = TocaObjectsLoader.Instance.TocaObjectsPool[TocaSave.ParentObjectID];
             List<TocaFunction> functions = toca.GetTocaFunctions<BaseControl>();

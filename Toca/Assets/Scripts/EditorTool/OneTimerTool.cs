@@ -12,8 +12,8 @@ public class OneTimerTool : MonoBehaviour
     {
         if (EXECUTE)
         {
-            AdjustPositions();
-            //ReinitializeAllTotas();
+            //GroupObjectsWithAttachingBase();
+            AutoSetObjectsBase();
             EXECUTE = false;
         }    
     }
@@ -210,4 +210,36 @@ public class OneTimerTool : MonoBehaviour
             }
         }
     }
+
+    public BaseControl BigBase;
+    private FindControl[] FCs;
+
+    private void GroupObjectsWithAttachingBase()
+    {
+        FCs = FindObjectsOfType<FindControl>();
+        Helper(BigBase);
+    }
+
+    private void Helper(BaseControl reference)
+    {
+        foreach (FindControl fc in FCs)
+        {
+            if (fc.GetComponent<AutoSetBase>() && fc.GetComponent<AutoSetBase>().Reference == reference)
+            {
+                // this object is moved, try to adjust its position
+                TocaObject toca = fc.GetComponentInParent<TocaObject>();
+                if (toca)
+                {
+                    toca.transform.SetParent(TargetParent);
+
+                    BaseControl bc = toca.GetComponentInChildren<BaseControl>();
+                    // there's a base control under this object, call helper again
+                    if (bc)
+                        Helper(bc);
+                }
+            }
+        }
+    }
+
+   
 }

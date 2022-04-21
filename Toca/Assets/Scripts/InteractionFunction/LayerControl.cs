@@ -89,7 +89,6 @@ public class LayerControl : TocaFunction
                 float rangY = find.CurrentAttachment.GetYRange();
                 float myY = find.CurrentAttachment.GetTargetPos(find, find.CurrentAttachment.Attachments[find]).y;
                 baseOrder = parentLayer.OrderValue + Mathf.Max(1, (int)((Mathf.Min(((maxY - myY) / rangY), 1) * 30)));
-
             }
         }
 
