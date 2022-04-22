@@ -8,6 +8,7 @@ public class BottleControl : StateControl
 
     private Transform FXref;
     private bool InControl;
+    private FindControl FindControl;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class BottleControl : StateControl
     private void Start()
     {
         base.RegisterStateEvent();
+        FindControl = (FindControl)TocaObject.GetTocaFunction<FindControl>();
     }
 
     public override void OnSelection()
@@ -69,5 +71,10 @@ public class BottleControl : StateControl
         transform.eulerAngles = Vector3.zero;
         if (FXref.childCount > 0)
             Destroy(FXref.GetChild(0).gameObject);
+        if (FindControl && FindControl.CurrentAttachment)
+        {
+            FindControl.CurrentAttachment.RecalculateSnapPos(FindControl);
+            FindControl.Arrived = false;
+        }
     }
 }

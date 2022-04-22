@@ -61,6 +61,7 @@ public class StandControl : StateControl
         if (FindControl && FindControl.CurrentAttachment)
         {
             FindControl.CurrentAttachment.RecalculateSnapPos(FindControl);
+            FindControl.Arrived = false;
         }
     }
 
@@ -76,6 +77,7 @@ public class StandControl : StateControl
         if (FindControl && FindControl.CurrentAttachment)
         {
             FindControl.CurrentAttachment.RecalculateSnapPos(FindControl);
+            FindControl.Arrived = false;
         }
     }
 }

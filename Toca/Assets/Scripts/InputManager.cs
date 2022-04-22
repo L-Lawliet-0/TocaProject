@@ -62,13 +62,22 @@ public class InputManager : MonoBehaviour
 
         private void UpdateSelectedObject()
         {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(MyTouch.position), Vector2.zero, 999, 1 << LayerMask.NameToLayer("Selection"));
-            if (hit)
+            SelectedObject = null;
+            RaycastHit2D[] hits = Physics2D.RaycastAll(Camera.main.ScreenToWorldPoint(MyTouch.position), Vector2.zero, 999, 1 << LayerMask.NameToLayer("Selection"));
+            float maxLayer = float.MinValue;
+            foreach (RaycastHit2D hit in hits)
             {
-                SelectedObject = hit.collider.GetComponentInParent<TouchControl>();
+                TouchControl tc = hit.collider.GetComponentInParent<TouchControl>();
+                LayerControl lc = (LayerControl)tc.TocaObject.GetTocaFunction<LayerControl>();
+                float layerValue = lc.OrderValue;
+                if (tc.GetComponent<SpriteRenderer>())
+                    layerValue = tc.GetComponent<SpriteRenderer>().sortingOrder;
+                if (layerValue > maxLayer)
+                {
+                    maxLayer = layerValue;
+                    SelectedObject = tc;
+                }
             }
-            else
-                SelectedObject = null;
         }
 
         public void Detouch()
