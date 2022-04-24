@@ -37,8 +37,6 @@ public class LimbControl
 
     public virtual void UpdateLimbRotation()
     {
-        if (this is ArmControl)
-            Debug.LogError("update in limb control");
         if (Active)
         {
             if (Selectable.Speed > GlobalParameter.MinLimbSpeed)

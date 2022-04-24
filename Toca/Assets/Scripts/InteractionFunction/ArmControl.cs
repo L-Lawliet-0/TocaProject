@@ -34,7 +34,6 @@ public class ArmControl : LimbControl
                 angle = Mathf.Clamp(angle, 190, 260);
 
             TargetBone.Rotation = angle;
-            Debug.LogError(angle);
         }
         else
             base.UpdateLimbRotation();

@@ -4,7 +4,7 @@ using UnityEngine;
 using Spine.Unity;
 using Spine;
 
-public class SpineControl : MonoBehaviour
+public class SpineControl : TocaFunction
 {
     private SkeletonAnimation SkeletonAnimation;
     private Skeleton MySkeleton;
@@ -23,7 +23,8 @@ public class SpineControl : MonoBehaviour
         RightHandDrop,
         Sit,
         Stand,
-        Idle;
+        Idle,
+        Eat;
 
     public enum Animations
     {
@@ -33,12 +34,15 @@ public class SpineControl : MonoBehaviour
         RightHandDrop,
         Sit,
         Stand,
-        Idle
+        Idle,
+        Eat
     }
 
     public Transform LeftHandBase, RightHandBase;
 
     public float HipOffset;
+
+    private AttachmentControl Maozi, Kouzhao, Glasses, Mianju, Ershi, Meimao, Bizi, Zui, Yanjing, Toufa, Toufahoumian, Jiaodongxi;
 
     private void Start()
     {
@@ -72,7 +76,41 @@ public class SpineControl : MonoBehaviour
         RightHand = MySkeleton.FindBone("bone12");
 
         HipOffset = (MySkeleton.FindBone("bone2").GetWorldPosition(transform).y - transform.GetChild(0).transform.position.y) / transform.lossyScale.y * GetComponent<SelectionControl>().DefaultScale.y;
+
+        Maozi = new AttachmentControl("maozi1", MySkeleton, "maozi");
+        Kouzhao = new AttachmentControl("kouzhao1", MySkeleton, "kouzhao");
+        Glasses = new AttachmentControl("glasses1", MySkeleton, "glasses");
+        Mianju = new AttachmentControl("mianju1", MySkeleton, "mianju");
+        Ershi = new AttachmentControl("ershi2", MySkeleton, "ershi");
+        Meimao = new AttachmentControl("meimao", MySkeleton, "meimao");
+        Bizi = new AttachmentControl("bizi", MySkeleton, "bizi");
+        Zui = new AttachmentControl("zui2", MySkeleton, "zui");
+        Yanjing = new AttachmentControl("yanjing", MySkeleton, "yanjing");
+        Toufa = new AttachmentControl("toufa1", MySkeleton, "toufa");
+        Toufahoumian = new AttachmentControl("toufahoumian", MySkeleton, "toufahoumian");
+        Jiaodongxi = new AttachmentControl("zui1", MySkeleton, "mouth");
+
+        Yanjing.SetAttachment(1);
+        Bizi.SetAttachment(1);
+        Toufa.SetAttachment(1);
+        Zui.SetAttachment(1);
+
+        B7 = MySkeleton.FindBone("bone7");
+        B8 = MySkeleton.FindBone("bone8");
+        B9 = MySkeleton.FindBone("bone9");
+        B10 = MySkeleton.FindBone("bone10");
+        B11 = MySkeleton.FindBone("bone11");
+        B12 = MySkeleton.FindBone("bone12");
+        R7 = B7.Rotation;
+        R8 = B8.Rotation;
+        R9 = B9.Rotation;
+        R10 = B10.Rotation;
+        R11 = B11.Rotation;
+        R12 = B12.Rotation;
     }
+
+    private Bone B7, B8, B9, B10, B11, B12;
+    private float R7, R8, R9, R10, R11, R12;
 
     private LimbControl InitLimbControl(string slotName, string controlName, float hu, float hl, float vu, float vl, out Bone thisRef, bool isArm = false)
     {
@@ -102,8 +140,11 @@ public class SpineControl : MonoBehaviour
                 SetControlValue(leftHandControl, 1);
                 LeftArmControl.Active = false;
                 SkeletonAnimation.AnimationState.End -= HandleLeftHand;
+                SkeletonAnimation.AnimationState.Complete += HandleLeftHandRaise;
                 break;
             case Animations.LeftHandDrop:
+                SkeletonAnimation.AnimationState.Complete -= HandleLeftHandRaise;
+                
                 track = SkeletonAnimation.AnimationState.SetAnimation(3, LeftHandDrop, false);
                 track.TimeScale = 2;
                 SetControlValue(leftHandControl, 1);
@@ -116,8 +157,10 @@ public class SpineControl : MonoBehaviour
                 SetControlValue(rightHandControl, 1);
                 RightArmControl.Active = false;
                 SkeletonAnimation.AnimationState.End -= HandleRightHand;
+                SkeletonAnimation.AnimationState.Complete += HandleRightHandRaise;
                 break;
             case Animations.RightHandDrop:
+                SkeletonAnimation.AnimationState.Complete -= HandleRightHandRaise;
                 track = SkeletonAnimation.AnimationState.SetAnimation(2, RightHandDrop, false);
                 track.TimeScale = 2;
                 SetControlValue(rightHandControl, 1);
@@ -140,14 +183,90 @@ public class SpineControl : MonoBehaviour
                 RightLegControl.Active = false;
                 SkeletonAnimation.AnimationState.End -= HandleLeg;
                 break;
+            case Animations.Eat:
+                // set corresponding attachment to true
+                if (Eating)
+                    break;
+                Eating = true;
+                SetOpenMouse();
+                SkeletonAnimation.AnimationState.Complete += HandleEat;
+                SkeletonAnimation.AnimationState.SetAnimation(4, Eat, false);
+                
+                break;
         }
         
+    }
+    private bool Eating = false;
+
+    private void HandleEat(TrackEntry trackEntry)
+    {
+        Debug.LogError("Handleeat");
+        if (trackEntry.TrackIndex == 4)
+        {
+            Eating = false;
+            SetDefaultMouse();
+            SkeletonAnimation.AnimationState.Complete -= HandleEat;
+        }
+    }
+
+    public void SetOpenMouse()
+    {
+        Jiaodongxi.SetAttachment("mouth1");
+        Zui.SetAttachment();
+        Debug.LogError("Set open mouse");
+    }
+
+    public void SetDefaultMouse()
+    {
+        if (!Eating)
+        {
+            Jiaodongxi.SetAttachment();
+            Zui.SetAttachment(1);
+        }
+    }
+
+    private void HandleLeftHandRaise(TrackEntry trackEntry)
+    {
+        if (trackEntry.TrackIndex == 3)
+        {
+            float r7 = B7.AppliedRotation;
+            float r8 = B8.AppliedRotation;
+            float r9 = B9.AppliedRotation;
+
+            SetControlValue(leftHandControl, 0);
+            LeftArmControl.Active = true;
+
+            B7.Rotation = r7;
+            B8.Rotation = r8;
+            B9.Rotation = r9;
+        }
+    }
+
+    private void HandleRightHandRaise(TrackEntry trackEntry)
+    {
+        if (trackEntry.TrackIndex == 2)
+        {
+            float r10 = B10.AppliedRotation;
+            float r11 = B11.AppliedRotation;
+            float r12 = B12.AppliedRotation;
+
+            SetControlValue(rightHandControl, 0);
+            RightArmControl.Active = true;
+
+            B10.Rotation = r10;
+            B11.Rotation = r11;
+            B12.Rotation = r12;
+        }
     }
 
     private void HandleLeftHand(TrackEntry trackEntry)
     { 
         if (trackEntry.TrackIndex == 3)
         {
+            B7.Rotation = R7;
+            B8.Rotation = R8;
+            B9.Rotation = R9;
+
             SetControlValue(leftHandControl, 0);
             LeftArmControl.Active = true;
         }
@@ -157,6 +276,10 @@ public class SpineControl : MonoBehaviour
     {
         if (trackEntry.TrackIndex == 2)
         {
+            B10.Rotation = R10;
+            B11.Rotation = R11;
+            B12.Rotation = R12;
+
             SetControlValue(rightHandControl, 0);
             RightArmControl.Active = true;
         }
@@ -183,7 +306,7 @@ public class SpineControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-            LeftArm.ScaleY = -LeftArm.ScaleY;
+            PlayAnimation(Animations.Eat);
         }
 
         if (Input.GetKeyDown(KeyCode.L))

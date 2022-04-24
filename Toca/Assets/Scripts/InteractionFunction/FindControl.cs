@@ -11,6 +11,7 @@ public class FindControl : TocaFunction
 {
     public float InteractionRadius;
     public bool IsHuman;
+    public bool IsFood;
     public BaseControl CurrentAttachment; // the base this object is currently attaching
     public BaseControl BasePreview;
     public bool Arrived;
@@ -115,6 +116,11 @@ public class FindControl : TocaFunction
         if (BasePreview && BasePreview.transform.parent && BasePreview.transform.parent.GetComponent<SpineControl>())
         {
             BasePreview.transform.parent.GetComponent<SpineControl>().AssignAttach(BasePreview.MyBaseAttributes.IsLeftHand, this);
+        }
+
+        if (BasePreview && BasePreview.MyBaseAttributes.IsMouth)
+        {
+            BasePreview.GetComponent<EatControl>().PendingFood = this;
         }
     }
 

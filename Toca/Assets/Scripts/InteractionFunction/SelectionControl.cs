@@ -19,10 +19,10 @@ public class SelectionControl : TocaFunction
         Collider2D collider = GetComponent<Collider2D>();
         if (collider)
         {
-            float zh = 2f / collider.bounds.size.y;
-            float zw = 2f / collider.bounds.size.x;
+            float zh = 1.5f / collider.bounds.size.y;
+            float zw = 1.5f / collider.bounds.size.x;
             ZoomScale = Mathf.Min(zh, zw);
-            ZoomScale = ZoomScale < 1.2f ? 1.2f : ZoomScale;
+            ZoomScale = ZoomScale < 1.1f ? 1.1f : ZoomScale;
         }
     }
 

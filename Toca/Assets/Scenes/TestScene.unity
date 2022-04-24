@@ -796,6 +796,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -889,6 +890,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -989,6 +991,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -1080,6 +1083,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -1410,6 +1414,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -1501,6 +1506,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -1933,6 +1939,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -2026,6 +2033,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -2524,6 +2532,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -3537,6 +3546,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -4481,6 +4491,7 @@ MonoBehaviour:
     IsChair: 1
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 1
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -4654,6 +4665,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -5013,6 +5025,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -6021,6 +6034,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -6120,6 +6134,7 @@ MonoBehaviour:
     IsChair: 1
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 1
   SnapWithProp: 1
   HumanHorizontalSnapType: 1
@@ -6293,6 +6308,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -6554,6 +6570,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -6633,6 +6650,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -6726,6 +6744,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -7490,6 +7509,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -8363,6 +8383,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -9159,6 +9180,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -9282,6 +9304,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -9881,6 +9904,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -9974,6 +9998,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -10074,6 +10099,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -10165,6 +10191,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -10668,6 +10695,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -10761,6 +10789,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -10854,6 +10883,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -10947,6 +10977,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -11297,6 +11328,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -11569,6 +11601,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -11789,6 +11822,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -11882,6 +11916,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -12155,6 +12190,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -12255,6 +12291,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -12346,6 +12383,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -13139,6 +13177,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -13418,6 +13457,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -13742,6 +13782,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -13833,6 +13874,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -13926,6 +13968,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -14246,6 +14289,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -14428,6 +14472,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -14601,6 +14646,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -14980,6 +15026,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -15468,6 +15515,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -15723,6 +15771,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 1
   SnapWithProp: 1
   HumanHorizontalSnapType: 1
@@ -15978,6 +16027,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -16320,6 +16370,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -16549,6 +16600,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -16963,6 +17015,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -17138,6 +17191,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -17398,6 +17452,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -17489,6 +17544,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -17795,6 +17851,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -18120,6 +18177,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -18690,6 +18748,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -19129,6 +19188,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -19229,6 +19289,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -19713,6 +19774,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -20395,6 +20457,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -20836,6 +20899,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -21736,6 +21800,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -22082,6 +22147,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -24292,6 +24358,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -24385,6 +24452,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 1
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -24749,6 +24817,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 1
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -27453,6 +27522,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -27553,6 +27623,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -28038,6 +28109,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -28387,6 +28459,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -28846,6 +28919,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -29887,6 +29961,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -29987,6 +30062,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -30086,6 +30162,7 @@ MonoBehaviour:
     IsChair: 1
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 1
   SnapWithProp: 1
   HumanHorizontalSnapType: 1
@@ -30184,6 +30261,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -30508,6 +30586,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -30608,6 +30687,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -31566,6 +31646,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -31666,10 +31747,11 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
+  - {fileID: 2100000, guid: f1c9a0495fa9d294faea4d977d15e569, type: 2}
   - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
   - {fileID: 2100000, guid: 001a920a89b39e74d882411802f596b3, type: 2}
   - {fileID: 2100000, guid: f1c9a0495fa9d294faea4d977d15e569, type: 2}
+  - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
   - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
   - {fileID: 2100000, guid: 001a920a89b39e74d882411802f596b3, type: 2}
   - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
@@ -31725,6 +31807,7 @@ Transform:
   - {fileID: 566397621}
   - {fileID: 1836294663}
   - {fileID: 1107152346}
+  - {fileID: 1697476981}
   m_Father: {fileID: 238411389}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -31740,6 +31823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7b8336a94b50dd4282b3e97e55b497e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TocaObject: {fileID: 0}
   LeftHandRaise: {fileID: 11400000, guid: 97da25a0b0c21dd498a8376e4696fa6b, type: 2}
   LeftHandDrop: {fileID: 11400000, guid: ba2d7bd10c0ff03469ffc368aaacf12f, type: 2}
   RightHandRaise: {fileID: 11400000, guid: fedbd261db5166d42ab8682d096cf5df, type: 2}
@@ -31747,6 +31831,7 @@ MonoBehaviour:
   Sit: {fileID: 11400000, guid: 58e89f8449713d04ca4422f17c3b1c5b, type: 2}
   Stand: {fileID: 11400000, guid: 77cc5aa62174fcc4ba1c212b563df56e, type: 2}
   Idle: {fileID: 11400000, guid: 1795f9da2cd300549894f3adacc1b73a, type: 2}
+  Eat: {fileID: 11400000, guid: 3b7bd01549759324bb04b6c0bdb56f02, type: 2}
   LeftHandBase: {fileID: 1836294663}
   RightHandBase: {fileID: 1107152346}
   HipOffset: 0
@@ -33508,6 +33593,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -33760,6 +33846,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -34293,6 +34380,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -34629,6 +34717,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -34727,6 +34816,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -34903,6 +34993,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -35140,6 +35231,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -36503,6 +36595,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -36666,6 +36759,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -36901,6 +36995,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -37066,6 +37161,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -38243,6 +38339,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 1
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -38343,6 +38440,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -38472,6 +38570,7 @@ MonoBehaviour:
     IsChair: 1
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 1
   SnapWithProp: 1
   HumanHorizontalSnapType: 1
@@ -39595,6 +39694,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -40191,6 +40291,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -41283,6 +41384,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -43126,6 +43228,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -43481,6 +43584,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -43581,6 +43685,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -43913,6 +44018,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -44242,6 +44348,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -44695,6 +44802,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -45030,6 +45138,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -45121,6 +45230,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -45671,6 +45781,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -45771,6 +45882,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -45934,6 +46046,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -46138,6 +46251,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -46873,6 +46987,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -47676,6 +47791,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -48140,6 +48256,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -48238,6 +48355,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -48723,6 +48841,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -49053,6 +49172,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -50001,6 +50121,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -50522,6 +50643,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -50687,6 +50809,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -50934,6 +51057,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -51332,6 +51456,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -51985,6 +52110,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -52334,6 +52460,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -52427,6 +52554,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -52520,6 +52648,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -53108,6 +53237,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -53290,6 +53420,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -53541,6 +53672,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -53763,6 +53895,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -53852,6 +53985,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 1
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -53943,6 +54077,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -54754,6 +54889,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -54855,6 +54991,7 @@ MonoBehaviour:
     IsChair: 1
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 1
   SnapWithProp: 1
   HumanHorizontalSnapType: 1
@@ -54946,6 +55083,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -55199,6 +55337,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -55533,6 +55672,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -55810,6 +55950,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -56259,6 +56400,7 @@ MonoBehaviour:
     IsChair: 1
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 1
   SnapWithProp: 1
   HumanHorizontalSnapType: 1
@@ -57020,6 +57162,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -57113,6 +57256,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -57288,6 +57432,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -58149,6 +58294,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -58435,6 +58581,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -59216,6 +59363,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -59307,6 +59455,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -59400,6 +59549,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -59523,6 +59673,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -59616,6 +59767,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -59717,6 +59869,7 @@ MonoBehaviour:
     IsChair: 1
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 1
   SnapWithProp: 1
   HumanHorizontalSnapType: 1
@@ -59815,6 +59968,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -59998,6 +60152,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -60089,6 +60244,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -60182,6 +60338,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -60403,6 +60560,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -60489,6 +60647,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -60580,6 +60739,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -61262,6 +61422,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -61595,6 +61756,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -62635,6 +62797,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -62728,6 +62891,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -63045,6 +63209,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -63138,6 +63303,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -63489,6 +63655,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -63862,6 +64029,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -64688,6 +64856,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -64851,6 +65020,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -66082,6 +66252,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -66180,6 +66351,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -66278,6 +66450,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -66487,6 +66660,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -66895,6 +67069,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -68072,6 +68247,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -69173,6 +69349,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -69336,6 +69513,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -69655,6 +69833,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -69822,6 +70001,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -70004,6 +70184,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -70740,6 +70921,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -71059,6 +71241,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -71354,6 +71537,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -71837,6 +72021,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -72126,6 +72311,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -72555,6 +72741,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -72728,6 +72915,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -73659,6 +73847,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -73752,6 +73941,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -73845,6 +74035,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -73938,6 +74129,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -74492,6 +74684,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -74591,6 +74784,7 @@ MonoBehaviour:
     IsChair: 1
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 1
   SnapWithProp: 1
   HumanHorizontalSnapType: 1
@@ -74809,6 +75003,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -75043,6 +75238,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -75280,6 +75476,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -75373,6 +75570,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -75881,6 +76079,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -76143,6 +76342,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -76241,6 +76441,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -76562,6 +76763,7 @@ MonoBehaviour:
     IsChair: 1
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 1
   SnapWithProp: 1
   HumanHorizontalSnapType: 1
@@ -76660,6 +76862,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -77021,6 +77224,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -77491,6 +77695,7 @@ MonoBehaviour:
     IsChair: 1
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 1
   SnapWithProp: 1
   HumanHorizontalSnapType: 1
@@ -77582,6 +77787,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -77969,6 +78175,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -78204,6 +78411,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -78634,6 +78842,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -79703,6 +79912,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -79796,6 +80006,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -79927,6 +80138,7 @@ MonoBehaviour:
     IsChair: 1
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 1
   SnapWithProp: 1
   HumanHorizontalSnapType: 1
@@ -80163,6 +80375,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -80256,6 +80469,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -80584,6 +80798,120 @@ MonoBehaviour:
   Base: 0
   Find: 1
   Open: 0
+--- !u!1 &1697476980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1697476981}
+  - component: {fileID: 1697476983}
+  - component: {fileID: 1697476982}
+  - component: {fileID: 1697476984}
+  m_Layer: 7
+  m_Name: Mouse_base
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1697476981
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697476980}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 4.36, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2135165948}
+  m_Father: {fileID: 657178375}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1697476982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697476980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6641f802414704d5298de7e9cbd96126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TocaObject: {fileID: 0}
+  MyBaseAttributes:
+    Parameters: 
+    InheirtLayer: 1
+    BookStand: 0
+    BrushStand: 0
+    HaveCover: 0
+    IsChair: 0
+    IsLeftHand: 0
+    IsRightHand: 0
+    IsMouth: 1
+  SnapWithHuman: 0
+  SnapWithProp: 1
+  HumanHorizontalSnapType: 0
+  HumanVerticalSnapType: 0
+  PropHorizontalSnapType: 1
+  PropVerticalSnapType: 1
+  VisibleDatas: []
+  SnapLimit: 0
+  HumanPointSnap: {fileID: 0}
+  PropPointSnap: {fileID: 2135165948}
+  MaxObjectWidth: 3.4028235e+38
+  MaxObjectHeight: 3.4028235e+38
+  IgnoreLimit: 1
+  IsHand: 0
+  BaseID: 0
+  Cover: {fileID: 0}
+  SpineControl: {fileID: 0}
+--- !u!61 &1697476983
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697476980}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &1697476984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697476980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709ff2e8835f3fb45ba5e1b47a189a84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TocaObject: {fileID: 0}
+  PendingFood: {fileID: 0}
 --- !u!1 &1698543138
 GameObject:
   m_ObjectHideFlags: 0
@@ -81200,6 +81528,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -81525,6 +81854,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -82262,6 +82592,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -82355,6 +82686,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -82556,6 +82888,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -83061,6 +83394,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -83410,6 +83744,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -83503,6 +83838,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -83633,6 +83969,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -83949,6 +84286,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -84619,6 +84957,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -84712,6 +85051,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -85497,6 +85837,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -85799,6 +86140,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -85973,6 +86315,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -86073,6 +86416,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -86164,6 +86508,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -86264,6 +86609,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -86355,6 +86701,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -86448,6 +86795,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -86541,6 +86889,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -87045,6 +87394,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -87300,6 +87650,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -87389,6 +87740,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 1
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -87592,6 +87944,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -88386,6 +88739,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -88486,6 +88840,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -89259,6 +89614,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -89352,6 +89708,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -91234,6 +91591,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -91557,6 +91915,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -92056,6 +92415,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -92668,6 +93028,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -93051,6 +93412,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -93388,6 +93750,7 @@ MonoBehaviour:
     IsChair: 1
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 1
   SnapWithProp: 1
   HumanHorizontalSnapType: 1
@@ -93598,6 +93961,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -93731,6 +94095,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -93952,6 +94317,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 1
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -94067,6 +94433,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -94160,6 +94527,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -94666,6 +95034,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -94759,6 +95128,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -95088,6 +95458,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -95416,6 +95787,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -95509,6 +95881,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -95609,6 +95982,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -95700,6 +96074,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -95793,6 +96168,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -96258,6 +96634,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -96522,6 +96899,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -96613,6 +96991,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -97430,6 +97809,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -97830,6 +98210,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -98176,6 +98557,7 @@ MonoBehaviour:
     IsChair: 0
     IsLeftHand: 0
     IsRightHand: 0
+    IsMouth: 0
   SnapWithHuman: 0
   SnapWithProp: 1
   HumanHorizontalSnapType: 0
@@ -98501,6 +98883,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 1
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -98877,6 +99260,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -99698,6 +100082,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -99791,6 +100176,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -99956,6 +100342,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -100049,6 +100436,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -101076,6 +101464,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
+  IsFood: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -101095,6 +101484,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SET: 0
   Reference: {fileID: 0}
+--- !u!1 &2135165947
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2135165948}
+  m_Layer: 7
+  m_Name: snap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2135165948
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135165947}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1697476981}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2136123584
 GameObject:
   m_ObjectHideFlags: 0

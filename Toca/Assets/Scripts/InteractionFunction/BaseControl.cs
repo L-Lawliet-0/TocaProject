@@ -16,7 +16,8 @@ public class BaseControl : TocaFunction
                     HaveCover, // does this base has cover that needs to stand in front of the base layer
                     IsChair, // this base is a sittable thing
                     IsLeftHand, // is this base left hand
-                    IsRightHand; // is this base right hand
+                    IsRightHand, // is this base right hand
+                    IsMouth; // is this base mouse 
 
         public void InitalizePara()
         {
@@ -159,7 +160,7 @@ public class BaseControl : TocaFunction
         bool limit = IgnoreLimit || Attachments.Count < SnapLimit;
         bool width = finder.IsHuman || MaxObjectWidth > finder.ObjectWidth; // human automatically ignore width check
         bool height = finder.IsHuman || MaxObjectHeight > finder.ObjectHeight; // human automatically ignore height check
-        return limit && width && height;
+        return limit && width && height && (!MyBaseAttributes.IsMouth || finder.IsFood);
     }
 
     public Vector3 FindSnapPosition(FindControl find)

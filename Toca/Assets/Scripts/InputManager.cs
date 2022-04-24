@@ -108,7 +108,7 @@ public class InputManager : MonoBehaviour
                     if (SelectedObject)
                     {
                         ClickingTime += Time.deltaTime;
-                        if (ClickingTime > .2f)
+                        if (ClickingTime > .15f || (Vector2.Distance(LastScreenPosition, MyTouch.position) > 1))
                         {
                             Vector3 pos = GlobalParameter.Instance.ScreenPosToGamePos(MyTouch.position);
                             SelectedObject.OnTouch(pos);
@@ -118,13 +118,13 @@ public class InputManager : MonoBehaviour
                     else
                     {
                         UpdateCamera = true;
-                        LastScreenPosition = MyTouch.position;
+                        
                     }
+                    LastScreenPosition = MyTouch.position;
                 }
                 else
                 {
                     SelectedObject.OnTouchPositionChanged(GlobalParameter.Instance.ScreenPosToGamePos(MyTouch.position));
-                    Debug.LogError("UpdatePos: " + MyTouch.position);
                     bool instantGo = false;
                     // if the touch position is at the border, move the camera position
                     if (MyTouch.position.x > Screen.width * .95f)
@@ -214,7 +214,7 @@ public class InputManager : MonoBehaviour
                 {
                     if (SelectedObject && !UpdateCamera)
                     {
-                        if (ClickingTime > .2f)
+                        if (ClickingTime > .15f)
                         {
                             // finger touched object
                             pos.z = GlobalParameter.Depth;
