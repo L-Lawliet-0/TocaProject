@@ -41,6 +41,8 @@ public class SelectionControl : TocaFunction
 
         StopAllCoroutines();
         StartCoroutine("ScaleUp");
+        if (MoveControl)
+            MoveControl.Shaked = false;
     }
 
     public void OnDeselect()

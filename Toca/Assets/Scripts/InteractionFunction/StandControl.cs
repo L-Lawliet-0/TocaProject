@@ -6,12 +6,16 @@ using System.Linq;
 public class StandControl : StateControl
 {
     private FindControl FindControl;
+    private LayerControl LayerControl;
+    private BaseControl BaseControl;
     public List<int> StandingParams;
 
     private void Start()
     {
         base.RegisterStateEvent();
         FindControl = (FindControl)TocaObject.GetTocaFunction<FindControl>();
+        BaseControl = (BaseControl)TocaObject.GetTocaFunction<BaseControl>();
+        LayerControl = (LayerControl)TocaObject.GetTocaFunction<LayerControl>();
     }
 
     private void Update()
@@ -22,20 +26,30 @@ public class StandControl : StateControl
     public override void OnSelection()
     {
         // object should be standing
-        StartCoroutine("StandUp");
+        if (!BaseControl || BaseControl.Attachments.Count < 1)
+        {
+            StartCoroutine("StandUp");
+        }
     }
 
     public override void OnDeselect()
     {
         StopAllCoroutines();
         if (ShouldObjectStand())
+        {
             StartCoroutine("StandUp");
+        }
         else
+        {
             StartCoroutine("StandDown");
+        }
     }
 
     private bool ShouldObjectStand()
     {
+        if (BaseControl && BaseControl.Attachments.Count > 0)
+            return false;
+
         if (FindControl.CurrentAttachment)
         {
             bool val = false;
@@ -79,5 +93,8 @@ public class StandControl : StateControl
             FindControl.CurrentAttachment.RecalculateSnapPos(FindControl);
             FindControl.Arrived = false;
         }
+
+        if (LayerControl)
+            LayerControl.DetouchCallback();
     }
 }

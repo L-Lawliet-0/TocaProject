@@ -8,6 +8,7 @@ public class MoveControl : TocaFunction
     public Vector3 Direction;
     public float Speed;
     public bool InstantGo;
+    public bool Shaked; // does this object already shaked in this selection
 
     public enum MoveMode
     {
@@ -66,8 +67,12 @@ public class MoveControl : TocaFunction
 
                 //transform.position -= Vector3.up * GrandChange;
                 //GrandChange = 0;
-                StopCoroutine("ObjectShake");
-                StartCoroutine("ObjectShake");
+                if (!Shaked)
+                {
+                    StopCoroutine("ObjectShake");
+                    StartCoroutine("ObjectShake");
+                    Shaked = true;
+                }
             }
         }
     }

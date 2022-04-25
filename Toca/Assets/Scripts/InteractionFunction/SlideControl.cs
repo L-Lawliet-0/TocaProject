@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class SlideControl : TocaFunction
 {
+    private class SlideData
+    {
+        public int TrackIndex;
+        public Vector3 OverridePos;
+
+        public SlideData(int index)
+        {
+            TrackIndex = index;
+        }
+    }
     public Transform SlideTrack;
     private BaseControl BaseControl;
-    private Dictionary<FindControl, int> Sliders;
+    private Dictionary<FindControl, SlideData> Sliders;
     private void Start()
     {
-        Sliders = new Dictionary<FindControl, int>();
+        Sliders = new Dictionary<FindControl, SlideData>();
         BaseControl = (BaseControl)TocaObject.GetTocaFunction<BaseControl>();
     }
 
@@ -35,7 +45,15 @@ public class SlideControl : TocaFunction
                         min = dis;
                     }
                 }
-                Sliders.Add(f, track);
+                Sliders.Add(f, new SlideData(track));
+                if (Sliders[f].TrackIndex == SlideTrack.childCount - 1)
+                {
+                    Sliders[f].OverridePos = SlideTrack.GetChild(Sliders[f].TrackIndex).position + new Vector3(Random.Range(-2f,2f), Random.Range(-1f, 1f));
+                }
+                else
+                {
+                    Sliders[f].OverridePos = SlideTrack.GetChild(Sliders[f].TrackIndex).position;
+                }
             }
         }
 
@@ -49,19 +67,28 @@ public class SlideControl : TocaFunction
         // move position
         for (int i = 0; i < sliderKeys.Count; i ++)
         {
-            MoveControl mc = (MoveControl)sliderKeys[i].TocaObject.GetTocaFunction<MoveControl>();
-            mc.UpdateTargetPosition(SlideTrack.GetChild(Sliders[sliderKeys[i]]).position);
+            FindControl f = sliderKeys[i];
+            MoveControl mc = (MoveControl)f.TocaObject.GetTocaFunction<MoveControl>();
+            mc.UpdateTargetPosition(Sliders[f].OverridePos);
 
 
             if (Vector3.Distance(mc.TargetPosition, mc.transform.position) < .1f)
             {
-                if (Sliders[sliderKeys[i]] == SlideTrack.childCount - 1)
+                if (Sliders[f].TrackIndex == SlideTrack.childCount - 1)
                 {
-                    remove.Add(sliderKeys[i]);
+                    remove.Add(f);
                 }
                 else
                 {
-                    Sliders[sliderKeys[i]]++;
+                    Sliders[f].TrackIndex++;
+                    if (Sliders[f].TrackIndex == SlideTrack.childCount - 1)
+                    {
+                        Sliders[f].OverridePos = SlideTrack.GetChild(Sliders[f].TrackIndex).position + new Vector3(Random.Range(-2f, 2f), Random.Range(-1f, 1f));
+                    }
+                    else
+                    {
+                        Sliders[f].OverridePos = SlideTrack.GetChild(Sliders[f].TrackIndex).position;
+                    }
                 }
             }
         }
@@ -71,6 +98,14 @@ public class SlideControl : TocaFunction
         {
             f.TryDetach();
             Sliders.Remove(f);
+            // recalculate the layer
+            LayerControl lc = (LayerControl)f.TocaObject.GetTocaFunction<LayerControl>();
+            if (lc)
+                lc.DetouchCallback();
+
+            MoveControl mc = (MoveControl)f.TocaObject.GetTocaFunction<MoveControl>();
+            if (mc)
+                mc.Speed = 0;
         }
     }
 }

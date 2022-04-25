@@ -70,7 +70,8 @@ public class FloatControl : TocaFunction
                 {
                     Floaters[moveKeys[i]].Arrived = true;
                     Floaters[moveKeys[i]].ArrivedPos = moveKeys[i].transform.position;
-                    Floaters[moveKeys[i]].Ripple = Instantiate(GlobalParameter.Instance.RunTimeEffects[2], moveKeys[i].TocaObject.Bottom.position, Quaternion.identity);
+
+                    StartCoroutine("DelayCreate", moveKeys[i]);
                 }
             }
             else
@@ -82,6 +83,27 @@ public class FloatControl : TocaFunction
                 // move the position of the movecontrol
                 moveKeys[i].UpdateTargetPosition(newPos);
             }
+        }
+    }
+
+    private IEnumerator DelayCreate(MoveControl mc)
+    {
+        yield return new WaitForSeconds(.2f);
+        CreateRipple(mc);
+    }
+
+    private void CreateRipple(MoveControl mc)
+    {
+        if (mc && Floaters.ContainsKey(mc))
+        {
+            FindControl fc = (FindControl)mc.TocaObject.GetTocaFunction<FindControl>();
+
+            Floaters[mc].Ripple = Instantiate(GlobalParameter.Instance.RunTimeEffects[2], fc.BottomCenter, Quaternion.identity);
+
+            Floaters[mc].Ripple.GetComponent<SpriteRenderer>().size = new Vector2(Mathf.Min(fc.ObjectWidth + .2f, 1.85f), 0.89f);
+
+            LayerControl lc = (LayerControl)fc.TocaObject.GetTocaFunction<LayerControl>();
+            Floaters[mc].Ripple.GetComponent<SpriteRenderer>().sortingOrder = lc.OrderValue + 1;
         }
     }
 }

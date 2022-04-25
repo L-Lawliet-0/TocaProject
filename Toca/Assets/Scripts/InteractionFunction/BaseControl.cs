@@ -19,6 +19,14 @@ public class BaseControl : TocaFunction
                     IsRightHand, // is this base right hand
                     IsMouth; // is this base mouse 
 
+        public enum StackType
+        {
+            None,
+            Plate,
+            Book
+        }
+        public StackType MyStackType;
+
         public void InitalizePara()
         {
             Parameters = new bool[]
@@ -157,6 +165,29 @@ public class BaseControl : TocaFunction
     public bool CanbeSnapped(FindControl finder)
     {
         // can not have more than limit amount of attachment
+        if (MyBaseAttributes.MyStackType != BaseAttributes.StackType.None)
+        {
+            BaseControl bc = (BaseControl)finder.TocaObject.GetTocaFunction<BaseControl>();
+            if (bc && bc.MyBaseAttributes.MyStackType == MyBaseAttributes.MyStackType && Attachments.Count < 1)
+                return true;
+        }
+
+
+        // stack check
+        if (MyBaseAttributes.MyStackType != BaseAttributes.StackType.None)
+        {
+            foreach (KeyValuePair<FindControl, AttachData> pair in Attachments)
+            {
+                BaseControl bc = (BaseControl)pair.Key.TocaObject.GetTocaFunction<BaseControl>();
+                if (bc && bc.MyBaseAttributes.MyStackType == MyBaseAttributes.MyStackType)
+                {
+                    Debug.LogError("Return false here");
+                    return false;
+                }
+            }
+        }
+        
+
         bool limit = IgnoreLimit || Attachments.Count < SnapLimit;
         bool width = finder.IsHuman || MaxObjectWidth > finder.ObjectWidth; // human automatically ignore width check
         bool height = finder.IsHuman || MaxObjectHeight > finder.ObjectHeight; // human automatically ignore height check
@@ -251,7 +282,11 @@ public class BaseControl : TocaFunction
             // if there's cover, snap so that part of the top is showing
             if (MyBaseAttributes.HaveCover)
             {
-                float coverTop = Cover.bounds.center.y + Cover.bounds.extents.y;
+                Bounds bounds = Cover.bounds;
+                if (Cover.GetComponent<Collider2D>())
+                    bounds = Cover.GetComponent<Collider2D>().bounds;
+
+                float coverTop = bounds.center.y + bounds.extents.y;
                 float objectTop = value + find.ObjectHeight;
                 
                 if (objectTop - .2f < coverTop)
