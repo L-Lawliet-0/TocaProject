@@ -12,6 +12,7 @@ public class FindControl : TocaFunction
     public float InteractionRadius;
     public bool IsHuman;
     public bool IsFood;
+    public bool IsGlasses; // is this glasses
     public BaseControl CurrentAttachment; // the base this object is currently attaching
     public BaseControl BasePreview;
     public bool Arrived;

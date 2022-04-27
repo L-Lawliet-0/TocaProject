@@ -44,6 +44,8 @@ public class SpineControl : TocaFunction
 
     private AttachmentControl Maozi, Kouzhao, Glasses, Mianju, Ershi, Meimao, Bizi, Zui, Yanjing, Toufa, Toufahoumian, Jiaodongxi;
 
+    private const int LeftHandIndex = 1, RightHandIndex = 2, LegIndex = 3, FaceIndex = 4;
+
     private void Start()
     {
         AllControls = new string[]
@@ -135,7 +137,7 @@ public class SpineControl : TocaFunction
                     l.Active = true;
                 break;
             case Animations.LeftHandRaise:
-                TrackEntry track = SkeletonAnimation.AnimationState.SetAnimation(3, LeftHandRaise, false);
+                TrackEntry track = SkeletonAnimation.AnimationState.SetAnimation(LeftHandIndex, LeftHandRaise, false);
                 track.TimeScale = 2f;
                 SetControlValue(leftHandControl, 1);
                 LeftArmControl.Active = false;
@@ -145,14 +147,14 @@ public class SpineControl : TocaFunction
             case Animations.LeftHandDrop:
                 SkeletonAnimation.AnimationState.Complete -= HandleLeftHandRaise;
                 
-                track = SkeletonAnimation.AnimationState.SetAnimation(3, LeftHandDrop, false);
+                track = SkeletonAnimation.AnimationState.SetAnimation(LeftHandIndex, LeftHandDrop, false);
                 track.TimeScale = 2;
                 SetControlValue(leftHandControl, 1);
                 LeftArmControl.Active = false;
                 SkeletonAnimation.AnimationState.End += HandleLeftHand;
                 break;
             case Animations.RightHandRaise:
-                track = SkeletonAnimation.AnimationState.SetAnimation(2, RightHandRaise, false);
+                track = SkeletonAnimation.AnimationState.SetAnimation(RightHandIndex, RightHandRaise, false);
                 track.TimeScale = 2;
                 SetControlValue(rightHandControl, 1);
                 RightArmControl.Active = false;
@@ -161,14 +163,14 @@ public class SpineControl : TocaFunction
                 break;
             case Animations.RightHandDrop:
                 SkeletonAnimation.AnimationState.Complete -= HandleRightHandRaise;
-                track = SkeletonAnimation.AnimationState.SetAnimation(2, RightHandDrop, false);
+                track = SkeletonAnimation.AnimationState.SetAnimation(RightHandIndex, RightHandDrop, false);
                 track.TimeScale = 2;
                 SetControlValue(rightHandControl, 1);
                 RightArmControl.Active = false;
                 SkeletonAnimation.AnimationState.End += HandleRightHand;
                 break;
             case Animations.Stand:
-                SkeletonAnimation.AnimationState.SetAnimation(1, Stand, false);
+                SkeletonAnimation.AnimationState.SetAnimation(LegIndex, Stand, false);
                 SetControlValue(leftLegControl, 1);
                 SetControlValue(rightLegControl, 1);
                 LeftLegControl.Active = false;
@@ -176,7 +178,7 @@ public class SpineControl : TocaFunction
                 SkeletonAnimation.AnimationState.End += HandleLeg;
                 break;
             case Animations.Sit:
-                SkeletonAnimation.AnimationState.SetAnimation(1, Sit, false);
+                SkeletonAnimation.AnimationState.SetAnimation(LegIndex, Sit, false);
                 SetControlValue(leftLegControl, 1);
                 SetControlValue(rightLegControl, 1);
                 LeftLegControl.Active = false;
@@ -190,7 +192,7 @@ public class SpineControl : TocaFunction
                 Eating = true;
                 SetOpenMouse();
                 SkeletonAnimation.AnimationState.Complete += HandleEat;
-                SkeletonAnimation.AnimationState.SetAnimation(4, Eat, false);
+                SkeletonAnimation.AnimationState.SetAnimation(FaceIndex, Eat, false);
                 
                 break;
         }
@@ -201,7 +203,7 @@ public class SpineControl : TocaFunction
     private void HandleEat(TrackEntry trackEntry)
     {
         Debug.LogError("Handleeat");
-        if (trackEntry.TrackIndex == 4)
+        if (trackEntry.TrackIndex == FaceIndex)
         {
             Eating = false;
             SetDefaultMouse();
@@ -227,7 +229,7 @@ public class SpineControl : TocaFunction
 
     private void HandleLeftHandRaise(TrackEntry trackEntry)
     {
-        if (trackEntry.TrackIndex == 3)
+        if (trackEntry.TrackIndex == LeftHandIndex)
         {
             float r7 = B7.AppliedRotation;
             float r8 = B8.AppliedRotation;
@@ -244,7 +246,7 @@ public class SpineControl : TocaFunction
 
     private void HandleRightHandRaise(TrackEntry trackEntry)
     {
-        if (trackEntry.TrackIndex == 2)
+        if (trackEntry.TrackIndex == RightHandIndex)
         {
             float r10 = B10.AppliedRotation;
             float r11 = B11.AppliedRotation;
@@ -261,7 +263,7 @@ public class SpineControl : TocaFunction
 
     private void HandleLeftHand(TrackEntry trackEntry)
     { 
-        if (trackEntry.TrackIndex == 3)
+        if (trackEntry.TrackIndex == LeftHandIndex)
         {
             B7.Rotation = R7;
             B8.Rotation = R8;
@@ -274,7 +276,7 @@ public class SpineControl : TocaFunction
 
     private void HandleRightHand(TrackEntry trackEntry)
     {
-        if (trackEntry.TrackIndex == 2)
+        if (trackEntry.TrackIndex == RightHandIndex)
         {
             B10.Rotation = R10;
             B11.Rotation = R11;
@@ -287,7 +289,7 @@ public class SpineControl : TocaFunction
 
     private void HandleLeg(TrackEntry trackEntry)
     {
-        if (trackEntry.TrackIndex == 1)
+        if (trackEntry.TrackIndex == LegIndex)
         {
             SetControlValue(leftLegControl, 0);
             SetControlValue(rightLegControl, 0);

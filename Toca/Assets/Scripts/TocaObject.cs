@@ -98,4 +98,11 @@ public class TocaObject : MonoBehaviour
         }
         return values;
     }
+
+    private void OnDestroy()
+    {
+        FindControl fc = (FindControl)GetTocaFunction<FindControl>();
+        if (fc)
+            fc.TryDetach();
+    }
 }

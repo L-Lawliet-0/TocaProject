@@ -29,9 +29,9 @@ public class ArmControl : LimbControl
             angle = GlobalParameter.ClampAngle(angle - 90);
 
             if (HandBase.MyBaseAttributes.IsLeftHand)
-                angle = Mathf.Clamp(angle, 100, 170);
+                angle = Mathf.Clamp(angle, 120, 150);
             else
-                angle = Mathf.Clamp(angle, 190, 260);
+                angle = Mathf.Clamp(angle, 210, 240);
 
             TargetBone.Rotation = angle;
         }

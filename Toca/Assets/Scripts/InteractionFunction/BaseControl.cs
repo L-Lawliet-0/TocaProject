@@ -17,7 +17,8 @@ public class BaseControl : TocaFunction
                     IsChair, // this base is a sittable thing
                     IsLeftHand, // is this base left hand
                     IsRightHand, // is this base right hand
-                    IsMouth; // is this base mouse 
+                    IsMouth, // is this base mouse 
+                    IsEye; // is this base eye
 
         public enum StackType
         {
@@ -191,6 +192,10 @@ public class BaseControl : TocaFunction
         bool limit = IgnoreLimit || Attachments.Count < SnapLimit;
         bool width = finder.IsHuman || MaxObjectWidth > finder.ObjectWidth; // human automatically ignore width check
         bool height = finder.IsHuman || MaxObjectHeight > finder.ObjectHeight; // human automatically ignore height check
+
+        if (MyBaseAttributes.IsEye)
+            return finder.IsGlasses;
+
         return limit && width && height && (!MyBaseAttributes.IsMouth || finder.IsFood);
     }
 
@@ -305,6 +310,16 @@ public class BaseControl : TocaFunction
 
     public float GetYRange()
     {
-        return GetComponent<Collider2D>().bounds.size.y;
+        bool temp = gameObject.activeSelf;
+        Transform tempTran = transform.parent;
+
+        transform.parent = null;
+        gameObject.SetActive(true);
+        float y = GetComponent<Collider2D>().bounds.size.y;
+
+        transform.parent = tempTran;
+        gameObject.SetActive(temp);
+
+        return y;
     }
 }
