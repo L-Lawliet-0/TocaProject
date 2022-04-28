@@ -98,9 +98,9 @@ public class FloatControl : TocaFunction
         {
             FindControl fc = (FindControl)mc.TocaObject.GetTocaFunction<FindControl>();
 
-            Floaters[mc].Ripple = Instantiate(GlobalParameter.Instance.RunTimeEffects[2], fc.BottomCenter, Quaternion.identity);
+            Floaters[mc].Ripple = Instantiate(GlobalParameter.Instance.RunTimeEffects[2] , fc.BottomCenter, Quaternion.identity);
 
-            Floaters[mc].Ripple.GetComponent<SpriteRenderer>().size = new Vector2(Mathf.Min(fc.ObjectWidth + .2f, 1.85f), 0.89f);
+            Floaters[mc].Ripple.GetComponent<SpriteRenderer>().size = new Vector2(Mathf.Min(fc.ObjectWidth + .1f, 1.85f), 0.89f);
 
             LayerControl lc = (LayerControl)fc.TocaObject.GetTocaFunction<LayerControl>();
             Floaters[mc].Ripple.GetComponent<SpriteRenderer>().sortingOrder = lc.OrderValue + 1;

@@ -48,10 +48,10 @@ public class LayerControl : TocaFunction
             {
                 if (AllRenderers[i] == bc.Cover)
                 {
-                    if (name.Equals("drawer"))
-                    {
+                    //if (name.Equals("drawer"))
+                    //{
                         DefaultValues[i] = (int)(bc.GetYRange() * 100) + 1;
-                    }
+                    //}
                 }
             }
         }
@@ -103,7 +103,6 @@ public class LayerControl : TocaFunction
                 float maxY = find.CurrentAttachment.GetMaxY();
                 float rangY = find.CurrentAttachment.GetYRange();
                 float myY = find.CurrentAttachment.GetTargetPos(find, find.CurrentAttachment.Attachments[find]).y;
-                Debug.LogError("My y value: " + myY + " Max y value: " + maxY);
                 float layerValue = rangY * 100;
                 baseOrder = parentLayer.OrderValue + Mathf.Max(1, (int)((Mathf.Min(((maxY - myY) / rangY), 1) * layerValue)));
             }

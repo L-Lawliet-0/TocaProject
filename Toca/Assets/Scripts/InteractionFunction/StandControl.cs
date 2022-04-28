@@ -10,12 +10,15 @@ public class StandControl : StateControl
     private BaseControl BaseControl;
     public List<int> StandingParams;
 
+    private float HeightFix;
+
     private void Start()
     {
         base.RegisterStateEvent();
         FindControl = (FindControl)TocaObject.GetTocaFunction<FindControl>();
         BaseControl = (BaseControl)TocaObject.GetTocaFunction<BaseControl>();
         LayerControl = (LayerControl)TocaObject.GetTocaFunction<LayerControl>();
+        HeightFix = (FindControl.ObjectHeight - FindControl.ObjectWidth) / 2;
     }
 
     private void Update()
@@ -72,6 +75,10 @@ public class StandControl : StateControl
         }
         transform.eulerAngles = Vector3.zero;
 
+        transform.position += Vector3.up * HeightFix;
+        yield return null;
+
+
         if (FindControl && FindControl.CurrentAttachment)
         {
             FindControl.CurrentAttachment.RecalculateSnapPos(FindControl);
@@ -87,6 +94,9 @@ public class StandControl : StateControl
             yield return null;
         }
         transform.eulerAngles = Vector3.forward * 90;
+
+        transform.position -= Vector3.up * HeightFix;
+        yield return null;
 
         if (FindControl && FindControl.CurrentAttachment)
         {

@@ -308,7 +308,8 @@ public class SpineControl : TocaFunction
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-            PlayAnimation(Animations.Eat);
+            //PlayAnimation(Animations.Eat);
+            Yanjing.SetAttachment("biyan");
         }
 
         if (Input.GetKeyDown(KeyCode.L))
@@ -333,5 +334,21 @@ public class SpineControl : TocaFunction
             ((ArmControl)LeftArmControl).PendingAttach = fc;
         else
             ((ArmControl)RightArmControl).PendingAttach = fc;
+    }
+
+    public bool Sleeping = false;
+    private GameObject sleepFX;
+    public void Sleep(Vector3 fxPos)
+    {
+        Sleeping = true;
+        Yanjing.SetAttachment("biyan");
+        sleepFX = Instantiate(GlobalParameter.Instance.RunTimeEffects[5], fxPos, Quaternion.identity);
+    }
+
+    public void WakeUp()
+    {
+        Sleeping = false;
+        Yanjing.SetAttachment(1);
+        Destroy(sleepFX);
     }
 }

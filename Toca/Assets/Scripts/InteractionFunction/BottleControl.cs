@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class BottleControl : StateControl
 {
-    public int FXindex;
-
-    private Transform FXref;
+    private Transform BottleTop;
     private bool InControl;
+    private bool Shaking;
     private FindControl FindControl;
+
+    private Collider2D CupCollider;
+    private BaseControl Mouth;
 
     private void Awake()
     {
         // assume bottle is in standing pose, calcualte the top reference position
-        FXref = new GameObject().transform;
-        FXref.position = GetComponent<Collider2D>().bounds.center + GetComponent<Collider2D>().bounds.extents.y * Vector3.up;
-        FXref.SetParent(transform);
+        BottleTop = new GameObject().transform;
+        BottleTop.position = GetComponent<Collider2D>().bounds.center + GetComponent<Collider2D>().bounds.extents.y * Vector3.up;
+        BottleTop.SetParent(transform);
     }
 
     // control the particle effect and bottle rotation when in selection and deselection
@@ -29,6 +31,7 @@ public class BottleControl : StateControl
     {
         ForceEnd();
         InControl = true;
+        Shaking = false;
         StopAllCoroutines();
         StartCoroutine("SelectionLoop");
     }
@@ -36,24 +39,55 @@ public class BottleControl : StateControl
     public override void OnDeselect()
     {
         InControl = false;
+        StopCoroutine("Shake");
     }
 
     private IEnumerator SelectionLoop()
     {
-        // create particle effect
-        GameObject fx = Instantiate(GlobalParameter.Instance.RunTimeEffects[FXindex]);
-        fx.transform.SetParent(FXref);
-        fx.transform.localPosition = Vector3.zero;
-        fx.transform.localRotation = Quaternion.identity;
-
         while (InControl)
         {
-            while (GlobalParameter.ClampAngle(transform.eulerAngles.z) < 120)
+            // what conditions will the bottle start shaking
+            // get close to child mouth
+            // get close to cup
+
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(BottleTop.position, .5f, 1 << LayerMask.NameToLayer("WaterDrop"));
+            CupCollider = null;
+            float minDis = float.MaxValue;
+            foreach (Collider2D c in colliders)
             {
-                transform.eulerAngles += Vector3.forward * Time.deltaTime * 240;
-                yield return null;
+                float dis = Vector3.Distance(BottleTop.position, c.transform.position);
+                if (dis < minDis)
+                {
+                    minDis = dis;
+                    CupCollider = c;
+                }
             }
-            transform.eulerAngles = 120 * Vector3.forward;
+
+            colliders = Physics2D.OverlapCircleAll(BottleTop.position, .5f, 1 << LayerMask.NameToLayer("Base"));
+
+            Mouth = null;
+            foreach (Collider2D c in colliders)
+            {
+                BaseControl bc = c.GetComponent<BaseControl>();
+                if (bc && bc.MyBaseAttributes.IsMouth)
+                {
+                    Mouth = bc;
+                    break;
+                }
+            }
+
+            if (!Shaking && (Mouth || CupCollider))
+            {
+                Shaking = true;
+                StartCoroutine("Shake");
+            }
+            else if (Shaking && !Mouth && !CupCollider)
+            {
+                Shaking = false;
+                StopCoroutine("Shake");
+                transform.eulerAngles = Vector3.zero;
+            }
+
             yield return null;
         }
 
@@ -66,11 +100,35 @@ public class BottleControl : StateControl
         ForceEnd();
     }
 
+    private IEnumerator Shake()
+    {
+        while (true)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 1);
+            float angle = Random.Range(30, 60);
+            while (GlobalParameter.ClampAngle(transform.eulerAngles.z) < angle)
+            {
+                transform.eulerAngles += Vector3.forward * Time.deltaTime * 45;
+                yield return null;
+            }
+
+            if (CupCollider)
+                CupCollider.GetComponent<WaterFillControl>().Fill();
+
+            while (GlobalParameter.ClampAngle(transform.eulerAngles.z) < 270)
+            {
+                transform.eulerAngles -= Vector3.forward * Time.deltaTime * 45;
+                yield return null;
+            }
+
+            yield return null;
+        }
+    }
+
     private void ForceEnd()
     {
         transform.eulerAngles = Vector3.zero;
-        if (FXref.childCount > 0)
-            Destroy(FXref.GetChild(0).gameObject);
+
         if (FindControl && FindControl.CurrentAttachment)
         {
             FindControl.CurrentAttachment.RecalculateSnapPos(FindControl);

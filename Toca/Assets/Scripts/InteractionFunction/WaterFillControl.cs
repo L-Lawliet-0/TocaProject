@@ -13,6 +13,16 @@ public class WaterFillControl : TocaFunction
         Filled = false;
     }
 
+    public void Fill()
+    {
+        if (!Filled)
+        {
+            Filled = true;
+            StartCoroutine("FillCup");
+            GetComponent<Collider2D>().isTrigger = true;
+        }
+    }
+
     private void OnParticleCollision(GameObject other)
     {
         if (!Filled)

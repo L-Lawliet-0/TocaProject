@@ -134,5 +134,7 @@ public class MoveControl : TocaFunction
             count -= Time.fixedDeltaTime;
             yield return new WaitForFixedUpdate();
         }
+
+        transform.position = TargetPosition;
     }
 }

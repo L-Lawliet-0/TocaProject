@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HorseShakeControl : TocaFunction
 {
+    private FindControl Target;
     private BaseControl BaseControl;
     private bool Shaking;
     private void Start()
@@ -30,6 +31,7 @@ public class HorseShakeControl : TocaFunction
 
     private IEnumerator Shake()
     {
+        Target = new List<FindControl>(BaseControl.Attachments.Keys)[0];
         float startAngle = 0;
         float limit = 5; // test value 10 degree
         float sign = 1;
@@ -57,5 +59,10 @@ public class HorseShakeControl : TocaFunction
     {
         yield return null;
         transform.eulerAngles = Vector3.zero;
+        if (Target)
+        {
+            Target.TocaObject.transform.eulerAngles = Vector3.zero;
+        }
+        Target = null;
     }
 }
