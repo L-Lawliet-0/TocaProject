@@ -6,6 +6,7 @@ public class OpenControl : TocaFunction
 {
     public bool Opening; // is this object currently opening
     public GameObject OpenObj, CloseObj;
+    public BaseControl Basecontrol;
 
     private void Start()
     {
@@ -32,6 +33,8 @@ public class OpenControl : TocaFunction
             OpenObj.SetActive(true);
         if (CloseObj)
             CloseObj.SetActive(false);
+        if (Basecontrol)
+            Basecontrol.IgnoreLimit = true;
     }
 
     public void OnClose()
@@ -41,5 +44,7 @@ public class OpenControl : TocaFunction
             OpenObj.SetActive(false);
         if (CloseObj)
             CloseObj.SetActive(true);
+        if (Basecontrol)
+            Basecontrol.IgnoreLimit = false;
     }
 }

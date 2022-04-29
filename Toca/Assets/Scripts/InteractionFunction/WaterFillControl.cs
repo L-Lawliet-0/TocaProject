@@ -19,26 +19,27 @@ public class WaterFillControl : TocaFunction
         {
             Filled = true;
             StartCoroutine("FillCup");
-            GetComponent<Collider2D>().isTrigger = true;
         }
     }
 
-    private void OnParticleCollision(GameObject other)
+    public void UnFill()
     {
-        if (!Filled)
+        if (Filled)
         {
-            Filled = true;
-            StartCoroutine("FillCup");
-            GetComponent<Collider2D>().isTrigger = true;
+            Filled = false;
+            StartCoroutine("ClearCup");       
         }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && !Filled)
+        if (Filled)
         {
-            Filled = true;
-            StartCoroutine("FillCup");
+            Collider2D collider = Physics2D.OverlapCircle(transform.position + .68f * Vector3.up, .5f, 1 << LayerMask.NameToLayer("Base"));
+            if (collider && collider.GetComponent<BaseControl>() && collider.GetComponent<BaseControl>().MyBaseAttributes.IsMouth)
+            {
+                UnFill();
+            }
         }
     }
 
@@ -62,5 +63,24 @@ public class WaterFillControl : TocaFunction
         }
 
         m_SpriteRenderer.size = new Vector2(targetWidth, targetHeigth);
+    }
+
+    private IEnumerator ClearCup()
+    {
+        float time = .5f;
+        float x_speed = -.6f / time;
+        float y_speed = -.68f / time;
+
+        while (time > 0)
+        {
+            m_SpriteRenderer.size += Vector2.right * Time.deltaTime * x_speed;
+            m_SpriteRenderer.size += Vector2.up * Time.deltaTime * y_speed;
+            time -= Time.deltaTime;
+            TocaObject.transform.eulerAngles += Vector3.forward * Time.deltaTime * 30;
+            yield return null;
+        }
+
+        m_SpriteRenderer.size = Vector2.zero;
+        TocaObject.transform.eulerAngles = Vector3.zero;
     }
 }

@@ -18,6 +18,7 @@ public class FindControl : TocaFunction
     public bool Arrived;
     private MoveControl MoveControl;
     private ArmControl NearByArm;
+    private SpineControl SpineControl;
 
     public BaseControl AttachBase;
     public int AttachBaseID;
@@ -68,6 +69,7 @@ public class FindControl : TocaFunction
     private void Start()
     {
         MoveControl = (MoveControl)TocaObject.GetTocaFunction<MoveControl>();
+        SpineControl = (SpineControl)TocaObject.GetTocaFunction<SpineControl>();
     }
 
     private void Update()
@@ -77,6 +79,12 @@ public class FindControl : TocaFunction
 
     public void TryAttach()
     {
+        if (Sitting)
+        {
+            SpineControl.PlayAnimation(SpineControl.Animations.Stand);
+            Sitting = false;
+        }
+
         Arrived = false;
         // find a good base to attach to
         CurrentAttachment = BasePreview;
@@ -110,6 +118,7 @@ public class FindControl : TocaFunction
         CurrentAttachment = null;
     }
 
+    private bool Sitting;
     public void SelectedUpdate()
     {
         BasePreview = FindBaseNearBy();
@@ -122,6 +131,20 @@ public class FindControl : TocaFunction
         if (BasePreview && BasePreview.MyBaseAttributes.IsMouth)
         {
             BasePreview.GetComponent<EatControl>().PendingFood = this;
+        }
+
+        if (!Sitting)
+        {
+            if (SpineControl && BasePreview && BasePreview.MyBaseAttributes.IsChair)
+            {
+                SpineControl.PlayAnimation(SpineControl.Animations.Sit);
+                Sitting = true;
+            }
+        }
+        else if (SpineControl && (!BasePreview || !BasePreview.MyBaseAttributes.IsChair))
+        {
+            SpineControl.PlayAnimation(SpineControl.Animations.Stand);
+            Sitting = false;
         }
     }
 

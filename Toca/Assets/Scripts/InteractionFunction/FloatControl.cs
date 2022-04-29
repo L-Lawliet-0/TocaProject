@@ -70,7 +70,6 @@ public class FloatControl : TocaFunction
                 {
                     Floaters[moveKeys[i]].Arrived = true;
                     Floaters[moveKeys[i]].ArrivedPos = moveKeys[i].transform.position;
-
                     StartCoroutine("DelayCreate", moveKeys[i]);
                 }
             }

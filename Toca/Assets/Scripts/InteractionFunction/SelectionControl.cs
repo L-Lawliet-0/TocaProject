@@ -8,6 +8,7 @@ public class SelectionControl : TocaFunction
     public Vector3 PositionOffset; // this is the position difference between object position and touch position
     private MoveControl MoveControl;
     private FindControl FindControl;
+    private StandControl StandControl;
 
     public Vector3 DefaultScale;
     private float ZoomScale;
@@ -30,6 +31,7 @@ public class SelectionControl : TocaFunction
     {
         MoveControl = (MoveControl)TocaObject.GetTocaFunction<MoveControl>();
         FindControl = (FindControl)TocaObject.GetTocaFunction<FindControl>();
+        StandControl = (StandControl)TocaObject.GetTocaFunction<StandControl>();
     }
 
     public void OnSelect(Vector3 initPos)
@@ -40,9 +42,12 @@ public class SelectionControl : TocaFunction
         transform.parent = null;
 
         StopAllCoroutines();
-        StartCoroutine("ScaleUp");
+        //StartCoroutine("ScaleUp");
         if (MoveControl)
             MoveControl.Shaked = false;
+
+        if (!StandControl)
+            transform.eulerAngles = Vector3.zero;
     }
 
     public void OnDeselect()
@@ -50,7 +55,7 @@ public class SelectionControl : TocaFunction
         Selected = false;
 
         StopAllCoroutines();
-        StartCoroutine("ScaleDown");
+        //StartCoroutine("ScaleDown");
     }
 
     private void OnDisable()

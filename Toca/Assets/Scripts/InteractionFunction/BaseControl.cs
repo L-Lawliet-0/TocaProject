@@ -107,6 +107,7 @@ public class BaseControl : TocaFunction
         if (Attachments.ContainsKey(find))
         {
             Attachments[find].offset = FindSnapPosition(find) - transform.position;
+            Attachments[find].mc.UpdateTargetPosition(CalculateTargetPos(find, Attachments[find]));
         }
     }
 
@@ -146,6 +147,9 @@ public class BaseControl : TocaFunction
 
         if (MyBaseAttributes.IsRightHand)
             SpineControl.PlayAnimation(SpineControl.Animations.RightHandRaise);
+
+        if (TocaObject.GetTocaFunction<FloatControl>() || TocaObject.GetTocaFunction<SlideControl>())
+            data.mc.Shaked = true;
     }
 
     public void Detach(FindControl find)
@@ -201,6 +205,12 @@ public class BaseControl : TocaFunction
 
     public Vector3 FindSnapPosition(FindControl find)
     {
+        if (MyBaseAttributes.MyStackType == BaseAttributes.StackType.Plate)
+        {
+            BaseControl otherBase = (BaseControl)find.TocaObject.GetTocaFunction<BaseControl>();
+            if (otherBase && otherBase.MyBaseAttributes.MyStackType == BaseAttributes.StackType.Plate)
+                return TocaObject.transform.position;
+        }
 
         Vector3 bottomCenter = find.BottomCenter;
         if (!GetComponent<Collider2D>().OverlapPoint(bottomCenter))

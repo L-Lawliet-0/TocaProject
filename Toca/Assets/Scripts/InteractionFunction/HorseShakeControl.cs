@@ -59,10 +59,10 @@ public class HorseShakeControl : TocaFunction
     {
         yield return null;
         transform.eulerAngles = Vector3.zero;
-        if (Target)
-        {
-            Target.TocaObject.transform.eulerAngles = Vector3.zero;
-        }
+        //if (Target)
+        //{
+        //    Target.TocaObject.transform.eulerAngles = Vector3.zero;
+        //}
         Target = null;
     }
 }

@@ -19,6 +19,8 @@ public class StandControl : StateControl
         BaseControl = (BaseControl)TocaObject.GetTocaFunction<BaseControl>();
         LayerControl = (LayerControl)TocaObject.GetTocaFunction<LayerControl>();
         HeightFix = (FindControl.ObjectHeight - FindControl.ObjectWidth) / 2;
+
+        Invoke("OnDeselect", 2);
     }
 
     private void Update()
@@ -28,6 +30,7 @@ public class StandControl : StateControl
 
     public override void OnSelection()
     {
+        StopAllCoroutines();
         // object should be standing
         if (!BaseControl || BaseControl.Attachments.Count < 1)
         {
@@ -68,37 +71,49 @@ public class StandControl : StateControl
 
     private IEnumerator StandUp()
     {
+        
         while (GlobalParameter.ClampAngle(transform.eulerAngles.z) < 270)
         {
-            transform.eulerAngles -= Vector3.forward * Time.deltaTime * 360;
+            transform.eulerAngles -= Vector3.forward * Time.deltaTime * 720;
             yield return null;
         }
+        
         transform.eulerAngles = Vector3.zero;
 
-        transform.position += Vector3.up * HeightFix;
+        //transform.position += Vector3.up * HeightFix;
         yield return null;
 
+        while (!FindControl.Arrived)
+            yield return null;
 
-        if (FindControl && FindControl.CurrentAttachment)
+        if (FindControl && FindControl.CurrentAttachment && FindControl.CurrentAttachment.MyBaseAttributes.HaveCover)
         {
             FindControl.CurrentAttachment.RecalculateSnapPos(FindControl);
             FindControl.Arrived = false;
         }
+
+        if (BaseControl)
+            BaseControl.gameObject.SetActive(false);
     }
 
     private IEnumerator StandDown()
     {
+        
         while (GlobalParameter.ClampAngle(transform.eulerAngles.z) < 90)
         {
-            transform.eulerAngles += Vector3.forward * Time.deltaTime * 360;
+            transform.eulerAngles += Vector3.forward * Time.deltaTime * 720;
             yield return null;
         }
+        
         transform.eulerAngles = Vector3.forward * 90;
 
-        transform.position -= Vector3.up * HeightFix;
+        //transform.position -= Vector3.up * HeightFix;
         yield return null;
 
-        if (FindControl && FindControl.CurrentAttachment)
+        while (!FindControl.Arrived)
+            yield return null;
+
+        if (FindControl && FindControl.CurrentAttachment && FindControl.CurrentAttachment.MyBaseAttributes.HaveCover)
         {
             FindControl.CurrentAttachment.RecalculateSnapPos(FindControl);
             FindControl.Arrived = false;
@@ -106,5 +121,8 @@ public class StandControl : StateControl
 
         if (LayerControl)
             LayerControl.DetouchCallback();
+
+        if (BaseControl)
+            BaseControl.gameObject.SetActive(true);
     }
 }

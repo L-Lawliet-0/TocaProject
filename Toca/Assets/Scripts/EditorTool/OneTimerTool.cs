@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.Experimental.Rendering.Universal;
 
 [ExecuteInEditMode]
 public class OneTimerTool : MonoBehaviour
@@ -13,7 +14,8 @@ public class OneTimerTool : MonoBehaviour
         if (EXECUTE)
         {
             //GroupObjectsWithAttachingBase();
-            AutoSetObjectsBase();
+            //AutoSetObjectsBase();
+            FindObjectsNameWithComponent();
             EXECUTE = false;
         }    
     }
@@ -241,5 +243,13 @@ public class OneTimerTool : MonoBehaviour
         }
     }
 
-   
+    private void FindObjectsNameWithComponent()
+    {
+        Light2D[] lights = FindObjectsOfType<Light2D>(true);
+        foreach (Light2D l in lights)
+        {
+            Debug.LogError(l.name);
+        }
+
+    }
 }

@@ -23,7 +23,7 @@ public class BedControl : TocaFunction
             List<FindControl> finds = new List<FindControl>(BaseControl.Attachments.Keys);
             FindControl find = finds[0];
             SpineControl = (SpineControl)find.TocaObject.GetTocaFunction<SpineControl>();
-            SpineControl.Sleep(transform.position + Vector3.up * 5);
+            SpineControl.Sleep(transform.position + Vector3.up * 1.5f + Vector3.right * 1.5f);
         }
     }
 

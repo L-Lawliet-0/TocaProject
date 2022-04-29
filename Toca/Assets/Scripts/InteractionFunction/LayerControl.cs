@@ -50,7 +50,7 @@ public class LayerControl : TocaFunction
                 {
                     //if (name.Equals("drawer"))
                     //{
-                        DefaultValues[i] = (int)(bc.GetYRange() * 100) + 1;
+                        DefaultValues[i] = (int)(bc.GetYRange() * 100) + 2;
                     //}
                 }
             }

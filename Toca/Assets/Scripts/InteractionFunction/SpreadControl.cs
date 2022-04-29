@@ -9,6 +9,7 @@ public class SpreadControl : StateControl
     private Transform FXref;
     private bool InControl;
     private FindControl FindControl;
+    private LayerControl LayerControl;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class SpreadControl : StateControl
     {
         base.RegisterStateEvent();
         FindControl = (FindControl)TocaObject.GetTocaFunction<FindControl>();
+        LayerControl = (LayerControl)TocaObject.GetTocaFunction<LayerControl>();
     }
 
     public override void OnSelection()
@@ -63,10 +65,13 @@ public class SpreadControl : StateControl
             yield return null;
         }
 
-        ForceEnd();
+        while (!FindControl.Arrived)
+            yield return null;
+
+        ForceEnd(true);
     }
 
-    private void ForceEnd()
+    private void ForceEnd(bool resetLayer = false)
     {
         transform.eulerAngles = Vector3.zero;
         if (FXref.childCount > 0)
@@ -76,5 +81,8 @@ public class SpreadControl : StateControl
             FindControl.CurrentAttachment.RecalculateSnapPos(FindControl);
             FindControl.Arrived = false;
         }
+
+        if (resetLayer && LayerControl)
+            LayerControl.DetouchCallback();
     }
 }

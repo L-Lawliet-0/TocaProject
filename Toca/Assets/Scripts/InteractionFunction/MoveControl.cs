@@ -115,6 +115,7 @@ public class MoveControl : TocaFunction
     private float GrandChange;
     private IEnumerator ObjectShake()
     {
+        Debug.LogError("Shake!");
         float speed = 10;
         float count = .1f;
         GrandChange = 0;

@@ -33,7 +33,14 @@ public class ArmControl : LimbControl
             else
                 angle = Mathf.Clamp(angle, 210, 240);
 
-            TargetBone.Rotation = angle;
+            float sign = TargetBone.Rotation > angle ? -1 : 1;
+            if (TargetBone.Rotation == angle)
+                sign = 0;
+            TargetBone.Rotation += sign * Time.deltaTime * 60;
+
+            float newSign = TargetBone.Rotation > angle ? -1 : 1;
+            if (sign != 0 && sign != newSign)
+                TargetBone.Rotation = angle;
         }
         else
             base.UpdateLimbRotation();
