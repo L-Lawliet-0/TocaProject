@@ -7,7 +7,6 @@ public class BottleControl : StateControl
     private Transform BottleTop;
     private bool InControl;
     private bool Shaking;
-    private FindControl FindControl;
 
     private Collider2D CupCollider;
     private BaseControl Mouth;
@@ -25,6 +24,7 @@ public class BottleControl : StateControl
     {
         base.RegisterStateEvent();
         FindControl = (FindControl)TocaObject.GetTocaFunction<FindControl>();
+        LayerControl = (LayerControl)TocaObject.GetTocaFunction<LayerControl>();
     }
 
     public override void OnSelection()
@@ -97,7 +97,8 @@ public class BottleControl : StateControl
             yield return null;
         }
 
-        ForceEnd();
+        transform.eulerAngles = Vector3.zero;
+        ForceEnd(true);
     }
 
     private IEnumerator Shake()
@@ -122,17 +123,6 @@ public class BottleControl : StateControl
             }
 
             yield return null;
-        }
-    }
-
-    private void ForceEnd()
-    {
-        transform.eulerAngles = Vector3.zero;
-
-        if (FindControl && FindControl.CurrentAttachment)
-        {
-            FindControl.CurrentAttachment.RecalculateSnapPos(FindControl);
-            FindControl.Arrived = false;
         }
     }
 }

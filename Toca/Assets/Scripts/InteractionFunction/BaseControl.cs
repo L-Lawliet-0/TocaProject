@@ -48,6 +48,7 @@ public class BaseControl : TocaFunction
     public List<FindControl> VisibleDatas;
 
     public int SnapLimit;
+    public int LayerCache;
 
     public enum SnapType
     {
@@ -106,7 +107,8 @@ public class BaseControl : TocaFunction
     {
         if (Attachments.ContainsKey(find))
         {
-            Attachments[find].offset = FindSnapPosition(find) - transform.position;
+            if (MyBaseAttributes.HaveCover)
+                Attachments[find].offset = FindSnapPosition(find) - transform.position;
             Attachments[find].mc.UpdateTargetPosition(CalculateTargetPos(find, Attachments[find]));
         }
     }

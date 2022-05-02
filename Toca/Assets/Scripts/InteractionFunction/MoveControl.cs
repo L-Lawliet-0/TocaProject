@@ -9,6 +9,7 @@ public class MoveControl : TocaFunction
     public float Speed;
     public bool InstantGo;
     public bool Shaked; // does this object already shaked in this selection
+    private bool Shaking;
 
     public enum MoveMode
     {
@@ -31,6 +32,8 @@ public class MoveControl : TocaFunction
 
     public void UpdateTargetPosition(Vector3 targetPos)
     {
+        if (Shaking)
+            return;
         TargetPosition = targetPos;
     }
 
@@ -71,6 +74,7 @@ public class MoveControl : TocaFunction
                 {
                     StopCoroutine("ObjectShake");
                     StartCoroutine("ObjectShake");
+                    Shaking = true;
                     Shaked = true;
                 }
             }
@@ -85,6 +89,13 @@ public class MoveControl : TocaFunction
 
     public bool CanMove()
     {
+        if (Shaking)
+        {
+            CurrentMoveMode = MoveMode.Linear;
+            Speed = 5;
+            return true;
+        }
+
         if (Select && Select.Selected)
         {
             CurrentMoveMode = MoveMode.TimeReach;
@@ -109,33 +120,26 @@ public class MoveControl : TocaFunction
         if (angle > 10 && angle < 350)
             return true;
 
+
         return false;
     }
 
     private float GrandChange;
     private IEnumerator ObjectShake()
     {
-        Debug.LogError("Shake!");
-        float speed = 10;
-        float count = .1f;
-        GrandChange = 0;
-        while (count > 0)
-        {
-            transform.position += Vector3.up * Time.fixedDeltaTime * speed;
-            GrandChange += Time.fixedDeltaTime * speed;
-            count -= Time.fixedDeltaTime;
-            yield return new WaitForFixedUpdate();
-        }
+        // speed = 10
+        // 
+        Vector3 targetSave = TargetPosition;
 
-        count = .1f;
-        while (count > 0)
-        {
-            transform.position -= Vector3.up * Time.fixedDeltaTime * speed;
-            GrandChange -= Time.fixedDeltaTime * speed;
-            count -= Time.fixedDeltaTime;
-            yield return new WaitForFixedUpdate();
-        }
+        TargetPosition = targetSave + Vector3.up * .5f;
 
-        transform.position = TargetPosition;
+        yield return new WaitForSeconds(.1f);
+
+        TargetPosition = targetSave;
+
+        yield return new WaitForSeconds(.1f);
+
+        transform.position = targetSave;
+        Shaking = false;
     }
 }

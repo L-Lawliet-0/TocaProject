@@ -5,8 +5,6 @@ using System.Linq;
 
 public class StandControl : StateControl
 {
-    private FindControl FindControl;
-    private LayerControl LayerControl;
     private BaseControl BaseControl;
     public List<int> StandingParams;
 
@@ -34,7 +32,7 @@ public class StandControl : StateControl
         // object should be standing
         if (!BaseControl || BaseControl.Attachments.Count < 1)
         {
-            StartCoroutine("StandUp");
+            StartCoroutine("StandUp", false);
         }
     }
 
@@ -43,7 +41,7 @@ public class StandControl : StateControl
         StopAllCoroutines();
         if (ShouldObjectStand())
         {
-            StartCoroutine("StandUp");
+            StartCoroutine("StandUp", true);
         }
         else
         {
@@ -69,7 +67,7 @@ public class StandControl : StateControl
         return false;
     }
 
-    private IEnumerator StandUp()
+    private IEnumerator StandUp(bool resetLayer = false)
     {
         
         while (GlobalParameter.ClampAngle(transform.eulerAngles.z) < 270)
@@ -86,11 +84,7 @@ public class StandControl : StateControl
         while (!FindControl.Arrived)
             yield return null;
 
-        if (FindControl && FindControl.CurrentAttachment && FindControl.CurrentAttachment.MyBaseAttributes.HaveCover)
-        {
-            FindControl.CurrentAttachment.RecalculateSnapPos(FindControl);
-            FindControl.Arrived = false;
-        }
+        ForceEnd(resetLayer);
 
         if (BaseControl)
             BaseControl.gameObject.SetActive(false);
@@ -113,14 +107,7 @@ public class StandControl : StateControl
         while (!FindControl.Arrived)
             yield return null;
 
-        if (FindControl && FindControl.CurrentAttachment && FindControl.CurrentAttachment.MyBaseAttributes.HaveCover)
-        {
-            FindControl.CurrentAttachment.RecalculateSnapPos(FindControl);
-            FindControl.Arrived = false;
-        }
-
-        if (LayerControl)
-            LayerControl.DetouchCallback();
+        ForceEnd(true);
 
         if (BaseControl)
             BaseControl.gameObject.SetActive(true);
