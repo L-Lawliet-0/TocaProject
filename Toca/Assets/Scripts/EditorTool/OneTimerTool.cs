@@ -14,8 +14,8 @@ public class OneTimerTool : MonoBehaviour
         if (EXECUTE)
         {
             //GroupObjectsWithAttachingBase();
-            //AutoSetObjectsBase();
-            FindObjectsNameWithComponent();
+            AutoSetObjectsBase();
+            //FindObjectsNameWithComponent();
             EXECUTE = false;
         }    
     }

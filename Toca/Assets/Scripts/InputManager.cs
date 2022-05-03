@@ -54,7 +54,7 @@ public class InputManager : MonoBehaviour
         {
             LastScreenPosition = MyTouch.position;
             UpdateSelectedObject();
-            UpdateCamera = SelectedObject == null;
+            UpdateCamera = (SelectedObject == null || !SelectedObject.TocaObject.GetTocaFunction<SelectionControl>());
 
             //if (SelectedObject)
             //    SelectedObject.OnClick(GlobalParameter.Instance.ScreenPosToGamePos(MyTouch.position));
@@ -82,7 +82,7 @@ public class InputManager : MonoBehaviour
 
         public void Detouch()
         {
-            if (SelectedObject && !InSelection)
+            if (SelectedObject && !InSelection && ClickingTime < .15f)
                 SelectedObject.OnClick(GlobalParameter.Instance.ScreenPosToGamePos(MyTouch.position));
 
             if (InSelection)
@@ -97,6 +97,7 @@ public class InputManager : MonoBehaviour
 
         public void UpdatePos()
         {
+            ClickingTime += Time.deltaTime;
             if (UpdateCamera)
             {
                 // not selecting object, update camera position
@@ -110,7 +111,6 @@ public class InputManager : MonoBehaviour
                     UpdateSelectedObject();
                     if (SelectedObject)
                     {
-                        ClickingTime += Time.deltaTime;
                         if (ClickingTime > .15f || (Vector2.Distance(LastScreenPosition, MyTouch.position) > 1))
                         {
                             Vector3 pos = GlobalParameter.Instance.ScreenPosToGamePos(MyTouch.position);
@@ -209,7 +209,7 @@ public class InputManager : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     LastScreenPosition = Input.mousePosition;
-                    UpdateCamera = SelectedObject == null;
+                    UpdateCamera = (SelectedObject == null || !SelectedObject.TocaObject.GetTocaFunction<SelectionControl>());
                     //if (SelectedObject)
                     //    SelectedObject.OnClick(GlobalParameter.Instance.ScreenPosToGamePos(Input.mousePosition));
                 }
@@ -225,21 +225,19 @@ public class InputManager : MonoBehaviour
                             InSelection = true;
                             ClickingTime = 0;
                         }
-                        else
-                            ClickingTime += Time.deltaTime;
                         LastScreenPosition = Input.mousePosition;
                     }
                     else
                     {
                         UpdateCamera = true;
-                        ClickingTime = 0;
                         CameraController.Instance.UpdateCameraX(Input.mousePosition.x - LastScreenPosition.x);
                         LastScreenPosition = Input.mousePosition;
                     }
+                    ClickingTime += Time.deltaTime;
                 }
                 else if (Input.GetMouseButtonUp(0))
                 {
-                    if (SelectedObject)
+                    if (SelectedObject && ClickingTime < .15f)
                         SelectedObject.OnClick(GlobalParameter.Instance.ScreenPosToGamePos(Input.mousePosition));
                     ClickingTime = 0;
                 }

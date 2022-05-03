@@ -94,7 +94,7 @@ public class BaseControl : TocaFunction
     {
         foreach (KeyValuePair<FindControl, AttachData> pair in Attachments)
         {
-            if (pair.Value.mc && !TocaObject.GetTocaFunction<SlideControl>() && !TocaObject.GetTocaFunction<TrashBinControl>() && !TocaObject.GetTocaFunction<FloatControl>())
+            if (pair.Value.mc && !GlobalParameter.OverrideMove(this))
             {
                 // recalculate if this base has cover
                 //if (MyBaseAttributes.HaveCover)

@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,9 +32,12 @@ public class MoveControl : TocaFunction
 
     public void UpdateTargetPosition(Vector3 targetPos)
     {
+        if (!CanMove())
+            transform.position = targetPos;
         if (Shaking)
-            return;
-        TargetPosition = targetPos;
+            tempTargetSave = targetPos;
+        else
+            TargetPosition = targetPos;
     }
 
     // handle object movement logic, clsing to target every frame
@@ -72,19 +75,35 @@ public class MoveControl : TocaFunction
                 //GrandChange = 0;
                 if (!Shaked)
                 {
-                    StopCoroutine("ObjectShake");
-                    StartCoroutine("ObjectShake");
-                    Shaking = true;
+                    if (!GlobalParameter.OverrideMove(Find.CurrentAttachment) && gameObject.activeInHierarchy)
+                    {
+                        StopCoroutine("ObjectShake");
+                        StartCoroutine("ObjectShake");
+                        tempTargetSave = TargetPosition;
+                        Shaking = true;
+                    }
                     Shaked = true;
                 }
             }
         }
     }
 
+    private void OnEnable()
+    {
+
+    }
+
     private void OnDisable()
     {
-        //transform.position -= Vector3.up * GrandChange;
-        //GrandChange = 0;
+        StopAllCoroutines();
+        if (Shaking)
+        {
+            Shaking = false;
+            transform.position = tempTargetSave;
+            TargetPosition = tempTargetSave;
+        }
+        else
+            transform.position = TargetPosition;
     }
 
     public bool CanMove()
@@ -125,6 +144,7 @@ public class MoveControl : TocaFunction
     }
 
     private float GrandChange;
+    private Vector3 tempTargetSave;
     private IEnumerator ObjectShake()
     {
         // speed = 10
@@ -135,11 +155,11 @@ public class MoveControl : TocaFunction
 
         yield return new WaitForSeconds(.1f);
 
-        TargetPosition = targetSave;
+        TargetPosition = tempTargetSave;
 
         yield return new WaitForSeconds(.1f);
 
-        transform.position = targetSave;
+        transform.position = tempTargetSave;
         Shaking = false;
     }
 }

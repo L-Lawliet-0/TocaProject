@@ -58,4 +58,9 @@ public class GlobalParameter : MonoBehaviour
         tran.localScale = Vector3.one;
         tran.localScale = new Vector3(globalScale.x / tran.lossyScale.x, globalScale.y / tran.lossyScale.y, globalScale.z / tran.lossyScale.z);
     }
+
+    public static bool OverrideMove(TocaFunction t)
+    {
+        return t.TocaObject.GetTocaFunction<SlideControl>() || t.TocaObject.GetTocaFunction<TrashBinControl>() || t.TocaObject.GetTocaFunction<FloatControl>();
+    }
 }

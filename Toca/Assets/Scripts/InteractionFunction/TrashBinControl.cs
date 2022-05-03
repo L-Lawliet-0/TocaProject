@@ -53,7 +53,7 @@ public class TrashBinControl : TocaFunction
             {
                 // this trash already reach the top, drop to bottom
                 moveKeys[i].UpdateTargetPosition(transform.position);
-                moveKeys[i].transform.localScale -= Time.deltaTime * Vector3.one * 10;
+                moveKeys[i].transform.localScale -= Time.deltaTime * Vector3.one * 5;
                 if (moveKeys[i].transform.localScale.x < .01f)
                 {
                     Destroy(moveKeys[i].TocaObject.gameObject);
