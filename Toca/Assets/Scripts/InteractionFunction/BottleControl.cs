@@ -55,7 +55,7 @@ public class BottleControl : StateControl
             float minDis = float.MaxValue;
             foreach (Collider2D c in colliders)
             {
-                float dis = Vector3.Distance(BottleTop.position, c.transform.position);
+                float dis = Vector3.Distance(BottleTop.position, c.transform.parent.position);
                 if (dis < minDis)
                 {
                     minDis = dis;

@@ -167,11 +167,12 @@ public class FindControl : TocaFunction
         }
 
         BaseControl value = null;
-        float minDis = float.MaxValue;
+        float minDis = float.MinValue;
         foreach (BaseControl b in cache)
         {
-            float dis = Vector3.Distance(transform.position, b.GetComponent<Collider2D>().bounds.center);//ClosestPoint(transform.position)); //b.transform.position);
-            if (dis < minDis)
+            //float dis = Vector3.Distance(transform.position, b.GetComponent<Collider2D>().bounds.center);//ClosestPoint(transform.position)); //b.transform.position);
+            float dis = ((LayerControl)b.TocaObject.GetTocaFunction<LayerControl>()).OrderValue;
+            if (dis > minDis)
             {
                 minDis = dis;
                 value = b;

@@ -11,7 +11,7 @@ public class CameraController : MonoBehaviour
     private float x_Min, x_Max;
     private float camera_Y;
     private float Target_X_Pixel;
-    private const float Speed = 75;
+    private const float Speed = 40;
     public float POSTOPIXEL;
 
     private void Awake()

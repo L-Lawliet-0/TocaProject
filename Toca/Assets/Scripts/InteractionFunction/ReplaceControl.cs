@@ -25,7 +25,11 @@ public class ReplaceControl : TocaFunction
 
             GameObject obj = Instantiate(ReplaceObject);
             obj.transform.position = transform.position;
+            MoveControl mc = obj.GetComponent<MoveControl>();
+            if (mc)
+                mc.TargetPosition = transform.position;
             obj.SetActive(false);
+           
 
             StartCoroutine("DelayInit", obj);
         }
@@ -34,11 +38,13 @@ public class ReplaceControl : TocaFunction
     private IEnumerator DelayInit(GameObject obj)
     {
         yield return new WaitForSeconds(.1f);
+        
         obj.SetActive(true);
         TouchControl tc = obj.GetComponent<TouchControl>();
-        tc.OnTouch(transform.position);
+        tc.OnTouch(obj.transform.position);
         yield return null;
         tc.OnDeTouch();
+        Debug.LogError("pos after init: " + obj.transform.position);
         Destroy(gameObject);
     }
 }

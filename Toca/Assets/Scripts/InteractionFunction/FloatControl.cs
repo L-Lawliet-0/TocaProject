@@ -10,6 +10,7 @@ public class FloatControl : TocaFunction
         public Vector3 ArrivedPos;
         public bool Arrived;
         public GameObject Ripple;
+        public LayerControl TargetLayer;
     }
     public float FloatSpeed = 180;
     public float frequency = .07f;
@@ -81,6 +82,10 @@ public class FloatControl : TocaFunction
 
                 // move the position of the movecontrol
                 moveKeys[i].UpdateTargetPosition(newPos);
+                if (Floaters[moveKeys[i]].TargetLayer)
+                {
+                    Floaters[moveKeys[i]].Ripple.GetComponent<SpriteRenderer>().sortingOrder = Floaters[moveKeys[i]].TargetLayer.OrderValue + 1;
+                }
             }
         }
     }
@@ -103,6 +108,7 @@ public class FloatControl : TocaFunction
 
             LayerControl lc = (LayerControl)fc.TocaObject.GetTocaFunction<LayerControl>();
             Floaters[mc].Ripple.GetComponent<SpriteRenderer>().sortingOrder = lc.OrderValue + 1;
+            Floaters[mc].TargetLayer = lc;
         }
     }
 }

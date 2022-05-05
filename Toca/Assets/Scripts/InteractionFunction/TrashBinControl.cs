@@ -65,8 +65,14 @@ public class TrashBinControl : TocaFunction
             else
             {
                 // this trash hasn't reach the top yet
+                LayerControl lc = (LayerControl)moveKeys[i].TocaObject.GetTocaFunction<LayerControl>();
+                if (lc)
+                    lc.SetLayer(LayerControl.SortingLayers.Selection, lc.OrderValue);
                 if (Vector3.Distance(moveKeys[i].transform.position, UpPos) < .1f)
+                {
                     Trashes[moveKeys[i]] = true; // this object reaches the top
+                    lc.SetLayer(lc.DefaultObjectLayer, lc.OrderValue);
+                }
                 else
                     moveKeys[i].UpdateTargetPosition(UpPos);
             }

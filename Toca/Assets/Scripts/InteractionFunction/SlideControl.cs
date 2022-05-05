@@ -48,7 +48,7 @@ public class SlideControl : TocaFunction
                 Sliders.Add(f, new SlideData(track));
                 if (Sliders[f].TrackIndex == SlideTrack.childCount - 1)
                 {
-                    Sliders[f].OverridePos = SlideTrack.GetChild(Sliders[f].TrackIndex).position + new Vector3(Random.Range(0f,2f), Random.Range(-2f, 0));
+                    Sliders[f].OverridePos = SlideTrack.GetChild(Sliders[f].TrackIndex).position + new Vector3(Random.Range(0f,2f), Random.Range(-1f, 0));
                 }
                 else
                 {
@@ -83,7 +83,7 @@ public class SlideControl : TocaFunction
                     Sliders[f].TrackIndex++;
                     if (Sliders[f].TrackIndex == SlideTrack.childCount - 1)
                     {
-                        Sliders[f].OverridePos = SlideTrack.GetChild(Sliders[f].TrackIndex).position + new Vector3(Random.Range(0f, 2f), Random.Range(-2f, 0f));
+                        Sliders[f].OverridePos = SlideTrack.GetChild(Sliders[f].TrackIndex).position + new Vector3(Random.Range(0f, 2f), Random.Range(-1f, 0f));
                     }
                     else
                     {

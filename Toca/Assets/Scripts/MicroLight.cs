@@ -3,21 +3,51 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
-public class MicroLight : MonoBehaviour
+public class MicroLight : TocaFunction
 {
+    private BaseControl BaseControl;
     private Light2D Light2D;
+    private bool Blinking;
     private void Awake()
     {
         Light2D = GetComponent<Light2D>();
+        Light2D.enabled = false;
     }
 
-    private void OnEnable()
+    private void Start()
     {
-        StartCoroutine("Blink");
+        BaseControl = (BaseControl)TocaObject.GetTocaFunction<BaseControl>();
+        Blinking = false;
+    }
+
+    private void Update()
+    {
+        if (!Blinking && BaseControl.Attachments.Count > 0)
+        {
+            Blinking = true;
+            StartCoroutine("Blink");
+        }
+        else if (Blinking && BaseControl.Attachments.Count == 0)
+        {
+            StopBlink();
+        }
+    }
+
+    private void StopBlink()
+    {
+        StopAllCoroutines();
+        Blinking = false;
+        Light2D.enabled = false;
+    }
+
+    private void OnDisable()
+    {
+        StopBlink();
     }
 
     private IEnumerator Blink()
     {
+        Light2D.enabled = true;
         float r = Light2D.color.r;
         //float g = Light2D.color.g;
         float sign = 1;

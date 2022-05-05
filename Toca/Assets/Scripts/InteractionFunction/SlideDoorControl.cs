@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class SlideDoorControl : TocaFunction
 {
+    private SlideDoorControl OtherDoor;
     public enum SlideStatus
     {
         Close,
-        Open,
-        Sliding
+        Open
     }
+    private bool Sliding;
 
     public SlideStatus m_SlideStatus;
 
@@ -23,6 +24,7 @@ public class SlideDoorControl : TocaFunction
 
     private void Start()
     {
+        Sliding = false;
         ClosePos = SlideDoor.position;
         OpenPos = OpenTarget.position;
 
@@ -31,27 +33,33 @@ public class SlideDoorControl : TocaFunction
         openTouch.ClickCallBacks.Add(OnSlideTouch);
         m_SlideStatus = SlideStatus.Close;
 
+        OtherDoor = OpenTarget.GetComponentInParent<SlideDoorControl>();
         SetBases(false);
     }
 
     public void OnSlideTouch()
     {
+        if (Sliding)
+            return;
+        Sliding = true;
         if (m_SlideStatus == SlideStatus.Close)
         {
-            m_SlideStatus = SlideStatus.Sliding;
-            StartCoroutine("Slide",SlideStatus.Open);
+            StartCoroutine("Slide", SlideStatus.Open);
         }
         else if (m_SlideStatus == SlideStatus.Open)
         {
-            m_SlideStatus = SlideStatus.Sliding;
             StartCoroutine("Slide", SlideStatus.Close);
         }
     }
 
     private IEnumerator Slide(SlideStatus target)
     {
-        if (target == SlideStatus.Open)
+        m_SlideStatus = target;
+        if (target == SlideStatus.Open && OtherDoor.m_SlideStatus == SlideStatus.Close)
             SetBases(true);
+        bool other = OtherDoor.CanOpen();
+        if (other)
+            OtherDoor.SetBases(true);
 
         Vector3 targetPos;
         if (target == SlideStatus.Open)
@@ -71,16 +79,19 @@ public class SlideDoorControl : TocaFunction
         }
 
         SlideDoor.position = targetPos;
-        m_SlideStatus = target;
 
         if (target == SlideStatus.Close)
             SetBases(false);
+        if (!other)
+            OtherDoor.SetBases(false);
+        Sliding = false;
     }
 
-    private void SetBases(bool value)
+    public void SetBases(bool value)
     {
         foreach (BaseControl bc in ExposedBases)
             bc.gameObject.SetActive(value);
+        //bc.IgnoreLimit = !value;
 
         if (value)
         {
@@ -90,5 +101,15 @@ public class SlideDoorControl : TocaFunction
             // override the layer control value for selection purpose
             ((LayerControl)SlideDoor.GetComponent<TouchControl>().TocaObject.GetTocaFunction<LayerControl>()).OrderValue = ((LayerControl)OpenTarget.GetComponent<TouchControl>().TocaObject.GetTocaFunction<LayerControl>()).OrderValue + 1;
         }
+    }
+
+    public bool CanOpen()
+    {
+        return m_SlideStatus == SlideStatus.Open && OtherDoor.m_SlideStatus == SlideStatus.Close;
+    }
+
+    public void AutoSetBase()
+    {
+        SetBases(m_SlideStatus == SlideStatus.Open && OtherDoor.m_SlideStatus == SlideStatus.Close);
     }
 }

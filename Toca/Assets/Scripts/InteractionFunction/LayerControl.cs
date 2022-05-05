@@ -123,7 +123,7 @@ public class LayerControl : TocaFunction
                 {
                     //FindControl fc = (FindControl)sortedLayers[i].TocaObject.GetTocaFunction<FindControl>();
                     //if (fc && fc.CurrentAttachment && fc.CurrentAttachment.MyBaseAttributes.InheirtLayer)
-                        sortedLayers[i].SetLayer(sortedLayers[i].DefaultObjectLayer, GetBaseLayer(sortedLayers[i]) + i);
+                        sortedLayers[i].SetLayer(sortedLayers[i].DefaultObjectLayer, GetBaseLayer(sortedLayers[i]) + i * 2);
                     //else
                     //    sortedLayers[i].SetLayer(sortedLayers[i].DefaultObjectLayer, sortedLayers[i].CalculateBaseLayerOrder());
                 }
@@ -183,7 +183,7 @@ public class LayerControl : TocaFunction
             int count = values.Count - countBefore;
             if (bc.MyBaseAttributes.HaveCover)
             {
-                bc.LayerCache = count + 1;
+                bc.LayerCache = (count + 1) * 2;
                 values.Add(null); // add a null object as cover layer
             }
         }
