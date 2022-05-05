@@ -96,6 +96,9 @@ public class MoveControl : TocaFunction
     private void OnDisable()
     {
         StopAllCoroutines();
+        if (Find && Find.CurrentAttachment && Find.CurrentAttachment.Attachments[Find].Timer >= 1)
+            return;
+
         if (Shaking)
         {
             Shaking = false;

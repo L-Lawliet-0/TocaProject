@@ -51,7 +51,7 @@ public class BottleControl : StateControl
             // get close to child mouth
             // get close to cup
 
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(BottleTop.position, .5f, 1 << LayerMask.NameToLayer("WaterDrop"));
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(BottleTop.position, .1f, 1 << LayerMask.NameToLayer("WaterDrop"));
             CupCollider = null;
             float minDis = float.MaxValue;
             foreach (Collider2D c in colliders)
@@ -64,7 +64,7 @@ public class BottleControl : StateControl
                 }
             }
 
-            colliders = Physics2D.OverlapCircleAll(BottleTop.position, .5f, 1 << LayerMask.NameToLayer("Base"));
+            colliders = Physics2D.OverlapCircleAll(BottleTop.position, .1f, 1 << LayerMask.NameToLayer("Base"));
 
             Mouth = null;
             foreach (Collider2D c in colliders)

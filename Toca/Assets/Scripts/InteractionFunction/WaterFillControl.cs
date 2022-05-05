@@ -36,10 +36,14 @@ public class WaterFillControl : TocaFunction
     {
         if (Filled)
         {
-            Collider2D collider = Physics2D.OverlapCircle(transform.position + .68f * Vector3.up, .5f, 1 << LayerMask.NameToLayer("Base"));
-            if (collider && collider.GetComponent<BaseControl>() && collider.GetComponent<BaseControl>().MyBaseAttributes.IsMouth)
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + .68f * Vector3.up, .1f, 1 << LayerMask.NameToLayer("Base"));
+            foreach (Collider2D collider in colliders)
             {
-                UnFill();
+                if (collider && collider.GetComponent<BaseControl>() && collider.GetComponent<BaseControl>().MyBaseAttributes.IsMouth)
+                {
+                    UnFill();
+                    break;
+                }
             }
         }
     }

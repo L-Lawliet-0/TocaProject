@@ -34275,7 +34275,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   LayerControl: {fileID: 0}
   FindControl: {fileID: 0}
-  LiquidColor: {r: 0.2713777, g: 0.5943396, b: 0.47820064, a: 1}
+  LiquidColor: {r: 0.87058824, g: 0.5803922, b: 0.5568628, a: 1}
 --- !u!1 &670149647
 GameObject:
   m_ObjectHideFlags: 0
@@ -70225,7 +70225,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   LayerControl: {fileID: 0}
   FindControl: {fileID: 0}
-  LiquidColor: {r: 0.74716985, g: 0.8301887, b: 0.7733527, a: 1}
+  LiquidColor: {r: 0.8980392, g: 0.8627451, b: 0.78039217, a: 1}
 --- !u!1 &1367632778
 GameObject:
   m_ObjectHideFlags: 0
@@ -75041,7 +75041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 225680232c5cc47b89d83b6652bf2209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TouchMode: 1
+  TouchMode: 0
   InSelection: 0
   LastScreenPosition: {x: 0, y: 0}
   SelectedObject: {fileID: 0}
@@ -89284,8 +89284,8 @@ MonoBehaviour:
   LayerCache: 0
   HumanPointSnap: {fileID: 0}
   PropPointSnap: {fileID: 0}
-  MaxObjectWidth: 3.4028235e+38
-  MaxObjectHeight: 3.4028235e+38
+  MaxObjectWidth: 1.3790045
+  MaxObjectHeight: 1.110343
   IgnoreLimit: 1
   IsHand: 0
   BaseID: 34914
@@ -102182,7 +102182,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   LayerControl: {fileID: 0}
   FindControl: {fileID: 0}
-  LiquidColor: {r: 0.8627451, g: 1, b: 1, a: 0.92156863}
+  LiquidColor: {r: 0.627451, g: 0.85882354, b: 0.9529412, a: 1}
 --- !u!1 &2076358665
 GameObject:
   m_ObjectHideFlags: 0
