@@ -67,6 +67,7 @@ public class BaseControl : TocaFunction
     {
         public MoveControl mc;
         public Vector2 offset;
+        public float Timer;
 
         public AttachData(FindControl find, Vector3 snapPos, Transform me)
         {
@@ -75,6 +76,7 @@ public class BaseControl : TocaFunction
             {
                 offset = snapPos - me.position;
             }
+            Timer = 0;
         }
     }
 
@@ -94,11 +96,12 @@ public class BaseControl : TocaFunction
     {
         foreach (KeyValuePair<FindControl, AttachData> pair in Attachments)
         {
-            if (pair.Value.mc && !GlobalParameter.OverrideMove(this))
+            if (pair.Value.mc && pair.Value.Timer < 1 && !GlobalParameter.UpdateMovement(this))
             {
                 // recalculate if this base has cover
                 //if (MyBaseAttributes.HaveCover)
                 pair.Value.mc.UpdateTargetPosition(CalculateTargetPos(pair.Key, pair.Value));
+                pair.Value.Timer += Time.deltaTime;
             }
         }
     }

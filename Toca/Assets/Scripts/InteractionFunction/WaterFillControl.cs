@@ -13,10 +13,11 @@ public class WaterFillControl : TocaFunction
         Filled = false;
     }
 
-    public void Fill()
+    public void Fill(Color color)
     {
         if (!Filled)
         {
+            m_SpriteRenderer.color = color;
             Filled = true;
             StartCoroutine("FillCup");
         }

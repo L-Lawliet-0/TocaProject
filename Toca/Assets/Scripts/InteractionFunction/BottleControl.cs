@@ -10,6 +10,7 @@ public class BottleControl : StateControl
 
     private Collider2D CupCollider;
     private BaseControl Mouth;
+    public Color LiquidColor;
 
     private void Awake()
     {
@@ -114,7 +115,7 @@ public class BottleControl : StateControl
             }
 
             if (CupCollider)
-                CupCollider.GetComponent<WaterFillControl>().Fill();
+                CupCollider.GetComponent<WaterFillControl>().Fill(LiquidColor);
 
             while (GlobalParameter.ClampAngle(transform.eulerAngles.z) < 270)
             {

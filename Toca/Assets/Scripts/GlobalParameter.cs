@@ -59,8 +59,41 @@ public class GlobalParameter : MonoBehaviour
         tran.localScale = new Vector3(globalScale.x / tran.lossyScale.x, globalScale.y / tran.lossyScale.y, globalScale.z / tran.lossyScale.z);
     }
 
+    public static bool HaveComponentInHierchy<T>(TocaObject t)
+    {
+        if (t.GetTocaFunction<T>())
+            return true;
+
+        FindControl f = (FindControl)t.GetTocaFunction<FindControl>();
+        if (f && f.CurrentAttachment)
+            return HaveComponentInHierchy<T>(f.CurrentAttachment.TocaObject);
+
+        return false;
+    }
+
     public static bool OverrideMove(BaseControl t)
     {
-        return t.TocaObject.GetTocaFunction<SlideControl>() || t.TocaObject.GetTocaFunction<TrashBinControl>() || t.TocaObject.GetTocaFunction<FloatControl>() || t.TocaObject.GetTocaFunction<HorseShakeControl>() || t.MyBaseAttributes.IsLeftHand || t.MyBaseAttributes.IsRightHand;
+        return UpdateMovement(t) || t.MyBaseAttributes.IsLeftHand || t.MyBaseAttributes.IsRightHand;
+        //return t.TocaObject.GetTocaFunction<SlideControl>() || t.TocaObject.GetTocaFunction<TrashBinControl>() || t.TocaObject.GetTocaFunction<FloatControl>() || t.TocaObject.GetTocaFunction<HorseShakeControl>(); //|| t.MyBaseAttributes.IsLeftHand || t.MyBaseAttributes.IsRightHand;
+    }
+
+    public static bool UpdateMovement(BaseControl t)
+    {
+        return HaveComponentInHierchy<SlideControl>(t.TocaObject) || HaveComponentInHierchy<TrashBinControl>(t.TocaObject) || HaveComponentInHierchy<FloatControl>(t.TocaObject);
+    }
+
+    public GameObject ToastSausage, ToastCarrot;
+    public GameObject GetCombinePrefab(CombineControl.CombineType t1, CombineControl.CombineType t2)
+    {
+        HashSet<CombineControl.CombineType> types = new HashSet<CombineControl.CombineType>();
+        types.Add(t1);
+        types.Add(t2);
+
+        if (types.Contains(CombineControl.CombineType.Toast) && types.Contains(CombineControl.CombineType.Carrot))
+            return ToastCarrot;
+        else if (types.Contains(CombineControl.CombineType.Toast) && types.Contains(CombineControl.CombineType.Sausage))
+            return ToastSausage;
+
+        return null;
     }
 }
