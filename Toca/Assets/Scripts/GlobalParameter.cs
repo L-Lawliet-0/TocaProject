@@ -79,7 +79,7 @@ public class GlobalParameter : MonoBehaviour
 
     public static bool UpdateMovement(BaseControl t)
     {
-        return HaveComponentInHierchy<SlideControl>(t.TocaObject) || HaveComponentInHierchy<TrashBinControl>(t.TocaObject) || HaveComponentInHierchy<FloatControl>(t.TocaObject);
+        return t.TocaObject.GetTocaFunction<SlideControl>() || t.TocaObject.GetTocaFunction<TrashBinControl>() || t.TocaObject.GetTocaFunction<FloatControl>(); //HaveComponentInHierchy<SlideControl>(t.TocaObject) || HaveComponentInHierchy<TrashBinControl>(t.TocaObject) || HaveComponentInHierchy<FloatControl>(t.TocaObject);
     }
 
     public GameObject ToastSausage, ToastCarrot;

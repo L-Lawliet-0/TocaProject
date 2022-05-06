@@ -8,6 +8,9 @@ public class OpenControl : TocaFunction
     public GameObject OpenObj, CloseObj;
     public BaseControl Basecontrol;
 
+    public delegate void VoidDelegate();
+    public event VoidDelegate OnOpening, OnClosing;
+
     private void Start()
     {
         // register open and close event on touch control
@@ -15,13 +18,13 @@ public class OpenControl : TocaFunction
         TouchControl closeTouch = CloseObj.GetComponent<TouchControl>();
         openTouch.ClickCallBacks.Add(OnClose);
         closeTouch.ClickCallBacks.Add(OnOpen);
+        
+        if (OpenObj && OpenObj.GetComponent<SpriteRenderer>() && !TocaObject.GetTocaFunction<OpenAnimationControl>())
+            OpenObj.GetComponent<SpriteRenderer>().enabled = true;
+        if (CloseObj && CloseObj.GetComponent<SpriteRenderer>() && !TocaObject.GetTocaFunction<OpenAnimationControl>())
+            CloseObj.GetComponent<SpriteRenderer>().enabled = true;
 
         OnClose(); // close the objects first
-
-        if (OpenObj && OpenObj.GetComponent<SpriteRenderer>())
-            OpenObj.GetComponent<SpriteRenderer>().enabled = true;
-        if (CloseObj && CloseObj.GetComponent<SpriteRenderer>())
-            CloseObj.GetComponent<SpriteRenderer>().enabled = true;
     }
 
     // when this game object is "opened"
@@ -35,6 +38,7 @@ public class OpenControl : TocaFunction
             CloseObj.SetActive(false);
         if (Basecontrol)
             Basecontrol.IgnoreLimit = true;
+        OnOpening?.Invoke();
     }
 
     public void OnClose()
@@ -46,5 +50,6 @@ public class OpenControl : TocaFunction
             CloseObj.SetActive(true);
         if (Basecontrol)
             Basecontrol.IgnoreLimit = false;
+        OnClosing?.Invoke();
     }
 }

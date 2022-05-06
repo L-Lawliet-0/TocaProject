@@ -61,6 +61,7 @@ public class StandControl : StateControl
             {
                 val |= FindControl.CurrentAttachment.MyBaseAttributes.Parameters[index];
             }
+            val |= FindControl.CurrentAttachment.MyBaseAttributes.IsLeftHand || FindControl.CurrentAttachment.MyBaseAttributes.IsRightHand;
             return val;
         }
 

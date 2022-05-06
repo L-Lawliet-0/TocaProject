@@ -44,7 +44,6 @@ public class ReplaceControl : TocaFunction
         tc.OnTouch(obj.transform.position);
         yield return null;
         tc.OnDeTouch();
-        Debug.LogError("pos after init: " + obj.transform.position);
         Destroy(gameObject);
     }
 }

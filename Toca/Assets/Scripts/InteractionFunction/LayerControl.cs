@@ -24,24 +24,30 @@ public class LayerControl : TocaFunction
     public int OrderValue { get; set; }
 
     SpriteRenderer[] AllRenderers;
+    SkeletonPartsRenderer[] AllPartsRenderers;
     SkeletonAnimation SkeletonAnimation;
     
     int[] DefaultValues;
+    int[] PartsDefaultValues;
     
     private void Start()
     {
         AllRenderers = GlobalParameter.GetComponentAndChildren<SpriteRenderer>(TocaObject.transform);
+        AllPartsRenderers = GlobalParameter.GetComponentAndChildren<SkeletonPartsRenderer>(TocaObject.transform);
         SkeletonAnimation = GetComponent<SkeletonAnimation>();
         DefaultValues = new int[AllRenderers.Length];
+        PartsDefaultValues = new int[AllPartsRenderers.Length];
         for (int i = 0; i < AllRenderers.Length; i++)
         {
             DefaultValues[i] = AllRenderers[i].sortingOrder;
-
-            //Test code!!!!
-            //if (DefaultValues[i] > 10)
-            //    DefaultValues[i] = 0;
         }
 
+        for (int i = 0; i < AllPartsRenderers.Length; i++)
+        {
+            PartsDefaultValues[i] = AllPartsRenderers[i].GetComponent<MeshRenderer>().sortingOrder;
+        }
+
+        /*
         BaseControl bc = (BaseControl)TocaObject.GetTocaFunction<BaseControl>();
         if (bc && bc.MyBaseAttributes.HaveCover)
         {
@@ -56,7 +62,7 @@ public class LayerControl : TocaFunction
                 }
             }
         }
-
+        */
         //ResetLayer(DefaultObjectLayer, false, false);
         ResetLayer(false);
 
@@ -112,7 +118,6 @@ public class LayerControl : TocaFunction
         {
             LayerControl upper = GetParent(this); // get the upper most layer control
             List<LayerControl> sortedLayers = SortAllLayers(upper);
-            Debug.LogError("layers length: " + sortedLayers.Count);
 
             // now the whole list is sorted by "appear in the back" -> "appear in the front" order
             // and we start to assign sorting order values into the layer control
@@ -220,6 +225,10 @@ public class LayerControl : TocaFunction
             if (find && find.CurrentAttachment)
             {
                 y = find.CurrentAttachment.GetTargetPos(find, find.CurrentAttachment.Attachments[find]).y;
+
+                SpineControl sc = (SpineControl)find.TocaObject.GetTocaFunction<SpineControl>();
+                if (sc)
+                    y -= sc.HipOffset;
             }
 
             return y; // return the pending or actual height
@@ -232,8 +241,12 @@ public class LayerControl : TocaFunction
         {
             AllRenderers[i].sortingLayerName = layer.ToString();
             AllRenderers[i].sortingOrder = order + DefaultValues[i];
-            if (transform.name.Equals("can1"))
-                Debug.LogError("sorting order: " + AllRenderers[i].sortingOrder);
+        }
+
+        for (int i = 0; i < AllPartsRenderers.Length; i++)
+        {
+            AllPartsRenderers[i].GetComponent<MeshRenderer>().sortingLayerName = layer.ToString();
+            AllPartsRenderers[i].GetComponent<MeshRenderer>().sortingOrder = order + PartsDefaultValues[i];
         }
 
         if (SkeletonAnimation)
@@ -245,12 +258,15 @@ public class LayerControl : TocaFunction
         OrderValue = order;
         CurrentObjectLayer = layer;
 
-        if (transform.name.Equals("can1"))
-            Debug.LogError("can1 layer is set to: " + CurrentObjectLayer.ToString() + " : " + OrderValue);
 
         BaseControl bc = (BaseControl)TocaObject.GetTocaFunction<BaseControl>();
         if (bc && bc.MyBaseAttributes.HaveCover)
-            bc.Cover.sortingOrder = OrderValue + bc.LayerCache;
+        {
+            if (bc.Cover)
+                bc.Cover.sortingOrder = OrderValue + bc.LayerCache;
+            if (bc.Cover2)
+                bc.Cover2.sortingOrder = OrderValue + bc.LayerCache;
+        }
     }
 
     public int CalculateBaseLayerOrder()

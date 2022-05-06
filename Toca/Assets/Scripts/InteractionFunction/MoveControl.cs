@@ -126,12 +126,13 @@ public class MoveControl : TocaFunction
         
         if (Find && Find.CurrentAttachment)
         {
+            /*
             if (Find.CurrentAttachment.TocaObject.GetTocaFunction<FloatControl>())
             {
                 CurrentMoveMode = MoveMode.Linear;
                 Speed = 10;
             }
-            else if ((!Find.Arrived || Find.CurrentAttachment.TocaObject.GetTocaFunction<SlideControl>() || Find.CurrentAttachment.TocaObject.GetTocaFunction<TrashBinControl>()))
+            else*/ if ((!Find.Arrived || Find.CurrentAttachment.TocaObject.GetTocaFunction<SlideControl>() || Find.CurrentAttachment.TocaObject.GetTocaFunction<TrashBinControl>()))
                 CurrentMoveMode = MoveMode.Freefall;
             else
                 return false;

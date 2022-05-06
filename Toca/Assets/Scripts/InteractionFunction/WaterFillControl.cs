@@ -6,9 +6,12 @@ public class WaterFillControl : TocaFunction
 {
     private SpriteRenderer m_SpriteRenderer;
     private bool Filled;
+    private float TargetWidth, TargetHeight;
     private void Start()
     {
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
+        TargetWidth = m_SpriteRenderer.size.x;
+        TargetHeight = m_SpriteRenderer.size.y;
         m_SpriteRenderer.size = Vector2.zero;
         Filled = false;
     }
@@ -51,11 +54,9 @@ public class WaterFillControl : TocaFunction
     private IEnumerator FillCup()
     {
         float initX = .3f;
-        float targetWidth = .6f;
-        float targetHeigth = .68f;
         float time = .5f;
-        float x_speed = (targetWidth - initX) / time;
-        float y_speed = targetHeigth / time;
+        float x_speed = (TargetWidth - initX) / time;
+        float y_speed = TargetHeight / time;
 
         m_SpriteRenderer.size = new Vector2(initX, 0);
 
@@ -67,14 +68,14 @@ public class WaterFillControl : TocaFunction
             yield return null;
         }
 
-        m_SpriteRenderer.size = new Vector2(targetWidth, targetHeigth);
+        m_SpriteRenderer.size = new Vector2(TargetWidth, TargetHeight);
     }
 
     private IEnumerator ClearCup()
     {
         float time = .5f;
-        float x_speed = -.6f / time;
-        float y_speed = -.68f / time;
+        float x_speed = -TargetWidth / time;
+        float y_speed = -TargetHeight / time;
 
         while (time > 0)
         {

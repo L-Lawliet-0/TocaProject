@@ -1,0 +1,118 @@
+{
+"skeleton": {
+	"hash": "eiCiDB7fJWQ",
+	"spine": "4.0.64",
+	"x": -258.57,
+	"y": -61.45,
+	"width": 534.69,
+	"height": 419,
+	"images": "C:/Users/Administrator/Desktop/新建文件夹/images/",
+	"audio": "C:/Users/Administrator/Desktop/新建文件夹"
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "bone", "parent": "root", "length": 204.39, "rotation": 179.82, "x": 1.48, "y": 288.35 }
+],
+"slots": [
+	{ "name": "chouti", "bone": "root", "attachment": "chouti" },
+	{ "name": "chouti2h", "bone": "root", "attachment": "chouti4h" },
+	{ "name": "chouti1", "bone": "root", "attachment": "chouti4" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"chouti": {
+				"chouti": { "x": 8.77, "y": 148.05, "width": 505, "height": 419 }
+			},
+			"chouti1": {
+				"chouti1": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 232.27, 166.55, -214.73, 166.55, -214.73, 292.55, 232.27, 292.55 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 447,
+					"height": 126
+				},
+				"chouti2": { "x": 6.64, "y": 218, "scaleX": 1.0426, "width": 445, "height": 110 },
+				"chouti3": { "x": 8.77, "y": 207.59, "scaleX": 1.0358, "width": 469, "height": 110 },
+				"chouti4": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 1, -274.62, 158.39, 1, 1, 1, 259.02, 160.08, 1, 1, 1, 259.36, 50.08, 1, 1, 1, -274.27, 48.39, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 510,
+					"height": 110
+				}
+			},
+			"chouti2h": {
+				"chouti2h": { "x": 6.92, "y": 277.18, "scaleX": 1.064, "scaleY": 1.0192, "width": 437, "height": 19 },
+				"chouti3h": { "x": 8.77, "y": 271.47, "scaleX": 1.0558, "width": 462, "height": 33 },
+				"chouti4h": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 1, -274.82, 55.81, 1, 1, 1, 259.87, 57.5, 1, 1, 1, 260.04, 2.5, 1, 1, 1, -274.64, 0.81, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 499,
+					"height": 55
+				}
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"chouti1": {
+				"attachment": [
+					{ "name": "chouti1" },
+					{ "time": 0.2333, "name": "chouti2" },
+					{ "time": 0.3, "name": "chouti3" },
+					{ "time": 0.3667, "name": "chouti4" }
+				]
+			},
+			"chouti2h": {
+				"rgba": [
+					{ "color": "ffffff00", "curve": "stepped" },
+					{ "time": 0.2, "color": "ffffff00" },
+					{ "time": 0.2333, "color": "ffffffff" }
+				],
+				"attachment": [
+					{ "name": "chouti2h" },
+					{ "time": 0.3, "name": "chouti3h" },
+					{ "time": 0.3667, "name": "chouti4h" }
+				]
+			}
+		},
+		"bones": {
+			"bone": {
+				"scale": [
+					{ "time": 0.3667 },
+					{ "time": 0.4667, "y": 1.13 },
+					{ "time": 0.5333 }
+				]
+			}
+		},
+		"deform": {
+			"default": {
+				"chouti1": {
+					"chouti1": [
+						{},
+						{
+							"time": 0.1,
+							"vertices": [ 8.70015, -2.45239, -8.70015, -2.45239, -8.70015, 2.45239, 8.70015, 2.45239 ]
+						},
+						{ "time": 0.1667 }
+					]
+				}
+			}
+		}
+	}
+}
+}

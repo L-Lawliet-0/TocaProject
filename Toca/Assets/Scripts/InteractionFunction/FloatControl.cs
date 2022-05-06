@@ -82,6 +82,7 @@ public class FloatControl : TocaFunction
 
                 // move the position of the movecontrol
                 moveKeys[i].UpdateTargetPosition(newPos);
+                //moveKeys[i].TocaObject.transform.position = newPos;
                 if (Floaters[moveKeys[i]].TargetLayer)
                 {
                     Floaters[moveKeys[i]].Ripple.GetComponent<SpriteRenderer>().sortingOrder = Floaters[moveKeys[i]].TargetLayer.OrderValue + 1;

@@ -19,7 +19,6 @@ public class ArmControl : LimbControl
         if (PendingAttach && PendingAttach.BasePreview == HandBase)
         {
             // try to aim the hand at
-            Debug.LogError("Update in arm control");
             Vector3 origin = TargetBone.GetWorldPosition(HandBase.transform.parent);
             Vector2 offset = PendingAttach.transform.position - origin;
             offset = offset.normalized;

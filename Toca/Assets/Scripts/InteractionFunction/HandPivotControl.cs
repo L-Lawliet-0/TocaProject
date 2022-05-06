@@ -5,11 +5,14 @@ using UnityEngine;
 public class HandPivotControl : TocaFunction
 {
     private FindControl Find;
+    private MoveControl Move;
     private bool InHand;
+    private float myTimer;
     // this function is used to fix position and rotation of hand object
     private void Start()
     {
         Find = (FindControl)TocaObject.GetTocaFunction<FindControl>();
+        Move = (MoveControl)TocaObject.GetTocaFunction<MoveControl>();
         InHand = false;
     }
 
@@ -24,25 +27,32 @@ public class HandPivotControl : TocaFunction
             SetOut();
         }
 
-        if (InHand && Find.CurrentAttachment && Find.Arrived)
+        if (InHand && myTimer > 0)
         {
-            if (Find.CurrentAttachment.MyBaseAttributes.IsLeftHand)
-                TocaObject.transform.position = Find.CurrentAttachment.transform.position - transform.localPosition;
+            Find.CurrentAttachment.Attachments[Find].Timer = 2;
+            if (transform.localScale.x > 0)
+                Move.UpdateTargetPosition(Find.CurrentAttachment.transform.position - Find.TocaObject.Bottom.localPosition);
             else
-                TocaObject.transform.position = Find.CurrentAttachment.transform.position + new Vector3(transform.localPosition.x, -transform.localPosition.y);
+                Move.UpdateTargetPosition(Find.CurrentAttachment.transform.position - new Vector3(-Find.TocaObject.Bottom.localPosition.x, Find.TocaObject.Bottom.localPosition.y));
+            myTimer -= Time.deltaTime;
         }
     }
 
     private void SetInHand()
     {
         InHand = true;
-        TocaObject.GetComponent<SpriteRenderer>().flipX = Find.CurrentAttachment.MyBaseAttributes.IsRightHand;
+        if (Find.CurrentAttachment.MyBaseAttributes.IsRightHand)
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        else if (Find.CurrentAttachment.MyBaseAttributes.IsLeftHand)
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
 
+        myTimer = 1; // update position for 1 seconds
     }
 
     private void SetOut()
     {
         InHand = false;
         TocaObject.GetComponent<SpriteRenderer>().flipX = false;
+        transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
     }
 }

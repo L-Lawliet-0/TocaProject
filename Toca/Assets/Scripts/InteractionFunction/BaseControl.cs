@@ -62,6 +62,7 @@ public class BaseControl : TocaFunction
     public bool IsHand;
     public int BaseID;
     public SpriteRenderer Cover;
+    public MeshRenderer Cover2;
 
     public class AttachData
     {
@@ -96,12 +97,19 @@ public class BaseControl : TocaFunction
     {
         foreach (KeyValuePair<FindControl, AttachData> pair in Attachments)
         {
-            if (pair.Value.mc && pair.Value.Timer < 1 && !GlobalParameter.UpdateMovement(this))
+            if (pair.Value.mc && !GlobalParameter.UpdateMovement(this))
             {
                 // recalculate if this base has cover
                 //if (MyBaseAttributes.HaveCover)
-                pair.Value.mc.UpdateTargetPosition(CalculateTargetPos(pair.Key, pair.Value));
-                pair.Value.Timer += Time.deltaTime;
+                if (pair.Value.Timer < 1)
+                {
+                    pair.Value.mc.UpdateTargetPosition(CalculateTargetPos(pair.Key, pair.Value));
+                    pair.Value.Timer += Time.deltaTime;
+                }
+                else
+                {
+                    pair.Value.mc.TargetPosition = CalculateTargetPos(pair.Key, pair.Value);
+                }
             }
         }
     }
@@ -120,7 +128,6 @@ public class BaseControl : TocaFunction
     {
         if (MyBaseAttributes.IsChair && find.TocaObject.GetComponent<SpineControl>())
         {
-            Debug.LogError(find.TocaObject.GetComponent<SpineControl>().HipOffset);
             return transform.position + new Vector3(attach.offset.x, attach.offset.y) - find.TocaObject.GetComponent<SpineControl>().HipOffset * Vector3.up;
             
         }
@@ -174,6 +181,14 @@ public class BaseControl : TocaFunction
 
     public bool CanbeSnapped(FindControl finder)
     {
+        // if previous layer has not opened basecontrol
+        OpenControl[] opens = GetComponentsInParent<OpenControl>();
+        foreach (OpenControl o in opens)
+        {
+            if (!o.Opening)
+                return false;
+        }
+
         // can not have more than limit amount of attachment
         if (MyBaseAttributes.MyStackType != BaseAttributes.StackType.None)
         {
@@ -181,7 +196,6 @@ public class BaseControl : TocaFunction
             if (bc && bc.MyBaseAttributes.MyStackType == MyBaseAttributes.MyStackType && Attachments.Count < 1)
                 return true;
         }
-
 
         // stack check
         if (MyBaseAttributes.MyStackType != BaseAttributes.StackType.None)
@@ -191,12 +205,10 @@ public class BaseControl : TocaFunction
                 BaseControl bc = (BaseControl)pair.Key.TocaObject.GetTocaFunction<BaseControl>();
                 if (bc && bc.MyBaseAttributes.MyStackType == MyBaseAttributes.MyStackType)
                 {
-                    Debug.LogError("Return false here");
                     return false;
                 }
             }
         }
-        
 
         bool limit = IgnoreLimit || Attachments.Count < SnapLimit;
         bool width = finder.IsHuman || MaxObjectWidth > finder.ObjectWidth; // human automatically ignore width check
@@ -275,7 +287,6 @@ public class BaseControl : TocaFunction
                 RaycastHit2D hit = Physics2D.BoxCast(checkPos, Vector2.one * .1f, 0, -direction, 9999, 1 << LayerMask.NameToLayer("OnlyOne")); //Physics2D.Raycast(checkPos, -direction, 9999, 1 << LayerMask.NameToLayer("OnlyOne"));
                 if (hit)
                     value -= hit.distance;
-                Debug.LogError("Adjusted position because of right " + hit.distance);
             }
             // reverse direction
             checkPos = objectPos - new Vector3(direction.x, direction.y).normalized * extents;
@@ -284,7 +295,6 @@ public class BaseControl : TocaFunction
                 RaycastHit2D hit = Physics2D.BoxCast(checkPos, Vector2.one * .1f, 0, direction, 9999, 1 << LayerMask.NameToLayer("OnlyOne")); //Physics2D.Raycast(checkPos, direction, 9999, 1 << LayerMask.NameToLayer("OnlyOne"));
                 if (hit)
                     value += hit.distance;
-                Debug.LogError("Adjusted position because of left " + hit.distance);
             }
 
             gameObject.layer = saveLayer;
@@ -300,7 +310,7 @@ public class BaseControl : TocaFunction
                 value -= (top - maxTop);
 
             // if there's cover, snap so that part of the top is showing
-            if (MyBaseAttributes.HaveCover)
+            if (MyBaseAttributes.HaveCover && Cover)
             {
                 Bounds bounds = Cover.bounds;
                 if (Cover.GetComponent<Collider2D>())

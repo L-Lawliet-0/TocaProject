@@ -41,8 +41,6 @@ public class TrashBinControl : TocaFunction
         // refresh keys
         moveKeys = new List<MoveControl>(Trashes.Keys);
 
-        if (Trashes.Count > 0)
-            Debug.LogError(moveKeys[0].transform.localScale);
 
         UpPos = transform.position + Vector3.up * 2;
 

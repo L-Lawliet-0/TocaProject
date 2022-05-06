@@ -38,12 +38,10 @@ public class StateControl : TocaFunction
     // when the object is on selection
     public virtual void OnSelection()
     {
-        Debug.LogError("Fire in parent");
     }
 
     // when the object is put down
     public virtual void OnDeselect()
     {
-        Debug.LogError("Fire in parent");
     }
 }

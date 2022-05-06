@@ -192,7 +192,8 @@ public class SpineControl : TocaFunction
                 Eating = true;
                 SetOpenMouse();
                 SkeletonAnimation.AnimationState.Complete += HandleEat;
-                SkeletonAnimation.AnimationState.SetAnimation(FaceIndex, Eat, false);
+                track = SkeletonAnimation.AnimationState.SetAnimation(FaceIndex, Eat, false);
+                track.TimeScale = .8f;
                 
                 break;
         }
@@ -202,7 +203,6 @@ public class SpineControl : TocaFunction
 
     private void HandleEat(TrackEntry trackEntry)
     {
-        Debug.LogError("Handleeat");
         if (trackEntry.TrackIndex == FaceIndex)
         {
             Eating = false;
@@ -215,7 +215,6 @@ public class SpineControl : TocaFunction
     {
         Jiaodongxi.SetAttachment("mouth1");
         Zui.SetAttachment();
-        Debug.LogError("Set open mouse");
     }
 
     public void SetDefaultMouse()
@@ -296,7 +295,6 @@ public class SpineControl : TocaFunction
             LeftLegControl.Active = true;
             RightLegControl.Active = true;
         }
-        Debug.LogError("called");
     }
 
     public void SetControlValue(string controlName, float value)
