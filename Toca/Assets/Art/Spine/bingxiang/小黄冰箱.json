@@ -1,0 +1,93 @@
+{
+"skeleton": {
+	"hash": "KtAiyqtjrHE",
+	"spine": "4.0.64",
+	"x": -72.26,
+	"y": -4.92,
+	"width": 128.76,
+	"height": 218,
+	"images": "C:/Users/Administrator/Desktop/新建文件夹/images1/images3/",
+	"audio": "C:/Users/Administrator/Desktop"
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "bone", "parent": "root", "length": 100.42, "rotation": 89.77, "x": -47.67, "y": 105.09 }
+],
+"slots": [
+	{ "name": "bingxiang", "bone": "root", "attachment": "bingxiang" },
+	{ "name": "bingxiang1", "bone": "root", "attachment": "bingxiang5" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"bingxiang": {
+				"bingxiang": { "y": 103.78, "width": 113, "height": 210 }
+			},
+			"bingxiang1": {
+				"bingxiang1": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 55, 1.46, -55, 1.46, -55, 206.46, 55, 206.46 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 110,
+					"height": 205
+				},
+				"bingxiang2": { "x": -10.56, "y": 103.75, "width": 90, "height": 221 },
+				"bingxiang3": { "x": -26, "y": 98.02, "width": 58, "height": 233 },
+				"bingxiang4": { "x": -42.23, "y": 104.08, "width": 24, "height": 219 },
+				"bingxiang5": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 0, 2, 3, 0, 1, 2 ],
+					"vertices": [ 1, 1, -110, -3.85, 1, 1, 1, -110.11, 24.15, 1, 1, 1, 107.89, 25.03, 1, 1, 1, 108, -2.97, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 28,
+					"height": 218
+				}
+			}
+		}
+	}
+],
+"animations": {
+	"1": {
+		"slots": {
+			"bingxiang1": {
+				"attachment": [
+					{ "name": "bingxiang1" },
+					{ "time": 0.2667, "name": "bingxiang2" },
+					{ "time": 0.3333, "name": "bingxiang3" },
+					{ "time": 0.4, "name": "bingxiang4" },
+					{ "time": 0.4667, "name": "bingxiang5" }
+				]
+			}
+		},
+		"bones": {
+			"bone": {
+				"scale": [
+					{ "time": 0.4667 },
+					{ "time": 0.5667, "y": 2.008 },
+					{ "time": 0.6333 }
+				]
+			}
+		},
+		"deform": {
+			"default": {
+				"bingxiang1": {
+					"bingxiang1": [
+						{},
+						{
+							"time": 0.1,
+							"vertices": [ 1.94602, -3.62667, -1.94602, -3.62667, -1.94602, 3.62668, 1.94602, 3.62668 ]
+						},
+						{ "time": 0.1667 }
+					]
+				}
+			}
+		}
+	}
+}
+}

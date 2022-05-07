@@ -109,6 +109,25 @@ public class SpineControl : TocaFunction
         R10 = B10.Rotation;
         R11 = B11.Rotation;
         R12 = B12.Rotation;
+
+        // Set attachments that not being used to inactive state for now
+        AttachmentControl ac = new AttachmentControl("1han", MySkeleton, "");
+        ac = new AttachmentControl("7han", MySkeleton, "");
+        ac = new AttachmentControl("6han", MySkeleton, "");
+        ac = new AttachmentControl("5han", MySkeleton, "");
+        ac = new AttachmentControl("4han", MySkeleton, "");
+        ac = new AttachmentControl("3han", MySkeleton, "");
+        ac = new AttachmentControl("2han", MySkeleton, "");
+        ac = new AttachmentControl("4xing", MySkeleton, "");
+        ac = new AttachmentControl("3xing", MySkeleton, "");
+        ac = new AttachmentControl("2xing", MySkeleton, "");
+        ac = new AttachmentControl("1xing", MySkeleton, "");
+        ac = new AttachmentControl("xin3", MySkeleton, "");
+        ac = new AttachmentControl("xin2", MySkeleton, "");
+        ac = new AttachmentControl("xin1", MySkeleton, "");
+        ac = new AttachmentControl("biaoqing1", MySkeleton, "");
+        ac = new AttachmentControl("bianse1", MySkeleton, "");
+        ac = new AttachmentControl("texiao", MySkeleton, "");
     }
 
     private Bone B7, B8, B9, B10, B11, B12;
@@ -193,8 +212,10 @@ public class SpineControl : TocaFunction
                 SetOpenMouse();
                 SkeletonAnimation.AnimationState.Complete += HandleEat;
                 track = SkeletonAnimation.AnimationState.SetAnimation(FaceIndex, Eat, false);
-                track.TimeScale = .8f;
-                
+                track.TimeScale = 1f;
+
+                Yanjing.SetAttachment(27);
+
                 break;
         }
         
@@ -207,8 +228,17 @@ public class SpineControl : TocaFunction
         {
             Eating = false;
             SetDefaultMouse();
+            SetDefaultYanJing();
             SkeletonAnimation.AnimationState.Complete -= HandleEat;
         }
+    }
+
+    public void SetDefaultYanJing()
+    {
+        if (Sleeping)
+            Yanjing.SetAttachment("biyan");
+        else
+            Yanjing.SetAttachment(1);
     }
 
     public void SetOpenMouse()

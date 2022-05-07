@@ -121,6 +121,10 @@ public class BaseControl : TocaFunction
             if (MyBaseAttributes.HaveCover)
                 Attachments[find].offset = FindSnapPosition(find) - transform.position;
             Attachments[find].mc.UpdateTargetPosition(CalculateTargetPos(find, Attachments[find]));
+
+            FloatControl fc = (FloatControl)TocaObject.GetTocaFunction<FloatControl>();
+            if (fc)
+                fc.ResetArrivePos(Attachments[find].mc, CalculateTargetPos(find, Attachments[find]));
         }
     }
 

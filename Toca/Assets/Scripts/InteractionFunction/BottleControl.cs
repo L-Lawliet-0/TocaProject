@@ -11,12 +11,15 @@ public class BottleControl : StateControl
     private Collider2D CupCollider;
     private BaseControl Mouth;
     public Color LiquidColor;
+    public Transform PositionOverride;
 
     private void Awake()
     {
         // assume bottle is in standing pose, calcualte the top reference position
         BottleTop = new GameObject().transform;
         BottleTop.position = GetComponent<Collider2D>().bounds.center + GetComponent<Collider2D>().bounds.extents.y * Vector3.up;
+        if (PositionOverride)
+            BottleTop.position = PositionOverride.position;
         BottleTop.SetParent(transform);
     }
 
@@ -82,12 +85,6 @@ public class BottleControl : StateControl
                 Shaking = true;
                 StartCoroutine("Shake");
             }
-            else if (Shaking && !Mouth && !CupCollider)
-            {
-                Shaking = false;
-                StopCoroutine("Shake");
-                transform.eulerAngles = Vector3.zero;
-            }
 
             yield return null;
         }
@@ -104,26 +101,26 @@ public class BottleControl : StateControl
 
     private IEnumerator Shake()
     {
-        while (true)
+        transform.eulerAngles = new Vector3(0, 0, 1);
+        float angle = Random.Range(30, 60);
+        while (GlobalParameter.ClampAngle(transform.eulerAngles.z) < angle)
         {
-            transform.eulerAngles = new Vector3(0, 0, 1);
-            float angle = Random.Range(30, 60);
-            while (GlobalParameter.ClampAngle(transform.eulerAngles.z) < angle)
-            {
-                transform.eulerAngles += Vector3.forward * Time.deltaTime * 45;
-                yield return null;
-            }
-
-            if (CupCollider)
-                CupCollider.GetComponent<WaterFillControl>().Fill(LiquidColor);
-
-            while (GlobalParameter.ClampAngle(transform.eulerAngles.z) < 270)
-            {
-                transform.eulerAngles -= Vector3.forward * Time.deltaTime * 45;
-                yield return null;
-            }
-
+            transform.eulerAngles += Vector3.forward * Time.deltaTime * 45;
             yield return null;
         }
+
+        if (CupCollider)
+        {
+            CupCollider.GetComponent<WaterFillControl>().Fill(LiquidColor);
+        }
+
+        while (GlobalParameter.ClampAngle(transform.eulerAngles.z) < 270)
+        {
+            transform.eulerAngles -= Vector3.forward * Time.deltaTime * 45;
+            yield return null;
+        }
+
+        Shaking = false;
+        transform.eulerAngles = Vector3.zero;
     }
 }

@@ -10,6 +10,7 @@ public class OpenAnimationControl : TocaFunction
     public SkeletonAnimation m_SkeletonAnimation;
     public int TrackIndex;
     private OpenControl Oc;
+    public float AnimationSpeed = 1;
 
     private void Awake()
     {
@@ -29,7 +30,7 @@ public class OpenAnimationControl : TocaFunction
     {
         TrackEntry track = m_SkeletonAnimation.AnimationState.SetAnimation(TrackIndex, OpenAnimation, false);
         track.Reverse = false;
-        track.TimeScale = 2;
+        track.TimeScale = AnimationSpeed;
     }
 
     private List<Transform> BaseSaves;
@@ -37,7 +38,7 @@ public class OpenAnimationControl : TocaFunction
     {
         TrackEntry track = m_SkeletonAnimation.AnimationState.SetAnimation(TrackIndex, OpenAnimation, false);
         track.Reverse = true;
-        track.TimeScale = 2;
+        track.TimeScale = AnimationSpeed;
 
         FinishClose();
         

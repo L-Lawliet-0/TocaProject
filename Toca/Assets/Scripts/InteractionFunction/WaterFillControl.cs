@@ -39,7 +39,7 @@ public class WaterFillControl : TocaFunction
     {
         if (Filled)
         {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + .68f * Vector3.up, .1f, 1 << LayerMask.NameToLayer("Base"));
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + TargetHeight * Vector3.up, .1f, 1 << LayerMask.NameToLayer("Base"));
             foreach (Collider2D collider in colliders)
             {
                 if (collider && collider.GetComponent<BaseControl>() && collider.GetComponent<BaseControl>().MyBaseAttributes.IsMouth)
@@ -54,7 +54,7 @@ public class WaterFillControl : TocaFunction
     private IEnumerator FillCup()
     {
         float initX = .3f;
-        float time = .5f;
+        float time = 1f;
         float x_speed = (TargetWidth - initX) / time;
         float y_speed = TargetHeight / time;
 
@@ -73,7 +73,7 @@ public class WaterFillControl : TocaFunction
 
     private IEnumerator ClearCup()
     {
-        float time = .5f;
+        float time = 1f;
         float x_speed = -TargetWidth / time;
         float y_speed = -TargetHeight / time;
 

@@ -70,7 +70,7 @@ public class FloatControl : TocaFunction
                 if (fc.Arrived)
                 {
                     Floaters[moveKeys[i]].Arrived = true;
-                    Floaters[moveKeys[i]].ArrivedPos = moveKeys[i].transform.position;
+                    Floaters[moveKeys[i]].ArrivedPos = BaseControl.CalculateTargetPos(fc, BaseControl.Attachments[fc]); //moveKeys[i].transform.position;
                     StartCoroutine("DelayCreate", moveKeys[i]);
                 }
             }
@@ -89,6 +89,12 @@ public class FloatControl : TocaFunction
                 }
             }
         }
+    }
+
+    public void ResetArrivePos(MoveControl mc, Vector3 newPos)
+    {
+        if (Floaters.ContainsKey(mc))
+            Floaters[mc].ArrivedPos = newPos;
     }
 
     private IEnumerator DelayCreate(MoveControl mc)
