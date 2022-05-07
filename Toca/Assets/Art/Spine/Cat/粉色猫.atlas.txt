@@ -1,0 +1,21 @@
+粉色猫.png
+size:254,196
+filter:Linear,Linear
+pma:true
+maobiyan1
+bounds:2,2,87,12
+maoshenzi1
+bounds:2,16,165,178
+maoweiba2
+bounds:169,145,83,49
+maoyanjing 1
+bounds:169,58,85,32
+rotate:90
+maoyouerduo1
+bounds:203,88,43,55
+maozui1
+bounds:203,58,34,28
+maozuichidx
+bounds:169,16,36,40
+maozuoerduo1
+bounds:207,4,40,52

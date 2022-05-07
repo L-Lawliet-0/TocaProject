@@ -16,6 +16,7 @@ public class OneTimerTool : MonoBehaviour
             //GroupObjectsWithAttachingBase();
             AutoSetObjectsBase();
             //FindObjectsNameWithComponent();
+            //GroupFindControlWithoutBases();
             EXECUTE = false;
         }    
     }
@@ -125,6 +126,18 @@ public class OneTimerTool : MonoBehaviour
                     toca.transform.SetParent(TargetParent);
                     break;
                 }
+            }
+        }
+    }
+
+    private void GroupFindControlWithoutBases()
+    {
+        TocaObject[] tocas = FindObjectsOfType<TocaObject>(true);
+        foreach (TocaObject toca in tocas)
+        {
+            if (toca.GetComponentInChildren<AutoSetBase>() && !toca.GetComponentInChildren<AutoSetBase>().Reference)
+            {
+                toca.transform.SetParent(TargetParent);
             }
         }
     }

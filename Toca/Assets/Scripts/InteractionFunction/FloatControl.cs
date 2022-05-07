@@ -11,6 +11,7 @@ public class FloatControl : TocaFunction
         public bool Arrived;
         public GameObject Ripple;
         public LayerControl TargetLayer;
+        public BaseControl CoverBase;
     }
     public float FloatSpeed = 180;
     public float frequency = .07f;
@@ -85,7 +86,8 @@ public class FloatControl : TocaFunction
                 //moveKeys[i].TocaObject.transform.position = newPos;
                 if (Floaters[moveKeys[i]].TargetLayer)
                 {
-                    Floaters[moveKeys[i]].Ripple.GetComponent<SpriteRenderer>().sortingOrder = Floaters[moveKeys[i]].TargetLayer.OrderValue + 1;
+                    Floaters[moveKeys[i]].Ripple.GetComponent<SpriteRenderer>().sortingOrder = Floaters[moveKeys[i]].TargetLayer.OrderValue + 1 + (Floaters[moveKeys[i]].CoverBase ? Floaters[moveKeys[i]].CoverBase.LayerCache : 0);
+                    
                 }
             }
         }
@@ -116,6 +118,13 @@ public class FloatControl : TocaFunction
             LayerControl lc = (LayerControl)fc.TocaObject.GetTocaFunction<LayerControl>();
             Floaters[mc].Ripple.GetComponent<SpriteRenderer>().sortingOrder = lc.OrderValue + 1;
             Floaters[mc].TargetLayer = lc;
+
+            BaseControl bc = (BaseControl)fc.TocaObject.GetTocaFunction<BaseControl>();
+            if (bc && bc.MyBaseAttributes.HaveCover)
+            {
+                Floaters[mc].CoverBase = bc;
+                Floaters[mc].Ripple.GetComponent<SpriteRenderer>().sortingOrder = lc.OrderValue + bc.LayerCache + 1;
+            }
         }
     }
 }

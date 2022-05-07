@@ -160,7 +160,7 @@ public class SpineControl : TocaFunction
                 track.TimeScale = 2f;
                 SetControlValue(leftHandControl, 1);
                 LeftArmControl.Active = false;
-                SkeletonAnimation.AnimationState.End -= HandleLeftHand;
+                SkeletonAnimation.AnimationState.Complete -= HandleLeftHand;
                 SkeletonAnimation.AnimationState.Complete += HandleLeftHandRaise;
                 break;
             case Animations.LeftHandDrop:
@@ -170,14 +170,14 @@ public class SpineControl : TocaFunction
                 track.TimeScale = 2;
                 SetControlValue(leftHandControl, 1);
                 LeftArmControl.Active = false;
-                SkeletonAnimation.AnimationState.End += HandleLeftHand;
+                SkeletonAnimation.AnimationState.Complete += HandleLeftHand;
                 break;
             case Animations.RightHandRaise:
                 track = SkeletonAnimation.AnimationState.SetAnimation(RightHandIndex, RightHandRaise, false);
                 track.TimeScale = 2;
                 SetControlValue(rightHandControl, 1);
                 RightArmControl.Active = false;
-                SkeletonAnimation.AnimationState.End -= HandleRightHand;
+                SkeletonAnimation.AnimationState.Complete -= HandleRightHand;
                 SkeletonAnimation.AnimationState.Complete += HandleRightHandRaise;
                 break;
             case Animations.RightHandDrop:
@@ -186,7 +186,7 @@ public class SpineControl : TocaFunction
                 track.TimeScale = 2;
                 SetControlValue(rightHandControl, 1);
                 RightArmControl.Active = false;
-                SkeletonAnimation.AnimationState.End += HandleRightHand;
+                SkeletonAnimation.AnimationState.Complete += HandleRightHand;
                 break;
             case Animations.Stand:
                 SkeletonAnimation.AnimationState.SetAnimation(LegIndex, Stand, false);
@@ -194,7 +194,7 @@ public class SpineControl : TocaFunction
                 SetControlValue(rightLegControl, 1);
                 LeftLegControl.Active = false;
                 RightLegControl.Active = false;
-                SkeletonAnimation.AnimationState.End += HandleLeg;
+                SkeletonAnimation.AnimationState.Complete += HandleLeg;
                 break;
             case Animations.Sit:
                 SkeletonAnimation.AnimationState.SetAnimation(LegIndex, Sit, false);
@@ -202,7 +202,7 @@ public class SpineControl : TocaFunction
                 SetControlValue(rightLegControl, 1);
                 LeftLegControl.Active = false;
                 RightLegControl.Active = false;
-                SkeletonAnimation.AnimationState.End -= HandleLeg;
+                SkeletonAnimation.AnimationState.Complete -= HandleLeg;
                 break;
             case Animations.Eat:
                 // set corresponding attachment to true

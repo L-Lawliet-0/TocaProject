@@ -102,7 +102,7 @@ public class BottleControl : StateControl
     private IEnumerator Shake()
     {
         transform.eulerAngles = new Vector3(0, 0, 1);
-        float angle = Random.Range(30, 60);
+        float angle = 30;
         while (GlobalParameter.ClampAngle(transform.eulerAngles.z) < angle)
         {
             transform.eulerAngles += Vector3.forward * Time.deltaTime * 45;
