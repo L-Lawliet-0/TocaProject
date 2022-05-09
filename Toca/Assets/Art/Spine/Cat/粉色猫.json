@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "y/sxDLvNp18",
+	"hash": "oGRBqnyfUjY",
 	"spine": "4.0.64",
 	"x": -135.59,
 	"y": -8.73,
@@ -164,7 +164,10 @@
 				"attachment": [
 					{ "name": "maozui1" },
 					{ "time": 0.3333, "name": "maozuichidx" },
-					{ "time": 0.6667, "name": "maozuichidx" }
+					{ "time": 0.6667, "name": "maozui1" },
+					{ "time": 1, "name": "maozuichidx" },
+					{ "time": 1.3333, "name": "maozui1" },
+					{ "time": 1.4, "name": "maozui1" }
 				]
 			}
 		}

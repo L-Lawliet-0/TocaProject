@@ -13,6 +13,7 @@ public class CameraController : MonoBehaviour
     private float Target_X_Pixel;
     private const float Speed = 40;
     public float POSTOPIXEL;
+    public float Width_Half;
 
     private void Awake()
     {
@@ -27,6 +28,7 @@ public class CameraController : MonoBehaviour
         float width = m_Camera.orthographicSize * 2 * m_Camera.aspect; // this is the width of the current camera
         float half_Target_Width = testWidthValue / 2;
         float half_Width = width / 2;
+        Width_Half = half_Width;
 
         x_Min = -half_Target_Width + half_Width;
         x_Max = half_Target_Width - half_Width;
@@ -38,11 +40,15 @@ public class CameraController : MonoBehaviour
         POSTOPIXEL = 1 / (m_Camera.ScreenToWorldPoint(Vector3.right).x - m_Camera.ScreenToWorldPoint(Vector3.zero).x);
     }
 
+    public SunControl Sun;
     public void UpdateCameraX(float x)
     {
         // the incoming x is in pixel
         Target_X_Pixel -= x;
         Target_X_Pixel = Mathf.Clamp(Target_X_Pixel, x_Min * POSTOPIXEL, x_Max * POSTOPIXEL);
+
+        float dif = x / POSTOPIXEL;
+        Sun.UpdateMajorX(-dif * 2);
     }
 
     private void Update()

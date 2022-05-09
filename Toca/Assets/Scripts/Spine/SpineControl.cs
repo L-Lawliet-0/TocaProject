@@ -189,7 +189,7 @@ public class SpineControl : TocaFunction
                 SkeletonAnimation.AnimationState.Complete += HandleRightHand;
                 break;
             case Animations.Stand:
-                SkeletonAnimation.AnimationState.SetAnimation(LegIndex, Stand, false);
+                track = SkeletonAnimation.AnimationState.SetAnimation(LegIndex, Stand, false);
                 SetControlValue(leftLegControl, 1);
                 SetControlValue(rightLegControl, 1);
                 LeftLegControl.Active = false;
@@ -237,6 +237,8 @@ public class SpineControl : TocaFunction
     {
         if (Sleeping)
             Yanjing.SetAttachment("biyan");
+        else if (Eating)
+            Yanjing.SetAttachment(27);
         else
             Yanjing.SetAttachment(1);
     }
@@ -318,12 +320,13 @@ public class SpineControl : TocaFunction
 
     private void HandleLeg(TrackEntry trackEntry)
     {
-        if (trackEntry.TrackIndex == LegIndex)
+        if (trackEntry.TrackIndex == LegIndex && trackEntry.Animation == Stand.Animation)
         {
-            SetControlValue(leftLegControl, 0);
-            SetControlValue(rightLegControl, 0);
+            Debug.LogError("Handle leg!");
             LeftLegControl.Active = true;
             RightLegControl.Active = true;
+            SetControlValue(leftLegControl, 0);
+            SetControlValue(rightLegControl, 0);
         }
     }
 
@@ -376,7 +379,30 @@ public class SpineControl : TocaFunction
     public void WakeUp()
     {
         Sleeping = false;
-        Yanjing.SetAttachment(1);
+        SetDefaultYanJing();
         Destroy(sleepFX);
     }
+
+    private void OnEnable()
+    {
+        StartCoroutine("Blink");
+    }
+
+    private IEnumerator Blink()
+    {
+        while (Yanjing == null)
+            yield return null;
+
+        while (true)
+        {
+            if (!Sleeping && !Eating)
+            {
+                Yanjing.SetAttachment("biyan");
+                yield return new WaitForSeconds(.3f);
+                SetDefaultYanJing();
+            }
+            yield return new WaitForSeconds(Random.Range(3f, 6f));
+        }
+    }
+
 }

@@ -35,6 +35,8 @@ public class LayerControl : TocaFunction
         AllRenderers = GlobalParameter.GetComponentAndChildren<SpriteRenderer>(TocaObject.transform);
         AllPartsRenderers = GlobalParameter.GetComponentAndChildren<SkeletonPartsRenderer>(TocaObject.transform);
         SkeletonAnimation = GetComponent<SkeletonAnimation>();
+        if (!SkeletonAnimation)
+            SkeletonAnimation = GetComponentInChildren<SkeletonAnimation>();
         DefaultValues = new int[AllRenderers.Length];
         PartsDefaultValues = new int[AllPartsRenderers.Length];
         for (int i = 0; i < AllRenderers.Length; i++)

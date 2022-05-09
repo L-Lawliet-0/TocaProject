@@ -6,7 +6,18 @@ using Spine.Unity;
 
 public class LimbControl
 {
-    public bool Active;
+    public bool Active { get { return active; } set { SetActiveValue(value); } }
+    private void SetActiveValue(bool value)
+    {
+        active = value;
+        if (!value)
+        {
+            TargetBone.Rotation = DefaultRotation;
+            TargetAngle = DefaultRotation;
+        }
+    }
+
+    private bool active;
     private MoveControl Selectable;
 
     public float H_UpperLimit = -30;
@@ -26,13 +37,14 @@ public class LimbControl
         targetBone.Rotation = DefaultRotation;
 
         Selectable = move;
-        Active = true;
+       
         H_UpperLimit = h_Upper;
         H_LowerLimit = h_Lower;
         V_UpperLimit = v_Upper;
         V_LowerLimit = v_Lower;
         TargetBone = targetBone;
         ReachedDesiredAngle = true;
+        Active = true;
     }
 
     public virtual void UpdateLimbRotation()

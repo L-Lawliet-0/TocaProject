@@ -9,7 +9,7 @@ public class BottleControl : StateControl
     private bool Shaking;
 
     private Collider2D CupCollider;
-    private BaseControl Mouth;
+    public BaseControl Mouth;
     public Color LiquidColor;
     public Transform PositionOverride;
 
@@ -76,6 +76,8 @@ public class BottleControl : StateControl
                 if (bc && bc.MyBaseAttributes.IsMouth)
                 {
                     Mouth = bc;
+                    if (Mouth.GetComponent<EatControl>())
+                        Mouth.GetComponent<EatControl>().PendingBottle = this;
                     break;
                 }
             }

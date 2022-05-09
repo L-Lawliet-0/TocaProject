@@ -6,6 +6,7 @@ public class WaterFillControl : TocaFunction
 {
     private SpriteRenderer m_SpriteRenderer;
     private bool Filled;
+    public bool WaterFilled { get { return m_SpriteRenderer.size.y > 0; } }
     private float TargetWidth, TargetHeight;
     private void Start()
     {
@@ -45,6 +46,8 @@ public class WaterFillControl : TocaFunction
                 if (collider && collider.GetComponent<BaseControl>() && collider.GetComponent<BaseControl>().MyBaseAttributes.IsMouth)
                 {
                     UnFill();
+                    if (collider.GetComponent<EatControl>())
+                        collider.GetComponent<EatControl>().PendingWater = this;
                     break;
                 }
             }
