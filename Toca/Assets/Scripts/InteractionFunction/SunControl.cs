@@ -12,14 +12,22 @@ public class SunControl : TocaFunction
     public Transform CenterPoint;
     public float Radius;
     public GameObject Sun, Moon;
-    public SpriteRenderer Day, Night;
+    public SpriteRenderer[] Days, Nights;
 
     private void Start()
     {
         TouchControl tc = (TouchControl)TocaObject.GetTocaFunction<TouchControl>();
         tc.ClickCallBacks.Add(SwitchTime);
-        Night.color = new Color(1, 1, 1, 0);
-        Day.color = Color.white;
+        SetSpritesColor(Nights, new Color(1, 1, 1, 0));
+        SetSpritesColor(Days, Color.white);
+    }
+
+    private void SetSpritesColor(SpriteRenderer[] array, Color color)
+    {
+        foreach(SpriteRenderer s in array)
+        {
+            s.color = color;
+        }
     }
 
     public void UpdateMajorX(float x)
@@ -52,6 +60,8 @@ public class SunControl : TocaFunction
         bool switched = false;
 
         float sign = IsDay ? -1 : 1;
+        Color dayColor = IsDay ? Color.white : new Color(1, 1, 1, 0);
+        Color nightColor = IsDay ? new Color(1, 1, 1, 0) : Color.white;
 
         while (angle > -270)
         {
@@ -67,8 +77,10 @@ public class SunControl : TocaFunction
                 angle = -180;
             }
 
-            Day.color += sign * new Color(0, 0, 0, 1) * Time.deltaTime / 2;
-            Night.color -= sign * new Color(0, 0, 0, 1) * Time.deltaTime / 2;
+            dayColor += sign * new Color(0, 0, 0, 1) * Time.deltaTime / 2;
+            nightColor -= sign * new Color(0, 0, 0, 1) * Time.deltaTime / 2;
+            SetSpritesColor(Days, dayColor);
+            SetSpritesColor(Nights, nightColor);
 
             yield return null;
         }
@@ -76,5 +88,16 @@ public class SunControl : TocaFunction
         GlobalLight.color = targetColor;
         IsDay = !IsDay;
         Switching = false;
+
+        if (IsDay)
+        {
+            SetSpritesColor(Days, Color.white);
+            SetSpritesColor(Nights, new Color(1, 1, 1, 0));
+        }
+        else
+        {
+            SetSpritesColor(Days, new Color(1, 1, 1, 0));
+            SetSpritesColor(Nights, Color.white);
+        }
     }
 }

@@ -5,10 +5,19 @@ using System.Linq;
 
 public class StandControl : StateControl
 {
-    private BaseControl BaseControl;
+    public float TargetDownAngle = 90;
+    public float DownSign = 1;
+    private float StandReferenceAngle;
+
+    public BaseControl BaseControl;
     public List<int> StandingParams;
 
     private float HeightFix;
+
+    private void Awake()
+    {
+        StandReferenceAngle = 360 - TargetDownAngle;
+    }
 
     private void Start()
     {
@@ -70,11 +79,21 @@ public class StandControl : StateControl
 
     private IEnumerator StandUp(bool resetLayer = false)
     {
-        
-        while (GlobalParameter.ClampAngle(transform.eulerAngles.z) < 270)
+        if (DownSign > 0)
         {
-            transform.eulerAngles -= Vector3.forward * Time.deltaTime * 720;
-            yield return null;
+            while (GlobalParameter.ClampAngle(transform.eulerAngles.z) < StandReferenceAngle)
+            {
+                transform.eulerAngles -= DownSign * Vector3.forward * Time.deltaTime * 720;
+                yield return null;
+            }
+        }
+        else
+        {
+            while (GlobalParameter.ClampAngle(transform.eulerAngles.z) > StandReferenceAngle)
+            {
+                transform.eulerAngles -= DownSign * Vector3.forward * Time.deltaTime * 720;
+                yield return null;
+            }
         }
         
         transform.eulerAngles = Vector3.zero;
@@ -93,14 +112,27 @@ public class StandControl : StateControl
 
     private IEnumerator StandDown()
     {
-        
-        while (GlobalParameter.ClampAngle(transform.eulerAngles.z) < 90)
+        if (DownSign > 0)
         {
-            transform.eulerAngles += Vector3.forward * Time.deltaTime * 720;
-            yield return null;
+            while (GlobalParameter.ClampAngle(transform.eulerAngles.z) < TargetDownAngle)
+            {
+                transform.eulerAngles += DownSign * Vector3.forward * Time.deltaTime * 720;
+                yield return null;
+            }
+        }
+        else
+        {
+            if (transform.eulerAngles.z == 0)
+                transform.eulerAngles = new Vector3(0, 0, -1);
+            while (GlobalParameter.ClampAngle(transform.eulerAngles.z) > TargetDownAngle)
+            {
+                Debug.LogError(GlobalParameter.ClampAngle(transform.eulerAngles.z));
+                transform.eulerAngles += DownSign * Vector3.forward * Time.deltaTime * 720;
+                yield return null;
+            }
         }
         
-        transform.eulerAngles = Vector3.forward * 90;
+        transform.eulerAngles = Vector3.forward * TargetDownAngle;
 
         //transform.position -= Vector3.up * HeightFix;
         yield return null;

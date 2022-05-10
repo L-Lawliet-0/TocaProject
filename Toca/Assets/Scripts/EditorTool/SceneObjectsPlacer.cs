@@ -17,7 +17,7 @@ public class SceneObjectsPlacer : MonoBehaviour
 
         if (GENERATEOBJECTS && transform.childCount == 0)
         {
-            string path = Application.dataPath + "/Resources/RoomOfPrincess/V2";
+            string path = Application.dataPath + "/Resources/Navy";
 
             DirectoryInfo dir = new DirectoryInfo(path);
             FileInfo[] info = dir.GetFiles("*.*");
@@ -32,7 +32,7 @@ public class SceneObjectsPlacer : MonoBehaviour
                     obj.name = name;
                     obj.transform.SetParent(transform);
                     obj.AddComponent<SpriteRenderer>();
-                    obj.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("RoomOfPrincess/V2/" + name);
+                    obj.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Navy/" + name);
 
                     PlaceObject(obj.transform);
                 }

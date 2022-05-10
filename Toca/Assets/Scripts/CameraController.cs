@@ -7,7 +7,7 @@ public class CameraController : MonoBehaviour
     private static CameraController m_Instance;
     public static CameraController Instance { get { return m_Instance; } }
     private Camera m_Camera;
-    private const float testWidthValue = 90; // max res = 9000, pixel mult is 100
+    public float testWidthValue = 90; // max res = 9000, pixel mult is 100
     private float x_Min, x_Max;
     private float camera_Y;
     private float Target_X_Pixel;
