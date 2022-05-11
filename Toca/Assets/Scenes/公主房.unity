@@ -1232,9 +1232,9 @@ GameObject:
   - component: {fileID: 20576037}
   - component: {fileID: 20576036}
   - component: {fileID: 20576034}
-  - component: {fileID: 20576041}
   - component: {fileID: 20576035}
   - component: {fileID: 20576042}
+  - component: {fileID: 20576041}
   m_Layer: 9
   m_Name: "\u68B3\u5B50"
   m_TagString: Untagged
@@ -1344,6 +1344,7 @@ MonoBehaviour:
   FindControl: {fileID: 0}
   TargetDownAngle: 90
   DownSign: 1
+  BaseControl: {fileID: 0}
   StandingParams: 02000000
 --- !u!114 &20576036
 MonoBehaviour:
@@ -1455,32 +1456,33 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.085, y: -0.195}
-      - {x: 0.24499999, y: -0.044999998}
-      - {x: 0.355, y: 0.13499999}
-      - {x: 0.39499998, y: 0.295}
-      - {x: 0.39499998, y: 0.645}
-      - {x: 0.385, y: 0.675}
-      - {x: 0.36499998, y: 0.745}
-      - {x: 0.255, y: 0.835}
-      - {x: 0.13499999, y: 0.85499996}
-      - {x: -0.105, y: 0.85499996}
-      - {x: -0.185, y: 0.815}
-      - {x: -0.305, y: 0.695}
-      - {x: -0.385, y: 0.475}
-      - {x: -0.39499998, y: 0.36499998}
-      - {x: -0.39499998, y: 0.125}
-      - {x: -0.355, y: 0.005}
-      - {x: -0.295, y: -0.095}
-      - {x: -0.125, y: -0.155}
-      - {x: -0.155, y: -0.225}
-      - {x: -0.295, y: -0.675}
-      - {x: -0.295, y: -0.805}
-      - {x: -0.225, y: -0.85499996}
-      - {x: -0.074999996, y: -0.85499996}
-      - {x: -0.044999998, y: -0.835}
-      - {x: 0.024999999, y: -0.755}
-      - {x: 0.024999999, y: -0.59499997}
+    - - {x: 0.114999995, y: -0.125}
+      - {x: 0.16499999, y: -0.125}
+      - {x: 0.24499999, y: -0.114999995}
+      - {x: 0.325, y: -0.055}
+      - {x: 0.355, y: 0.015}
+      - {x: 0.39499998, y: 0.095}
+      - {x: 0.39499998, y: 0.42499998}
+      - {x: 0.36499998, y: 0.555}
+      - {x: 0.295, y: 0.73499995}
+      - {x: 0.125, y: 0.85499996}
+      - {x: -0.125, y: 0.85499996}
+      - {x: -0.285, y: 0.825}
+      - {x: -0.36499998, y: 0.745}
+      - {x: -0.39499998, y: 0.66499996}
+      - {x: -0.39499998, y: 0.265}
+      - {x: -0.355, y: 0.125}
+      - {x: -0.255, y: -0.044999998}
+      - {x: -0.16499999, y: -0.114999995}
+      - {x: -0.145, y: -0.13499999}
+      - {x: -0.085, y: -0.185}
+      - {x: -0.024999999, y: -0.59499997}
+      - {x: -0.015, y: -0.78499997}
+      - {x: 0.065, y: -0.85499996}
+      - {x: 0.24499999, y: -0.85499996}
+      - {x: 0.285, y: -0.79499996}
+      - {x: 0.295, y: -0.73499995}
+      - {x: 0.24499999, y: -0.49499997}
 --- !u!114 &20576042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8331,6 +8333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TocaObject: {fileID: 0}
+  ShakeAngle: 5
 --- !u!60 &157238662
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10695,6 +10698,7 @@ MonoBehaviour:
   FindControl: {fileID: 0}
   TargetDownAngle: 90
   DownSign: 1
+  BaseControl: {fileID: 0}
   StandingParams: 02000000
 --- !u!114 &218924690
 MonoBehaviour:
@@ -13384,6 +13388,7 @@ MonoBehaviour:
   FindControl: {fileID: 0}
   TargetDownAngle: 90
   DownSign: 1
+  BaseControl: {fileID: 0}
   StandingParams: 02000000
 --- !u!1 &262502786
 GameObject:
@@ -14639,6 +14644,7 @@ MonoBehaviour:
   FindControl: {fileID: 0}
   TargetDownAngle: 90
   DownSign: 1
+  BaseControl: {fileID: 0}
   StandingParams: 02000000
 --- !u!1 &276098712
 GameObject:
@@ -15496,6 +15502,7 @@ MonoBehaviour:
   FindControl: {fileID: 0}
   TargetDownAngle: 90
   DownSign: 1
+  BaseControl: {fileID: 0}
   StandingParams: 02000000
 --- !u!1 &296763993
 GameObject:
@@ -17276,6 +17283,7 @@ MonoBehaviour:
   FindControl: {fileID: 0}
   TargetDownAngle: 90
   DownSign: 1
+  BaseControl: {fileID: 0}
   StandingParams: 02000000
 --- !u!1 &344781742
 GameObject:
@@ -34812,6 +34820,7 @@ MonoBehaviour:
   FindControl: {fileID: 0}
   TargetDownAngle: 90
   DownSign: 1
+  BaseControl: {fileID: 0}
   StandingParams: 02000000
 --- !u!1 &661308649
 GameObject:
@@ -44226,6 +44235,7 @@ MonoBehaviour:
   FindControl: {fileID: 0}
   TargetDownAngle: 90
   DownSign: 1
+  BaseControl: {fileID: 0}
   StandingParams: 02000000
 --- !u!1 &866542422
 GameObject:
@@ -48391,6 +48401,7 @@ MonoBehaviour:
   FindControl: {fileID: 0}
   TargetDownAngle: 90
   DownSign: 1
+  BaseControl: {fileID: 0}
   StandingParams: 02000000
 --- !u!1 &944437883
 GameObject:
@@ -49312,6 +49323,7 @@ MonoBehaviour:
   FindControl: {fileID: 0}
   TargetDownAngle: 90
   DownSign: 1
+  BaseControl: {fileID: 0}
   StandingParams: 02000000
 --- !u!114 &966488244
 MonoBehaviour:
@@ -51046,6 +51058,7 @@ MonoBehaviour:
   FindControl: {fileID: 0}
   TargetDownAngle: 90
   DownSign: 1
+  BaseControl: {fileID: 0}
   StandingParams: 02000000
 --- !u!1 &998140323
 GameObject:
@@ -61404,6 +61417,7 @@ MonoBehaviour:
   FindControl: {fileID: 0}
   TargetDownAngle: 90
   DownSign: 1
+  BaseControl: {fileID: 0}
   StandingParams: 02000000
 --- !u!1 &1151778581
 GameObject:
@@ -84510,6 +84524,7 @@ MonoBehaviour:
   FindControl: {fileID: 0}
   TargetDownAngle: 90
   DownSign: 1
+  BaseControl: {fileID: 0}
   StandingParams: 02000000
 --- !u!1 &1656080007
 GameObject:
@@ -108886,6 +108901,7 @@ MonoBehaviour:
   FindControl: {fileID: 0}
   TargetDownAngle: 90
   DownSign: 1
+  BaseControl: {fileID: 0}
   StandingParams: 01000000
 --- !u!4 &212910165375028585
 Transform:
@@ -109276,6 +109292,7 @@ MonoBehaviour:
   FindControl: {fileID: 0}
   TargetDownAngle: 90
   DownSign: 1
+  BaseControl: {fileID: 0}
   StandingParams: 01000000
 --- !u!1 &483962665719350822
 GameObject:
@@ -111205,6 +111222,7 @@ MonoBehaviour:
   FindControl: {fileID: 0}
   TargetDownAngle: 90
   DownSign: 1
+  BaseControl: {fileID: 0}
   StandingParams: 01000000
 --- !u!212 &1645339806583022928
 SpriteRenderer:
@@ -116358,6 +116376,7 @@ MonoBehaviour:
   FindControl: {fileID: 0}
   TargetDownAngle: 90
   DownSign: 1
+  BaseControl: {fileID: 0}
   StandingParams: 01000000
 --- !u!4 &4649904035034309076
 Transform:
@@ -118167,6 +118186,7 @@ MonoBehaviour:
   FindControl: {fileID: 0}
   TargetDownAngle: 90
   DownSign: 1
+  BaseControl: {fileID: 0}
   StandingParams: 01000000
 --- !u!4 &5748288851497562386
 Transform:
@@ -121475,6 +121495,7 @@ MonoBehaviour:
   FindControl: {fileID: 0}
   TargetDownAngle: 90
   DownSign: 1
+  BaseControl: {fileID: 0}
   StandingParams: 01000000
 --- !u!212 &8261768107583425512
 SpriteRenderer:
@@ -121898,6 +121919,7 @@ MonoBehaviour:
   FindControl: {fileID: 0}
   TargetDownAngle: 90
   DownSign: 1
+  BaseControl: {fileID: 0}
   StandingParams: 01000000
 --- !u!4 &8505645232205802151
 Transform:
@@ -122614,6 +122636,7 @@ MonoBehaviour:
   FindControl: {fileID: 0}
   TargetDownAngle: 90
   DownSign: 1
+  BaseControl: {fileID: 0}
   StandingParams: 01000000
 --- !u!4 &8906774317579366677
 Transform:

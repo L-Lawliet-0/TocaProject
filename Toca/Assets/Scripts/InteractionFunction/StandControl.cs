@@ -126,7 +126,6 @@ public class StandControl : StateControl
                 transform.eulerAngles = new Vector3(0, 0, -1);
             while (GlobalParameter.ClampAngle(transform.eulerAngles.z) > TargetDownAngle)
             {
-                Debug.LogError(GlobalParameter.ClampAngle(transform.eulerAngles.z));
                 transform.eulerAngles += DownSign * Vector3.forward * Time.deltaTime * 720;
                 yield return null;
             }

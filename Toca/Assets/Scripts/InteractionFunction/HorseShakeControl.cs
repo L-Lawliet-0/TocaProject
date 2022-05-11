@@ -7,6 +7,7 @@ public class HorseShakeControl : TocaFunction
     private FindControl Target;
     private BaseControl BaseControl;
     private bool Shaking;
+    public float ShakeAngle = 5;
     private void Start()
     {
         BaseControl = (BaseControl)TocaObject.GetTocaFunction<BaseControl>();
@@ -33,7 +34,7 @@ public class HorseShakeControl : TocaFunction
     {
         Target = new List<FindControl>(BaseControl.Attachments.Keys)[0];
         float startAngle = 0;
-        float limit = 5; // test value 10 degree
+        float limit = ShakeAngle; // test value 10 degree
         float sign = 1;
         float speed = 10;
         while (true)
