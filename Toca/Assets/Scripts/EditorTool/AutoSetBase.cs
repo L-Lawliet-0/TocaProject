@@ -11,6 +11,7 @@ public class AutoSetBase : MonoBehaviour
 
     private void Update()
     {
+        //SET = false;
         if (SET)
         {
             /*
@@ -20,7 +21,7 @@ public class AutoSetBase : MonoBehaviour
             {
                 Reference = collider.GetComponent<BaseControl>();
 
-                if (Reference.GetComponentInParent<TocaObject>() && Reference.GetComponentInParent<TocaObject>() != GetComponentInParent<TocaObject>() && Reference.CanbeSnapped(GetComponent<FindControl>()))
+                if (Reference.GetComponentInParent<TocaObject>() && Reference.GetComponentInParent<TocaObject>() != GetComponentInParent<TocaObject>())
                 {
                     TocaObject toca = GetComponentInParent<TocaObject>();
                     toca.TocaSave.Attaching = true;

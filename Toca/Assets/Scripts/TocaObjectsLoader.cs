@@ -18,6 +18,8 @@ public class TocaObjectsLoader : MonoBehaviour
     {
         if (Application.isPlaying)
         {
+            // find all sprite renderers and reset their layers
+
             m_Instance = this;
             TocaObjectsPool = new Dictionary<int, TocaObject>();
             TocaObject[] all = FindObjectsOfType<TocaObject>();

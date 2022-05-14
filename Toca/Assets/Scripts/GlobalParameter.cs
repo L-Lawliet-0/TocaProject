@@ -79,10 +79,10 @@ public class GlobalParameter : MonoBehaviour
 
     public static bool UpdateMovement(BaseControl t)
     {
-        return t.TocaObject.GetTocaFunction<SlideControl>() || t.TocaObject.GetTocaFunction<TrashBinControl>() || t.TocaObject.GetTocaFunction<FloatControl>(); //HaveComponentInHierchy<SlideControl>(t.TocaObject) || HaveComponentInHierchy<TrashBinControl>(t.TocaObject) || HaveComponentInHierchy<FloatControl>(t.TocaObject);
+        return t.TocaObject.GetTocaFunction<SlideControl>() || t.TocaObject.GetTocaFunction<TrashBinControl>() || t.TocaObject.GetTocaFunction<FloatControl>() || t.TocaObject.GetTocaFunction<BedControl>(); //HaveComponentInHierchy<SlideControl>(t.TocaObject) || HaveComponentInHierchy<TrashBinControl>(t.TocaObject) || HaveComponentInHierchy<FloatControl>(t.TocaObject);
     }
 
-    public GameObject ToastSausage, ToastCarrot;
+    public GameObject ToastSausage, ToastCarrot, ChickenToast, ChickenBread;
     public GameObject GetCombinePrefab(CombineControl.CombineType t1, CombineControl.CombineType t2)
     {
         HashSet<CombineControl.CombineType> types = new HashSet<CombineControl.CombineType>();
@@ -93,6 +93,10 @@ public class GlobalParameter : MonoBehaviour
             return ToastCarrot;
         else if (types.Contains(CombineControl.CombineType.Toast) && types.Contains(CombineControl.CombineType.Sausage))
             return ToastSausage;
+        else if (types.Contains(CombineControl.CombineType.ChickenLeg) && types.Contains(CombineControl.CombineType.Bread))
+            return ChickenBread;
+        else if (types.Contains(CombineControl.CombineType.ChickenLeg) && types.Contains(CombineControl.CombineType.Toast))
+            return ChickenToast;
 
         return null;
     }

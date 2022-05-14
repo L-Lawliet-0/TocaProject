@@ -41,6 +41,7 @@ public class LayerControl : TocaFunction
         PartsDefaultValues = new int[AllPartsRenderers.Length];
         for (int i = 0; i < AllRenderers.Length; i++)
         {
+            //DefaultValues[i] = 0;
             DefaultValues[i] = AllRenderers[i].sortingOrder;
         }
 
@@ -187,7 +188,7 @@ public class LayerControl : TocaFunction
                 LayerControl lc = (LayerControl)fc.TocaObject.GetTocaFunction<LayerControl>();
                 values.AddRange(SortAllLayers(lc)); // add sorted layers
             }
-            int count = values.Count - countBefore;
+            int count = values.Count; //- countBefore;
             if (bc.MyBaseAttributes.HaveCover)
             {
                 bc.LayerCache = (count + 1) * 2;
@@ -261,13 +262,16 @@ public class LayerControl : TocaFunction
         CurrentObjectLayer = layer;
 
 
-        BaseControl bc = (BaseControl)TocaObject.GetTocaFunction<BaseControl>();
-        if (bc && bc.MyBaseAttributes.HaveCover)
+        List<TocaFunction> bcs = TocaObject.GetTocaFunctions<BaseControl>();
+        foreach (BaseControl bc in bcs)
         {
-            if (bc.Cover)
-                bc.Cover.sortingOrder = OrderValue + bc.LayerCache;
-            if (bc.Cover2)
-                bc.Cover2.sortingOrder = OrderValue + bc.LayerCache;
+            if (bc && bc.MyBaseAttributes.HaveCover)
+            {
+                if (bc.Cover)
+                    bc.Cover.sortingOrder = OrderValue + bc.LayerCache;
+                if (bc.Cover2)
+                    bc.Cover2.sortingOrder = OrderValue + bc.LayerCache;
+            }
         }
     }
 

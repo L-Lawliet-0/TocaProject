@@ -17,6 +17,10 @@ public class TouchControl : TocaFunction
     public List<VoidDelegate> DeTouchCallBacks; // used for register on release event
     public List<VoidDelegate> ClickCallBacks;
 
+    public delegate void V3Delegate(Vector3 pos);
+    public List<V3Delegate> TouchCallBacksV3;
+    public List<V3Delegate> PositionChangeCallBacksV3;
+
     public bool CallbackOnly;
 
     private void Awake()
@@ -24,6 +28,9 @@ public class TouchControl : TocaFunction
         TouchCallBacks = new List<VoidDelegate>();
         DeTouchCallBacks = new List<VoidDelegate>();
         ClickCallBacks = new List<VoidDelegate>();
+
+        TouchCallBacksV3 = new List<V3Delegate>();
+        PositionChangeCallBacksV3 = new List<V3Delegate>();
     }
 
     private void Start()
@@ -50,6 +57,8 @@ public class TouchControl : TocaFunction
 
         foreach (VoidDelegate dele in TouchCallBacks)
             dele();
+        foreach (V3Delegate dele in TouchCallBacksV3)
+            dele(pos);
     }
 
     public void OnClick(Vector3 pos)
@@ -88,6 +97,9 @@ public class TouchControl : TocaFunction
             Selection.UpdateSelectionPos(worldPosition);
         if (Find)
             Find.SelectedUpdate();
+
+        foreach (V3Delegate dele in PositionChangeCallBacksV3)
+            dele(worldPosition);
     }
 
 }

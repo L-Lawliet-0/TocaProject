@@ -42,7 +42,7 @@ public class SpineControl : TocaFunction
 
     public float HipOffset;
 
-    private AttachmentControl Maozi, Kouzhao, Glasses, Mianju, Ershi, Meimao, Bizi, Zui, Yanjing, Toufa, Toufahoumian, Jiaodongxi;
+    private AttachmentControl Maozi, Kouzhao, Glasses, Mianju, Ershi, Meimao, Bizi, Zui, Yanjing, Toufa, Toufahoumian, Jiaodongxi, shenti, youshou, zuoshou, youtui, zuotui;
 
     private const int LeftHandIndex = 1, RightHandIndex = 2, LegIndex = 3, FaceIndex = 4;
 
@@ -91,6 +91,16 @@ public class SpineControl : TocaFunction
         Toufa = new AttachmentControl("toufa1", MySkeleton, "toufa");
         Toufahoumian = new AttachmentControl("toufahoumian", MySkeleton, "toufahoumian");
         Jiaodongxi = new AttachmentControl("zui1", MySkeleton, "mouth");
+        shenti = new AttachmentControl("shenti", MySkeleton, "");
+        youshou = new AttachmentControl("youshou", MySkeleton, "");
+        zuoshou = new AttachmentControl("zuoshou", MySkeleton, "");
+        youtui = new AttachmentControl("youtui", MySkeleton, "");
+        zuotui = new AttachmentControl("zuotui", MySkeleton, "");
+        shenti.SetAttachment("shenti");
+        youshou.SetAttachment("youshou");
+        zuoshou.SetAttachment("zuoshou");
+        zuotui.SetAttachment("zuotui");
+        youtui.SetAttachment("youtui");
 
         Yanjing.SetAttachment(1);
         Bizi.SetAttachment(1);
@@ -371,6 +381,11 @@ public class SpineControl : TocaFunction
     private GameObject sleepFX;
     public void Sleep(Vector3 fxPos)
     {
+        shenti.SetAttachment();
+        youshou.SetAttachment();
+        zuoshou.SetAttachment();
+        zuotui.SetAttachment();
+        youtui.SetAttachment();
         Sleeping = true;
         Yanjing.SetAttachment("biyan");
         sleepFX = Instantiate(GlobalParameter.Instance.RunTimeEffects[5], fxPos, Quaternion.identity);
@@ -378,6 +393,11 @@ public class SpineControl : TocaFunction
 
     public void WakeUp()
     {
+        shenti.SetAttachment("shenti");
+        youshou.SetAttachment("youshou");
+        zuoshou.SetAttachment("zuoshou");
+        zuotui.SetAttachment("zuotui");
+        youtui.SetAttachment("youtui");
         Sleeping = false;
         SetDefaultYanJing();
         Destroy(sleepFX);

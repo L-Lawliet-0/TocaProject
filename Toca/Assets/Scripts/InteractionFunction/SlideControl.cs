@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class SlideControl : TocaFunction
 {
+    public float X_Random_Min = 0, X_Random_Max = 2, Y_Random_Min = -1, Y_Random_Max = 0;
     private class SlideData
     {
         public int TrackIndex;
         public Vector3 OverridePos;
+        public Quaternion OverrideAngle;
 
         public SlideData(int index)
         {
             TrackIndex = index;
+            OverrideAngle = Quaternion.identity;
         }
     }
     public Transform SlideTrack;
@@ -48,11 +51,13 @@ public class SlideControl : TocaFunction
                 Sliders.Add(f, new SlideData(track));
                 if (Sliders[f].TrackIndex == SlideTrack.childCount - 1)
                 {
-                    Sliders[f].OverridePos = SlideTrack.GetChild(Sliders[f].TrackIndex).position + new Vector3(Random.Range(0f,2f), Random.Range(-1f, 0));
+                    Sliders[f].OverridePos = SlideTrack.GetChild(Sliders[f].TrackIndex).position + new Vector3(Random.Range(X_Random_Min,X_Random_Max), Random.Range(Y_Random_Min, Y_Random_Max));
+                    Sliders[f].OverrideAngle = SlideTrack.GetChild(Sliders[f].TrackIndex).rotation;
                 }
                 else
                 {
                     Sliders[f].OverridePos = SlideTrack.GetChild(Sliders[f].TrackIndex).position;
+                    Sliders[f].OverrideAngle = SlideTrack.GetChild(Sliders[f].TrackIndex).rotation;
                 }
             }
         }
@@ -69,7 +74,12 @@ public class SlideControl : TocaFunction
         {
             FindControl f = sliderKeys[i];
             MoveControl mc = (MoveControl)f.TocaObject.GetTocaFunction<MoveControl>();
-            mc.UpdateTargetPosition(Sliders[f].OverridePos);
+            if (f.IsHuman)
+                mc.UpdateTargetPosition(Sliders[f].OverridePos);
+            else
+                mc.UpdateTargetPosition(Sliders[f].OverridePos + f.ObjectHeight / 2 * Vector3.up);
+            
+            mc.TocaObject.transform.rotation = Quaternion.RotateTowards(mc.TocaObject.transform.rotation, Sliders[f].OverrideAngle, Time.deltaTime * 90);
 
 
             if (Vector3.Distance(mc.TargetPosition, mc.transform.position) < .1f)
@@ -83,11 +93,13 @@ public class SlideControl : TocaFunction
                     Sliders[f].TrackIndex++;
                     if (Sliders[f].TrackIndex == SlideTrack.childCount - 1)
                     {
-                        Sliders[f].OverridePos = SlideTrack.GetChild(Sliders[f].TrackIndex).position + new Vector3(Random.Range(0f, 2f), Random.Range(-1f, 0f));
+                        Sliders[f].OverridePos = SlideTrack.GetChild(Sliders[f].TrackIndex).position + new Vector3(Random.Range(X_Random_Min, X_Random_Max), Random.Range(Y_Random_Min, Y_Random_Max));
+                        Sliders[f].OverrideAngle = SlideTrack.GetChild(Sliders[f].TrackIndex).rotation;
                     }
                     else
                     {
                         Sliders[f].OverridePos = SlideTrack.GetChild(Sliders[f].TrackIndex).position;
+                        Sliders[f].OverrideAngle = SlideTrack.GetChild(Sliders[f].TrackIndex).rotation;
                     }
                 }
             }
@@ -106,6 +118,14 @@ public class SlideControl : TocaFunction
             MoveControl mc = (MoveControl)f.TocaObject.GetTocaFunction<MoveControl>();
             if (mc)
                 mc.Speed = 0;
+
+            TouchControl tc = (TouchControl)f.TocaObject.GetTocaFunction<TouchControl>();
+            if (tc)
+            {
+                tc.OnTouch(tc.TocaObject.transform.position);
+                tc.OnDeTouch();
+            }
+
         }
     }
 }

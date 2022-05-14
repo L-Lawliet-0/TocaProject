@@ -54,7 +54,7 @@ public class InputManager : MonoBehaviour
         {
             LastScreenPosition = MyTouch.position;
             UpdateSelectedObject();
-            UpdateCamera = (SelectedObject == null || !SelectedObject.TocaObject.GetTocaFunction<SelectionControl>());
+            UpdateCamera = (SelectedObject == null || (!SelectedObject.TocaObject.GetTocaFunction<SelectionControl>() && SelectedObject.PositionChangeCallBacksV3.Count == 0));
 
             //if (SelectedObject)
             //    SelectedObject.OnClick(GlobalParameter.Instance.ScreenPosToGamePos(MyTouch.position));
@@ -209,7 +209,7 @@ public class InputManager : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     LastScreenPosition = Input.mousePosition;
-                    UpdateCamera = (SelectedObject == null || !SelectedObject.TocaObject.GetTocaFunction<SelectionControl>());
+                    UpdateCamera = (SelectedObject == null || (!SelectedObject.TocaObject.GetTocaFunction<SelectionControl>() && SelectedObject.PositionChangeCallBacksV3.Count == 0));
                     //if (SelectedObject)
                     //    SelectedObject.OnClick(GlobalParameter.Instance.ScreenPosToGamePos(Input.mousePosition));
                 }

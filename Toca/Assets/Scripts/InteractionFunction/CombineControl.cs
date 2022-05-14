@@ -9,7 +9,9 @@ public class CombineControl : TocaFunction
     {
         Toast,
         Carrot,
-        Sausage
+        Sausage,
+        Bread,
+        ChickenLeg
     }
 
     public CombineType MyType;

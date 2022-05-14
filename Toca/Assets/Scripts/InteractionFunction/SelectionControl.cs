@@ -13,6 +13,9 @@ public class SelectionControl : TocaFunction
     public Vector3 DefaultScale;
     private float ZoomScale;
 
+    public GameObject FXonSelection;
+    public GameObject FXpointer;
+
     private void Awake()
     {
         DefaultScale = transform.lossyScale;
@@ -48,10 +51,14 @@ public class SelectionControl : TocaFunction
 
         if (!StandControl)
             transform.eulerAngles = Vector3.zero;
+
+        if (FXonSelection)
+            FXpointer = Instantiate(FXonSelection, transform.position, Quaternion.identity, transform);
     }
 
     public void OnDeselect()
     {
+        Destroy(FXpointer);
         Selected = false;
 
         StopAllCoroutines();

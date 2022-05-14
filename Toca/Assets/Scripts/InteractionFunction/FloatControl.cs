@@ -111,19 +111,23 @@ public class FloatControl : TocaFunction
         {
             FindControl fc = (FindControl)mc.TocaObject.GetTocaFunction<FindControl>();
 
-            Floaters[mc].Ripple = Instantiate(GlobalParameter.Instance.RunTimeEffects[2] , fc.BottomCenter, Quaternion.identity);
-
-            Floaters[mc].Ripple.GetComponent<SpriteRenderer>().size = new Vector2(Mathf.Min(fc.ObjectWidth + .1f, 1.85f), 0.89f);
-
-            LayerControl lc = (LayerControl)fc.TocaObject.GetTocaFunction<LayerControl>();
-            Floaters[mc].Ripple.GetComponent<SpriteRenderer>().sortingOrder = lc.OrderValue + 1;
-            Floaters[mc].TargetLayer = lc;
-
-            BaseControl bc = (BaseControl)fc.TocaObject.GetTocaFunction<BaseControl>();
-            if (bc && bc.MyBaseAttributes.HaveCover)
+            if (fc.ObjectWidth <= 3.7f)
             {
-                Floaters[mc].CoverBase = bc;
-                Floaters[mc].Ripple.GetComponent<SpriteRenderer>().sortingOrder = lc.OrderValue + bc.LayerCache + 1;
+
+                Floaters[mc].Ripple = Instantiate(GlobalParameter.Instance.RunTimeEffects[2], fc.BottomCenter, Quaternion.identity);
+
+                Floaters[mc].Ripple.GetComponent<SpriteRenderer>().size = new Vector2(Mathf.Min(fc.ObjectWidth + .1f, 1.85f), 0.89f);
+
+                LayerControl lc = (LayerControl)fc.TocaObject.GetTocaFunction<LayerControl>();
+                Floaters[mc].Ripple.GetComponent<SpriteRenderer>().sortingOrder = lc.OrderValue + 1;
+                Floaters[mc].TargetLayer = lc;
+
+                BaseControl bc = (BaseControl)fc.TocaObject.GetTocaFunction<BaseControl>();
+                if (bc && bc.MyBaseAttributes.HaveCover)
+                {
+                    Floaters[mc].CoverBase = bc;
+                    Floaters[mc].Ripple.GetComponent<SpriteRenderer>().sortingOrder = lc.OrderValue + bc.LayerCache + 1;
+                }
             }
         }
     }

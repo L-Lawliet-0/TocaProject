@@ -13,10 +13,12 @@ public class OneTimerTool : MonoBehaviour
     {
         if (EXECUTE)
         {
+            //ResetLayers();
             //GroupObjectsWithAttachingBase();
             AutoSetObjectsBase();
             //FindObjectsNameWithComponent();
             //GroupFindControlWithoutBases();
+            //GroupBases();
             EXECUTE = false;
         }    
     }
@@ -264,5 +266,26 @@ public class OneTimerTool : MonoBehaviour
             Debug.LogError(l.name);
         }
 
+    }
+
+    private void SortChildBasedOnOrder()
+    {
+        List<GameObject> objs = new List<GameObject>();
+        for (int i = 0; i < transform.childCount; i++)
+            objs.Add(transform.GetChild(i).gameObject);
+        objs.Sort(new HeightCompare());
+
+        for (int i = 0; i < objs.Count; i++)
+        {
+            objs[i].transform.SetSiblingIndex(i);
+        }
+    }
+
+    public class HeightCompare : Comparer<GameObject>
+    {
+        public override int Compare(GameObject x, GameObject y)
+        {
+            return x.GetComponent<SpriteRenderer>().sortingOrder - y.GetComponent<SpriteRenderer>().sortingOrder;
+        }
     }
 }
