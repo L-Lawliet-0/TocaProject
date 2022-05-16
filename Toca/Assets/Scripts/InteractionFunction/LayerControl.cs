@@ -177,9 +177,9 @@ public class LayerControl : TocaFunction
         bcs.Sort(heightCompare); // sort base control based on their pure height values
 
         heightCompare.PureHeight = false;
+        int countBefore = values.Count;
         foreach (BaseControl bc in bcs)
         {
-            int countBefore = values.Count;
             List<FindControl> fcs = new List<FindControl>(bc.Attachments.Keys);
             fcs.Sort(heightCompare); // sort find controls
 
@@ -188,7 +188,7 @@ public class LayerControl : TocaFunction
                 LayerControl lc = (LayerControl)fc.TocaObject.GetTocaFunction<LayerControl>();
                 values.AddRange(SortAllLayers(lc)); // add sorted layers
             }
-            int count = values.Count; //- countBefore;
+            int count = values.Count- countBefore;
             if (bc.MyBaseAttributes.HaveCover)
             {
                 bc.LayerCache = (count + 1) * 2;

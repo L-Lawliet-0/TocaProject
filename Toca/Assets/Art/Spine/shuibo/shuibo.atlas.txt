@@ -1,0 +1,8 @@
+shuibo.png
+size:1104,609
+filter:Linear,Linear
+pma:true
+11
+bounds:2,195,1093,412
+shuibo1
+bounds:2,2,1100,191

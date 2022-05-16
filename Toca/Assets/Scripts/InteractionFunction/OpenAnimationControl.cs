@@ -31,7 +31,25 @@ public class OpenAnimationControl : TocaFunction
         TrackEntry track = m_SkeletonAnimation.AnimationState.SetAnimation(TrackIndex, OpenAnimation, false);
         track.Reverse = false;
         track.TimeScale = AnimationSpeed;
+
+        FinishClose();
+
+        if (Oc.OpenObj)
+        {
+            for (int i = Oc.OpenObj.transform.childCount - 1; i >= 0; i--)
+            {
+                Transform tran = Oc.OpenObj.transform.GetChild(i);
+                if (tran.GetComponent<BaseControl>())
+                {
+                    tran.parent = null;
+                    BaseSaves.Add(tran);
+                    tran.gameObject.SetActive(false);
+                }
+            }
+        }
+        Invoke("FinishClose", OpenAnimation.Animation.Duration / track.TimeScale);
     }
+
 
     private List<Transform> BaseSaves;
     public void Close()
@@ -40,6 +58,7 @@ public class OpenAnimationControl : TocaFunction
         track.Reverse = true;
         track.TimeScale = AnimationSpeed;
 
+        /*
         FinishClose();
         
         if (Oc.OpenObj)
@@ -55,6 +74,7 @@ public class OpenAnimationControl : TocaFunction
             }
         }
         Invoke("FinishClose", OpenAnimation.Animation.Duration / track.TimeScale);
+        */
     }
 
     private void FinishClose()
@@ -62,6 +82,7 @@ public class OpenAnimationControl : TocaFunction
         foreach (Transform tran in BaseSaves)
         {
             tran.SetParent(Oc.OpenObj.transform);
+            tran.gameObject.SetActive(true);
         }
         BaseSaves.Clear();
     }

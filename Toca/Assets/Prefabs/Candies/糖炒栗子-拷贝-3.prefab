@@ -175,6 +175,8 @@ MonoBehaviour:
   Selected: 0
   PositionOffset: {x: 0, y: 0, z: 0}
   DefaultScale: {x: 0, y: 0, z: 0}
+  FXonSelection: {fileID: 0}
+  FXpointer: {fileID: 0}
 --- !u!60 &2765897360886572676
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -278,7 +280,7 @@ MonoBehaviour:
   TocaObject: {fileID: 0}
   InteractionRadius: 0
   IsHuman: 0
-  IsFood: 0
+  IsFood: 1
   IsGlasses: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
