@@ -63,6 +63,7 @@ public class BaseControl : TocaFunction
     public int BaseID;
     public SpriteRenderer Cover;
     public MeshRenderer Cover2;
+    public SpriteRenderer[] Covers;
 
     public class AttachData
     {

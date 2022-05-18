@@ -386,6 +386,8 @@ public class SpineControl : TocaFunction
         zuoshou.SetAttachment();
         zuotui.SetAttachment();
         youtui.SetAttachment();
+        LeftHandBase.gameObject.SetActive(false);
+        RightHandBase.gameObject.SetActive(false);
         Sleeping = true;
         Yanjing.SetAttachment("biyan");
         sleepFX = Instantiate(GlobalParameter.Instance.RunTimeEffects[5], fxPos, Quaternion.identity);
@@ -398,6 +400,8 @@ public class SpineControl : TocaFunction
         zuoshou.SetAttachment("zuoshou");
         zuotui.SetAttachment("zuotui");
         youtui.SetAttachment("youtui");
+        LeftHandBase.gameObject.SetActive(true);
+        RightHandBase.gameObject.SetActive(true);
         Sleeping = false;
         SetDefaultYanJing();
         Destroy(sleepFX);

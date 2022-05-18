@@ -11,7 +11,9 @@ public class CameraController : MonoBehaviour
     private float x_Min, x_Max;
     private float camera_Y;
     private float Target_X_Pixel;
-    private const float Speed = 20;
+
+    private const float MaxSpeed = 20;
+    private float Speed = MaxSpeed;
     public float POSTOPIXEL;
     public float Width_Half;
 
@@ -61,12 +63,21 @@ public class CameraController : MonoBehaviour
         {
             int sign = transform.position.x > target ? -1 : 1;
 
+            Speed -= Time.deltaTime * 10;
+            //Speed = Mathf.Max(2, Speed);
             transform.position += Vector3.right * Time.deltaTime * Speed * sign;
 
             int afterSign = transform.position.x > target ? -1 : 1;
 
-            if (sign != afterSign)
-                transform.position = new Vector3(target, camera_Y);
+            if (sign != afterSign || Speed <= 0)
+            {
+                if (sign != afterSign)
+                    transform.position = new Vector3(target, camera_Y);
+                else
+                    Target_X_Pixel = transform.position.x * POSTOPIXEL;
+                // reset speed after destination
+                Speed = MaxSpeed;
+            }
         }
     }
 }

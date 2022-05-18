@@ -156,7 +156,7 @@ public class FindControl : TocaFunction
         Bounds bounds = GetComponent<Collider2D>().bounds;
         float interactionRange = Mathf.Min(bounds.extents.x, bounds.extents.y);
 
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position /*+ Vector3.up * bounds.extents.y*/, interactionRange, 1 << LayerMask.NameToLayer("Base"));
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(TocaObject.transform.position /*+ Vector3.up * bounds.extents.y*/, interactionRange, 1 << LayerMask.NameToLayer("Base"));
         foreach (Collider2D collider in colliders)
         {
             bc = collider.GetComponentInParent<BaseControl>();

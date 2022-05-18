@@ -271,6 +271,8 @@ public class LayerControl : TocaFunction
                     bc.Cover.sortingOrder = OrderValue + bc.LayerCache;
                 if (bc.Cover2)
                     bc.Cover2.sortingOrder = OrderValue + bc.LayerCache;
+                foreach (SpriteRenderer sr in bc.Covers)
+                    sr.sortingOrder = OrderValue + bc.LayerCache + 1;
             }
         }
     }

@@ -90,6 +90,9 @@ public class TouchControl : TocaFunction
 
     public void OnTouchPositionChanged(Vector3 worldPosition)
     {
+        foreach (V3Delegate dele in PositionChangeCallBacksV3)
+            dele(worldPosition);
+
         if (CallbackOnly)
             return;
 
@@ -97,9 +100,6 @@ public class TouchControl : TocaFunction
             Selection.UpdateSelectionPos(worldPosition);
         if (Find)
             Find.SelectedUpdate();
-
-        foreach (V3Delegate dele in PositionChangeCallBacksV3)
-            dele(worldPosition);
     }
 
 }

@@ -30,7 +30,7 @@ public class ReplaceControl : TocaFunction
                 GameObject obj;
                 if (ObjectsPool != null && ObjectsPool.Length > 0)
                 {
-                    obj = Instantiate(ObjectsPool[Random.Range(0, ObjectsPool.Length)]);
+                    obj = Instantiate(ObjectsPool[i % ObjectsPool.Length]);
                 }
                 else
                     obj = Instantiate(ReplaceObject);
