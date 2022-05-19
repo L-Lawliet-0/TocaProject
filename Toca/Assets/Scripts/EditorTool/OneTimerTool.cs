@@ -15,10 +15,11 @@ public class OneTimerTool : MonoBehaviour
         {
             //ResetLayers();
             //GroupObjectsWithAttachingBase();
-            AutoSetObjectsBase();
+            //AutoSetObjectsBase();
             //FindObjectsNameWithComponent();
             //GroupFindControlWithoutBases();
             //GroupBases();
+            CreateUIitems();
             EXECUTE = false;
         }    
     }
@@ -286,6 +287,17 @@ public class OneTimerTool : MonoBehaviour
         public override int Compare(GameObject x, GameObject y)
         {
             return x.GetComponent<SpriteRenderer>().sortingOrder - y.GetComponent<SpriteRenderer>().sortingOrder;
+        }
+    }
+
+    private void CreateUIitems()
+    {
+        for (int i = transform.childCount + 1; i < 22; i++)
+        {
+            GameObject newobj = Instantiate(transform.GetChild(0).gameObject);
+            RectTransform rect = newobj.GetComponent<RectTransform>();
+            rect.SetParent(transform);
+            rect.localPosition = transform.GetChild(0).GetComponent<RectTransform>().localPosition + new Vector3(238 * (i % 5), -248 * (i / 5));
         }
     }
 }
