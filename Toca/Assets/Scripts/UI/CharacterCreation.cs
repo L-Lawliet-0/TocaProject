@@ -5,27 +5,154 @@ using UnityEngine.UI;
 
 public class CharacterCreation : MonoBehaviour
 {
-    public GameObject UnitPrefab, fushiPrefab, lianPrefab;
+    private static CharacterCreation m_Instance;
+    public static CharacterCreation Instance { get { return m_Instance; } }
+
+    public GameObject UnitPrefab, fushiPrefab, lianPrefab, toufaPrefab;
 
     public GameObject ResetPrefab;
 
     public Transform glassesRoot, kouzhaoRoot, maoziRoot, mianjuRoot;
     public Transform yanjingRoot, biziRoot, zuiRoot;
+    public Transform toufaRoot;
 
     public Transform Glasses, Kouzhao, Maozi, Mianju;
     private Transform[] AllPurples;
-    private Dictionary<string, Transform> PurpleDict;
+    private Dictionary<string, Transform> PurpleDict, YellowDict;
 
     public Sprite SelectedSprite, UnselectedSprite;
     public Sprite fushiSelectedSprite, fushiUnselectedSprite;
     public Sprite lianSelectedSprite, lianUnselectedSprite;
 
     public Transform[] AllYellows;
+    public Transform[] AllOranges;
 
     public Transform fushiRoot;
 
-    private void Start()
+    private const float MajorSpeed = 2000;
+
+    
+
+    // this section handles major panel swipe logic
+    private class MajorPanel
     {
+        public Transform ContentPanel;
+        public Transform Label;
+        public Vector3 OpenPos, ClosePos;
+        public Vector3 l_OpenPos, l_ClosePos;
+        public bool Open;
+        public bool Moving; // this panel is either moving from left to right or right to left
+        public MajorPanel(Transform cp, Transform label)
+        {
+            ContentPanel = cp;
+            Label = label;
+            OpenPos = cp.localPosition;
+            ClosePos = cp.localPosition + Vector3.right * 1300;
+            l_OpenPos = label.localPosition;
+            l_ClosePos = label.localPosition + Vector3.right * 1300;
+            Open = true;
+        }
+
+        public void DeltaChange()
+        {
+            int sign = Open ? 1 : -1;
+            ContentPanel.localPosition += Vector3.right * sign * MajorSpeed * Time.deltaTime;
+            Label.localPosition += Vector3.right * sign * MajorSpeed * Time.deltaTime;
+
+            if ((Open && ContentPanel.localPosition.x > ClosePos.x) || (!Open && ContentPanel.localPosition.x < OpenPos.x))
+            {
+                Open = !Open;
+                Moving = false;
+                if (Open)
+                {
+                    ContentPanel.localPosition = OpenPos;
+                    Label.localPosition = l_OpenPos;
+                }
+                else
+                {
+                    ContentPanel.localPosition = ClosePos;
+                    Label.localPosition = l_ClosePos;
+                }
+            }
+        }
+    }
+    private MajorPanel Hair, Face, Clothing, Gear;
+    private MajorPanel[] AllPanels;
+
+    private void InitalizeMajorPanel()
+    {
+        Hair = new MajorPanel(transform.GetChild(1), transform.GetChild(2));
+        Face = new MajorPanel(transform.GetChild(3), transform.GetChild(4));
+        Clothing = new MajorPanel(transform.GetChild(5), transform.GetChild(6));
+        Gear = new MajorPanel(transform.GetChild(7), transform.GetChild(8));
+        AllPanels = new MajorPanel[]
+        {
+            Hair, Face, Clothing, Gear
+        };
+    }
+
+    public bool Shifting()
+    {
+        foreach (MajorPanel mp in AllPanels)
+        {
+            if (mp.Moving)
+                return true;
+        }
+        return false;
+    }
+
+    private int ActiveIndex = -1;
+
+    public void OpenMajorPanel(int index)
+    {
+        // don't do anything if not done moving yet
+        if (!Shifting() && ActiveIndex != index)
+        {
+            ActiveIndex = index;
+            // open left side
+            StartCoroutine("Shift",index);
+        }
+    }
+
+    private IEnumerator Shift(int index)
+    {
+        for (int i = 0; i <= index; i++)
+        {
+            if (!AllPanels[i].Open)
+            {
+                AllPanels[i].Moving = true;
+                yield return new WaitForSeconds(.2f);
+            }
+        }
+
+        // close right side
+        for (int i = AllPanels.Length - 1; i > index; i--)
+        {
+            if (AllPanels[i].Open)
+            {
+                AllPanels[i].Moving = true;
+                yield return new WaitForSeconds(.2f);
+            }
+        }
+    }
+
+    private void Update()
+    {
+        foreach (MajorPanel mp in AllPanels)
+        {
+            if (mp.Moving)
+                mp.DeltaChange();
+        }
+    }
+
+    private void Awake()
+    {
+        m_Instance = this;
+    }
+
+    public void InitAllPanels()
+    {
+        // initalize all contents
         AllPurples = new Transform[]
         {
             Glasses, Kouzhao, Maozi, Mianju
@@ -43,12 +170,25 @@ public class CharacterCreation : MonoBehaviour
         PurpleDict.Add("maozi", maoziRoot);
         PurpleDict.Add("mianju", mianjuRoot);
 
+        YellowDict = new Dictionary<string, Transform>();
+        YellowDict.Add("yanjing", yanjingRoot);
+        YellowDict.Add("bizi", biziRoot);
+        YellowDict.Add("zui", zuiRoot);
 
         InitalizeContent(41, "fushi", fushiRoot, fushiPrefab, 395, 436, false);
 
-        InitalizeContent(40, "yanjing", yanjingRoot, UnitPrefab, 395, 323, false);
-        InitalizeContent(40, "bizi", biziRoot, UnitPrefab, 395, 323, false);
-        InitalizeContent(41, "zui", zuiRoot, UnitPrefab, 395, 323, false);
+        InitalizeContent(36, "yanjing", yanjingRoot, lianPrefab, 395, 323, false);
+        InitalizeContent(32, "bizi", biziRoot, lianPrefab, 395, 323, false);
+        InitalizeContent(29, "zui", zuiRoot, lianPrefab, 395, 323, false);
+
+        SetYellowSubpage(0);
+
+        InitalizeContent(41, "toufa", toufaRoot, toufaPrefab, 395, 323, false);
+
+        SetOrangeSubpage(0);
+
+        // initalize major panel
+        InitalizeMajorPanel();
     }
 
     public void InitalizeContent(int count, string itemPrefix, Transform rootTran, GameObject unitPrefab, float horizontalGap, float verticalGap, bool resetButton = false)
@@ -87,28 +227,64 @@ public class CharacterCreation : MonoBehaviour
 
             // register button
             int input = i;
-            if (itemPrefix.Equals("bizi") && i >= 26)
-                input += 2;
-            else if (!resetButton)
+            if (!resetButton)
                 input += 1;
             else if (i == 0)
                 input = -1;
 
             if (itemPrefix.Equals("fushi"))
                 rect.GetComponent<Button>().onClick.AddListener(() => fushiButtonCallback(input));
+            else if (itemPrefix.Equals("yanjing") || itemPrefix.Equals("bizi") || itemPrefix.Equals("zui"))
+                rect.GetComponent<Button>().onClick.AddListener(() => lianButtonCallback(itemPrefix, input));
+            else if (itemPrefix.Equals("toufa"))
+                rect.GetComponent<Button>().onClick.AddListener(() => toufaButtonCallback(itemPrefix, input));
             else
                 rect.GetComponent<Button>().onClick.AddListener(() => ButtonCallback(itemPrefix, input));
 
             if (!resetButton || i > 0)
             {
-                Image img = rect.GetChild(0).GetComponent<Image>();
-                Sprite sprite = Resources.Load<Sprite>(itemPrefix  + "/" + itemPrefix + input.ToString());
-                img.sprite = sprite;
+                if (itemPrefix.Equals("toufa"))
+                {
+                    SetHairUIunit(unit, input);
+                }
+                else
+                {
+                    Image img = rect.GetChild(0).GetComponent<Image>();
+                    Sprite sprite = Resources.Load<Sprite>(itemPrefix + "/" + itemPrefix + input.ToString());
+                    img.sprite = sprite;
 
-                rect = rect.GetChild(0).GetComponent<RectTransform>();
-                rect.sizeDelta = sprite.bounds.size * 100;
+                    rect = rect.GetChild(0).GetComponent<RectTransform>();
+                    rect.sizeDelta = sprite.bounds.size * 100;
+                }
             }
         }
+    }
+
+    private void SetHairUIunit(GameObject obj, int index)
+    {
+        if (houmianHairs.Contains(index))
+        {
+            obj.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("toufa/toufahoumian" + index);
+            obj.transform.GetChild(0).GetComponent<Image>().enabled = true;
+        }
+        else
+        {
+            obj.transform.GetChild(0).GetComponent<Image>().enabled = false;
+        }
+
+        obj.transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>("toufa/" + SpineUI.Instance.GetHead());
+
+        obj.transform.GetChild(2).GetComponent<Image>().sprite = Resources.Load<Sprite>("toufa/toufa" + index);
+
+        if (peishiHairs.Contains(index))
+        {
+            obj.transform.GetChild(3).GetComponent<Image>().sprite = Resources.Load<Sprite>("toufa/peishi" + index);
+            obj.transform.GetChild(3).GetComponent<Image>().enabled = true;
+        }
+        else
+            obj.transform.GetChild(3).GetComponent<Image>().enabled = false;
+
+        obj.transform.GetChild(0).GetComponent<Image>().color = obj.transform.GetChild(2).GetComponent<Image>().color = SpineUI.Instance.GetHairColor();
     }
 
     private void fushiButtonCallback(int index)
@@ -127,6 +303,36 @@ public class CharacterCreation : MonoBehaviour
         for (int i = 1; i < tran.childCount; i++)
         {
             tran.GetChild(i).GetComponent<Image>().sprite = index == i ? SelectedSprite : UnselectedSprite;
+        }
+    }
+
+    private static List<int> houmianHairs = new List<int>()
+    {
+        19, 20, 21, 27, 35, 36, 40
+    };
+
+    private static List<int> peishiHairs = new List<int>()
+    {
+        8, 9, 24
+    };
+
+    private void toufaButtonCallback(string key, int index)
+    {
+        SpineUI.Instance.Pairs[key].SetAttachment(index);
+        if (houmianHairs.Contains(index))
+            SpineUI.Instance.toufahoumian.SetAttachment(index);
+        else
+            SpineUI.Instance.toufahoumian.SetAttachment();
+    }
+
+    private void lianButtonCallback(string key, int index)
+    {
+        SpineUI.Instance.Pairs[key].SetAttachment(index);
+        Transform tran = YellowDict[key];
+        for (int i = 0; i < tran.childCount; i++)
+        {
+            int indexFix = index - 1;
+            tran.GetChild(i).GetComponent<Image>().sprite = indexFix == i ? lianSelectedSprite : lianUnselectedSprite;
         }
     }
 
@@ -154,7 +360,15 @@ public class CharacterCreation : MonoBehaviour
         }
     }
 
-    private static Color[] SkinColors = new Color[]
+    public void SetOrangeSubpage(int index)
+    {
+        for (int i = 0; i < AllOranges.Length; i++)
+        {
+            SetChildrenActive(AllOranges[i], i == index);
+        }
+    }
+
+    public static Color[] SkinColors = new Color[]
     {
         new Color(235f / 255f, 208f / 255f, 191f / 255f),
         new Color(255f / 255f, 214f / 255f, 186f / 255f),
@@ -180,8 +394,51 @@ public class CharacterCreation : MonoBehaviour
         new Color(142f / 255f, 75f / 255f, 37f / 255f),
     };
 
+    public static Color[] HairColors = new Color[]
+    {
+         new Color(241f / 255f, 145f / 255f, 73f / 255f),
+         new Color(72f / 255f, 58f / 255f, 57f / 255f),
+         new Color(230f / 255f, 206f / 255f, 196f / 255f),
+         new Color(233f / 255f, 192f / 255f, 173f / 255f),
+         new Color(74f / 255f, 39f / 255f, 31f / 255f),
+         new Color(125f / 255f, 105f / 255f, 101f / 255f),
+         new Color(36f / 255f, 36f / 255f, 36f / 255f),
+         new Color(217f / 255f, 217f / 255f, 217f / 255f),
+         new Color(41f / 255f, 17f / 255f, 15f / 255f),
+         new Color(31f / 255f, 37f / 255f, 63f / 255f),
+         new Color(240f / 255f, 185f / 255f, 120f / 255f),
+         new Color(210f / 255f, 194f / 255f, 181f / 255f),
+         new Color(119f / 255f, 74f / 255f, 63f / 255f),
+         new Color(51f / 255f, 63f / 255f, 67f / 255f),
+         new Color(51f / 255f, 54f / 255f, 63f / 255f),
+         new Color(58f / 255f, 40f / 255f, 40f / 255f),
+         new Color(226f / 255f, 190f / 255f, 152f / 255f),
+         new Color(231f / 255f, 196f / 255f, 96f / 255f),
+         new Color(0f / 255f, 134f / 255f, 171f / 255f),
+         new Color(207f / 255f, 183f / 255f, 219f / 255f),
+         new Color(150f / 255f, 54f / 255f, 82f / 255f),
+         new Color(255f / 255f, 191f / 255f, 207f / 255f),
+         new Color(43f / 255f, 80f / 255f, 88f / 255f),
+         new Color(88f / 255f, 50f / 255f, 91f / 255f),
+         new Color(222f / 255f, 153f / 255f, 88f / 255f),
+    };
+
     public void SetSkinColor(int colorIndex)
     {
         SpineUI.Instance.SetSkinColor(SkinColors[colorIndex]);
+    }
+
+    public void SetHairColor(int colorIndex)
+    {
+        SpineUI.Instance.SetHairColor(HairColors[colorIndex]);
+        ResetHairElements();
+    }
+
+    public void ResetHairElements()
+    {
+        for (int i = 0; i < toufaRoot.childCount; i++)
+        {
+            SetHairUIunit(toufaRoot.GetChild(i).gameObject, i + 1);
+        }
     }
 }

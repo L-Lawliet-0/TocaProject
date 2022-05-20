@@ -479,6 +479,28 @@ namespace Spine {
 			skin = newSkin;
 			UpdateCache();
 		}
+		
+		/// <summary>
+		/// clear skin attachments
+		/// </summary>
+		public void ClearSkin()
+		{
+			if (skin!= null)
+			{
+				Slot[] slots = this.slots.Items;
+				for (int i = 0, n = this.slots.Count; i < n; i++)
+				{
+					Slot slot = slots[i];
+					string name = slot.data.attachmentName;
+					if (name != null)
+					{
+						Attachment attachment = skin.GetAttachment(i, name);
+						if (attachment != null) slot.Attachment = null;
+					}
+				}
+			}
+			skin = null;
+		}
 
 		/// <summary>Finds an attachment by looking in the <see cref="Skeleton.Skin"/> and <see cref="SkeletonData.DefaultSkin"/> using the slot name and attachment name.</summary>
 		/// <returns>May be null.</returns>
