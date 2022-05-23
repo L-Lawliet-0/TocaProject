@@ -11,7 +11,7 @@ public class SpineUI : MonoBehaviour
     public AttachmentControl mianju, maozi, glasses, kouzhao, yanjing, bizi, zui, tou, toufa, toufahoumian;
 
     public Dictionary<string, AttachmentControl> Pairs;
-    private SkeletonGraphic SkeletonGraphic;
+    public SkeletonGraphic SkeletonGraphic;
 
     private void Awake()
     {

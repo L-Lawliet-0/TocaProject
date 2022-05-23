@@ -19,7 +19,8 @@ public class OneTimerTool : MonoBehaviour
             //FindObjectsNameWithComponent();
             //GroupFindControlWithoutBases();
             //GroupBases();
-            CreateUIitems();
+            //CreateUIitems();
+            //RearrangeUIChildren();
             EXECUTE = false;
         }    
     }
@@ -298,6 +299,47 @@ public class OneTimerTool : MonoBehaviour
             RectTransform rect = newobj.GetComponent<RectTransform>();
             rect.SetParent(transform);
             rect.localPosition = transform.GetChild(0).GetComponent<RectTransform>().localPosition + new Vector3(238 * (i % 5), -248 * (i / 5));
+        }
+    }
+
+    private void RearrangeUIChildren()
+    {
+        Vector3 startLocal = transform.GetChild(0).localPosition;
+
+        int[] newOrder = new int[]
+        {
+            2,1,3,6,17,
+            16,8,9,7,14,
+            18,20,21,15,22,
+            5,13,12,11,10,
+            4,19
+        };
+
+        int[] newOrder2 = new int[]
+        {
+            9, 22, 1, 2, 5,
+            4, 25, 11, 20, 19,
+            16, 7, 3, 10, 23,
+            24, 15, 6, 8, 21,
+            17, 13, 14, 12, 18
+        };
+
+        Dictionary<int, Transform> dict = new Dictionary<int, Transform>();
+
+        for (int i = 0; i < transform.childCount; i++)
+            dict.Add(newOrder2[i], transform.GetChild(i));
+
+        List<int> keys = new List<int>(dict.Keys);
+        keys.Sort();
+ 
+        for (int i = 0; i < keys.Count; i++)
+        {
+            dict[keys[i]].SetSiblingIndex(i);
+        }
+
+        for (int i = 0; i < transform.childCount; i++)
+        {
+           transform.GetChild(i).localPosition = startLocal + new Vector3(238 * (i % 5), -248 * (i / 5));
         }
     }
 }
