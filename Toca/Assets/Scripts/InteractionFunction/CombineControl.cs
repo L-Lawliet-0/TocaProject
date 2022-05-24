@@ -48,33 +48,13 @@ public class CombineControl : TocaFunction
             if (meet)
             {
                 Combined = true;
-                GameObject fx = Instantiate(GlobalParameter.Instance.RunTimeEffects[4], transform.position, Quaternion.identity);
-                Destroy(fx, 1f);
 
-                GameObject obj = Instantiate(GlobalParameter.Instance.GetCombinePrefab(MyType, cc.MyType));
-                obj.transform.position = transform.position;
-                MoveControl mc = obj.GetComponent<MoveControl>();
-                if (mc)
-                    mc.TargetPosition = transform.position;
-                obj.SetActive(false);
+                GlobalParameter.Instance.CreateObject(GlobalParameter.Instance.GetCombinePrefab(MyType, cc.MyType), transform.position);
+
                 Destroy(cc.TocaObject.gameObject);
-
-                StartCoroutine("DelayInit", obj);
-
+                Destroy(gameObject);
                 break;
             }
         }
-    }
-
-    private IEnumerator DelayInit(GameObject obj)
-    {
-        yield return new WaitForSeconds(.1f);
-
-        obj.SetActive(true);
-        TouchControl tc = obj.GetComponent<TouchControl>();
-        tc.OnTouch(obj.transform.position);
-        yield return null;
-        tc.OnDeTouch();
-        Destroy(gameObject);
     }
 }

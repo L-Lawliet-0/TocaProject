@@ -100,4 +100,32 @@ public class GlobalParameter : MonoBehaviour
 
         return null;
     }
+
+    public GameObject CreateObject(GameObject prefab, Vector3 pos)
+    {
+        // create a fx at spawn position
+        GameObject fx = Instantiate(RunTimeEffects[4], pos, Quaternion.identity);
+        Destroy(fx, 1f);
+
+        // make the object
+        GameObject obj = Instantiate(prefab, pos, Quaternion.identity);
+        MoveControl mc = obj.GetComponent<MoveControl>();
+        if (mc)
+            mc.TargetPosition = pos;
+        obj.SetActive(false);
+
+        StartCoroutine("DelayInit", obj);
+
+        return obj;
+    }
+
+    private IEnumerator DelayInit(GameObject obj)
+    {
+        yield return new WaitForSeconds(.1f);
+        obj.SetActive(true);
+        TouchControl tc = obj.GetComponent<TouchControl>();
+        tc.OnTouch(obj.transform.position);
+        yield return null;
+        tc.OnDeTouch();
+    }
 }

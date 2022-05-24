@@ -27,36 +27,17 @@ public class ReplaceControl : TocaFunction
 
             for (int i = 0; i < GenerateCount; i++)
             {
-                GameObject obj;
+                GameObject prefab;
                 if (ObjectsPool != null && ObjectsPool.Length > 0)
                 {
-                    obj = Instantiate(ObjectsPool[i % ObjectsPool.Length]);
+                    prefab = ObjectsPool[i % ObjectsPool.Length];
                 }
                 else
-                    obj = Instantiate(ReplaceObject);
-                obj.transform.position = transform.position + new Vector3(Random.Range(-.1f, .1f), Random.Range(-.1f, .1f));
-                MoveControl mc = obj.GetComponent<MoveControl>();
-                if (mc)
-                    mc.TargetPosition = obj.transform.position;
-                obj.SetActive(false);
-
-
-                StartCoroutine("DelayInit", obj);
+                    prefab = ReplaceObject;
+                GlobalParameter.Instance.CreateObject(prefab, transform.position + new Vector3(Random.Range(-.1f, .1f), Random.Range(-.1f, .1f)));
             }
 
             Destroy(gameObject, .2f);
         }
-    }
-
-    private IEnumerator DelayInit(GameObject obj)
-    {
-        yield return new WaitForSeconds(.1f);
-        
-        obj.SetActive(true);
-        TouchControl tc = obj.GetComponent<TouchControl>();
-        tc.OnTouch(obj.transform.position);
-        yield return null;
-        tc.OnDeTouch();
-        
     }
 }

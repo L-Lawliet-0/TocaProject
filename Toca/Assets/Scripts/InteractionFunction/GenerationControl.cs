@@ -21,18 +21,6 @@ public class GenerationControl : TocaFunction
             return;
         CurrentCount++;
 
-        GameObject candy = Instantiate(CandyPrefabs[Random.Range(0, CandyPrefabs.Length)]); // clone a random new candy
-        candy.SetActive(true);
-        candy.transform.position = transform.position; //+ new Vector3(Random.Range(-1f, 1f), Random.Range(0f, 2f));
-        StartCoroutine("DelayInit", candy);
+        GlobalParameter.Instance.CreateObject(CandyPrefabs[Random.Range(0, CandyPrefabs.Length)], transform.position);
     }
-
-    private IEnumerator DelayInit(GameObject candy)
-    {
-        yield return new WaitForSeconds(.1f);
-        candy.GetComponent<TouchControl>().OnTouch(candy.transform.position);
-        yield return new WaitForSeconds(.1f);
-        candy.GetComponent<TouchControl>().OnDeTouch();
-    }
-
 }

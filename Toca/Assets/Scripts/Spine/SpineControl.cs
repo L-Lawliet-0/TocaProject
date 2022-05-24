@@ -83,7 +83,7 @@ public class SpineControl : TocaFunction
         Kouzhao = new AttachmentControl("kouzhao1", MySkeleton, "kouzhao");
         Glasses = new AttachmentControl("glasses1", MySkeleton, "glasses");
         Mianju = new AttachmentControl("mianju1", MySkeleton, "mianju");
-        Ershi = new AttachmentControl("ershi2", MySkeleton, "ershi");
+        //Ershi = new AttachmentControl("ershi2", MySkeleton, "ershi");
         Meimao = new AttachmentControl("meimao", MySkeleton, "meimao");
         Bizi = new AttachmentControl("bizi", MySkeleton, "bizi");
         Zui = new AttachmentControl("zui2", MySkeleton, "zui");
