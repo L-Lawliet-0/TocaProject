@@ -17,16 +17,19 @@ public class SinkControl : MonoBehaviour
         TouchControl tc = GetComponent<TouchControl>();
         tc.ClickCallBacks.Add(Turn);
 
-        m_SpriteRenderer = ActiveAlways.GetComponent<SpriteRenderer>();
-        TargetWidth = m_SpriteRenderer.size.x;
-        TargetHeight = m_SpriteRenderer.size.y;
+        if (ActiveAlways)
+        {
+            m_SpriteRenderer = ActiveAlways.GetComponent<SpriteRenderer>();
+            TargetWidth = m_SpriteRenderer.size.x;
+            TargetHeight = m_SpriteRenderer.size.y;
+        }
     }
 
     public void Turn()
     {
         On = !On;
 
-        if (!ActiveAlways.activeInHierarchy)
+        if (ActiveAlways && !ActiveAlways.activeInHierarchy)
         {
             ActiveAlways.SetActive(true);
             StartCoroutine("FillCup");

@@ -15,7 +15,7 @@ public class OneTimerTool : MonoBehaviour
         {
             //ResetLayers();
             //GroupObjectsWithAttachingBase();
-            //AutoSetObjectsBase();
+            AutoSetObjectsBase();
             //FindObjectsNameWithComponent();
             //GroupFindControlWithoutBases();
             //GroupBases();

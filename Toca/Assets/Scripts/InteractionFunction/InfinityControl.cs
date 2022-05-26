@@ -15,7 +15,7 @@ public class InfinityControl : MonoBehaviour
         Rotations = new Quaternion[ObjectsList.Length];
         for (int i = 0; i < ObjectsList.Length; i++)
         {
-            Positions[i] = ObjectsList[i].transform.position;
+            Positions[i] = ObjectsList[i].transform.localPosition;
             Rotations[i] = ObjectsList[i].transform.rotation;
             ObjectsList[i] = null;
         }
@@ -29,9 +29,11 @@ public class InfinityControl : MonoBehaviour
             {
                 if (ObjectsList[i])
                     ObjectsList[i].GetComponent<SpriteRenderer>().enabled = true;
-                GameObject clone = Instantiate(Prefab, Positions[i], Rotations[i], transform);
+                GameObject clone = Instantiate(Prefab, transform.position + Positions[i], Rotations[i], transform);
                 ObjectsList[i] = clone;
             }
+            else
+                ObjectsList[i].transform.position = transform.position + Positions[i];
         }
     }
 }
