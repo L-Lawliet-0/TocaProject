@@ -1,0 +1,53 @@
+{
+"skeleton": {
+	"hash": "OtAe+Qdk8Os",
+	"spine": "4.0.64",
+	"x": -215,
+	"y": -7.89,
+	"width": 430,
+	"height": 695,
+	"images": "C:/Users/Administrator/Desktop/新建文件夹/images/images3/",
+	"audio": "C:/Users/Administrator/Desktop"
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "yinxiang", "bone": "root", "attachment": "yinxiang" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"yinxiang": {
+				"yinxiang": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 215, -7.89, -215, -7.89, -215, 687.11, 215, 687.11 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 430,
+					"height": 695
+				}
+			}
+		}
+	}
+],
+"animations": {
+	"1": {
+		"bones": {
+			"root": {
+				"scale": [
+					{},
+					{ "time": 0.1667, "x": 1.188, "y": 1.146 },
+					{ "time": 0.3, "x": 0.9, "y": 0.9 },
+					{ "time": 0.4667, "x": 1.18, "y": 1.18 },
+					{ "time": 0.6667, "x": 0.9, "y": 0.9 },
+					{ "time": 0.8 }
+				]
+			}
+		}
+	}
+}
+}

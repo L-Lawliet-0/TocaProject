@@ -255,16 +255,17 @@ public class SpineControl : TocaFunction
 
     public void SetOpenMouse()
     {
-        Jiaodongxi.SetAttachment("mouth1");
         Zui.SetAttachment();
+        Jiaodongxi.SetAttachment("mouth1");
     }
 
     public void SetDefaultMouse()
     {
         if (!Eating)
         {
-            Jiaodongxi.SetAttachment();
+            SkeletonAnimation.AnimationState.ClearTrack(FaceIndex);// . SetAnimation(FaceIndex, Eat, false);
             Zui.SetAttachment(1);
+            Jiaodongxi.SetAttachment();
         }
     }
 

@@ -1,0 +1,16 @@
+叶子.png
+size:293,204
+filter:Linear,Linear
+pma:true
+0
+bounds:2,74,128,211
+rotate:90
+yezi1
+bounds:2,2,70,206
+rotate:90
+yezi2
+bounds:215,28,71,37
+rotate:90
+yezi3
+bounds:215,101,101,76
+rotate:90

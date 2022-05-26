@@ -1,0 +1,6 @@
+男孩房音响.png
+size:434,699
+filter:Linear,Linear
+pma:true
+yinxiang
+bounds:2,2,430,695

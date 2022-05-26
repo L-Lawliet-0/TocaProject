@@ -47,6 +47,7 @@ public class OpenAnimationControl : TocaFunction
                 }
             }
         }
+
         Invoke("FinishClose", OpenAnimation.Animation.Duration / track.TimeScale);
     }
 
