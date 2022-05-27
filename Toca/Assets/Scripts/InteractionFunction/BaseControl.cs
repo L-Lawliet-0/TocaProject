@@ -18,7 +18,8 @@ public class BaseControl : TocaFunction
                     IsLeftHand, // is this base left hand
                     IsRightHand, // is this base right hand
                     IsMouth, // is this base mouse 
-                    IsEye; // is this base eye
+                    IsEye, // is this base eye
+                    IsHanger;
 
         public enum StackType
         {
@@ -213,6 +214,12 @@ public class BaseControl : TocaFunction
                     return false;
                 }
             }
+        }
+
+        // hang check
+        if (MyBaseAttributes.IsHanger)
+        {
+            return finder.IsHang;
         }
 
         bool limit = IgnoreLimit || Attachments.Count < SnapLimit;

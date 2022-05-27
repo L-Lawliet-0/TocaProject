@@ -13,6 +13,7 @@ public class FindControl : TocaFunction
     public bool IsHuman;
     public bool IsFood;
     public bool IsGlasses; // is this glasses
+    public bool IsHang; // is this object hangable
     public BaseControl CurrentAttachment; // the base this object is currently attaching
     public BaseControl BasePreview;
     public bool Arrived;
@@ -155,6 +156,7 @@ public class FindControl : TocaFunction
         BaseControl bc = null;
         Bounds bounds = GetComponent<Collider2D>().bounds;
         float interactionRange = Mathf.Min(bounds.extents.x, bounds.extents.y);
+        interactionRange = Mathf.Max(.5f, interactionRange);
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(TocaObject.transform.position /*+ Vector3.up * bounds.extents.y*/, interactionRange, 1 << LayerMask.NameToLayer("Base"));
         foreach (Collider2D collider in colliders)

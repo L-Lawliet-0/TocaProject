@@ -6,6 +6,7 @@ public class DancingPadControl : TocaFunction
 {
     private bool ManStanding;
     private BaseControl BaseControl;
+    public GameObject[] ActiveByOrder;
     void Start()
     {
         ManStanding = false;
@@ -39,6 +40,8 @@ public class DancingPadControl : TocaFunction
 
             if (breakOut)
             {
+                foreach (GameObject obj in ActiveByOrder)
+                    obj.SetActive(false);
                 BlinkFX.SetActive(false);
                 StopAllCoroutines();
                 ManStanding = false;
@@ -58,10 +61,14 @@ public class DancingPadControl : TocaFunction
         }
         YellowLight.color = Color.white;
 
+        int index = 0;
         while (true)
         {
             BlinkFX.SetActive(!BlinkFX.activeInHierarchy);
+            ActiveByOrder[index].SetActive(true);
             yield return new WaitForSeconds(.2f);
+            ActiveByOrder[index].SetActive(false);
+            index = index + 1 >= ActiveByOrder.Length ? 0 : index + 1;
         }
     }
 

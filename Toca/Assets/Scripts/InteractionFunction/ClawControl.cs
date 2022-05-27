@@ -14,6 +14,8 @@ public class ClawControl : TocaFunction
     public Transform GiftSpawnPos;
     public GameObject[] GiftPool;
 
+    private bool AutoRunning = false;
+
     void Start()
     {
         Grabing = false;
@@ -25,8 +27,38 @@ public class ClawControl : TocaFunction
         PosMax = TocaObject.transform.position.x + DragRange;
     }
 
+    public void AutoRun()
+    {
+        if (AutoRunning)
+            return;
+        AutoRunning = true;
+        if (DetachOnClick.parent == transform)
+            DetachOnClick.parent = null;
+
+        StartCoroutine("RandomGo");
+    }
+
+    private IEnumerator RandomGo()
+    {
+        float ran = Random.Range(PosMin, PosMax);
+        int sign = ran > TocaObject.transform.position.x ? 1 : -1;
+
+        while (true)
+        {
+            TocaObject.transform.position += Time.deltaTime * sign * Vector3.right;
+            int temp = ran > TocaObject.transform.position.x ? 1 : -1;
+            if (temp != sign)
+                break;
+            yield return null;
+        }
+        Grabing = true;
+        StartCoroutine("Grab");
+    }
+
     public void OnTouch(Vector3 pos)
     {
+        if (AutoRunning)
+            return;
         PositionLastFrame = pos;
         if (DetachOnClick.parent == transform)
             DetachOnClick.parent = null;
@@ -34,6 +66,8 @@ public class ClawControl : TocaFunction
 
     public void OnPositionChanged(Vector3 pos)
     {
+        if (AutoRunning)
+            return;
         if (!Grabing)
         {
             float delta = pos.x - PositionLastFrame.x;
@@ -47,6 +81,8 @@ public class ClawControl : TocaFunction
 
     public void OnRelease()
     {
+        if (AutoRunning)
+            return;
         if (!Grabing)
         {
             Grabing = true;
@@ -78,5 +114,7 @@ public class ClawControl : TocaFunction
         Grabing = false;
 
         GlobalParameter.Instance.CreateObject(GiftPool[Random.Range(0, GiftPool.Length)], GiftSpawnPos.position);
+
+        AutoRunning = false;
     }
 }
