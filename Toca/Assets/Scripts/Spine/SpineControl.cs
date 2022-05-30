@@ -42,7 +42,7 @@ public class SpineControl : TocaFunction
 
     public float HipOffset;
 
-    private AttachmentControl Maozi, Kouzhao, Glasses, Mianju, Ershi, Meimao, Bizi, Zui, Yanjing, Toufa, Toufahoumian, Jiaodongxi, shenti, youshou, zuoshou, youtui, zuotui;
+    private AttachmentControl Maozi, Kouzhao, Glasses, Mianju, Ershi, Meimao, Bizi, Zui, Yanjing, Toufa, Toufahoumian, Jiaodongxi, shenti, youshou, zuoshou, youtui, zuotui, Tou;
 
     private const int LeftHandIndex = 1, RightHandIndex = 2, LegIndex = 3, FaceIndex = 4;
 
@@ -96,6 +96,7 @@ public class SpineControl : TocaFunction
         zuoshou = new AttachmentControl("zuoshou", MySkeleton, "");
         youtui = new AttachmentControl("youtui", MySkeleton, "");
         zuotui = new AttachmentControl("zuotui", MySkeleton, "");
+        Tou = new AttachmentControl("tou", MySkeleton, "");
         shenti.SetAttachment("shenti");
         youshou.SetAttachment("youshou");
         zuoshou.SetAttachment("zuoshou");
@@ -106,6 +107,7 @@ public class SpineControl : TocaFunction
         Bizi.SetAttachment(1);
         Toufa.SetAttachment(1);
         Zui.SetAttachment(1);
+        Tou.SetAttachment("tou");
 
         B7 = MySkeleton.FindBone("bone7");
         B8 = MySkeleton.FindBone("bone8");
@@ -430,4 +432,37 @@ public class SpineControl : TocaFunction
         }
     }
 
+    // load character state based on character data
+    public void LoadCharacter()
+    {
+        CharacterData cd = TocaObject.TocaSave.My_CharacterData;
+        Mianju.SetAttachment(cd.ID_mianju);
+        Maozi.SetAttachment(cd.ID_maozi);
+        Glasses.SetAttachment(cd.ID_glasses);
+        Kouzhao.SetAttachment(cd.ID_kouzhao);
+        Yanjing.SetAttachment(cd.ID_yanjing);
+        Bizi.SetAttachment(cd.ID_bizi);
+        Zui.SetAttachment(cd.ID_zui);
+        Tou.SetAttachment(cd.ID_tou);
+        Toufa.SetAttachment(cd.ID_toufa);
+        Toufahoumian.SetAttachment(cd.ID_toufahoumian);
+        SetSkinColor(CharacterCreation.SkinColors[cd.ID_skinColor]);
+        SetHairColor(CharacterCreation.HairColors[cd.ID_hairColor]);
+    }
+
+    public void SetSkinColor(Color color)
+    {
+        MySkeleton.FindSlot("tou").SetColor(color);
+        MySkeleton.FindSlot("shenti").SetColor(color);
+        MySkeleton.FindSlot("youshou").SetColor(color);
+        MySkeleton.FindSlot("zuoshou").SetColor(color);
+        MySkeleton.FindSlot("youtui").SetColor(color);
+        MySkeleton.FindSlot("zuotui").SetColor(color);
+    }
+
+    public void SetHairColor(Color color)
+    {
+        MySkeleton.FindSlot("toufahoumian").SetColor(color);
+        MySkeleton.FindSlot("toufa1").SetColor(color);
+    }
 }

@@ -12,7 +12,9 @@ public class ParticleControl : TocaFunction
 
     public void Click()
     {
+
         ParticleSystem.loop = !ParticleSystem.loop;
-        ParticleSystem.Play();
+        if (ParticleSystem.loop)
+            ParticleSystem.Play();
     }
 }

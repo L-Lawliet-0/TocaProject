@@ -97,7 +97,7 @@ public class ClawControl : TocaFunction
 
         while (counter > 0)
         {
-            Claw.position -= Vector3.up * Time.deltaTime;
+            Claw.position -= Vector3.up * Time.deltaTime * 2;
             counter -= Time.deltaTime;
             yield return null;
         }
@@ -105,7 +105,7 @@ public class ClawControl : TocaFunction
         counter = .5f;
         while (counter > 0)
         {
-            Claw.position += Vector3.up * Time.deltaTime;
+            Claw.position += Vector3.up * Time.deltaTime * 2;
             counter -= Time.deltaTime;
             yield return null;
         }

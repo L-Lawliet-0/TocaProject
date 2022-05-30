@@ -67,7 +67,10 @@ public class LayerControl : TocaFunction
         }
         */
         //ResetLayer(DefaultObjectLayer, false, false);
-        ResetLayer(false);
+        if (!GetComponent<SunControl>())
+            ResetLayer(false);
+        else
+            OrderValue = GetBaseLayer(this);
 
         /*
         TouchHandler touch = (TouchHandler)TocaObject.GetTocaFunction<TouchHandler>();

@@ -18,6 +18,8 @@ public class TocaObject : MonoBehaviour
         public bool Attaching; // this toca object is attaching to another toca object
         public int ParentObjectID; // the toca object this current object is attaching
         public int ParentBaseID; // the basecontrol this current object is attaching
+
+        public CharacterData My_CharacterData; // if this object is spine object, load from character data
     }
     public ObjectSaveData TocaSave;
 
@@ -58,6 +60,14 @@ public class TocaObject : MonoBehaviour
                     break;
                 }
             }
+        }
+
+        SpineControl sc = (SpineControl)GetTocaFunction<SpineControl>();
+        if (sc)
+        {
+            TocaSave.My_CharacterData = new CharacterData();
+            TocaSave.My_CharacterData.InitData();
+            sc.LoadCharacter();
         }
     }
 
