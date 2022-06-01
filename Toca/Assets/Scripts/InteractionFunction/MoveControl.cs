@@ -15,7 +15,8 @@ public class MoveControl : TocaFunction
     {
         TimeReach,
         Linear,
-        Freefall
+        Freefall,
+        TrackMove
     }
     public MoveMode CurrentMoveMode;
 
@@ -54,6 +55,9 @@ public class MoveControl : TocaFunction
             case MoveMode.Freefall:
                 Speed += Time.deltaTime * GlobalParameter.Acceleration;
                 break;
+            case MoveMode.TrackMove:
+                Speed = 10;
+                break;
         }
 
         transform.position += Direction * Speed * Time.deltaTime;
@@ -64,6 +68,13 @@ public class MoveControl : TocaFunction
         if (Vector3.Distance(transform.position, TargetPosition) < .1f || Vector3.Dot(Direction, newDir) <= 0)
         {
             transform.position = TargetPosition;
+
+            if (CurrentMoveMode == MoveMode.TrackMove)
+            {
+                ((SpineControl)TocaObject.GetTocaFunction<SpineControl>()).ArrivedTarget = true;
+                ((SpineControl)TocaObject.GetTocaFunction<SpineControl>()).OnTrack = true;
+                Speed = 0;
+            }
 
             if (Find && Find.CurrentAttachment && !Find.Arrived)
             {
@@ -132,7 +143,15 @@ public class MoveControl : TocaFunction
                 CurrentMoveMode = MoveMode.Linear;
                 Speed = 10;
             }
-            else*/ if ((!Find.Arrived || Find.CurrentAttachment.TocaObject.GetTocaFunction<SlideControl>() || Find.CurrentAttachment.TocaObject.GetTocaFunction<TrashBinControl>()))
+            else*/
+            if (Find.CurrentAttachment.TocaObject.GetTocaFunction<TrackControl>())
+            {
+                if (CurrentMoveMode != MoveMode.TrackMove)
+                    StartCoroutine("TrackShake");
+                CurrentMoveMode = MoveMode.TrackMove;
+                return !((SpineControl)TocaObject.GetTocaFunction<SpineControl>()).ArrivedTarget;
+            }
+            if ((!Find.Arrived || Find.CurrentAttachment.TocaObject.GetTocaFunction<SlideControl>() || Find.CurrentAttachment.TocaObject.GetTocaFunction<TrashBinControl>()))
                 CurrentMoveMode = MoveMode.Freefall;
             else
                 return false;
@@ -165,5 +184,49 @@ public class MoveControl : TocaFunction
 
         transform.position = tempTargetSave;
         Shaking = false;
+    }
+
+    private IEnumerator TrackShake()
+    {
+        yield return null;
+        SpineControl sc = (SpineControl)TocaObject.GetTocaFunction<SpineControl>();
+        float rotationCounter = .1f; // 
+        int rotationSign = 1;
+        float verticalCounter = .2f;
+        int verticalSign = 1;
+
+        while (CurrentMoveMode == MoveMode.TrackMove)
+        {
+            if (!sc.ArrivedTarget)
+            {
+                transform.eulerAngles += Vector3.forward * 90 * Time.deltaTime * rotationSign;
+                rotationCounter -= Time.deltaTime;
+                if (rotationCounter < 0)
+                {
+                    rotationCounter = .2f;
+                    rotationSign = -rotationSign;
+                }
+
+                if (sc.OnTrack)
+                {
+                    transform.position += Vector3.up * verticalSign * Time.deltaTime * 2;
+                    verticalCounter -= Time.deltaTime;
+                }
+
+                if (verticalCounter < 0)
+                {
+                    verticalCounter = .2f;
+                    verticalSign = -verticalSign;
+                }
+            }
+            else
+            {
+                transform.eulerAngles = Vector3.zero;
+                rotationCounter = .1f;
+            }
+            yield return null;
+        }
+
+        transform.eulerAngles = Vector3.zero;
     }
 }

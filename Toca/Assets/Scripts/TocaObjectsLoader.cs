@@ -26,8 +26,11 @@ public class TocaObjectsLoader : MonoBehaviour
             PublicPool = new List<TocaObject>();
             foreach (TocaObject toca in all)
             {
-                PublicPool.Add(toca);
-                TocaObjectsPool.Add(toca.TocaSave.ObjectID, toca);
+                if (!toca.GetComponentInParent<TrackControl>())
+                {
+                    PublicPool.Add(toca);
+                    TocaObjectsPool.Add(toca.TocaSave.ObjectID, toca);
+                }
             }
             Initialized = false;
         }

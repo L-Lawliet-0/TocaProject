@@ -117,6 +117,12 @@ public class FindControl : TocaFunction
         if (CurrentAttachment)
             CurrentAttachment.Detach(this);
         CurrentAttachment = null;
+
+        if (SpineControl)
+        {
+            SpineControl.OnTrack = false;
+            SpineControl.ArrivedTarget = false;
+        }
     }
 
     private bool Sitting;

@@ -841,6 +841,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &24616793
@@ -1068,6 +1081,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 30448
     ParentBaseID: 30340
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &28200734
@@ -1507,6 +1533,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 30652
     ParentBaseID: 33478
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &55632430
@@ -1976,6 +2015,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 30804
     ParentBaseID: 33180
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &68262009
@@ -2357,6 +2409,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 32394
     ParentBaseID: 31476
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &81412217
@@ -2974,6 +3039,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &129999851
@@ -3378,6 +3456,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 30708
     ParentBaseID: 31304
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &156677086
@@ -3540,6 +3631,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &167250620
@@ -4721,6 +4825,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 32172
     ParentBaseID: 33606
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &228798426
@@ -5278,6 +5395,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 30974
     ParentBaseID: 31596
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &262162615
@@ -5697,6 +5827,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &279745273
@@ -6104,6 +6247,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 33518
     ParentBaseID: 32156
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &296363106
@@ -6281,6 +6437,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 33170
     ParentBaseID: 30830
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!212 &296995366
@@ -6581,6 +6750,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 31770
     ParentBaseID: 31272
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &307759291
@@ -6833,6 +7015,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &314638973
@@ -7005,6 +7200,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &331624640
@@ -7884,6 +8092,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &369946580
@@ -8128,6 +8349,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &373551779
@@ -8271,6 +8505,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &377069024
@@ -8768,6 +9015,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &397779922
@@ -9096,6 +9356,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &408824279
@@ -9630,6 +9903,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 32172
     ParentBaseID: 33606
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &447958597
@@ -9771,6 +10057,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &448678910
@@ -9845,6 +10144,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &450075242
@@ -10441,6 +10753,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 30974
     ParentBaseID: 31596
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &477095717
@@ -11158,6 +11483,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 33906
     ParentBaseID: 30894
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &496119872
@@ -11414,6 +11752,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 32722
     ParentBaseID: 30148
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &507742648
@@ -11725,6 +12076,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &514071208
@@ -12244,6 +12608,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 32314
     ParentBaseID: 31412
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &533609734
@@ -12692,6 +13069,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 30974
     ParentBaseID: 31596
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &559504760
@@ -12921,6 +13311,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &578029301
@@ -13063,6 +13466,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &579769923
@@ -13666,6 +14082,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 33518
     ParentBaseID: 32156
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &606452252
@@ -14095,6 +14524,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!1 &617821835
@@ -15650,6 +16092,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 30268
     ParentBaseID: 31220
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &695496018
@@ -16233,6 +16688,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 32394
     ParentBaseID: 31476
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &723556726
@@ -16375,6 +16843,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &727393490
@@ -17330,6 +17811,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 30804
     ParentBaseID: 33180
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &775106816
@@ -17840,6 +18334,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 33170
     ParentBaseID: 30830
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!212 &802389990
@@ -17949,7 +18456,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &802655807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18689,6 +19196,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 33518
     ParentBaseID: 32156
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &854285456
@@ -19558,6 +20078,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 32722
     ParentBaseID: 30148
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &885231140
@@ -19864,6 +20397,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &896716649
@@ -20680,6 +21226,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 30268
     ParentBaseID: 31220
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &921071470
@@ -20872,6 +21431,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &929376501
@@ -21357,6 +21929,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 32394
     ParentBaseID: 31476
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &970710841
@@ -21883,6 +22468,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 31770
     ParentBaseID: 31272
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &975349065
@@ -22211,6 +22809,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &981251227
@@ -22358,6 +22969,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &988387773
@@ -22663,6 +23287,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 30804
     ParentBaseID: 33180
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1004055224
@@ -22851,6 +23488,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1022092620
@@ -23305,6 +23955,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1044243720
@@ -23709,6 +24372,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1057602272
@@ -23850,6 +24526,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1058759616
@@ -24267,6 +24956,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 31770
     ParentBaseID: 31272
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1072541968
@@ -24443,6 +25145,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!1 &1079324749
@@ -25439,6 +26154,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1113558342
@@ -25754,6 +26482,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 32394
     ParentBaseID: 31476
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1121481291
@@ -26299,6 +27040,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 30812
     ParentBaseID: 34238
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1126444956
@@ -27587,6 +28341,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 30562
     ParentBaseID: 34076
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1194097549
@@ -28117,6 +28884,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1222565493
@@ -28381,6 +29161,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 32172
     ParentBaseID: 33606
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1244111611
@@ -28864,6 +29657,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1255349634
@@ -29089,6 +29895,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1263328879
@@ -29415,6 +30234,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 33816
     ParentBaseID: 32224
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1266662954
@@ -29720,6 +30552,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 33518
     ParentBaseID: 32156
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1273408088
@@ -30130,6 +30975,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 31652
     ParentBaseID: 34090
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1289399241
@@ -30840,6 +31698,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 32172
     ParentBaseID: 33606
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1319124250
@@ -31437,6 +32308,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1351708569
@@ -31788,6 +32672,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1360779986
@@ -31930,6 +32827,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1363778993
@@ -32213,6 +33123,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1372186089
@@ -33463,6 +34386,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1453603895
@@ -33661,6 +34597,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 32172
     ParentBaseID: 33606
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1455298236
@@ -33854,6 +34803,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1455455677
@@ -34549,6 +35511,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 34296
     ParentBaseID: 30348
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1500890470
@@ -35051,6 +36026,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 30708
     ParentBaseID: 31304
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1510568267
@@ -35431,6 +36419,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 30804
     ParentBaseID: 33180
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1526672819
@@ -35976,6 +36977,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 32172
     ParentBaseID: 33606
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1562644339
@@ -36826,6 +37840,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 34296
     ParentBaseID: 30348
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1614761919
@@ -36968,6 +37995,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1616018866
@@ -37796,6 +38836,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1675932224
@@ -38333,6 +39386,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 30268
     ParentBaseID: 31220
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1690073738
@@ -38562,6 +39628,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 33688
     ParentBaseID: 31740
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1693783024
@@ -38884,6 +39963,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 30448
     ParentBaseID: 30340
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1699391423
@@ -38975,6 +40067,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1702020684
@@ -39290,6 +40395,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 32172
     ParentBaseID: 33606
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1716343649
@@ -39801,6 +40919,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1736271858
@@ -40037,6 +41168,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 33906
     ParentBaseID: 30894
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1738487437
@@ -40963,6 +42107,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1792127577
@@ -41404,6 +42561,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 33654
     ParentBaseID: 32254
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1818363032
@@ -41783,7 +42953,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1835519415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42233,6 +43403,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1846507883
@@ -42576,6 +43759,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1864636706
@@ -42925,6 +44121,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 31770
     ParentBaseID: 31272
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1877354030
@@ -43245,6 +44454,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 30812
     ParentBaseID: 34238
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1882302661
@@ -43550,6 +44772,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 32394
     ParentBaseID: 31476
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1893983273
@@ -44355,6 +45590,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 33518
     ParentBaseID: 32156
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1926108442
@@ -44773,6 +46021,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 31770
     ParentBaseID: 31272
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1933367053
@@ -45123,6 +46384,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 30448
     ParentBaseID: 30340
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1934504956
@@ -45315,6 +46589,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1962925065
@@ -45911,6 +47198,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 32394
     ParentBaseID: 31476
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1971713456
@@ -46134,6 +47434,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 33654
     ParentBaseID: 32254
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1972898865
@@ -46860,6 +48173,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 32460
     ParentBaseID: 32044
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &2006417891
@@ -47254,6 +48580,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 32460
     ParentBaseID: 32044
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &2014252811
@@ -47673,6 +49012,19 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &2040049730
@@ -48102,6 +49454,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 31770
     ParentBaseID: 31272
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &2044558321
@@ -48298,6 +49663,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 32172
     ParentBaseID: 33606
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &2045786694
@@ -48863,6 +50241,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 32172
     ParentBaseID: 33606
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &2075819869
@@ -50032,6 +51423,19 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 31084
     ParentBaseID: 33638
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &2119610407

@@ -1,0 +1,5394 @@
+{
+"skeleton": {
+	"hash": "olNnmpSVE2k",
+	"spine": "4.0.64",
+	"x": -1500.97,
+	"y": -0.92,
+	"width": 3012.07,
+	"height": 1538.05,
+	"images": "C:/Users/Administrator/Desktop/新建文件夹/images/images5/",
+	"audio": "C:/Users/Administrator/Desktop"
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "bone6", "parent": "root", "length": 2987.56, "rotation": -0.08, "x": -1486.45, "y": 4.11 },
+	{ "name": "bone", "parent": "bone6", "length": 252.72, "rotation": 87.26, "x": 899.97, "y": 432.65 },
+	{ "name": "bone2", "parent": "bone6", "length": 137.32, "rotation": 86.88, "x": 1255.35, "y": 492.4 },
+	{ "name": "bone3", "parent": "bone6", "length": 405.63, "rotation": 87.41, "x": 1604.45, "y": 468.14 },
+	{ "name": "bone4", "parent": "bone6", "length": 393.3, "rotation": 78.07, "x": 2227.96, "y": 634.11 },
+	{ "name": "bone7", "parent": "bone6", "length": 172.98, "rotation": 90.9, "x": 1978.39, "y": 717.12 },
+	{ "name": "bone8", "parent": "bone6", "length": 366.31, "rotation": 78.29, "x": 1504.56, "y": 883.84 },
+	{
+		"name": "bone9",
+		"parent": "bone6",
+		"length": 251.06,
+		"rotation": 93.44,
+		"x": 1934.58,
+		"y": 842.36,
+		"scaleX": 0.7604
+	},
+	{ "name": "bone10", "parent": "bone6", "length": 296.57, "rotation": 85.18, "x": 1130.2, "y": 632.63 },
+	{ "name": "bone11", "parent": "bone6", "length": 105.61, "rotation": 87.78, "x": 1288.95, "y": 299.62 },
+	{ "name": "bone12", "parent": "bone6", "length": 196.7, "rotation": 89.39, "x": 779.34, "y": 690.81 },
+	{ "name": "bone13", "parent": "bone6", "length": 129.16, "rotation": 88.64, "x": 1053.2, "y": 922.22 },
+	{ "name": "bone14", "parent": "bone6", "length": 168.65, "rotation": 87.61, "x": 2080.53, "y": 460.65 },
+	{ "name": "bone15", "parent": "bone6", "length": 143.51, "rotation": 82.31, "x": 907.8, "y": 273.78 },
+	{ "name": "bone16", "parent": "bone6", "length": 84.03, "rotation": 90.08, "x": 1452.81, "y": 361.43 },
+	{ "name": "bone17", "parent": "bone6", "length": 63.4, "rotation": 80.29, "x": 1187.68, "y": 409.69 },
+	{ "name": "bone18", "parent": "bone6", "length": 120.65, "rotation": 90.08, "x": 2049.6, "y": 368.68 },
+	{ "name": "bone19", "parent": "bone18", "length": 127.57, "rotation": 4.84, "x": -45.36, "y": 244.69 },
+	{ "name": "bone21", "parent": "bone6", "length": 313.03, "rotation": 104.79, "x": 559.26, "y": 548.53 },
+	{
+		"name": "bone20",
+		"parent": "bone21",
+		"length": 150.66,
+		"rotation": -14.66,
+		"x": -155.04,
+		"y": -41.5,
+		"scaleX": 2.1328
+	},
+	{ "name": "bone22", "parent": "bone6", "length": 72.2, "rotation": 89.62, "x": 1947.12, "y": 337.59 },
+	{ "name": "bone23", "parent": "bone6", "length": 107.76, "rotation": 91.21, "x": 2266.44, "y": 442.31 },
+	{ "name": "bone24", "parent": "bone23", "length": 99.21, "rotation": -0.52, "x": 17.62, "y": -15.09 },
+	{ "name": "bone25", "parent": "bone6", "length": 47.78, "rotation": 87.25, "x": 2328.19, "y": 516.87 },
+	{ "name": "bone26", "parent": "bone6", "length": 86.34, "rotation": 105.91, "x": 2556.89, "y": 694.51 },
+	{ "name": "bone27", "parent": "bone6", "length": 70.23, "rotation": 98.27, "x": 2602.42, "y": 687.96 },
+	{ "name": "bone28", "parent": "bone6", "length": 49.02, "rotation": 86.77, "x": 2681.88, "y": 824.05 },
+	{ "name": "bone29", "parent": "bone6", "length": 63.09, "rotation": 85.82, "x": 2445.92, "y": 570.77 },
+	{
+		"name": "bone30",
+		"parent": "bone20",
+		"length": 39.95,
+		"rotation": 0.62,
+		"x": 27.87,
+		"y": 30.59,
+		"scaleX": 0.4422
+	},
+	{ "name": "bone31", "parent": "bone6", "length": 55.25, "rotation": 91, "x": 534.17, "y": 129.39 },
+	{ "name": "bone32", "parent": "bone6", "length": 45.1, "rotation": 85.74, "x": 342.57, "y": 410.11 },
+	{ "name": "bone33", "parent": "bone6", "length": 68.42, "rotation": 89.29, "x": 112.85, "y": 494.15 },
+	{ "name": "bone34", "parent": "bone6", "length": 85.31, "rotation": 91.43, "x": 1201.88, "y": 50.09 },
+	{ "name": "bone35", "parent": "bone6", "length": 46.34, "rotation": 90.91, "x": 1196.24, "y": 248.82 },
+	{ "name": "bone36", "parent": "bone6", "length": 34.84, "rotation": 86.98, "x": 1098.62, "y": 414.01 },
+	{ "name": "bone37", "parent": "bone36", "length": 45.11, "rotation": 1.76, "x": 9.49, "y": -14.39 },
+	{ "name": "bone38", "parent": "bone37", "length": 40.39, "rotation": -0.16, "x": 22.39, "y": -15.22 },
+	{ "name": "bone39", "parent": "bone38", "length": 38.84, "rotation": -0.83, "x": 15.53, "y": -12.19 },
+	{ "name": "bone45", "parent": "bone6", "length": 117.69, "rotation": 75.05, "x": 1958.53, "y": 527.45 },
+	{ "name": "bone46", "parent": "bone45", "length": 100.67, "rotation": 8.06, "x": 49.05, "y": -98.16 },
+	{ "name": "bone48", "parent": "bone6", "length": 26.97, "rotation": 88.34, "x": 2873.09, "y": 519.53 },
+	{ "name": "bone40", "parent": "bone6", "length": 30.88, "rotation": 86.2, "x": 2839.96, "y": 588.66 },
+	{ "name": "bone49", "parent": "bone6", "length": 108.59, "rotation": 90.96, "x": 2614.4, "y": 1070.29 },
+	{ "name": "bone50", "parent": "bone6", "length": 412.88, "rotation": 90.29, "x": 2198.22, "y": 643.13 },
+	{ "name": "bone51", "parent": "bone6", "length": 70.46, "rotation": 89.47, "x": 2256.96, "y": 582.77 },
+	{ "name": "bone52", "parent": "bone6", "length": 63.09, "rotation": 89.01, "x": 2308.68, "y": 575.5 },
+	{ "name": "bone53", "parent": "bone6", "length": 51.27, "rotation": 89.32, "x": 1960.96, "y": 674.29 },
+	{ "name": "bone54", "parent": "bone6", "length": 54.92, "rotation": 88.12, "x": 1996.8, "y": 671.7 },
+	{ "name": "bone56", "parent": "bone6", "length": 28.56, "rotation": 87.35, "x": 2715.02, "y": 457.82 },
+	{ "name": "bone57", "parent": "bone6", "length": 82.72, "rotation": 0.08, "x": 1314.58, "y": 1423.27 },
+	{ "name": "bone58", "parent": "bone6", "length": 202.75, "rotation": -3.34, "x": 119.98, "y": 1430.21 },
+	{ "name": "bone59", "parent": "bone6", "length": 72.97, "rotation": 88.86, "x": 733.93, "y": 1232.68 },
+	{ "name": "bone60", "parent": "bone6", "length": 344.68, "rotation": -4.1, "x": 429.21, "y": 1375.72 },
+	{ "name": "bone61", "parent": "bone6", "length": 201.03, "rotation": 1.22, "x": 1068.91, "y": 1430.77 },
+	{ "name": "bone62", "parent": "bone6", "length": 201.98, "rotation": 2.29, "x": 1691.87, "y": 1405.53 },
+	{ "name": "bone63", "parent": "bone6", "length": 162.24, "rotation": 0.78, "x": 2371.01, "y": 1382.91 },
+	{ "name": "bone64", "parent": "bone6", "length": 201.66, "rotation": 6.22, "x": 2745.04, "y": 1439.75 },
+	{ "name": "bone65", "parent": "bone6", "length": 123.94, "rotation": 91.13, "x": 763.29, "y": 584.19 },
+	{ "name": "bone66", "parent": "bone65", "length": 99.5, "rotation": 0.26, "x": 17.67, "y": -16.96 },
+	{ "name": "bone67", "parent": "bone6", "length": 130.96, "rotation": 91.54, "x": 877.35, "y": 934.8 },
+	{ "name": "bone68", "parent": "bone6", "length": 209.47, "rotation": 89.23, "x": 1606.34, "y": 712.44 },
+	{ "name": "bone69", "parent": "bone6", "length": 124.8, "rotation": 89.23, "x": 1045.87, "y": 522.5 },
+	{ "name": "bone70", "parent": "bone6", "length": 70.86, "rotation": 88.44, "x": 1000.22, "y": 425.12 },
+	{ "name": "bone71", "parent": "bone6", "length": 69.83, "rotation": 90.91, "x": 950.64, "y": 425.29 },
+	{ "name": "bone72", "parent": "bone6", "length": 50.63, "rotation": 92.37, "x": 1251.94, "y": 608.98 },
+	{ "name": "bone73", "parent": "bone6", "length": 53.67, "rotation": 87.91, "x": 1331.82, "y": 656.21 },
+	{ "name": "bone74", "parent": "bone6", "length": 69.85, "rotation": 88.42, "x": 834.28, "y": 424.9 },
+	{ "name": "bone75", "parent": "bone6", "length": 70.83, "rotation": 90.08, "x": 781.66, "y": 423.98 },
+	{ "name": "bone77", "parent": "bone6", "length": 22.5, "rotation": 105.33, "x": 1312.05, "y": 643.45 },
+	{ "name": "bone78", "parent": "bone6", "length": 29.75, "rotation": 95.79, "x": 1208.68, "y": 610.84 },
+	{ "name": "bone80", "parent": "bone6", "length": 177.04, "rotation": 90.08, "x": 929.88, "y": 674.89 },
+	{ "name": "bone83", "parent": "bone6", "length": 105.04, "rotation": 87.61, "x": 719.05, "y": 784.82 },
+	{ "name": "bone84", "parent": "bone21", "length": 64.91, "rotation": -20.04, "x": 271.63, "y": 45.01 },
+	{ "name": "bone86", "parent": "bone6", "length": 338.61, "rotation": 81.66, "x": 723.92, "y": 748.11 },
+	{ "name": "bone87", "parent": "bone6", "length": 108.68, "rotation": 86.83, "x": 1185.91, "y": 853.61 },
+	{ "name": "bone88", "parent": "bone87", "length": 113.61, "rotation": 21, "x": -30.31, "y": -126.95 },
+	{ "name": "bone89", "parent": "bone6", "length": 131.58, "rotation": 89.49, "x": 1075.07, "y": 1000.82 },
+	{ "name": "bone90", "parent": "bone6", "length": 130.67, "rotation": 90.33, "x": 1047.58, "y": 984.34 },
+	{ "name": "bone91", "parent": "bone6", "length": 20.51, "rotation": 88.17, "x": 590.41, "y": 940.81 },
+	{ "name": "bone92", "parent": "bone6", "length": 71.82, "rotation": 90.68, "x": 1812.58, "y": 946.1 },
+	{ "name": "bone93", "parent": "bone6", "length": 130.14, "rotation": 90.33, "x": 1756.8, "y": 938.52 },
+	{ "name": "bone94", "parent": "bone6", "length": 132.01, "rotation": 90.52, "x": 1878.67, "y": 967.39 },
+	{ "name": "bone95", "parent": "bone6", "length": 114.77, "rotation": 50.34, "x": 2241.71, "y": 1380.47 },
+	{ "name": "bone96", "parent": "bone6", "length": 55.42, "rotation": 91.25, "x": 1280.13, "y": 921.21 },
+	{ "name": "bone97", "parent": "bone96", "length": 56.57, "rotation": 0.36, "x": 12.33, "y": -17.12 },
+	{ "name": "bone98", "parent": "bone97", "length": 59.25, "rotation": 0.66, "x": 12.32, "y": -21.97 },
+	{ "name": "bone99", "parent": "bone98", "length": 58.87, "rotation": 0.01, "x": 13.27, "y": -20.26 },
+	{ "name": "bone101", "parent": "bone6", "length": 121.26, "rotation": 88.67, "x": 1769.03, "y": 1005.33 },
+	{ "name": "bone102", "parent": "bone6", "length": 118.71, "rotation": 90.48, "x": 1832.91, "y": 1038.56 },
+	{ "name": "bone103", "parent": "bone6", "length": 120.09, "rotation": 90.43, "x": 1862.31, "y": 1085.69 },
+	{ "name": "bone104", "parent": "bone6", "length": 119.37, "rotation": 90.68, "x": 1899.81, "y": 1065.33 },
+	{ "name": "bone105", "parent": "bone6", "length": 118.67, "rotation": 90.08, "x": 1936.64, "y": 1020.16 },
+	{ "name": "bone106", "parent": "bone6", "length": 120.16, "rotation": 90.43, "x": 1994.51, "y": 1009.88 },
+	{ "name": "bone107", "parent": "bone6", "length": 71.22, "rotation": 88.88, "x": 2160.64, "y": 1018.11 },
+	{ "name": "bone108", "parent": "bone6", "length": 120.9, "rotation": 89.72, "x": 2216.97, "y": 1054.61 },
+	{ "name": "bone109", "parent": "bone6", "length": 74.95, "rotation": 88.37, "x": 2120.44, "y": 1133.72 },
+	{ "name": "bone110", "parent": "bone6", "length": 118.5, "rotation": 88.77, "x": 2255.49, "y": 1028.21 },
+	{ "name": "bone111", "parent": "bone6", "length": 121.84, "rotation": 89.76, "x": 2352.49, "y": 968.53 },
+	{ "name": "bone112", "parent": "bone6", "length": 55.2, "rotation": 89.38, "x": 2090.43, "y": 1137.1 },
+	{ "name": "bone114", "parent": "bone6", "length": 116.42, "rotation": 89.48, "x": 2292.58, "y": 972.47 },
+	{ "name": "bone115", "parent": "bone6", "length": 119.51, "rotation": 88.33, "x": 2243.95, "y": 1061.43 },
+	{ "name": "bone116", "parent": "bone6", "length": 54.66, "rotation": 86.9, "x": 2416.18, "y": 1037.86 },
+	{ "name": "bone117", "parent": "bone6", "length": 64.88, "rotation": 90.61, "x": 2463.52, "y": 1006.15 },
+	{ "name": "bone118", "parent": "bone6", "length": 45.07, "rotation": 84.67, "x": 2495.67, "y": 988.04 },
+	{ "name": "bone119", "parent": "bone6", "length": 118.86, "rotation": 89.2, "x": 2340.39, "y": 1034.35 },
+	{ "name": "bone120", "parent": "bone6", "length": 116.48, "rotation": 91.87, "x": 2317.39, "y": 1007.3 },
+	{ "name": "bone121", "parent": "bone6", "length": 63.06, "rotation": 95.87, "x": 2535.18, "y": 893.93 },
+	{ "name": "bone122", "parent": "bone6", "length": 40.7, "rotation": 91.46, "x": 2463.6, "y": 931.65 },
+	{ "name": "bone123", "parent": "bone6", "length": 19.14, "rotation": 87.14, "x": 2578.32, "y": 923.05 },
+	{ "name": "bone124", "parent": "bone6", "length": 21.08, "rotation": 90.08, "x": 2389.96, "y": 1019.16 },
+	{ "name": "bone125", "parent": "bone6", "length": 119.61, "rotation": 89.37, "x": 2277.68, "y": 1049.82 },
+	{ "name": "bone126", "parent": "bone6", "length": 121.83, "rotation": 73.83, "x": 1605.86, "y": 1093.75 },
+	{ "name": "bone127", "parent": "bone6", "length": 120.5, "rotation": 89.52, "x": 1442, "y": 1149.12 },
+	{ "name": "bone128", "parent": "bone6", "length": 71.71, "rotation": 89.61, "x": 1493.01, "y": 1243.82 },
+	{ "name": "bone129", "parent": "bone6", "length": 85.23, "rotation": 90.47, "x": 1547.07, "y": 1254.55 },
+	{ "name": "bone130", "parent": "bone6", "length": 46.67, "rotation": 84.29, "x": 1584.64, "y": 1271.64 },
+	{ "name": "bone131", "parent": "bone6", "length": 66.48, "rotation": 89.35, "x": 1026.62, "y": 1162.43 },
+	{ "name": "bone132", "parent": "bone6", "length": 59.7, "rotation": 89.67, "x": 1208.25, "y": 1172.44 },
+	{ "name": "bone133", "parent": "bone6", "length": 123.5, "rotation": 91.2, "x": 545.54, "y": 967.58 },
+	{ "name": "bone134", "parent": "bone133", "length": 112.4, "rotation": 0.11, "x": 16.08, "y": -18.03 },
+	{ "name": "bone135", "parent": "bone6", "length": 120.7, "rotation": 90.4, "x": 669.24, "y": 1063.39 },
+	{ "name": "bone136", "parent": "bone6", "length": 124.17, "rotation": 90.4, "x": 712.93, "y": 1070.38 },
+	{ "name": "bone137", "parent": "bone6", "length": 42.11, "rotation": 85.35, "x": 487.64, "y": 944.04 },
+	{ "name": "bone138", "parent": "bone6", "length": 56.9, "rotation": 88.68, "x": 631.18, "y": 996.58 },
+	{ "name": "bone139", "parent": "bone6", "length": 47.99, "rotation": 88.89, "x": 755.23, "y": 1016.24 },
+	{ "name": "bone140", "parent": "bone6", "length": 123.65, "rotation": 90.3, "x": 791.78, "y": 1051.04 },
+	{ "name": "bone141", "parent": "bone6", "length": 69.8, "rotation": 92.51, "x": 901.55, "y": 1070.2 },
+	{ "name": "bone143", "parent": "bone6", "length": 38.75, "rotation": 87.04, "x": 2283.58, "y": 993.67 },
+	{ "name": "bone144", "parent": "bone6", "length": 58.55, "rotation": 90.08, "x": 2143.31, "y": 905.44 },
+	{ "name": "bone145", "parent": "bone144", "length": 58.91, "rotation": 1.33, "x": 11.18, "y": -18.43 },
+	{ "name": "bone146", "parent": "bone145", "length": 57.18, "rotation": -0.99, "x": 13.19, "y": -21.88 },
+	{ "name": "bone147", "parent": "bone146", "length": 59.93, "rotation": -1, "x": 12.55, "y": -19.59 },
+	{ "name": "bone148", "parent": "bone6", "length": 24.67, "rotation": 92.46, "x": 2130.19, "y": 975.5 },
+	{ "name": "bone149", "parent": "bone148", "length": 22.08, "rotation": 4.74, "x": 8.11, "y": -19.14 },
+	{ "name": "bone150", "parent": "bone6", "length": 123.36, "rotation": 91.13, "x": 1835.47, "y": 1136.81 },
+	{ "name": "bone151", "parent": "bone6", "length": 122.08, "rotation": 90.08, "x": 1804.25, "y": 1141.95 },
+	{ "name": "bone152", "parent": "bone6", "length": 116.58, "rotation": 91.56, "x": 1996.1, "y": 1107.35 },
+	{ "name": "bone153", "parent": "bone6", "length": 121.72, "rotation": 90.78, "x": 2047.17, "y": 1106.87 },
+	{ "name": "bone154", "parent": "bone6", "length": 464.23, "rotation": 84.92, "x": 1078.95, "y": 733.74 },
+	{ "name": "bone155", "parent": "bone6", "length": 660.57, "rotation": 81.11, "x": 1474.98, "y": 632.31 },
+	{ "name": "bone156", "parent": "bone6", "length": 287.18, "rotation": 85.42, "x": 1801.82, "y": 870.32 },
+	{ "name": "bone157", "parent": "bone6", "length": 354.03, "rotation": 87.86, "x": 2085.27, "y": 799.31 },
+	{ "name": "bone158", "parent": "bone6", "length": 339.29, "rotation": 87.44, "x": 2413.4, "y": 711.5 },
+	{ "name": "bone159", "parent": "bone6", "length": 40.09, "rotation": 87.93, "x": 2653.68, "y": 688.61 },
+	{ "name": "bone160", "parent": "bone6", "length": 18.82, "rotation": 88.75, "x": 2151.91, "y": 875.24 },
+	{ "name": "bone161", "parent": "bone6", "length": 115.79, "rotation": 90.08, "x": 1374.65, "y": 1079.89 },
+	{ "name": "bone162", "parent": "bone6", "length": 115.79, "rotation": 89.62, "x": 1410.63, "y": 1087.28 },
+	{ "name": "bone163", "parent": "bone6", "length": 123.64, "rotation": 89.65, "x": 1332.19, "y": 1098.25 },
+	{ "name": "bone164", "parent": "bone6", "length": 120.41, "rotation": 89.86, "x": 1271.24, "y": 1144.79 },
+	{ "name": "bone165", "parent": "bone6", "length": 120.89, "rotation": 88.98, "x": 1304.47, "y": 1128.6 },
+	{ "name": "bone166", "parent": "bone6", "length": 70.14, "rotation": 91.58, "x": 1232.52, "y": 1115.84 },
+	{ "name": "bone167", "parent": "bone6", "length": 122.79, "rotation": 89.6, "x": 937.56, "y": 1095.46 },
+	{ "name": "bone168", "parent": "bone6", "length": 123.15, "rotation": 88.96, "x": 887.22, "y": 1039.42 },
+	{ "name": "bone169", "parent": "bone6", "length": 123.13, "rotation": 89.44, "x": 855.63, "y": 1062.41 },
+	{ "name": "bone170", "parent": "bone6", "length": 20.28, "rotation": 85.41, "x": 757.66, "y": 928.93 },
+	{ "name": "bone171", "parent": "bone6", "length": 20.82, "rotation": 90.08, "x": 1861.75, "y": 640.13 },
+	{ "name": "bone172", "parent": "bone171", "length": 20.28, "x": 17.97, "y": -33.65 },
+	{ "name": "bone173", "parent": "bone172", "length": 20.28, "rotation": 0.77, "x": -0.27, "y": 74.53 },
+	{ "name": "bone174", "parent": "bone173", "length": 34.52, "rotation": -0.77, "x": -6, "y": -38.28 },
+	{ "name": "bone175", "parent": "bone6", "length": 121.55, "rotation": 89.22, "x": 1394.6, "y": 1152.91 },
+	{ "name": "bone176", "parent": "bone6", "length": 122.67, "rotation": 88.39, "x": 1359.89, "y": 1140.12 },
+	{ "name": "bone177", "parent": "bone6", "length": 121.9, "rotation": 90.76, "x": 1236.19, "y": 1133.32 },
+	{ "name": "bone178", "parent": "bone6", "length": 122.63, "rotation": 90.92, "x": 1335.98, "y": 1162.76 },
+	{ "name": "bone179", "parent": "bone6", "length": 39.86, "rotation": 88.4, "x": 1474.34, "y": 318.06 },
+	{ "name": "bone180", "parent": "bone6", "length": 40.82, "rotation": 90.89, "x": 1549.52, "y": 348.71 },
+	{ "name": "bone181", "parent": "bone6", "length": 39.66, "rotation": 91.2, "x": 1621.01, "y": 364.58 },
+	{ "name": "bone182", "parent": "bone6", "length": 197.91, "rotation": 75.3, "x": 619.92, "y": 1029.46 },
+	{ "name": "bone183", "parent": "bone182", "length": 246.41, "rotation": -1.14, "x": 29.31, "y": -115.55 },
+	{ "name": "bone184", "parent": "bone183", "length": 182.93, "rotation": 11.58, "x": 78.45, "y": -150.36 },
+	{ "name": "bone185", "parent": "bone184", "length": 249.13, "rotation": -4.88, "x": -32.64, "y": -97.21 },
+	{ "name": "bone186", "parent": "bone185", "length": 195.57, "rotation": 11.36, "x": 53.28, "y": -125 },
+	{ "name": "bone187", "parent": "bone186", "length": 246.8, "rotation": -2.35, "x": 12.44, "y": -166.29 },
+	{ "name": "bone188", "parent": "bone187", "length": 267.57, "rotation": 4.43, "x": 61.88, "y": -243.62 },
+	{ "name": "bone189", "parent": "bone188", "length": 174.46, "x": -21.56, "y": -154.72 },
+	{ "name": "bone190", "parent": "bone189", "length": 191.51, "rotation": -4.69, "x": -19.19, "y": -109.38 },
+	{ "name": "bone191", "parent": "bone190", "length": 227.72, "rotation": -1.31, "x": -24.8, "y": -134.42 },
+	{ "name": "bone192", "parent": "bone191", "length": 214.83, "rotation": -4.33, "x": -22.65, "y": -114.7 },
+	{ "name": "bone193", "parent": "bone192", "length": 229.37, "rotation": 0.38, "x": -29.07, "y": -206.06 },
+	{ "name": "bone194", "parent": "bone6", "length": 179.26, "rotation": 84.97, "x": 1148.5, "y": 983.12 },
+	{ "name": "bone5", "parent": "bone4", "length": 90.48, "rotation": 12.52, "x": 310.51, "y": -15.53 }
+],
+"slots": [
+	{ "name": "beijing", "bone": "bone6", "attachment": "beijing" },
+	{ "name": "yun1", "bone": "bone58", "attachment": "yun1" },
+	{ "name": "yun2", "bone": "bone60", "attachment": "yun2" },
+	{ "name": "yun3", "bone": "bone61", "attachment": "yun3" },
+	{ "name": "yun4", "bone": "bone62", "attachment": "yun4" },
+	{ "name": "yun5", "bone": "bone63", "attachment": "yun5" },
+	{ "name": "yun6", "bone": "bone64", "attachment": "yun6" },
+	{ "name": "shan10", "bone": "bone187", "attachment": "shan10" },
+	{ "name": "shan9", "bone": "bone155", "attachment": "shan9" },
+	{ "name": "caocong5", "bone": "bone126", "attachment": "caocong5" },
+	{ "name": "shu31", "bone": "bone128", "attachment": "shu31" },
+	{ "name": "shu30", "bone": "bone130", "attachment": "shu30" },
+	{ "name": "shu29", "bone": "bone129", "attachment": "shu29" },
+	{ "name": "shan8", "bone": "bone156", "attachment": "shan8" },
+	{ "name": "shu51", "bone": "bone140", "attachment": "shu51" },
+	{ "name": "shu50", "bone": "bone167", "attachment": "shu50" },
+	{ "name": "shu49", "bone": "bone175", "attachment": "shu49" },
+	{ "name": "shu48", "bone": "bone152", "attachment": "shu48" },
+	{ "name": "shu47", "bone": "bone150", "attachment": "shu47" },
+	{ "name": "shu46", "bone": "bone176", "attachment": "shu46" },
+	{ "name": "shu45", "bone": "bone177", "attachment": "shu45" },
+	{ "name": "shu44", "bone": "bone136", "attachment": "shu44" },
+	{ "name": "shu43", "bone": "bone162", "attachment": "shu43" },
+	{ "name": "shu42", "bone": "bone178", "attachment": "shu42" },
+	{ "name": "shu41", "bone": "bone153", "attachment": "shu41" },
+	{ "name": "shu40", "bone": "bone169", "attachment": "shu40" },
+	{ "name": "shu39", "bone": "bone135", "attachment": "shu39" },
+	{ "name": "shu38", "bone": "bone165", "attachment": "shu38" },
+	{ "name": "shu37", "bone": "bone161", "attachment": "shu37" },
+	{ "name": "shu36", "bone": "bone127", "attachment": "shu36" },
+	{ "name": "shu35", "bone": "bone151", "attachment": "shu35" },
+	{ "name": "shu34", "bone": "bone163", "attachment": "shu34" },
+	{ "name": "shu33", "bone": "bone168", "attachment": "shu33" },
+	{ "name": "shu32", "bone": "bone164", "attachment": "shu32" },
+	{ "name": "shan7", "bone": "bone154", "attachment": "shan7" },
+	{ "name": "shu28", "bone": "bone131", "attachment": "shu28" },
+	{ "name": "shu27", "bone": "bone141", "attachment": "shu27" },
+	{ "name": "shu26", "bone": "bone132", "attachment": "shu26" },
+	{ "name": "shan6", "bone": "bone86", "attachment": "shan6" },
+	{ "name": "shu25", "bone": "bone133", "attachment": "shu25" },
+	{ "name": "shu24", "bone": "bone140", "attachment": "shu24" },
+	{ "name": "shu23", "bone": "bone139", "attachment": "shu23" },
+	{ "name": "dengzi", "bone": "bone91", "attachment": "dengzi" },
+	{ "name": "caocong4", "bone": "bone137", "attachment": "caocong4" },
+	{ "name": "shu22", "bone": "bone138", "attachment": "shu22" },
+	{ "name": "hua6", "bone": "bone170", "attachment": "hua6" },
+	{ "name": "hua5", "bone": "bone6", "attachment": "hua5" },
+	{ "name": "shan5", "bone": "bone21", "attachment": "shan5" },
+	{ "name": "shu21", "bone": "bone84", "attachment": "shu21" },
+	{ "name": "hua4", "bone": "bone6", "attachment": "hua4" },
+	{ "name": "shan4", "bone": "bone20", "attachment": "shan4" },
+	{ "name": "hua3", "bone": "bone6", "attachment": "hua3" },
+	{ "name": "caocong3", "bone": "bone30", "attachment": "caocong3" },
+	{ "name": "shan3", "bone": "bone157", "attachment": "shan3" },
+	{ "name": "shu20", "bone": "bone109", "attachment": "shu20" },
+	{ "name": "shu19", "bone": "bone112", "attachment": "shu19" },
+	{ "name": "hua2", "bone": "bone6", "attachment": "hua2" },
+	{ "name": "shan2", "bone": "bone158", "attachment": "shan2" },
+	{ "name": "shu18", "bone": "bone118", "attachment": "shu18" },
+	{ "name": "shu17", "bone": "bone117", "attachment": "shu17" },
+	{ "name": "shu16", "bone": "bone116", "attachment": "shu16" },
+	{ "name": "caocong2", "bone": "bone122", "attachment": "caocong2" },
+	{ "name": "shu15", "bone": "bone121", "attachment": "shu15" },
+	{ "name": "caocong1", "bone": "bone123", "attachment": "caocong1" },
+	{ "name": "hua1", "bone": "bone124", "attachment": "hua1" },
+	{ "name": "shu14", "bone": "bone125", "attachment": "shu14" },
+	{ "name": "shu13", "bone": "bone103", "attachment": "shu13" },
+	{ "name": "shu12", "bone": "bone101", "attachment": "shu12" },
+	{ "name": "shu11", "bone": "bone102", "attachment": "shu11" },
+	{ "name": "shu10", "bone": "bone119", "attachment": "shu10" },
+	{ "name": "shu9", "bone": "bone115", "attachment": "shu9" },
+	{ "name": "shu8", "bone": "bone105", "attachment": "shu8" },
+	{ "name": "shu7", "bone": "bone120", "attachment": "shu7" },
+	{ "name": "shu6", "bone": "bone110", "attachment": "shu6" },
+	{ "name": "shu5", "bone": "bone104", "attachment": "shu5" },
+	{ "name": "shu4", "bone": "bone108", "attachment": "shu4" },
+	{ "name": "shu3", "bone": "bone114", "attachment": "shu3" },
+	{ "name": "shu2", "bone": "bone111", "attachment": "shu2" },
+	{ "name": "shu1", "bone": "bone106", "attachment": "shu1" },
+	{ "name": "shan 1", "bone": "bone50", "attachment": "shan 1" },
+	{ "name": "shu67", "bone": "bone166", "attachment": "shu67" },
+	{ "name": "caocong16", "bone": "bone194", "attachment": "caocong16" },
+	{ "name": "shu92", "bone": "bone89", "attachment": "shu92" },
+	{ "name": "shu66", "bone": "bone90", "attachment": "shu66" },
+	{ "name": "shu65", "bone": "bone67", "attachment": "shu65" },
+	{ "name": "shu64", "bone": "bone89", "attachment": "shu64" },
+	{ "name": "fangz9", "bone": "bone13", "attachment": "fangz9" },
+	{ "name": "shu63", "bone": "bone96", "attachment": "shu63" },
+	{ "name": "fangzi9", "bone": "bone8", "attachment": "fangzi9" },
+	{ "name": "shu62", "bone": "bone93", "attachment": "shu62" },
+	{ "name": "shu71", "bone": "bone94", "attachment": "shu71" },
+	{ "name": "hua8", "bone": "bone148", "attachment": "hua8" },
+	{ "name": "yizi1", "bone": "bone160", "attachment": "yizi1" },
+	{ "name": "fangzi", "bone": "bone9", "attachment": "fangzi" },
+	{ "name": "shu70", "bone": "bone92", "attachment": "shu70" },
+	{ "name": "shu69", "bone": "bone144", "attachment": "shu69" },
+	{ "name": "shu68", "bone": "bone107", "attachment": "shu68" },
+	{ "name": "caocong15", "bone": "bone83", "attachment": "caocong15" },
+	{ "name": "fangzi8", "bone": "bone12", "attachment": "fangzi8" },
+	{ "name": "caocong14", "bone": "bone80", "attachment": "caocong14" },
+	{ "name": "fangzi7", "bone": "bone10", "attachment": "fangzi7" },
+	{ "name": "hua10", "bone": "bone78", "attachment": "hua10" },
+	{ "name": "shu88", "bone": "bone73", "attachment": "shu88" },
+	{ "name": "caocong13", "bone": "bone77", "attachment": "caocong13" },
+	{ "name": "shu87", "bone": "bone72", "attachment": "shu87" },
+	{ "name": "fangzi6", "bone": "bone68", "attachment": "fangzi6" },
+	{ "name": "caocong12", "bone": "bone7", "attachment": "caocong12" },
+	{ "name": "hua9", "bone": "bone6", "attachment": "hua9" },
+	{ "name": "shu86", "bone": "bone54", "attachment": "shu86" },
+	{ "name": "shu85", "bone": "bone53", "attachment": "shu85" },
+	{ "name": "shu84", "bone": "bone174", "attachment": "shu84" },
+	{ "name": "shu83", "bone": "bone173", "attachment": "shu83" },
+	{ "name": "shu82", "bone": "bone172", "attachment": "shu82" },
+	{ "name": "shu81", "bone": "bone171", "attachment": "shu81" },
+	{ "name": "shu80", "bone": "bone143", "attachment": "shu80" },
+	{ "name": "fangzi5-", "bone": "bone4", "attachment": "fangzi5-" },
+	{ "name": "chuantuo", "bone": "bone5", "attachment": "chuantuo" },
+	{ "name": "fangzi5", "bone": "bone4", "attachment": "fangzi5" },
+	{ "name": "shu61", "bone": "bone65", "attachment": "shu61" },
+	{ "name": "caocong11", "bone": "bone69", "attachment": "caocong11" },
+	{ "name": "fangzi4", "bone": "bone", "attachment": "fangzi4" },
+	{ "name": "shu60", "bone": "bone74", "attachment": "shu60" },
+	{ "name": "shu59", "bone": "bone75", "attachment": "shu59" },
+	{ "name": "shu58", "bone": "bone70", "attachment": "shu58" },
+	{ "name": "shu57", "bone": "bone71", "attachment": "shu57" },
+	{ "name": "fangzi3", "bone": "bone2", "attachment": "fangzi3" },
+	{ "name": "caocong10", "bone": "bone17", "attachment": "caocong10" },
+	{ "name": "fangzi2", "bone": "bone3", "attachment": "fangzi2" },
+	{ "name": "caocong9", "bone": "bone45", "attachment": "caocong9" },
+	{ "name": "shu56", "bone": "bone51", "attachment": "shu56" },
+	{ "name": "shu55", "bone": "bone52", "attachment": "shu55" },
+	{ "name": "fangzi1", "bone": "bone14", "attachment": "fangzi1" },
+	{ "name": "caocong8", "bone": "bone15", "attachment": "caocong8" },
+	{ "name": "caocong7", "bone": "bone29", "attachment": "caocong7" },
+	{ "name": "shu54", "bone": "bone23", "attachment": "shu54" },
+	{ "name": "caocong6", "bone": "bone18", "attachment": "caocong6" },
+	{ "name": "shitou", "bone": "bone6", "attachment": "shitou" },
+	{ "name": "hu", "bone": "bone16", "attachment": "hu" },
+	{ "name": "shan", "bone": "bone11", "attachment": "shan" },
+	{ "name": "san3", "bone": "bone179", "attachment": "san3" },
+	{ "name": "san2", "bone": "bone180", "attachment": "san2" },
+	{ "name": "san1", "bone": "bone181", "attachment": "san1" },
+	{ "name": "yizi2", "bone": "bone6", "attachment": "yizi2" },
+	{ "name": "yizi", "bone": "bone159", "attachment": "yizi" },
+	{ "name": "shu53", "bone": "bone35", "attachment": "shu53" },
+	{ "name": "shu52", "bone": "bone22", "attachment": "shu52" },
+	{ "name": "lupai", "bone": "bone25", "attachment": "lupai" },
+	{ "name": "hua7", "bone": "bone6", "attachment": "hua7" },
+	{ "name": "reqiqiu", "bone": "bone49", "attachment": "reqiqiu" },
+	{ "name": "qiu4", "bone": "bone32", "attachment": "qiu4" },
+	{ "name": "qiu3", "bone": "bone40", "attachment": "qiu3" },
+	{ "name": "qiu2", "bone": "bone48", "attachment": "qiu2" },
+	{ "name": "qiu1", "bone": "bone56", "attachment": "qiu1" },
+	{ "name": "jingyu", "bone": "bone31", "attachment": "jingyu" },
+	{ "name": "dao1", "bone": "bone6", "attachment": "dao1" },
+	{ "name": "chuan", "bone": "bone34", "attachment": "chuan" },
+	{ "name": "qiqiu", "bone": "bone59", "attachment": "qiqiu" },
+	{ "name": "feiji", "bone": "bone57", "attachment": "feiji" },
+	{ "name": "chuan1", "bone": "bone33", "attachment": "chuan1" },
+	{ "name": "taiyang", "bone": "bone95", "attachment": "taiyang" },
+	{ "name": "heiye", "bone": "bone6", "attachment": "heiye", "blend": "multiply" },
+	{ "name": "deng14", "bone": "bone4", "attachment": "deng14" },
+	{ "name": "deng13", "bone": "bone4", "attachment": "deng13" },
+	{ "name": "deng12", "bone": "bone8", "attachment": "deng12" },
+	{ "name": "deng11", "bone": "bone10", "attachment": "deng11" },
+	{ "name": "deng10", "bone": "bone13", "attachment": "deng10" },
+	{ "name": "deng9", "bone": "bone12", "attachment": "deng9" },
+	{ "name": "deng8", "bone": "bone", "attachment": "deng8" },
+	{ "name": "deng7", "bone": "bone68", "attachment": "deng7" },
+	{ "name": "deng6", "bone": "bone9", "attachment": "deng6" },
+	{ "name": "deng5", "bone": "bone14", "attachment": "deng5" },
+	{ "name": "deng4", "bone": "bone6", "attachment": "deng4" },
+	{ "name": "deng3", "bone": "bone3", "attachment": "deng3" },
+	{ "name": "deng2", "bone": "bone57", "attachment": "deng2" },
+	{ "name": "deng1", "bone": "bone33", "attachment": "deng1" },
+	{ "name": "xingxing", "bone": "bone6", "attachment": "xingxing" },
+	{ "name": "yueliang", "bone": "bone95", "attachment": "yueliang" },
+	{ "name": "daxiao", "bone": "bone95", "attachment": "weixiao" },
+	{ "name": "zhengyan", "bone": "bone6" },
+	{ "name": "weixiao", "bone": "bone6" },
+	{ "name": "biyan", "bone": "bone95", "attachment": "zhengyan" },
+	{ "name": "shu89", "bone": "bone27", "attachment": "shu89" },
+	{ "name": "shu90", "bone": "bone26", "attachment": "shu90" },
+	{ "name": "shu91", "bone": "bone28", "attachment": "shu91" },
+	{ "name": "caocong", "bone": "bone6", "attachment": "caocong" },
+	{ "name": "shitou1", "bone": "bone6", "attachment": "shitou1" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"beijing": {
+				"beijing": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 2987.56, -1.05, -14.44, -5, -16.46, 1533, 2985.53, 1536.95 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 3002,
+					"height": 1538
+				}
+			},
+			"biyan": {
+				"biyan": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 89.06, -21.23, 79.47, -9.69, 87.93, -2.66, 97.52, -14.2 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 15,
+					"height": 11
+				},
+				"zhengyan": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 87.33, -24.62, 75.83, -10.77, 89.67, 0.73, 101.18, -13.11 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 18,
+					"height": 18
+				}
+			},
+			"caocong": {
+				"caocong": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 2682.64, 829.17, 2555.64, 829, 2555.57, 885, 2682.56, 885.17 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 127,
+					"height": 56
+				}
+			},
+			"caocong1": {
+				"caocong1": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 109, -5.57, -26.78, 1, 1, 109, -8.08, 22.16, 1, 1, 109, 20.89, 23.64, 1, 1, 109, 23.4, -25.29, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 49,
+					"height": 29
+				}
+			},
+			"caocong2": {
+				"caocong2": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 108, -5.16, -37.05, 1, 1, 108, -3.4, 35.93, 1, 1, 108, 45.59, 34.75, 1, 1, 108, 43.83, -38.23, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 73,
+					"height": 49
+				}
+			},
+			"caocong3": {
+				"caocong3": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 29, -5.33, -37.53, 1, 1, 29, -4.48, 35.47, 1, 1, 29, 44.52, 34.9, 1, 1, 29, 43.67, -38.1, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 73,
+					"height": 49
+				}
+			},
+			"caocong4": {
+				"caocong4": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 123, -0.7, -38.27, 1, 1, 123, -6.71, 34.48, 1, 1, 123, 42.12, 38.52, 1, 1, 123, 48.13, -34.24, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 73,
+					"height": 49
+				}
+			},
+			"caocong5": {
+				"caocong5": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 112, 42.77, -172.41, 1, 1, 112, -51.53, 151.13, 1, 1, 112, 87.68, 191.7, 1, 1, 112, 181.97, -131.84, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 337,
+					"height": 145
+				}
+			},
+			"caocong6": {
+				"caocong6": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 17, -59.97, -196.9, 1, 1, 18, 0.77, 183.54, 1, 1, 18, 198.07, 166.82, 1, 1, 17, 138.03, -196.9, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 619,
+					"height": 198
+				}
+			},
+			"caocong7": {
+				"caocong7": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 28, 0.76, -63.43, 1, 1, 28, -24.05, 269.65, 1, 1, 28, 324.99, 295.64, 1, 1, 28, 349.79, -37.43, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 334,
+					"height": 350
+				}
+			},
+			"caocong8": {
+				"caocong8": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 14, -7.65, -234.97, 1, 1, 14, -64.13, 179.19, 1, 1, 14, 130.08, 205.68, 1, 1, 14, 186.55, -208.49, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 418,
+					"height": 196
+				}
+			},
+			"caocong9": {
+				"caocong9": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 3, 0, 1, 2, 3 ],
+					"vertices": [ 1, 40, -17.75, -68.36, 1, 1, 39, -25.45, 74.34, 1, 1, 39, 100.1, 108.05, 1, 1, 40, 111.29, -52.6, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 257,
+					"height": 130
+				}
+			},
+			"caocong10": {
+				"caocong10": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 3, 0, 1, 2, 3 ],
+					"vertices": [ 1, 38, -48.5, -201.21, 1, 1, 35, -11.34, 8.59, 1, 3, 35, 88.51, 13.99, 0.19703, 36, 79.92, 31.47, 0.39247, 37, 57.4, 46.84, 0.41051, 1, 38, 51.42, -197.16, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 257,
+					"height": 100
+				}
+			},
+			"caocong11": {
+				"caocong11": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 62, -70.77, -97.48, 1, 1, 62, -77.43, 352.47, 1, 1, 62, 137.55, 355.66, 1, 1, 62, 144.21, -94.29, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 450,
+					"height": 215
+				}
+			},
+			"caocong12": {
+				"caocong12": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 6, -30.76, -231.23, 1, 1, 6, -24.42, 209.73, 1, 1, 6, 178.56, 206.81, 1, 1, 6, 172.22, -234.15, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 441,
+					"height": 203
+				}
+			},
+			"caocong13": {
+				"caocong13": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 69, -17.76, -14.71, 1, 1, 69, -6.71, 25.81, 1, 1, 69, 32.84, 15.03, 1, 1, 69, 21.79, -25.49, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 42,
+					"height": 41
+				}
+			},
+			"caocong14": {
+				"caocong14": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 3, 0, 1, 2, 3 ],
+					"vertices": [ 1, 76, -173.57, -44.57, 1, 1, 71, -10.66, 101.79, 1, 1, 71, 293.34, 101.79, 1, 1, 76, 115.95, -137.29, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 584,
+					"height": 304
+				}
+			},
+			"caocong15": {
+				"caocong15": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 3, 0, 1, 2, 3 ],
+					"vertices": [ 1, 72, -11.35, -250.61, 1, 1, 72, -26.52, 102.06, 1, 1, 72, 143.33, 109.37, 1, 1, 72, 158.5, -243.31, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 353,
+					"height": 170
+				}
+			},
+			"caocong16": {
+				"caocong16": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ -32.09, -271.11, -83.62, 305.59, 155.43, 326.95, 206.96, -249.75 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 579,
+					"height": 240
+				}
+			},
+			"chuan": {
+				"chuan": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 33, -17.93, -65.63, 1, 1, 33, -15.41, 41.34, 1, 1, 33, 88.57, 38.89, 1, 1, 33, 86.04, -68.08, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 107,
+					"height": 104
+				}
+			},
+			"chuan1": {
+				"chuan1": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 32, -4.04, -74.54, 1, 1, 32, -5.91, 61.45, 1, 1, 32, 70.09, 62.49, 1, 1, 32, 71.95, -73.5, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 136,
+					"height": 76
+				}
+			},
+			"chuantuo": {
+				"chuantuo": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 180, -92.6, -91.08, 1, 1, 180, -90.94, 92.92, 1, 1, 180, 93.05, 91.27, 1, 1, 180, 91.4, -92.73, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 184,
+					"height": 184
+				}
+			},
+			"dao1": {
+				"dao1": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1887.54, 11.5, 1604.54, 11.13, 1604.35, 155.13, 1887.35, 155.5 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 283,
+					"height": 144
+				}
+			},
+			"daxiao": {
+				"daxiao": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 66.77, -31.95, 48.23, -9.65, 66.69, 5.69, 85.22, -16.61 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 29,
+					"height": 24
+				},
+				"weixiao": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 67.23, -23.12, 57, -10.81, 66.23, -3.14, 76.46, -15.45 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 16,
+					"height": 12
+				}
+			},
+			"deng1": {
+				"deng1": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 32, 43.21, -19.89, 1, 1, 32, 42.76, 13.11, 1, 1, 32, 54.76, 13.27, 1, 1, 32, 55.21, -19.73, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 33,
+					"height": 12
+				}
+			},
+			"deng2": {
+				"deng2": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 50, 74.11, 2.83, 1, 1, 50, 25.11, 2.83, 1, 1, 50, 25.11, 20.83, 1, 1, 50, 74.11, 20.83, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 49,
+					"height": 18
+				}
+			},
+			"deng3": {
+				"deng3": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 4, 95.1, -199.71, 1, 1, 4, 79.4, 137.92, 1, 1, 4, 418.04, 153.67, 1, 1, 4, 433.73, -183.97, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 338,
+					"height": 339
+				}
+			},
+			"deng4": {
+				"deng4": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 2868.21, 1019.79, 2845.21, 1019.76, 2845.13, 1082.76, 2868.13, 1082.79 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 23,
+					"height": 63
+				}
+			},
+			"deng5": {
+				"deng5": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 13, 27.37, -127.79, 1, 1, 13, 13.62, 191.92, 1, 1, 13, 153.49, 197.93, 1, 1, 13, 167.24, -121.77, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 320,
+					"height": 140
+				}
+			},
+			"deng6": {
+				"deng6": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 8, 10.66, -125.97, 1, 1, 8, 31.5, 143.56, 1, 1, 8, 241.55, 134.17, 1, 1, 8, 220.72, -135.36, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 270,
+					"height": 160
+				}
+			},
+			"deng7": {
+				"deng7": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 61, 0.75, -145.71, 1, 1, 61, -3.44, 138.26, 1, 1, 61, 141.54, 140.4, 1, 1, 61, 145.73, -143.57, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 284,
+					"height": 145
+				}
+			},
+			"deng8": {
+				"deng8": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 2, 38.96, -175.74, 1, 1, 2, 25.48, 97.93, 1, 1, 2, 187.29, 105.9, 1, 1, 2, 200.76, -167.77, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 274,
+					"height": 162
+				}
+			},
+			"deng9": {
+				"deng9": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 11, 6.47, -25.66, 1, 1, 11, 5.19, 80.34, 1, 1, 11, 144.18, 82.01, 1, 1, 11, 145.46, -23.98, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 106,
+					"height": 139
+				}
+			},
+			"deng10": {
+				"deng10": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 12, 12.4, -134.3, 1, 1, 12, 6.02, 120.62, 1, 1, 12, 167.97, 124.67, 1, 1, 12, 174.35, -130.25, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 255,
+					"height": 162
+				}
+			},
+			"deng11": {
+				"deng11": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 9, 68.65, -175.71, 1, 1, 9, 42.77, 126.18, 1, 1, 9, 283.89, 146.85, 1, 1, 9, 309.76, -155.05, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 303,
+					"height": 242
+				}
+			},
+			"deng12": {
+				"deng12": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 7, 120.99, -158.81, 1, 1, 7, 75.25, 60.47, 1, 1, 7, 222.09, 91.1, 1, 1, 7, 267.83, -128.18, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 224,
+					"height": 150
+				}
+			},
+			"deng13": {
+				"deng13": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 5, 111.35, -150.23, 1, 1, 5, 72.47, 32.69, 1, 1, 5, 272.99, 75.32, 1, 1, 5, 311.87, -107.6, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 187,
+					"height": 205
+				}
+			},
+			"deng14": {
+				"deng14": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 5, 330.8, -538.07, 1, 1, 5, 244.5, -132.14, 1, 1, 5, 444.05, -89.72, 1, 1, 5, 530.34, -495.65, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 415,
+					"height": 204
+				}
+			},
+			"dengzi": {
+				"dengzi": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 79, -3.5, -21.46, 1, 1, 79, -4.93, 21.52, 1, 1, 79, 24.06, 22.48, 1, 1, 79, 25.49, -20.49, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 43,
+					"height": 29
+				}
+			},
+			"fangz9": {
+				"fangz9": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 12, -15.52, -218.02, 1, 1, 12, -24.69, 148.87, 1, 1, 12, 212.23, 154.79, 1, 1, 12, 221.41, -212.1, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 367,
+					"height": 237
+				}
+			},
+			"fangzi": {
+				"fangzi": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 8, -29.26, -199.32, 1, 1, 8, -1.4, 161.06, 1, 1, 8, 269.04, 148.97, 1, 1, 8, 241.18, -211.41, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 361,
+					"height": 206
+				}
+			},
+			"fangzi1": {
+				"fangzi1": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 13, 11.88, -186.51, 1, 1, 13, -5.35, 214.12, 1, 1, 13, 164.49, 221.43, 1, 1, 13, 181.72, -179.2, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 401,
+					"height": 170
+				}
+			},
+			"fangzi2": {
+				"fangzi2": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 4, -2.98, -329.41, 1, 1, 4, -29.73, 245.97, 1, 1, 4, 424.77, 267.1, 1, 1, 4, 451.53, -308.27, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 576,
+					"height": 455
+				}
+			},
+			"fangzi3": {
+				"fangzi3": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 3, 0.27, -149.2, 1, 1, 3, -14.07, 107.4, 1, 1, 3, 148.68, 116.5, 1, 1, 3, 163.02, -140.1, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 257,
+					"height": 163
+				}
+			},
+			"fangzi4": {
+				"fangzi4": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 2, 7.22, -222.36, 1, 1, 2, -10.1, 129.22, 1, 1, 2, 250.59, 142.06, 1, 1, 2, 267.9, -209.52, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 352,
+					"height": 261
+				}
+			},
+			"fangzi5": {
+				"fangzi5": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 5, 61.35, -232.42, 1, 1, 5, -30.56, 199.92, 1, 1, 5, 251.14, 259.81, 1, 1, 5, 343.06, -172.53, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 442,
+					"height": 288
+				}
+			},
+			"fangzi5-": {
+				"fangzi5-": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 5, 54.31, -314.68, 1, 1, 5, -63.81, 240.9, 1, 1, 5, 310.82, 320.54, 1, 1, 5, 428.93, -235.04, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 568,
+					"height": 383
+				}
+			},
+			"fangzi6": {
+				"fangzi6": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 61, -0.43, -201.73, 1, 1, 61, -5.57, 147.23, 1, 1, 61, 217.4, 150.52, 1, 1, 61, 222.55, -198.44, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 349,
+					"height": 223
+				}
+			},
+			"fangzi7": {
+				"fangzi7": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 9, 4.08, -335.81, 1, 1, 9, -44.25, 228.12, 1, 1, 9, 282.55, 256.13, 1, 1, 9, 330.88, -307.8, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 566,
+					"height": 328
+				}
+			},
+			"fangzi8": {
+				"fangzi8": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 11, -23.01, -152.02, 1, 1, 11, -26.12, 105.96, 1, 1, 11, 198.86, 108.67, 1, 1, 11, 201.97, -149.31, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 258,
+					"height": 225
+				}
+			},
+			"fangzi9": {
+				"fangzi9": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 7, 39.15, -295.4, 1, 1, 7, -71.1, 233.23, 1, 1, 7, 385.08, 328.38, 1, 1, 7, 495.34, -200.25, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 540,
+					"height": 466
+				}
+			},
+			"feiji": {
+				"feiji": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 50, 87.11, -27.17, 1, 1, 50, -0.89, -27.17, 1, 1, 50, -0.89, 47.83, 1, 1, 50, 87.11, 47.83, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 88,
+					"height": 75
+				}
+			},
+			"heiye": {
+				"heiye": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 2987.48, -1.1, -14.51, -5.05, -16.54, 1532.95, 2985.46, 1536.9 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 3002,
+					"height": 1538
+				}
+			},
+			"hu": {
+				"hu": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 15, -9.51, -138.69, 1, 1, 15, -9.51, 100.31, 1, 1, 15, 96.49, 100.31, 1, 1, 15, 96.49, -138.69, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 239,
+					"height": 106
+				}
+			},
+			"hua1": {
+				"hua1": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 110, -5.01, -26.68, 1, 1, 110, -5.01, 14.32, 1, 1, 110, 23.99, 14.32, 1, 1, 110, 23.99, -26.68, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 41,
+					"height": 29
+				}
+			},
+			"hua2": {
+				"hua2": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 2107.14, 1076.79, 2036.14, 1076.7, 2036.1, 1105.7, 2107.1, 1105.79 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 71,
+					"height": 29
+				}
+			},
+			"hua3": {
+				"hua3": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 713.02, 402.95, 672.02, 402.9, 671.98, 431.9, 712.98, 431.95 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 41,
+					"height": 29
+				}
+			},
+			"hua4": {
+				"hua4": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 478.64, 692.65, 437.64, 692.59, 437.6, 721.59, 478.6, 721.65 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 41,
+					"height": 29
+				}
+			},
+			"hua5": {
+				"hua5": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 736.27, 974.99, 655.27, 974.88, 655.23, 1008.88, 736.23, 1008.99 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 81,
+					"height": 34
+				}
+			},
+			"hua6": {
+				"hua6": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 155, -3.32, -25.45, 1, 1, 155, -6.65, 15.42, 1, 1, 155, 22.25, 17.78, 1, 1, 155, 25.59, -23.09, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 41,
+					"height": 29
+				}
+			},
+			"hua7": {
+				"hua7": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 2616.01, 417.46, 1629.01, 416.16, 1628.47, 823.16, 2615.47, 824.46 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 987,
+					"height": 407
+				}
+			},
+			"hua8": {
+				"hua8": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 3, 0, 1, 2, 3 ],
+					"vertices": [ 1, 134, -11.64, -6.8, 1, 2, 133, -0.9, 13.55, 0.9973, 134, -5.93, 38.85, 0.0027, 1, 133, 35.07, 12.05, 1, 1, 134, 24.08, -11.26, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 46,
+					"height": 36
+				}
+			},
+			"hua9": {
+				"hua9": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1991.57, 750.64, 1819.57, 750.41, 1819.47, 826.41, 1991.47, 826.64 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 172,
+					"height": 76
+				}
+			},
+			"hua10": {
+				"hua10": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 70, -10.39, -36.6, 1, 1, 70, -3.72, 30.07, 1, 1, 70, 38.07, 25.89, 1, 1, 70, 31.4, -40.78, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 67,
+					"height": 42
+				}
+			},
+			"jingyu": {
+				"jingyu": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 30, -8.35, -46.5, 1, 1, 30, -6.56, 64.48, 1, 1, 30, 63.43, 63.35, 1, 1, 30, 61.64, -47.63, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 111,
+					"height": 70
+				}
+			},
+			"lupai": {
+				"lupai": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 3, 0, 1, 2, 3 ],
+					"vertices": [ 17.18, -369.71, -1.96, 17.82, 363.6, 35.87, 382.73, -351.66 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 303,
+					"height": 239
+				}
+			},
+			"qiqiu": {
+				"qiqiu": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 52, -4.45, -17.53, 1, 1, 52, -5.09, 12.47, 1, 1, 52, 76.89, 14.21, 1, 1, 52, 77.53, -15.78, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 30,
+					"height": 82
+				}
+			},
+			"qiu1": {
+				"qiu1": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 49, -0.48, -21.41, 1, 1, 49, -2.58, 22.54, 1, 1, 49, 29.39, 24.06, 1, 1, 49, 31.48, -19.89, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 44,
+					"height": 32
+				}
+			},
+			"qiu2": {
+				"qiu2": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 41, -3.06, -28.31, 1, 1, 41, -4.78, 28.66, 1, 1, 41, 30.2, 29.72, 1, 1, 41, 31.93, -27.25, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 57,
+					"height": 35
+				}
+			},
+			"qiu3": {
+				"qiu3": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 42, -0.24, -30.34, 1, 1, 42, -4.09, 26.53, 1, 1, 42, 30.82, 28.9, 1, 1, 42, 34.68, -27.97, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 57,
+					"height": 35
+				}
+			},
+			"qiu4": {
+				"qiu4": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 31, 76.67, -1079.15, 1, 1, 31, -6.65, 20.7, 1, 1, 31, 174.83, 34.45, 1, 1, 31, 258.15, -1065.4, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 1103,
+					"height": 182
+				}
+			},
+			"reqiqiu": {
+				"reqiqiu": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 43, -5.49, -47.1, 1, 1, 43, -4, 49.89, 1, 1, 43, 120.99, 47.97, 1, 1, 43, 119.5, -49.02, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 97,
+					"height": 125
+				}
+			},
+			"san1": {
+				"san1": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 166, -3.67, -17.42, 1, 1, 166, -2.97, 18.57, 1, 1, 166, 42.02, 17.69, 1, 1, 166, 41.32, -18.3, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 36,
+					"height": 45
+				}
+			},
+			"san2": {
+				"san2": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 165, -2.85, -17.97, 1, 1, 165, -2.33, 18.03, 1, 1, 165, 42.66, 17.38, 1, 1, 165, 42.15, -18.61, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 36,
+					"height": 45
+				}
+			},
+			"san3": {
+				"san3": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 164, -2.71, -19.31, 1, 1, 164, -3.76, 16.68, 1, 1, 164, 41.22, 17.99, 1, 1, 164, 42.27, -17.99, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 36,
+					"height": 45
+				}
+			},
+			"shan": {
+				"shan": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 10, -32.28, -147.05, 1, 1, 10, -43.83, 141.72, 1, 1, 10, 105.05, 147.68, 1, 1, 10, 116.6, -141.09, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 289,
+					"height": 149
+				}
+			},
+			"shan 1": {
+				"shan 1": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 44, -61.15, -522.69, 1, 1, 44, -58.3, 244.3, 1, 1, 44, 441.7, 242.44, 1, 1, 44, 438.84, -524.55, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 767,
+					"height": 500
+				}
+			},
+			"shan2": {
+				"shan2": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 143, 3.96, -272.76, 1, 1, 143, -16.01, 161.79, 1, 1, 143, 335.62, 177.94, 1, 1, 143, 355.59, -256.6, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 435,
+					"height": 352
+				}
+			},
+			"shan3": {
+				"shan3": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 142, 14.93, -431.4, 1, 1, 142, -10.65, 229.1, 1, 1, 142, 349.08, 243.04, 1, 1, 142, 374.66, -417.47, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 661,
+					"height": 360
+				}
+			},
+			"shan4": {
+				"shan4": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 20, -4.54, -244.94, 1, 1, 20, -4.39, 135.06, 1, 1, 20, 150.81, 134.78, 1, 1, 20, 150.66, -245.22, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 380,
+					"height": 331
+				}
+			},
+			"shan5": {
+				"shan5": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 19, -112.97, -338.18, 1, 1, 19, 47.28, 272.13, 1, 1, 19, 409.98, 176.9, 1, 1, 19, 249.73, -433.42, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 631,
+					"height": 375
+				}
+			},
+			"shan6": {
+				"shan6": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 74, 48.9, -412.32, 1, 1, 74, -55.44, 293.01, 1, 1, 74, 293.76, 344.66, 1, 1, 74, 398.1, -360.66, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 713,
+					"height": 353
+				}
+			},
+			"shan7": {
+				"shan7": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 139, 31.93, -519.28, 1, 1, 139, -45.01, 334.26, 1, 1, 139, 437.04, 377.71, 1, 1, 139, 513.98, -475.83, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 857,
+					"height": 484
+				}
+			},
+			"shan8": {
+				"shan8": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 141, 19.13, -350.62, 1, 1, 141, -30.38, 257.37, 1, 1, 141, 269.63, 281.8, 1, 1, 141, 319.14, -326.19, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 610,
+					"height": 301
+				}
+			},
+			"shan9": {
+				"shan9": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 140, 84.38, -517.29, 1, 1, 140, -72.94, 480.39, 1, 1, 140, 570.11, 581.79, 1, 1, 140, 727.43, -415.89, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 1010,
+					"height": 651
+				}
+			},
+			"shan10": {
+				"shan10": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 2, 178, 9.9, -189.55, 0.99805, 177, -17.92, -395.54, 0.00195, 1, 167, -41.22, 42.33, 1, 2, 168, 313.67, 272.52, 0.15766, 167, 348.45, 145.14, 0.84234, 2, 178, 410.89, -149.34, 0.99388, 177, 382.79, -352.7, 0.00612 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 1884,
+					"height": 403
+				}
+			},
+			"shitou": {
+				"shitou": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 2657.71, 644.51, 2547.71, 644.37, 2547.58, 737.37, 2657.58, 737.51 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 110,
+					"height": 93
+				}
+			},
+			"shitou1": {
+				"shitou1": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 2603.82, 604.21, 2505.82, 604.08, 2505.77, 645.08, 2603.77, 645.21 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 98,
+					"height": 41
+				}
+			},
+			"shu1": {
+				"shu1": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 93, -3.38, -27.13, 1, 1, 93, -3.04, 28.87, 1, 1, 93, 123.96, 28.09, 1, 1, 93, 123.62, -27.91, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 56,
+					"height": 127
+				}
+			},
+			"shu2": {
+				"shu2": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 98, -3.3, -28.23, 1, 1, 98, -3.61, 27.77, 1, 1, 98, 123.39, 28.47, 1, 1, 98, 123.7, -27.53, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 56,
+					"height": 127
+				}
+			},
+			"shu3": {
+				"shu3": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 100, -6.19, -30.2, 1, 1, 100, -6.78, 26.8, 1, 1, 100, 121.21, 28.13, 1, 1, 100, 121.8, -28.87, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 57,
+					"height": 128
+				}
+			},
+			"shu4": {
+				"shu4": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 95, -2.55, -27.65, 1, 1, 95, -2.89, 28.35, 1, 1, 95, 123.11, 29.12, 1, 1, 95, 123.45, -26.88, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 56,
+					"height": 126
+				}
+			},
+			"shu5": {
+				"shu5": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 91, -5.06, -27.72, 1, 1, 91, -4.47, 28.27, 1, 1, 91, 122.53, 26.94, 1, 1, 91, 121.94, -29.06, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 56,
+					"height": 127
+				}
+			},
+			"shu6": {
+				"shu6": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 97, -2.7, -29.21, 1, 1, 97, -3.97, 26.78, 1, 1, 97, 123, 29.66, 1, 1, 97, 124.27, -26.32, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 56,
+					"height": 127
+				}
+			},
+			"shu7": {
+				"shu7": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 106, -5.79, -23.1, 1, 1, 106, -4.04, 32.87, 1, 1, 106, 121.9, 28.93, 1, 1, 106, 120.15, -27.04, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 56,
+					"height": 126
+				}
+			},
+			"shu8": {
+				"shu8": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 92, -4.6, -27, 1, 1, 92, -4.6, 30, 1, 1, 92, 123.4, 30, 1, 1, 92, 123.4, -27, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 57,
+					"height": 128
+				}
+			},
+			"shu9": {
+				"shu9": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 101, -3.73, -29.77, 1, 1, 101, -5.47, 27.21, 1, 1, 101, 121.47, 31.07, 1, 1, 101, 123.21, -25.9, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 57,
+					"height": 127
+				}
+			},
+			"shu10": {
+				"shu10": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 105, -3.94, -27.29, 1, 1, 105, -4.78, 27.7, 1, 1, 105, 122.21, 29.64, 1, 1, 105, 123.05, -25.35, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 55,
+					"height": 127
+				}
+			},
+			"shu11": {
+				"shu11": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 89, -5.3, -26.67, 1, 1, 89, -4.9, 29.32, 1, 1, 89, 123.1, 28.41, 1, 1, 89, 122.7, -27.59, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 56,
+					"height": 128
+				}
+			},
+			"shu12": {
+				"shu12": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 88, -2.41, -29.7, 1, 1, 88, -3.81, 27.29, 1, 1, 88, 123.16, 30.4, 1, 1, 88, 124.55, -26.58, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 57,
+					"height": 127
+				}
+			},
+			"shu13": {
+				"shu13": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 90, -5.37, -27.21, 1, 1, 90, -5.02, 29.79, 1, 1, 90, 122.98, 29, 1, 1, 90, 122.63, -28, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 57,
+					"height": 128
+				}
+			},
+			"shu14": {
+				"shu14": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 111, -3.52, -29.98, 1, 1, 111, -4.21, 26.02, 1, 1, 111, 122.78, 27.58, 1, 1, 111, 123.47, -28.42, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 56,
+					"height": 127
+				}
+			},
+			"shu15": {
+				"shu15": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 107, -4.99, -19.19, 1, 1, 107, -1.26, 17.62, 1, 1, 107, 68.39, 10.55, 1, 1, 107, 64.65, -26.26, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 37,
+					"height": 70
+				}
+			},
+			"shu16": {
+				"shu16": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 102, -5.07, -16.75, 1, 1, 102, -6.57, 10.21, 1, 1, 102, 58.33, 13.82, 1, 1, 102, 59.83, -13.14, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 27,
+					"height": 65
+				}
+			},
+			"shu17": {
+				"shu17": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 103, -2.95, -10.12, 1, 1, 103, -2.7, 16.88, 1, 1, 103, 70.3, 16.2, 1, 1, 103, 70.05, -10.8, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 27,
+					"height": 73
+				}
+			},
+			"shu18": {
+				"shu18": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 104, -3.55, -18.42, 1, 1, 104, -6.09, 8.46, 1, 1, 104, 47.67, 13.54, 1, 1, 104, 50.21, -13.34, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 27,
+					"height": 54
+				}
+			},
+			"shu19": {
+				"shu19": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 99, -5.21, -16.12, 1, 1, 99, -5.54, 10.88, 1, 1, 99, 59.46, 11.67, 1, 1, 99, 59.79, -15.33, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 27,
+					"height": 65
+				}
+			},
+			"shu20": {
+				"shu20": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 0, 1, 3, 1, 2, 3 ],
+					"vertices": [ 1, 96, -3.34, -25.16, 1, 1, 96, -4.43, 11.82, 1, 1, 96, 80.53, 14.34, 1, 1, 96, 81.63, -22.64, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 37,
+					"height": 85
+				}
+			},
+			"shu21": {
+				"shu21": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 73, -2.5, -18.29, 1, 1, 73, -5.29, 11.58, 1, 1, 73, 64.41, 18.08, 1, 1, 73, 67.19, -11.79, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 30,
+					"height": 70
+				}
+			},
+			"shu22": {
+				"shu22": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 124, -3.5, -15.58, 1, 1, 124, -4.16, 11.41, 1, 1, 124, 60.82, 12.99, 1, 1, 124, 61.48, -14, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 27,
+					"height": 65
+				}
+			},
+			"shu23": {
+				"shu23": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ -5.05, -14.52, -5.53, 8.47, 50.46, 9.63, 50.93, -13.37 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 23,
+					"height": 56
+				}
+			},
+			"shu24": {
+				"shu24": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 126, -14.03, -12.76, 1, 1, 126, -13.91, 15.24, 1, 1, 126, 40.08, 15.03, 1, 1, 126, 39.97, -12.97, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 28,
+					"height": 54
+				}
+			},
+			"shu25": {
+				"shu25": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 0, 1, 3, 1, 2, 3 ],
+					"vertices": [ 2, 119, -5.47, -37.06, 0.06611, 120, -21.69, -13.46, 0.93389, 1, 119, -4.33, 20.93, 1, 1, 119, 132.64, 18.23, 1, 1, 120, 115.28, -16.42, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 58,
+					"height": 137
+				}
+			},
+			"shu26": {
+				"shu26": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 118, -3.69, -26.21, 1, 1, 118, -4.07, 26.78, 1, 1, 118, 62.93, 27.26, 1, 1, 118, 63.3, -25.74, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 53,
+					"height": 67
+				}
+			},
+			"shu27": {
+				"shu27": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 127, -4.87, -25.82, 1, 1, 127, -2.62, 27.13, 1, 1, 127, 75.31, 23.81, 1, 1, 127, 73.06, -29.14, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 53,
+					"height": 78
+				}
+			},
+			"shu28": {
+				"shu28": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 117, -2.99, -11.87, 1, 1, 117, -3.33, 15.13, 1, 1, 117, 69.66, 16.06, 1, 1, 117, 70, -10.94, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 27,
+					"height": 73
+				}
+			},
+			"shu29": {
+				"shu29": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 115, -5.63, -23.23, 1, 1, 115, -5.31, 22.77, 1, 1, 115, 87.69, 22.13, 1, 1, 115, 87.37, -23.87, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 46,
+					"height": 93
+				}
+			},
+			"shu30": {
+				"shu30": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 116, -3.3, -18.07, 1, 1, 116, -6.02, 8.79, 1, 1, 116, 47.71, 14.23, 1, 1, 116, 50.43, -12.63, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 27,
+					"height": 54
+				}
+			},
+			"shu31": {
+				"shu31": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ -2.65, -29.36, -3.08, 23.64, 74.92, 24.28, 75.35, -28.72 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 53,
+					"height": 78
+				}
+			},
+			"shu32": {
+				"shu32": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 149, -5.01, -29.26, 1, 1, 149, -5.24, 28.74, 1, 1, 149, 123.76, 29.23, 1, 1, 149, 123.98, -28.77, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 58,
+					"height": 129
+				}
+			},
+			"shu33": {
+				"shu33": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 153, -2.76, -30.45, 1, 1, 153, -3.9, 27.53, 1, 1, 153, 125.08, 30.05, 1, 1, 153, 126.21, -27.94, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 58,
+					"height": 129
+				}
+			},
+			"shu34": {
+				"shu34": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 148, -4.31, -30.38, 1, 1, 148, -4.73, 26.62, 1, 1, 148, 123.26, 27.57, 1, 1, 148, 123.69, -29.43, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 57,
+					"height": 128
+				}
+			},
+			"shu35": {
+				"shu35": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 136, -2.56, -28.23, 1, 1, 136, -2.56, 29.77, 1, 1, 136, 124.44, 29.77, 1, 1, 136, 124.44, -28.23, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 58,
+					"height": 127
+				}
+			},
+			"shu36": {
+				"shu36": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 113, -3.96, -30.51, 1, 1, 113, -4.53, 27.48, 1, 1, 113, 122.47, 28.72, 1, 1, 113, 123.03, -29.27, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 58,
+					"height": 127
+				}
+			},
+			"shu37": {
+				"shu37": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 146, -4.08, -28.91, 1, 1, 146, -4.08, 28.09, 1, 1, 146, 123.92, 28.09, 1, 1, 146, 123.92, -28.91, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 57,
+					"height": 128
+				}
+			},
+			"shu38": {
+				"shu38": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 150, -4.41, -30.12, 1, 1, 150, -5.51, 27.87, 1, 1, 150, 123.46, 30.33, 1, 1, 150, 124.57, -27.65, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 58,
+					"height": 129
+				}
+			},
+			"shu39": {
+				"shu39": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ -4.63, -27.31, -4.29, 30.69, 125.7, 29.94, 125.37, -28.06 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 58,
+					"height": 130
+				}
+			},
+			"shu40": {
+				"shu40": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 154, -3, -29.98, 1, 1, 154, -3.65, 28.01, 1, 1, 154, 126.34, 29.46, 1, 1, 154, 126.99, -28.54, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 58,
+					"height": 130
+				}
+			},
+			"shu41": {
+				"shu41": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 138, -4.42, -26.3, 1, 1, 138, -3.72, 30.7, 1, 1, 138, 124.27, 29.13, 1, 1, 138, 123.57, -27.86, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 57,
+					"height": 128
+				}
+			},
+			"shu42": {
+				"shu42": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 163, -4.3, -26.41, 1, 1, 163, -3.46, 30.59, 1, 1, 163, 124.53, 28.7, 1, 1, 163, 123.69, -28.29, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 57,
+					"height": 128
+				}
+			},
+			"shu43": {
+				"shu43": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 147, -4.23, -28.96, 1, 1, 147, -4.69, 28.04, 1, 1, 147, 124.31, 29.07, 1, 1, 147, 124.77, -27.93, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 57,
+					"height": 129
+				}
+			},
+			"shu44": {
+				"shu44": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ -3.53, -22.62, -3.26, 25.38, 125.73, 24.66, 125.47, -23.34 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 48,
+					"height": 129
+				}
+			},
+			"shu45": {
+				"shu45": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 162, -5.88, -22.23, 1, 1, 162, -5.32, 24.77, 1, 1, 162, 123.67, 23.24, 1, 1, 162, 123.12, -23.76, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 47,
+					"height": 129
+				}
+			},
+			"shu46": {
+				"shu46": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 161, -2.58, -30.68, 1, 1, 161, -4.26, 26.29, 1, 1, 161, 123.68, 30.07, 1, 1, 161, 125.36, -26.91, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 57,
+					"height": 128
+				}
+			},
+			"shu47": {
+				"shu47": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 135, -3.76, -25.95, 1, 1, 135, -2.71, 31.04, 1, 1, 135, 125.27, 28.69, 1, 1, 135, 124.22, -28.3, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 57,
+					"height": 128
+				}
+			},
+			"shu48": {
+				"shu48": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 137, -9.21, -24.19, 1, 1, 137, -7.73, 32.79, 1, 1, 137, 120.23, 29.47, 1, 1, 137, 118.75, -27.51, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 57,
+					"height": 128
+				}
+			},
+			"shu49": {
+				"shu49": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 160, -3.7, -29.93, 1, 1, 160, -4.55, 27.07, 1, 1, 160, 123.44, 28.97, 1, 1, 160, 124.29, -28.02, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 57,
+					"height": 128
+				}
+			},
+			"shu50": {
+				"shu50": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 152, -5.01, -30.02, 1, 1, 152, -5.5, 27.98, 1, 1, 152, 124.5, 29.07, 1, 1, 152, 124.99, -28.93, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 58,
+					"height": 130
+				}
+			},
+			"shu51": {
+				"shu51": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ -4.09, -28.8, -3.85, 30.2, 125.14, 29.69, 124.91, -29.31 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 59,
+					"height": 129
+				}
+			},
+			"shu52": {
+				"shu52": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 21, -3.84, -27.45, 1, 1, 21, -4.27, 25.55, 1, 1, 21, 73.73, 26.18, 1, 1, 21, 74.15, -26.82, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 53,
+					"height": 78
+				}
+			},
+			"shu53": {
+				"shu53": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 34, -3.38, -15.36, 1, 1, 34, -2.92, 16.64, 1, 1, 34, 50.08, 15.87, 1, 1, 34, 49.62, -16.13, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 32,
+					"height": 53
+				}
+			},
+			"shu54": {
+				"shu54": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 3, 0, 1, 2, 3 ],
+					"vertices": [ 2, 22, -6.92, -35.83, 0.16612, 23, -24.51, -15.43, 0.83388, 1, 22, -5.77, 22.16, 1, 1, 22, 119.2, 19.68, 1, 1, 23, 100.48, -16.78, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 58,
+					"height": 125
+				}
+			},
+			"shu55": {
+				"shu55": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 46, -5.21, -18.66, 1, 1, 46, -5.88, 17.33, 1, 1, 46, 67.11, 18.69, 1, 1, 46, 67.78, -17.31, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 36,
+					"height": 73
+				}
+			},
+			"shu56": {
+				"shu56": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 45, -4.54, -30.31, 1, 1, 45, -5.19, 31.68, 1, 1, 45, 72.81, 32.51, 1, 1, 45, 73.46, -29.49, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 62,
+					"height": 78
+				}
+			},
+			"shu57": {
+				"shu57": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 64, -4.34, -26.72, 1, 1, 64, -3.57, 26.28, 1, 1, 64, 74.42, 25.15, 1, 1, 64, 73.65, -27.85, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 53,
+					"height": 78
+				}
+			},
+			"shu58": {
+				"shu58": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 63, -3.14, -28.3, 1, 1, 63, -4.66, 24.68, 1, 1, 63, 72.31, 26.88, 1, 1, 63, 73.82, -26.1, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 53,
+					"height": 77
+				}
+			},
+			"shu59": {
+				"shu59": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 68, -3.94, -27.76, 1, 1, 68, -3.94, 25.24, 1, 1, 68, 74.06, 25.24, 1, 1, 68, 74.06, -27.76, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 53,
+					"height": 78
+				}
+			},
+			"shu60": {
+				"shu60": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 67, -3.19, -26.25, 1, 1, 67, -4.73, 26.73, 1, 1, 67, 72.24, 28.96, 1, 1, 67, 73.77, -24.02, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 53,
+					"height": 77
+				}
+			},
+			"shu61": {
+				"shu61": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 0, 1, 3, 1, 2, 3 ],
+					"vertices": [ 1, 59, -22.6, -14.23, 1, 1, 58, -3.69, 21.16, 1, 1, 58, 133.29, 18.64, 1, 2, 58, 132.22, -39.35, 3.6E-4, 59, 114.37, -17.36, 0.99964 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 58,
+					"height": 137
+				}
+			},
+			"shu62": {
+				"shu62": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 81, -4.3, -27.93, 1, 1, 81, -4.05, 29.07, 1, 1, 81, 135.95, 28.45, 1, 1, 81, 135.7, -28.55, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 57,
+					"height": 140
+				}
+			},
+			"shu63": {
+				"shu63": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 3, 0, 1, 2, 3 ],
+					"vertices": [ 3, 85, -18.7, -51.77, 0.09509, 86, -31.36, -29.43, 0.52867, 87, -44.64, -9.16, 0.37625, 1, 84, -4.17, 11.45, 1, 3, 84, 101.81, 9.27, 0.44215, 85, 89.57, 31.36, 0.35229, 86, 77.86, 52.43, 0.20556, 1, 87, 61.28, -13.26, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 86,
+					"height": 106
+				}
+			},
+			"shu64": {
+				"shu64": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 77, -3.17, -28.62, 1, 1, 77, -3.75, 28.37, 1, 1, 77, 136.25, 29.8, 1, 1, 77, 136.83, -27.2, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 22,
+					"height": 23
+				}
+			},
+			"shu65": {
+				"shu65": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 60, -6.14, -25.25, 1, 1, 60, -4.69, 31.73, 1, 1, 60, 135.27, 28.16, 1, 1, 60, 133.81, -28.82, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 57,
+					"height": 140
+				}
+			},
+			"shu66": {
+				"shu66": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 78, -5.03, -23.08, 1, 1, 78, -4.82, 23.92, 1, 1, 78, 135.18, 23.29, 1, 1, 78, 134.96, -23.71, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 47,
+					"height": 140
+				}
+			},
+			"shu67": {
+				"shu67": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 151, -4.77, -26.88, 1, 1, 151, -3.38, 26.11, 1, 1, 151, 74.6, 24.05, 1, 1, 151, 73.2, -28.93, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 53,
+					"height": 78
+				}
+			},
+			"shu68": {
+				"shu68": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 94, -3.81, -27.09, 1, 1, 94, -4.91, 25.9, 1, 1, 94, 73.07, 27.53, 1, 1, 94, 74.17, -25.46, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 53,
+					"height": 78
+				}
+			},
+			"shu69": {
+				"shu69": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 3, 0, 1, 2, 3 ],
+					"vertices": [ 3, 130, -17.15, -53.14, 0.11103, 131, -29.8, -31.77, 0.4727, 132, -42.13, -12.91, 0.41627, 1, 129, -4.61, 10.51, 1, 3, 129, 100.39, 10.51, 0.42888, 130, 89.87, 32.4, 0.55964, 131, 75.73, 55.6, 0.01147, 1, 132, 62.86, -11.71, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 88,
+					"height": 105
+				}
+			},
+			"shu70": {
+				"shu70": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 80, -4.95, -28.1, 1, 1, 80, -4.39, 24.89, 1, 1, 80, 72.61, 24.07, 1, 1, 80, 72.04, -28.92, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 53,
+					"height": 77
+				}
+			},
+			"shu71": {
+				"shu71": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 82, -4.04, -22, 1, 1, 82, -3.67, 24.99, 1, 1, 82, 136.32, 23.9, 1, 1, 82, 135.95, -23.1, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 47,
+					"height": 140
+				}
+			},
+			"shu80": {
+				"shu80": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 128, -3.72, -23.33, 1, 1, 128, -5.58, 11.62, 1, 1, 128, 40.36, 14.06, 1, 1, 128, 42.22, -20.89, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 35,
+					"height": 46
+				}
+			},
+			"shu81": {
+				"shu81": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 156, -1.67, -14.39, 1, 1, 156, -1.67, 14.61, 1, 1, 156, 21.33, 14.61, 1, 1, 156, 21.33, -14.39, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 29,
+					"height": 23
+				}
+			},
+			"shu82": {
+				"shu82": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 157, -1.75, -15.21, 1, 1, 157, -1.75, 13.79, 1, 1, 157, 21.25, 13.79, 1, 1, 157, 21.25, -15.21, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 29,
+					"height": 23
+				}
+			},
+			"shu83": {
+				"shu83": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 158, -1.68, -14.71, 1, 1, 158, -1.29, 14.28, 1, 1, 158, 21.71, 13.97, 1, 1, 158, 21.32, -15.03, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 29,
+					"height": 23
+				}
+			},
+			"shu84": {
+				"shu84": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 159, 1, -22.38, 1, 1, 159, 1, 22.62, 1, 1, 159, 36, 22.62, 1, 1, 159, 36, -22.38, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 45,
+					"height": 35
+				}
+			},
+			"shu85": {
+				"shu85": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 47, -2.51, -20.17, 1, 1, 47, -3.03, 18.82, 1, 1, 47, 53.97, 19.57, 1, 1, 47, 54.48, -19.42, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 39,
+					"height": 57
+				}
+			},
+			"shu86": {
+				"shu86": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 48, -0.57, -20.34, 1, 1, 48, -1.9, 18.64, 1, 1, 48, 55.07, 20.58, 1, 1, 48, 56.4, -18.39, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 39,
+					"height": 57
+				}
+			},
+			"shu87": {
+				"shu87": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 65, -9.31, -29.89, 1, 1, 65, -6.83, 32.06, 1, 1, 65, 65.11, 29.19, 1, 1, 65, 62.64, -32.76, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 62,
+					"height": 72
+				}
+			},
+			"shu88": {
+				"shu88": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 66, -22.16, -40.16, 1, 1, 66, -25.22, 40.78, 1, 1, 66, 73.71, 44.52, 1, 1, 66, 76.77, -36.43, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 81,
+					"height": 99
+				}
+			},
+			"shu89": {
+				"shu89": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 26, -5.33, -9.88, 1, 1, 26, -0.76, 21.8, 1, 1, 26, 76.44, 10.67, 1, 1, 26, 71.88, -21, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 32,
+					"height": 78
+				}
+			},
+			"shu90": {
+				"shu90": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 25, -7.33, -3.52, 1, 1, 25, 2.76, 32.08, 1, 1, 25, 95.12, 5.88, 1, 1, 25, 85.02, -29.72, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 37,
+					"height": 96
+				}
+			},
+			"shu91": {
+				"shu91": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 27, -4.13, -15.61, 1, 1, 27, -6.03, 17.34, 1, 1, 27, 46.88, 20.39, 1, 1, 27, 48.78, -12.55, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 33,
+					"height": 53
+				}
+			},
+			"shu92": {
+				"shu92": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 0, 1, 3 ],
+					"vertices": [ 1, 77, -5.43, -29.62, 1, 1, 77, -6.01, 27.38, 1, 1, 77, 133.98, 28.81, 1, 1, 77, 134.56, -28.19, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 57,
+					"height": 140
+				}
+			},
+			"taiyang": {
+				"taiyang": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 34.81, -93.63, -77.05, 40.96, 59.07, 154.09, 170.93, 19.51 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 175,
+					"height": 177
+				}
+			},
+			"xingxing": {
+				"xingxing": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 2996.1, 1108.96, -2.9, 1105.01, -3.47, 1533.01, 2995.53, 1536.96 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 2999,
+					"height": 428
+				}
+			},
+			"yizi": {
+				"yizi": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 144, -7.66, -17.7, 1, 1, 144, -8.75, 11.28, 1, 1, 144, 41.21, 13.15, 1, 1, 144, 42.3, -15.83, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 29,
+					"height": 50
+				}
+			},
+			"yizi1": {
+				"yizi1": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 145, -6.05, -21.07, 1, 1, 145, -7.04, 21.92, 1, 1, 145, 28.95, 22.75, 1, 1, 145, 29.94, -20.24, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 43,
+					"height": 36
+				}
+			},
+			"yizi2": {
+				"yizi2": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1714.21, 258.27, 1465.21, 257.94, 1465.07, 364.94, 1714.07, 365.27 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 249,
+					"height": 107
+				}
+			},
+			"yueliang": {
+				"yueliang": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 61.43, -97.5, -28.06, 10.16, 81.92, 101.57, 171.41, -6.1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 140,
+					"height": 143
+				}
+			},
+			"yun1": {
+				"yun1": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 51, 208.71, -16.27, 1, 1, 51, -0.92, -28.78, 1, 1, 51, -7.65, 84.02, 1, 1, 51, 201.97, 96.53, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 210,
+					"height": 113
+				}
+			},
+			"yun2": {
+				"yun2": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 53, 349.18, -15.39, 1, 1, 53, 0.11, -40.89, 1, 1, 53, -7.54, 63.83, 1, 1, 53, 341.53, 89.33, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 350,
+					"height": 105
+				}
+			},
+			"yun3": {
+				"yun3": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 54, 202.2, -36.04, 1, 1, 54, -3.76, -31.92, 1, 1, 54, -1.54, 79.05, 1, 1, 54, 204.42, 74.94, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 206,
+					"height": 111
+				}
+			},
+			"yun4": {
+				"yun4": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 55, 204.1, -28.82, 1, 1, 55, -3.75, -20.8, 1, 1, 55, 0.61, 92.12, 1, 1, 55, 208.45, 84.1, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 208,
+					"height": 113
+				}
+			},
+			"yun5": {
+				"yun5": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 56, 166.65, -13.49, 1, 1, 56, -3.34, -11.39, 1, 1, 56, -2.6, 48.61, 1, 1, 56, 167.39, 46.51, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 170,
+					"height": 60
+				}
+			},
+			"yun6": {
+				"yun6": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ 1, 57, 199.98, -50.43, 1, 1, 57, -6.83, -28.16, 1, 1, 57, 2.81, 61.32, 1, 1, 57, 209.61, 39.05, 1 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 208,
+					"height": 90
+				}
+			}
+		}
+	}
+],
+"animations": {
+	"11": {
+		"bones": {
+			"bone": {
+				"shear": [
+					{ "x": 3.36 },
+					{ "time": 0.3333, "x": 10.79, "y": -0.03 },
+					{ "time": 0.5, "x": 3.36 },
+					{ "time": 0.8333, "x": -10.99, "y": 0.87 },
+					{ "time": 1 }
+				]
+			},
+			"bone21": {
+				"shear": [
+					{},
+					{ "time": 0.3333, "x": 4.18 },
+					{ "time": 0.5 },
+					{ "time": 0.8333, "x": -9.48 },
+					{ "time": 1 }
+				]
+			},
+			"bone10": {
+				"shear": [
+					{},
+					{ "time": 0.3333, "x": 13.17 },
+					{ "time": 0.5 },
+					{ "time": 0.8333, "x": -12.14 },
+					{ "time": 1 }
+				]
+			}
+		}
+	},
+	"chuan1": {
+		"bones": {
+			"bone33": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": 0.14, "y": 9.86 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": -0.14, "y": -10.14 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": 0.14, "y": 9.86 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": -0.14, "y": -10.14 },
+					{ "time": 5.3333 }
+				]
+			}
+		}
+	},
+	"chuan2": {
+		"bones": {
+			"bone34": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": -0.23, "y": 9.78 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": 0.24, "y": -10.21 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": -0.23, "y": 9.78 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": 0.24, "y": -10.21 },
+					{ "time": 5.3333 }
+				]
+			}
+		}
+	},
+	"dong": {
+		"bones": {
+			"bone84": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 4.93 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 4.93 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 4.93 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 4.93 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone133": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 9.87 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 9.87 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 9.87 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 9.87 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone134": {
+				"rotate": [
+					{},
+					{ "time": 0.3333, "value": -2.49, "curve": "stepped" },
+					{ "time": 0.6667, "value": -2.49 },
+					{ "time": 1, "value": 1.87 },
+					{ "time": 1.3333, "value": -2.49, "curve": "stepped" },
+					{ "time": 1.6667, "value": -2.49, "curve": "stepped" },
+					{ "time": 2, "value": -2.49 },
+					{ "time": 2.3333, "value": 1.87 },
+					{ "time": 2.6667, "value": -2.49 }
+				]
+			},
+			"bone138": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 10.27 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 10.27 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 10.27 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 10.27 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone135": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 5.26 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 7.18 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 5.26 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 7.18 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone136": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 6.1 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 6.37 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 6.1 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 6.37 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone65": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 4.37 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 4.37 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 4.37 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 4.37 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone66": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 2.93 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 2.93 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 2.93 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 2.93 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone75": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 4.98 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 4.98 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 4.98 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 4.98 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone74": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 6.77 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 7.22 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 6.77 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 7.22 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone139": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 9.75 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 9.75 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 9.75 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 9.75 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone140": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 7.26 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 7.26 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 7.26 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 7.26 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone169": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 5.09 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 5.09 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 5.09 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 5.09 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone168": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 6.96 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 6.96 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 6.96 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 6.96 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone141": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 3.23 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 3.23 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 3.23 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 3.23 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone167": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 5.85 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 5.85 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 5.85 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 5.85 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone67": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 3.42 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 4.08 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 3.42 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 4.08 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone131": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 7.71 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 7.71 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 7.71 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 7.71 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone90": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 5.39 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 4.99 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 5.39 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 4.99 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone166": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 3.57 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 3.57 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 3.57 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 3.57 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone132": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 3.09 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 3.09 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 3.09 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 3.09 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone177": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 2.81 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 2.81 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 2.81 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 2.81 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone164": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 4 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 4 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 4 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 4 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone163": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 3.8 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 3.51 },
+					{ "time": 2.6667, "value": -0.29 },
+					{ "time": 3.3333, "value": 3.8 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 3.51 },
+					{ "time": 5.3333, "value": -0.29 }
+				]
+			},
+			"bone178": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 5.01 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 5.01 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 5.01 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 5.01 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone165": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 3.03 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 3.03 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 3.03 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 3.03 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone176": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 5 },
+					{ "time": 1.3333, "value": 0.13 },
+					{ "time": 2, "value": 5 },
+					{ "time": 2.6667, "value": 0.13 },
+					{ "time": 3.3333, "value": 5 },
+					{ "time": 4, "value": 0.13 },
+					{ "time": 4.6667, "value": 5 },
+					{ "time": 5.3333, "value": 0.13 }
+				]
+			},
+			"bone175": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 3.88 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 3.88 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 3.88 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 3.88 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone161": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 2.86 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 2.86 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 2.86 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 2.86 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone162": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 2.95 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 2.95 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 2.95 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 2.95 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone127": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 5.68 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 5.68 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 5.68 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 5.68 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone128": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 6.52 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 6.52 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 6.52 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 6.52 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone96": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667, "curve": "stepped" },
+					{ "time": 1.3333 }
+				]
+			},
+			"bone71": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 5.08 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 5.08 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 5.08 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 5.08 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone70": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 6.69 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 6.69 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 6.69 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 6.69 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone72": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 9.52 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 9.52 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 9.52 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 9.52 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone73": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 9.1 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 9.1 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 9.1 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 9.1 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone130": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 8.39 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 8.39 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 8.39 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 8.39 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone129": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 5.98 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 5.98 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 5.98 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 5.98 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone28": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -4.46 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -4.46 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -4.46 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -4.46 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone89": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 4.62 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 4.62 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 4.62 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 4.62 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone121": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -7.03 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -7.03 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -7.03 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -7.03 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone27": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -7.2 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -7.2 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -7.2 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -7.2 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone26": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -10.2 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -10.2 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -10.2 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -10.2 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone118": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -2.91 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -2.91 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -2.91 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -2.91 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone117": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -5.9 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -5.9 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -5.9 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -5.9 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone116": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -5.95 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -5.95 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -5.95 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -5.95 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone111": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -4.96 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -4.96 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -4.96 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -4.96 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone119": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -6 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -6 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -6 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -6 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone120": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -3.71 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -3.71 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -3.71 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -3.71 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone114": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -3.96 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -3.96 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -3.96 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -3.96 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone143": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -3.48 },
+					{ "time": 1.3333, "value": -0.16 },
+					{ "time": 2, "value": -3.32 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -3.48 },
+					{ "time": 4, "value": -0.16 },
+					{ "time": 4.6667, "value": -3.32 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone125": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -2.65 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -2.65 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -2.65 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -2.65 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone110": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -4.1 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -4.1 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -4.1 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -4.1 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone115": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -3.13 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -3.13 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -3.13 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -3.13 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone108": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -4.17 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -4.17 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -4.17 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -4.17 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone107": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -4.53 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -4.53 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -4.53 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -4.53 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone109": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -8.31 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -8.31 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -8.31 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -8.31 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone112": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -9.2 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -9.2 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -9.2 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -9.2 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone153": {
+				"rotate": [
+					{},
+					{ "time": 0.7333, "value": -3.88 },
+					{ "time": 1.3333 },
+					{ "time": 2.0667, "value": -3.88 },
+					{ "time": 2.6667 },
+					{ "time": 3.4, "value": -3.88 },
+					{ "time": 4 },
+					{ "time": 4.7333, "value": -3.88 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone152": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -3.44 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -3.44 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -3.44 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -3.44 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone106": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -5.29 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -5.29 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -5.29 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -5.29 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone105": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -5.54 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -5.54 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -5.54 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -5.54 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone104": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -4.47 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -4.47 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -4.47 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -4.47 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone94": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -2.35 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -2.35 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -2.35 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -2.35 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone103": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -2.72 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -2.72 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -2.72 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -2.72 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone102": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -5.67 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -5.67 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -5.67 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -5.67 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone150": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -6.07 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -6.07 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -6.07 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -6.07 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone151": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -4.29 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -4.29 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -4.29 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -4.29 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone92": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -12.43 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -12.43 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -12.43 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -12.43 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone93": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -4.53 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -4.53 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -4.53 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -4.53 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone101": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -7.76 },
+					{ "time": 1.3333, "value": -0.29 },
+					{ "time": 2, "value": -7.76 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -7.76 },
+					{ "time": 4, "value": -0.29 },
+					{ "time": 4.6667, "value": -7.76 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone35": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -13.36 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -13.36 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -13.36 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -13.36 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone179": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -4.17 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -4.17 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -4.17 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -4.17 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone180": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -9.44 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -9.44 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -9.44 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -9.44 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone181": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -12.88 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -12.88 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -12.88 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -12.88 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone22": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -11.03 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -11.03 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -11.03 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -11.03 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone51": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -5.21 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -5.21 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -5.21 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -5.21 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone52": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -5.43 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -5.43 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -5.43 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -5.43 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone25": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -7.88 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -7.88 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -7.88 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -7.88 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone54": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -9.17 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -9.17 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -9.17 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -9.17 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone53": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -13.27 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -13.27 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -13.27 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -13.27 },
+					{ "time": 5.3333 }
+				]
+			}
+		}
+	},
+	"fangwu": {
+		"bones": {
+			"bone3": {
+				"scale": [
+					{},
+					{ "time": 0.1667, "x": 0.943, "y": 1.022 },
+					{ "time": 0.3333 }
+				]
+			}
+		}
+	},
+	"fangwu2": {
+		"bones": {
+			"bone4": {
+				"scale": [
+					{},
+					{ "time": 0.1667, "x": 0.921, "y": 1.021 },
+					{ "time": 0.3333 }
+				],
+				"shear": [
+					{},
+					{ "time": 0.1667, "x": -2.03, "y": 0.96 },
+					{ "time": 0.3333 }
+				]
+			}
+		}
+	},
+	"fangwu2-": {
+		"bones": {
+			"bone5": {
+				"rotate": [
+					{},
+					{ "time": 1.3333, "value": -372.52 },
+					{ "time": 2.6667, "value": -1100.15 }
+				]
+			}
+		}
+	},
+	"fangwu3": {
+		"bones": {
+			"bone8": {
+				"scale": [
+					{},
+					{ "time": 0.1667, "x": 0.937, "y": 1.032 },
+					{ "time": 0.3333 }
+				],
+				"shear": [
+					{},
+					{ "time": 0.1667, "y": 0.76 },
+					{ "time": 0.3333 }
+				]
+			}
+		}
+	},
+	"fangwu4": {
+		"bones": {
+			"bone10": {
+				"scale": [
+					{},
+					{ "time": 0.1667, "x": 0.937, "y": 1.021 },
+					{ "time": 0.3333 }
+				],
+				"shear": [
+					{},
+					{ "time": 0.1667, "x": -0.68, "y": 0.31 },
+					{ "time": 0.3333 }
+				]
+			}
+		}
+	},
+	"jingyu": {
+		"bones": {
+			"bone31": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": -0.16, "y": 10 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": 0.16, "y": -10 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": -0.16, "y": 10 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": 0.16, "y": -10 },
+					{ "time": 5.3333 }
+				]
+			}
+		}
+	},
+	"qiu1": {
+		"bones": {
+			"bone32": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": 0.76, "y": 9.97 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": -0.76, "y": -9.97 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": 0.76, "y": 9.97 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": -0.76, "y": -9.97 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone59": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": 0.24, "y": 11.34 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": -0.41, "y": -19.47 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": 0.24, "y": 11.34 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": -0.41, "y": -19.47 },
+					{ "time": 5.3333 }
+				]
+			}
+		}
+	},
+	"qiu2": {
+		"bones": {
+			"bone56": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": 0.48, "y": 9.99 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": -0.48, "y": -9.99 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": 0.48, "y": 9.99 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": -0.48, "y": -9.99 },
+					{ "time": 5.3333 }
+				]
+			}
+		}
+	},
+	"qiu3": {
+		"bones": {
+			"bone48": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": 0.3, "y": 10 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": -0.3, "y": -10 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": 0.3, "y": 10 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": -0.3, "y": -10 },
+					{ "time": 5.3333 }
+				]
+			}
+		}
+	},
+	"qiu4": {
+		"bones": {
+			"bone40": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": 1.01, "y": 14.85 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": -1.24, "y": -18.29 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": 1.01, "y": 14.85 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": -1.24, "y": -18.29 },
+					{ "time": 5.3333 }
+				]
+			}
+		}
+	},
+	"quanbu": {
+		"bones": {
+			"bone58": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": 0.58, "y": 9.67 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": -0.6, "y": -9.98 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": 0.58, "y": 9.67 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": -0.6, "y": -9.98 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone60": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": -0.73, "y": -9.97 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": 0.73, "y": 9.97 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": -0.73, "y": -9.97 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": 0.73, "y": 9.97 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone61": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": -0.2, "y": 10 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": 0.2, "y": -10 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": -0.2, "y": 10 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": 0.2, "y": -10 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone62": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": 0.39, "y": -9.99 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": -0.39, "y": 9.99 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": 0.39, "y": -9.99 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": -0.39, "y": 9.99 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone63": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": 0.12, "y": -10 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": -0.12, "y": 10 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": 0.12, "y": -10 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": -0.12, "y": 10 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone64": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": -1.07, "y": 9.94 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": 1.07, "y": -9.94 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": -1.07, "y": 9.94 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": 1.07, "y": -9.94 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone59": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": 0.24, "y": 11.34 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": -0.41, "y": -19.47 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": 0.24, "y": 11.34 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": -0.41, "y": -19.47 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone33": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": -0.14, "y": -10.14 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": 0.14, "y": 9.86 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": -0.14, "y": -10.14 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": 0.14, "y": 9.86 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone32": {
+				"translate": [
+					{ "x": -0.76, "y": -9.97 },
+					{ "time": 0.6667 },
+					{ "time": 1.3333, "x": 0.76, "y": 9.97 },
+					{ "time": 2 },
+					{ "time": 2.6667, "x": -0.76, "y": -9.97 },
+					{ "time": 3.3333 },
+					{ "time": 4, "x": 0.76, "y": 9.97 },
+					{ "time": 4.6667 },
+					{ "time": 5.3333, "x": -0.76, "y": -9.97 }
+				]
+			},
+			"bone31": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": 0.16, "y": -10 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": -0.16, "y": 10 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": 0.16, "y": -10 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": -0.16, "y": 10 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone34": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": -0.23, "y": 9.78 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": 0.24, "y": -10.21 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": -0.23, "y": 9.78 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": 0.24, "y": -10.21 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone56": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": 0.48, "y": 9.99 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": -0.48, "y": -9.99 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": 0.48, "y": 9.99 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": -0.48, "y": -9.99 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone48": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": -0.3, "y": -10 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": 0.3, "y": 10 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": -0.3, "y": -10 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": 0.3, "y": 10 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone40": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": 1.01, "y": 14.85 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": -1.24, "y": -18.29 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": 1.01, "y": 14.85 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": -1.24, "y": -18.29 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone49": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": -0.79, "y": 51.04 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": 0.55, "y": -36.02 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": -0.79, "y": 51.04 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": 0.55, "y": -36.02 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone84": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 4.93 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 4.93 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 4.93 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 4.93 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone22": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -11.03 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -11.03 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -11.03 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -11.03 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone25": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -7.88 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -7.88 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -7.88 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -7.88 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone26": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -10.2 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -10.2 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -10.2 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -10.2 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone27": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -7.2 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -7.2 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -7.2 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -7.2 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone28": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -4.46 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -4.46 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -4.46 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -4.46 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone35": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -13.36 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -13.36 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -13.36 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -13.36 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone51": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -5.21 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -5.21 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -5.21 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -5.21 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone52": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -5.43 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -5.43 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -5.43 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -5.43 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone53": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -13.27 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -13.27 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -13.27 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -13.27 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone54": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -9.17 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -9.17 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -9.17 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -9.17 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone65": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 4.37 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 4.37 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 4.37 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 4.37 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone67": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 3.42 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 4.08 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 3.42 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 4.08 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone70": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 6.69 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 6.69 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 6.69 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 6.69 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone71": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 5.08 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 5.08 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 5.08 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 5.08 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone72": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 9.52 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 9.52 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 9.52 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 9.52 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone73": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 9.1 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 9.1 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 9.1 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 9.1 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone74": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 6.77 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 7.22 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 6.77 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 7.22 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone75": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 4.98 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 4.98 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 4.98 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 4.98 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone89": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 4.62 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 4.62 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 4.62 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 4.62 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone90": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 5.39 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 4.99 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 5.39 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 4.99 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone92": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -12.43 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -12.43 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -12.43 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -12.43 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone93": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -4.53 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -4.53 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -4.53 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -4.53 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone94": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -2.35 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -2.35 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -2.35 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -2.35 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone96": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667, "curve": "stepped" },
+					{ "time": 1.3333 }
+				]
+			},
+			"bone101": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -7.76 },
+					{ "time": 1.3333, "value": -0.29 },
+					{ "time": 2, "value": -7.76 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -7.76 },
+					{ "time": 4, "value": -0.29 },
+					{ "time": 4.6667, "value": -7.76 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone102": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -5.67 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -5.67 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -5.67 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -5.67 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone103": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -2.72 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -2.72 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -2.72 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -2.72 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone104": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -4.47 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -4.47 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -4.47 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -4.47 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone105": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -5.54 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -5.54 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -5.54 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -5.54 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone106": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -5.29 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -5.29 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -5.29 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -5.29 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone107": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -4.53 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -4.53 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -4.53 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -4.53 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone108": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -4.17 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -4.17 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -4.17 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -4.17 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone109": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -8.31 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -8.31 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -8.31 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -8.31 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone110": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -4.1 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -4.1 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -4.1 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -4.1 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone111": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -4.96 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -4.96 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -4.96 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -4.96 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone112": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -9.2 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -9.2 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -9.2 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -9.2 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone114": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -3.96 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -3.96 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -3.96 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -3.96 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone115": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -3.13 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -3.13 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -3.13 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -3.13 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone116": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -5.95 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -5.95 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -5.95 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -5.95 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone117": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -5.9 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -5.9 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -5.9 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -5.9 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone118": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -2.91 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -2.91 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -2.91 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -2.91 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone119": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -6 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -6 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -6 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -6 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone120": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -3.71 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -3.71 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -3.71 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -3.71 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone121": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -7.03 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -7.03 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -7.03 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -7.03 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone125": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -2.65 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -2.65 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -2.65 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -2.65 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone127": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 5.68 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 5.68 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 5.68 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 5.68 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone128": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 6.52 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 6.52 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 6.52 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 6.52 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone129": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 5.98 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 5.98 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 5.98 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 5.98 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone130": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 8.39 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 8.39 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 8.39 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 8.39 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone131": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 7.71 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 7.71 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 7.71 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 7.71 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone132": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 3.09 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 3.09 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 3.09 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 3.09 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone133": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 9.87 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 9.87 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 9.87 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 9.87 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone135": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 5.26 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 7.18 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 5.26 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 7.18 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone136": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 6.1 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 6.37 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 6.1 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 6.37 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone138": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 10.27 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 10.27 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 10.27 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 10.27 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone139": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 9.75 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 9.75 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 9.75 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 9.75 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone140": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 7.26 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 7.26 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 7.26 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 7.26 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone141": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 3.23 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 3.23 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 3.23 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 3.23 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone143": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -3.48 },
+					{ "time": 1.3333, "value": -0.16 },
+					{ "time": 2, "value": -3.32 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -3.48 },
+					{ "time": 4, "value": -0.16 },
+					{ "time": 4.6667, "value": -3.32 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone150": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -6.07 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -6.07 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -6.07 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -6.07 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone151": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -4.29 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -4.29 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -4.29 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -4.29 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone152": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -3.44 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -3.44 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -3.44 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -3.44 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone153": {
+				"rotate": [
+					{},
+					{ "time": 0.7333, "value": -3.88 },
+					{ "time": 1.3333 },
+					{ "time": 2.0667, "value": -3.88 },
+					{ "time": 2.6667 },
+					{ "time": 3.4, "value": -3.88 },
+					{ "time": 4 },
+					{ "time": 4.7333, "value": -3.88 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone161": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 2.86 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 2.86 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 2.86 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 2.86 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone162": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 2.95 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 2.95 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 2.95 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 2.95 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone163": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 3.8 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 3.51 },
+					{ "time": 2.6667, "value": -0.29 },
+					{ "time": 3.3333, "value": 3.8 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 3.51 },
+					{ "time": 5.3333, "value": -0.29 }
+				]
+			},
+			"bone164": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 4 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 4 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 4 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 4 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone165": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 3.03 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 3.03 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 3.03 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 3.03 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone166": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 3.57 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 3.57 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 3.57 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 3.57 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone167": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 5.85 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 5.85 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 5.85 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 5.85 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone168": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 6.96 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 6.96 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 6.96 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 6.96 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone169": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 5.09 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 5.09 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 5.09 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 5.09 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone175": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 3.88 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 3.88 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 3.88 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 3.88 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone176": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 5 },
+					{ "time": 1.3333, "value": 0.13 },
+					{ "time": 2, "value": 5 },
+					{ "time": 2.6667, "value": 0.13 },
+					{ "time": 3.3333, "value": 5 },
+					{ "time": 4, "value": 0.13 },
+					{ "time": 4.6667, "value": 5 },
+					{ "time": 5.3333, "value": 0.13 }
+				]
+			},
+			"bone177": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 2.81 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 2.81 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 2.81 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 2.81 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone178": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 5.01 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 5.01 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 5.01 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 5.01 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone179": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -4.17 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -4.17 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -4.17 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -4.17 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone180": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -9.44 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -9.44 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -9.44 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -9.44 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone181": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": -12.88 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": -12.88 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": -12.88 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": -12.88 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone66": {
+				"rotate": [
+					{},
+					{ "time": 0.6667, "value": 2.93 },
+					{ "time": 1.3333 },
+					{ "time": 2, "value": 2.93 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "value": 2.93 },
+					{ "time": 4 },
+					{ "time": 4.6667, "value": 2.93 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone134": {
+				"rotate": [
+					{},
+					{ "time": 0.3333, "value": -2.49, "curve": "stepped" },
+					{ "time": 0.6667, "value": -2.49 },
+					{ "time": 1, "value": 1.87 },
+					{ "time": 1.3333, "value": -2.49, "curve": "stepped" },
+					{ "time": 1.6667, "value": -2.49, "curve": "stepped" },
+					{ "time": 2, "value": -2.49 },
+					{ "time": 2.3333, "value": 1.87 },
+					{ "time": 2.6667, "value": -2.49 }
+				]
+			},
+			"bone3": {
+				"scale": [
+					{},
+					{ "time": 0.1667, "x": 0.943, "y": 1.022 },
+					{ "time": 0.3333, "curve": "stepped" },
+					{ "time": 2.6667 },
+					{ "time": 2.8333, "x": 0.943, "y": 1.022 },
+					{ "time": 3 }
+				]
+			},
+			"bone4": {
+				"scale": [
+					{ "time": 0.6667 },
+					{ "time": 0.8333, "x": 0.921, "y": 1.021 },
+					{ "time": 1, "curve": "stepped" },
+					{ "time": 3.3333 },
+					{ "time": 3.5, "x": 0.921, "y": 1.021 },
+					{ "time": 3.6667 }
+				],
+				"shear": [
+					{ "time": 0.6667 },
+					{ "time": 0.8333, "x": -2.03, "y": 0.96 },
+					{ "time": 1, "curve": "stepped" },
+					{ "time": 3.3333 },
+					{ "time": 3.5, "x": -2.03, "y": 0.96 },
+					{ "time": 3.6667 }
+				]
+			},
+			"bone8": {
+				"scale": [
+					{ "time": 1.3333 },
+					{ "time": 1.5, "x": 0.937, "y": 1.032 },
+					{ "time": 1.6667, "curve": "stepped" },
+					{ "time": 4 },
+					{ "time": 4.1667, "x": 0.937, "y": 1.032 },
+					{ "time": 4.3333 }
+				],
+				"shear": [
+					{ "time": 1.3333 },
+					{ "time": 1.5, "y": 0.76 },
+					{ "time": 1.6667, "curve": "stepped" },
+					{ "time": 4 },
+					{ "time": 4.1667, "y": 0.76 },
+					{ "time": 4.3333 }
+				]
+			},
+			"bone10": {
+				"scale": [
+					{ "time": 2 },
+					{ "time": 2.1667, "x": 0.937, "y": 1.021 },
+					{ "time": 2.3333, "curve": "stepped" },
+					{ "time": 4.6667 },
+					{ "time": 4.8333, "x": 0.937, "y": 1.021 },
+					{ "time": 5 }
+				],
+				"shear": [
+					{ "time": 2 },
+					{ "time": 2.1667, "x": -0.68, "y": 0.31 },
+					{ "time": 2.3333, "curve": "stepped" },
+					{ "time": 4.6667 },
+					{ "time": 4.8333, "x": -0.68, "y": 0.31 },
+					{ "time": 5 }
+				]
+			}
+		}
+	},
+	"reqiqiu": {
+		"bones": {
+			"bone49": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": -0.79, "y": 51.04 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": 0.55, "y": -36.02 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": -0.79, "y": 51.04 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": 0.55, "y": -36.02 },
+					{ "time": 5.3333 }
+				]
+			}
+		}
+	},
+	"yueliangbiyan": {
+		"slots": {
+			"biyan": {
+				"attachment": [
+					{ "time": 0.3333, "name": "zhengyan" },
+					{ "time": 1, "name": "biyan" }
+				]
+			},
+			"daxiao": {
+				"attachment": [
+					{ "time": 0.6667, "name": "daxiao" },
+					{ "time": 1.3333, "name": "weixiao" }
+				]
+			}
+		},
+		"deform": {
+			"default": {
+				"biyan": {
+					"biyan": [
+						{}
+					]
+				},
+				"daxiao": {
+					"weixiao": [
+						{ "curve": "stepped" },
+						{ "time": 0.6667 }
+					]
+				}
+			}
+		}
+	},
+	"yun": {
+		"bones": {
+			"bone60": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": -0.73, "y": -9.97 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": 0.73, "y": 9.97 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": -0.73, "y": -9.97 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": 0.73, "y": 9.97 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone61": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": -0.2, "y": 10 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": 0.2, "y": -10 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": -0.2, "y": 10 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": 0.2, "y": -10 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone62": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": 0.39, "y": -9.99 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": -0.39, "y": 9.99 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": 0.39, "y": -9.99 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": -0.39, "y": 9.99 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone63": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": 0.12, "y": -10 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": -0.12, "y": 10 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": 0.12, "y": -10 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": -0.12, "y": 10 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone64": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": -1.07, "y": 9.94 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": 1.07, "y": -9.94 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": -1.07, "y": 9.94 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": 1.07, "y": -9.94 },
+					{ "time": 5.3333 }
+				]
+			},
+			"bone58": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": 0.58, "y": 9.67 },
+					{ "time": 1.3333 },
+					{ "time": 2, "x": -0.6, "y": -9.98 },
+					{ "time": 2.6667 },
+					{ "time": 3.3333, "x": 0.58, "y": 9.67 },
+					{ "time": 4 },
+					{ "time": 4.6667, "x": -0.6, "y": -9.98 },
+					{ "time": 5.3333 }
+				]
+			}
+		}
+	}
+}
+}

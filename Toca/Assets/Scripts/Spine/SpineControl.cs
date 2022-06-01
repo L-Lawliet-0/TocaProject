@@ -45,6 +45,7 @@ public class SpineControl : TocaFunction
     private AttachmentControl Maozi, Kouzhao, Glasses, Mianju, Ershi, Meimao, Bizi, Zui, Yanjing, Toufa, Toufahoumian, Jiaodongxi, shenti, youshou, zuoshou, youtui, zuotui, Tou;
 
     private const int LeftHandIndex = 1, RightHandIndex = 2, LegIndex = 3, FaceIndex = 4;
+    public bool OnTrack, ArrivedTarget;
 
     private void Start()
     {

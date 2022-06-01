@@ -49,8 +49,11 @@ public class CameraController : MonoBehaviour
         Target_X_Pixel -= x;
         Target_X_Pixel = Mathf.Clamp(Target_X_Pixel, x_Min * POSTOPIXEL, x_Max * POSTOPIXEL);
 
-        float dif = x / POSTOPIXEL;
-        Sun.UpdateMajorX(-dif * 2);
+        if (Sun)
+        {
+            float dif = x / POSTOPIXEL;
+            Sun.UpdateMajorX(-dif * 2);
+        }
     }
 
     private void Update()
@@ -66,13 +69,18 @@ public class CameraController : MonoBehaviour
             Speed -= Time.deltaTime * 10;
             //Speed = Mathf.Max(2, Speed);
             transform.position += Vector3.right * Time.deltaTime * Speed * sign;
+            CharacterTrack.Instance.Track.position += Vector3.right * Time.deltaTime * Speed * sign;
 
             int afterSign = transform.position.x > target ? -1 : 1;
 
             if (sign != afterSign || Speed <= 0)
             {
                 if (sign != afterSign)
-                    transform.position = new Vector3(target, camera_Y);
+                {
+                    float diff = target - transform.position.x;
+                    CharacterTrack.Instance.Track.position += Vector3.right * diff;
+                    transform.position = new Vector3(target, transform.position.y);
+                }
                 else
                     Target_X_Pixel = transform.position.x * POSTOPIXEL;
                 // reset speed after destination
