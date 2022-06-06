@@ -70,11 +70,7 @@ public class TocaObjectsLoader : MonoBehaviour
 
     private IEnumerator Init()
     {
-        Screen.autorotateToLandscapeLeft = true;
-        Screen.autorotateToLandscapeRight = true;
-        Screen.autorotateToPortrait = false;
-        Screen.autorotateToPortraitUpsideDown = false;
-        Screen.orientation = ScreenOrientation.AutoRotation;
+        
         yield return new WaitForSeconds(1);
         foreach (KeyValuePair<int, TocaObject> pair in TocaObjectsPool)
         {

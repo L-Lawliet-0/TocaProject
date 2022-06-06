@@ -19,6 +19,13 @@ public class CharacterTrack : MonoBehaviour
         //Track.transform.position = new Vector3(CameraController.Instance.transform.position.x, Track.transform.position.y, Track.transform.position.z);
     }
 
+    public void SetTrackElement(bool active)
+    {
+        OpenTrack.gameObject.SetActive(active);
+        MenuTrack.gameObject.SetActive(active);
+        Track.gameObject.SetActive(active);
+    }
+
     public void SetTrack(bool active)
     {
         StartCoroutine("FadeCanvas", active);
@@ -46,6 +53,9 @@ public class CharacterTrack : MonoBehaviour
 
         while (counter > 0)
         {
+            if (LoadingCtrl.Instance.LoadingScreenShowing)
+                break;
+
             CameraController.Instance.transform.position += Vector3.up * openSign * speed * Time.deltaTime;
             track_Cg.alpha += menuSign * Time.deltaTime;
             open_Cg.alpha += openSign * Time.deltaTime;

@@ -45,6 +45,9 @@ public class CameraController : MonoBehaviour
     public SunControl Sun;
     public void UpdateCameraX(float x)
     {
+        if (!Main.Instance.CanCameraMove)
+            return;
+
         // the incoming x is in pixel
         Target_X_Pixel -= x;
         Target_X_Pixel = Mathf.Clamp(Target_X_Pixel, x_Min * POSTOPIXEL, x_Max * POSTOPIXEL);
@@ -87,5 +90,11 @@ public class CameraController : MonoBehaviour
                 Speed = MaxSpeed;
             }
         }
+    }
+
+    public void ResetCamera()
+    {
+        Target_X_Pixel = 0;
+        transform.position = new Vector3(0, 7.68f);
     }
 }

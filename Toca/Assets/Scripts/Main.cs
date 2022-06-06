@@ -12,10 +12,12 @@ public class Main : MonoBehaviour
 {
     private static Main m_Instance;
     public static Main Instance { get { return m_Instance; } }
+    public bool CanCameraMove { get { return !LoadingCtrl.Instance.LoadingScreenShowing && (!LoadingCtrl.Instance.CurrentShowingObject || !LoadingCtrl.Instance.CurrentShowingObject.activeInHierarchy); } }
     public Transform Canvas;
 
     public SkeletonAnimation OpeningAnimation;
     public SkeletonAnimation SceneSelection;
+    public GameObject MainButton, HomeButton;
 
     private void Awake()
     {
@@ -24,15 +26,26 @@ public class Main : MonoBehaviour
 
     private void Start()
     {
+        // screen setting
+        Screen.autorotateToLandscapeLeft = true;
+        Screen.autorotateToLandscapeRight = true;
+        Screen.autorotateToPortrait = false;
+        Screen.autorotateToPortraitUpsideDown = false;
+        Screen.orientation = ScreenOrientation.AutoRotation;
+
         // dont destroy these things
         DontDestroyOnLoad(CharacterTrack.Instance.Track.transform.gameObject);
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(Canvas.gameObject);
+        DontDestroyOnLoad(OpeningAnimation.gameObject);
+        DontDestroyOnLoad(SceneSelection.gameObject);
 
         // scale opening animation
         // get camera width and height
         OpeningAnimation.transform.localScale = new Vector3(CameraController.Instance.Width_Half * 2 / 30 , 1, 1);
         SceneSelection.transform.localScale = new Vector3(CameraController.Instance.Width_Half * 2 / 30, 1, 1);
+
+        LoadingCtrl.Instance.LoadUIElement(OpeningAnimation.gameObject);
     }
 
     private void Update()
@@ -45,22 +58,11 @@ public class Main : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha3))
             StartCoroutine("LoadScene", 2);
         */
+        MainButton.SetActive(OpeningAnimation.gameObject.activeInHierarchy);
     }
 
-    public void LoadSceneUI(int index)
+    public void MainMenuButton()
     {
-        StartCoroutine("LoadScene", index);
-    }
-
-    private IEnumerator LoadScene(int sceneIndex)
-    {
-        AsyncOperation ao = SceneManager.LoadSceneAsync(sceneIndex);
-        while (!ao.isDone)
-            yield return null;
-
-        // scene finished
-        // initialize scene data
-        CameraController.Instance.Sun = FindObjectOfType<SunControl>();
-        CameraController.Instance.Sun.GlobalLight = GetComponentInChildren<UnityEngine.Experimental.Rendering.Universal.Light2D>();
+        LoadingCtrl.Instance.LoadUIElement(SceneSelection.gameObject);
     }
 }
