@@ -12,6 +12,8 @@ public class CameraController : MonoBehaviour
     private float camera_Y;
     private float Target_X_Pixel;
 
+    public float CamWidth;
+
     private const float MaxSpeed = 20;
     private float Speed = MaxSpeed;
     public float POSTOPIXEL;
@@ -27,9 +29,13 @@ public class CameraController : MonoBehaviour
         // get camera view width
         m_Camera = GetComponent<Camera>();
 
-        float width = m_Camera.orthographicSize * 2 * m_Camera.aspect; // this is the width of the current camera
+        CamWidth = m_Camera.orthographicSize * 2 * m_Camera.aspect; // this is the width of the current camera
+        TrackControl.Instance.OffsetRange = CamWidth / 4;
+        TrackControl.Instance.CharacterShadowLeft.transform.localPosition = new Vector3(-CamWidth, -1.5f);
+        TrackControl.Instance.CharacterShadowRight.transform.localPosition = new Vector3(CamWidth, -1.5f);
+
         float half_Target_Width = testWidthValue / 2;
-        float half_Width = width / 2;
+        float half_Width = CamWidth / 2;
         Width_Half = half_Width;
 
         x_Min = -half_Target_Width + half_Width;
@@ -40,6 +46,19 @@ public class CameraController : MonoBehaviour
         Target_X_Pixel = 0;
 
         POSTOPIXEL = 1 / (m_Camera.ScreenToWorldPoint(Vector3.right).x - m_Camera.ScreenToWorldPoint(Vector3.zero).x);
+    }
+
+    public void ResetWidth(float newWidth)
+    {
+        testWidthValue = newWidth;
+
+        float width = m_Camera.orthographicSize * 2 * m_Camera.aspect; // this is the width of the current camera
+        float half_Target_Width = testWidthValue / 2;
+        float half_Width = width / 2;
+        Width_Half = half_Width;
+
+        x_Min = -half_Target_Width + half_Width;
+        x_Max = half_Target_Width - half_Width;
     }
 
     public SunControl Sun;
@@ -71,8 +90,9 @@ public class CameraController : MonoBehaviour
 
             Speed -= Time.deltaTime * 10;
             //Speed = Mathf.Max(2, Speed);
-            transform.position += Vector3.right * Time.deltaTime * Speed * sign;
-            CharacterTrack.Instance.Track.position += Vector3.right * Time.deltaTime * Speed * sign;
+            float delta = Time.deltaTime * Speed * sign;
+            transform.position += Vector3.right * delta;
+            //CharacterTrack.Instance.Track.position += Vector3.right * delta;
 
             int afterSign = transform.position.x > target ? -1 : 1;
 
@@ -81,7 +101,7 @@ public class CameraController : MonoBehaviour
                 if (sign != afterSign)
                 {
                     float diff = target - transform.position.x;
-                    CharacterTrack.Instance.Track.position += Vector3.right * diff;
+                    //CharacterTrack.Instance.Track.position += Vector3.right * diff;
                     transform.position = new Vector3(target, transform.position.y);
                 }
                 else

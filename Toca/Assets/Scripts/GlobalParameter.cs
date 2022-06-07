@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class GlobalParameter : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class GlobalParameter : MonoBehaviour
 
     public static float MaxLimbSpeed = 50, MinLimbSpeed = 1;
     public static float Acceleration = 100, StartSpeed = 20;
+    public Color LightColor_Day, LightColor_Night;
+    public Light2D GlobalLight;
 
     public GameObject[] RunTimeEffects;
 

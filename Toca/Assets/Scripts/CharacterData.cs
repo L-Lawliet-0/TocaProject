@@ -17,4 +17,15 @@ public class CharacterData // inheirt mono behaviour so that object can be saved
         ID_tou = "tou";
         ID_toufahoumian = -1;
     }
+
+    public void RandomizeData()
+    {
+        ID_mianju = ID_maozi = ID_glasses = ID_kouzhao = -1;
+        ID_yanjing = Random.Range(1, 33);
+        ID_bizi = Random.Range(1, 32);
+        ID_zui = Random.Range(1, 29);
+        ID_toufa = Random.Range(1, 41);
+        ID_tou = Random.Range(0f, 1f) < .5f ? "tou" : "tou2";
+        ID_toufahoumian = -1;
+    }
 }

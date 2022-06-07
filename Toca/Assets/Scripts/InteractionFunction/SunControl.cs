@@ -5,7 +5,6 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class SunControl : TocaFunction
 {
-    public Light2D GlobalLight;
     public Color DayColor, NightColor;
     public bool IsDay; // is the scene currently in day time
     public bool Switching; // is the scene currently switching between day and night
@@ -53,7 +52,7 @@ public class SunControl : TocaFunction
 
     private IEnumerator Switch()
     {
-        Color currentColor = GlobalLight.color;
+        Color currentColor = GlobalParameter.Instance.GlobalLight.color;
         Color targetColor = IsDay ? NightColor : DayColor;
         float angle = 90;
         float counter = 0;
@@ -68,7 +67,7 @@ public class SunControl : TocaFunction
             counter += Time.deltaTime;
             angle -= Time.deltaTime * 90; // we rotate this fucker 30 degree per second
             transform.position = CenterPoint.position + new Vector3(Radius * Mathf.Cos(angle * Mathf.Deg2Rad), Radius * Mathf.Sin(angle * Mathf.Deg2Rad));
-            GlobalLight.color = Color.Lerp(currentColor, targetColor, counter / 2);
+            GlobalParameter.Instance.GlobalLight.color = Color.Lerp(currentColor, targetColor, counter / 2);
             if (angle < 0 && !switched)
             {
                 switched = true;
@@ -85,7 +84,7 @@ public class SunControl : TocaFunction
             yield return null;
         }
 
-        GlobalLight.color = targetColor;
+        GlobalParameter.Instance.GlobalLight.color = targetColor;
         IsDay = !IsDay;
         Switching = false;
 

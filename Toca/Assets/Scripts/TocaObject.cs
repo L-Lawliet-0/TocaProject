@@ -41,7 +41,7 @@ public class TocaObject : MonoBehaviour
     public void InitalizeTocaobject()
     {
         transform.position = new Vector3(TocaSave.x, TocaSave.y, GlobalParameter.Depth);
-        if (TocaSave.Attaching && TocaObjectsLoader.Instance.TocaObjectsPool.ContainsKey(TocaSave.ParentObjectID))
+        if (TocaSave.Attaching && TocaObjectsLoader.Instance && TocaObjectsLoader.Instance.TocaObjectsPool.ContainsKey(TocaSave.ParentObjectID))
         {
             TocaObject toca = TocaObjectsLoader.Instance.TocaObjectsPool[TocaSave.ParentObjectID];
             List<TocaFunction> functions = toca.GetTocaFunctions<BaseControl>();
@@ -65,8 +65,11 @@ public class TocaObject : MonoBehaviour
         SpineControl sc = (SpineControl)GetTocaFunction<SpineControl>();
         if (sc)
         {
-            TocaSave.My_CharacterData = new CharacterData();
-            TocaSave.My_CharacterData.InitData();
+            if (TocaSave.My_CharacterData.ID_mianju == 0)
+            {
+                TocaSave.My_CharacterData = new CharacterData();
+                TocaSave.My_CharacterData.InitData();
+            }
             sc.LoadCharacter();
         }
     }

@@ -71,7 +71,7 @@ public class TocaObjectsLoader : MonoBehaviour
     private IEnumerator Init()
     {
         
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.1f);
         foreach (KeyValuePair<int, TocaObject> pair in TocaObjectsPool)
         {
             pair.Value.InitalizeTocaobject();

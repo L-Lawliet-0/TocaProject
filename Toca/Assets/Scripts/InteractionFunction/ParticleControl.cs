@@ -8,6 +8,9 @@ public class ParticleControl : TocaFunction
     void Start()
     {
         GetComponent<TouchControl>().ClickCallBacks.Add(Click);
+
+        ParticleSystem.loop = true;
+        Click();
     }
 
     public void Click()

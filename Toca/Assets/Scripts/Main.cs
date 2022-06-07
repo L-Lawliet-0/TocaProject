@@ -45,7 +45,7 @@ public class Main : MonoBehaviour
         OpeningAnimation.transform.localScale = new Vector3(CameraController.Instance.Width_Half * 2 / 30 , 1, 1);
         SceneSelection.transform.localScale = new Vector3(CameraController.Instance.Width_Half * 2 / 30, 1, 1);
 
-        LoadingCtrl.Instance.LoadUIElement(OpeningAnimation.gameObject);
+        //LoadingCtrl.Instance.LoadUIElement(OpeningAnimation.gameObject);
     }
 
     private void Update()

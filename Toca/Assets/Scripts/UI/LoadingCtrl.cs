@@ -66,6 +66,7 @@ public class LoadingCtrl : MonoBehaviour
             LoadingFill.fillAmount += Time.deltaTime;
             yield return null;
         }
+        LoadingFill.fillAmount = 1;
 
         StartCoroutine("FadeLoadingScreen", false);
         while (LoadingScreenShowing)
@@ -102,6 +103,13 @@ public class LoadingCtrl : MonoBehaviour
         SetActive(active);
     }
 
+    private static Dictionary<int, float> SceneWidth = new Dictionary<int, float>()
+    {
+        {1, 90f },
+        {2, 69.59f },
+        {3, 90f }
+    };
+
     private IEnumerator LoadScene1(int sceneIndex)
     {
         StartCoroutine("FadeLoadingScreen",true);
@@ -118,10 +126,13 @@ public class LoadingCtrl : MonoBehaviour
             yield return null;
         }
 
+        LoadingFill.fillAmount = 1;
+        yield return new WaitForSeconds(.5f);
+
         // scene finished
         // initialize scene data
         CameraController.Instance.Sun = FindObjectOfType<SunControl>();
-        CameraController.Instance.Sun.GlobalLight = GetComponentInChildren<UnityEngine.Experimental.Rendering.Universal.Light2D>();
+        CameraController.Instance.ResetWidth(SceneWidth[sceneIndex]);
 
         CharacterTrack.Instance.SetTrackElement(true);
         CharacterTrack.Instance.SetTrack(false);
