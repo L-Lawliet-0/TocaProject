@@ -40,6 +40,7 @@ public class CharacterTrack : MonoBehaviour
     public void SwapPage(bool left)
     {
         PassingHelper pass = new PassingHelper();
+        pass.IsLeft = left;
         if (left)
         {
             pass.newIndex = CurrentActiveGroup - 1 < 0 ? Characters.Count - 1 : CurrentActiveGroup - 1;
@@ -58,6 +59,7 @@ public class CharacterTrack : MonoBehaviour
     {
         public int newIndex;
         public Transform Shadow;
+        public bool IsLeft;
     }
     
     /// <summary>
@@ -81,12 +83,80 @@ public class CharacterTrack : MonoBehaviour
 
             toca.TocaSave.x = passing.Shadow.GetChild(i).position.x;
             toca.TocaSave.y = passing.Shadow.GetChild(i).position.y;
+
+            toca.transform.position = new Vector3(0, -100); // so it is out of player view
         }
 
         yield return new WaitForSeconds(.1f);
 
         foreach (TocaObject toca in tocas)
+        {
             toca.InitalizeTocaobject();
+            toca.transform.SetParent(Track);
+            // disable character first
+            ((MoveControl)toca.GetTocaFunction<MoveControl>()).TargetPosition = toca.transform.position;
+            toca.gameObject.SetActive(false);
+        }
+
+
+        // set toca to base children
+
+        // update position offset to give a page swapping effect
+        // target position offset is 30
+
+        if (passing.IsLeft)
+        {
+            while (TrackControl.Instance.PositionOffset < 30)
+            {
+                TrackControl.Instance.PositionOffset += Time.deltaTime * 30;
+                yield return null;
+            }
+            TrackControl.Instance.PositionOffset = 30;
+        }
+        else
+        {
+            while (TrackControl.Instance.PositionOffset > -30)
+            {
+                TrackControl.Instance.PositionOffset -= Time.deltaTime * 30;
+                yield return null;
+            }
+            TrackControl.Instance.PositionOffset = -30;
+        }
+
+        // disable shadow and enable characters
+        foreach (TocaObject toca in tocas)
+        {
+            toca.gameObject.SetActive(true);
+            // attach it to track control and reset layer
+            LayerControl lc = (LayerControl)toca.GetTocaFunction<LayerControl>();
+            FindControl fc = (FindControl)toca.GetTocaFunction<FindControl>();
+            fc.CurrentAttachment = TrackControl.Instance.m_BaseControl;
+            fc.Attach(TrackControl.Instance.m_BaseControl);
+            lc.ResetLayer(false);
+        }
+        for (int i = 0; i < passing.Shadow.childCount; i++)
+        {
+            passing.Shadow.GetChild(i).gameObject.SetActive(false);
+        }
+
+        // destroy old characters
+        foreach (TocaObject toca in olds)
+            Destroy(toca.gameObject);
+
+        float delta = passing.IsLeft ? 30 : -30;
+        // instant moving so the characters will still be in the center of the camera
+        for (int i = 0; i < tocas.Count; i++)
+        {
+            tocas[i].transform.position += Vector3.right * delta;
+        }
+
+        TrackControl.Instance.PositionOffset = 0;
+
+        // reenable shaodws
+        for (int i = 0; i < passing.Shadow.childCount; i++)
+        {
+            passing.Shadow.GetChild(i).gameObject.SetActive(true);
+        }
     }
 
     /// <summary>
@@ -101,6 +171,10 @@ public class CharacterTrack : MonoBehaviour
 
     private IEnumerator SpawnHelper(int index)
     {
+        List<TocaObject> olds = TrackControl.Instance.DetachAllAttachments();
+        foreach (TocaObject toca in olds)
+            Destroy(toca.gameObject);
+
         float bound = CameraController.Instance.Width_Half + 2;
         Vector3 leftPos = new Vector3(CameraController.Instance.transform.position.x - bound, TrackControl.Instance.m_BaseControl.transform.position.y, GlobalParameter.Depth);
         Vector3 rightPos = new Vector3(CameraController.Instance.transform.position.x + bound, TrackControl.Instance.m_BaseControl.transform.position.y, GlobalParameter.Depth);
@@ -123,6 +197,7 @@ public class CharacterTrack : MonoBehaviour
                 toca.TocaSave.x = rightPos.x;
                 toca.TocaSave.y = rightPos.y;
             }
+            toca.transform.position = new Vector3(0, 100);
         }
 
         yield return new WaitForSeconds(.1f);
@@ -157,6 +232,7 @@ public class CharacterTrack : MonoBehaviour
 
     public void SetTrack(bool active)
     {
+        TrackControl.Instance.m_BaseControl.IgnoreLimit = active;
         StartCoroutine("FadeCanvas", active);
 
         if (active)
@@ -165,7 +241,9 @@ public class CharacterTrack : MonoBehaviour
             TrackControl.Instance.CharacterIn();
         }
         else
+        {
             TrackControl.Instance.CharacterOut();
+        }
     }
 
     private IEnumerator FadeCanvas(bool active)
