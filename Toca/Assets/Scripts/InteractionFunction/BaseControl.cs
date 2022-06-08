@@ -101,6 +101,7 @@ public class BaseControl : TocaFunction
         {
             if (pair.Value.mc && !GlobalParameter.UpdateMovement(this))
             {
+                
                 // recalculate if this base has cover
                 //if (MyBaseAttributes.HaveCover)
                 if (pair.Value.Timer < 1)

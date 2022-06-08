@@ -45,6 +45,7 @@ public class TouchControl : TocaFunction
     // need a collider to detech input
     public void OnTouch(Vector3 pos)
     {
+        EmoteControl.Instance.SetActive(false, EmoteControl.Instance.transform.position, null);
         if (!CallbackOnly)
         {
             if (Find)
@@ -63,6 +64,7 @@ public class TouchControl : TocaFunction
 
     public void OnClick(Vector3 pos)
     {
+        EmoteControl.Instance.SetActive(false, EmoteControl.Instance.transform.position, null);
         foreach (VoidDelegate dele in ClickCallBacks)
             dele();
     }

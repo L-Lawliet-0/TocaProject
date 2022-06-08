@@ -33,6 +33,7 @@ public class TrackControl : TocaFunction
     private Vector3 PositionSave;
     public void OnTouch(Vector3 pos)
     {
+        StopCoroutine("OffsetToZero");
         PositionSave = pos;
         Debug.LogError("OnTouch");
     }
@@ -52,6 +53,22 @@ public class TrackControl : TocaFunction
             CharacterTrack.Instance.SwapPage(false);
         else if (PositionOffset > OffsetRange / 2)
             CharacterTrack.Instance.SwapPage(true);
+        else
+            StartCoroutine("OffsetToZero");
+    }
+
+    private IEnumerator OffsetToZero()
+    {
+        float value = PositionOffset;
+
+        float counter = 0;
+        while (counter < 1)
+        {
+            PositionOffset = Mathf.Lerp(value, 0, counter);
+            counter += Time.deltaTime * 2;
+            yield return null;
+        }
+        PositionOffset = 0;
     }
 
     private void Update()
@@ -77,6 +94,7 @@ public class TrackControl : TocaFunction
                 Vector3 newPos = new Vector3(startPos + i * 3.5f, m_BaseControl.transform.position.y, GlobalParameter.Depth);
                 ((SpineControl)mc.TocaObject.GetTocaFunction<SpineControl>()).ArrivedTarget = false;
                 mc.UpdateTargetPosition(newPos);
+                Debug.LogError(newPos);
             }
         }
         CountCache = m_BaseControl.Attachments.Count;

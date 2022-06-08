@@ -12,6 +12,7 @@ public class CharacterTrack : MonoBehaviour
 
     private List<List<CharacterData>> Characters;
     public int CurrentActiveGroup; // the index of the active 
+    public Sprite TrackSprite;
 
     private void Awake()
     {
@@ -104,23 +105,25 @@ public class CharacterTrack : MonoBehaviour
         // update position offset to give a page swapping effect
         // target position offset is 30
 
+        float spriteWidth = CameraController.Instance.CamWidth;
+
         if (passing.IsLeft)
         {
-            while (TrackControl.Instance.PositionOffset < 30)
+            while (TrackControl.Instance.PositionOffset < spriteWidth)
             {
-                TrackControl.Instance.PositionOffset += Time.deltaTime * 30;
+                TrackControl.Instance.PositionOffset += Time.deltaTime * spriteWidth;
                 yield return null;
             }
-            TrackControl.Instance.PositionOffset = 30;
+            TrackControl.Instance.PositionOffset = spriteWidth;
         }
         else
         {
-            while (TrackControl.Instance.PositionOffset > -30)
+            while (TrackControl.Instance.PositionOffset > -spriteWidth)
             {
-                TrackControl.Instance.PositionOffset -= Time.deltaTime * 30;
+                TrackControl.Instance.PositionOffset -= Time.deltaTime * spriteWidth;
                 yield return null;
             }
-            TrackControl.Instance.PositionOffset = -30;
+            TrackControl.Instance.PositionOffset = -spriteWidth;
         }
 
         // disable shadow and enable characters
@@ -143,7 +146,7 @@ public class CharacterTrack : MonoBehaviour
         foreach (TocaObject toca in olds)
             Destroy(toca.gameObject);
 
-        float delta = passing.IsLeft ? 30 : -30;
+        float delta = passing.IsLeft ? spriteWidth : -spriteWidth;
         // instant moving so the characters will still be in the center of the camera
         for (int i = 0; i < tocas.Count; i++)
         {
@@ -203,7 +206,9 @@ public class CharacterTrack : MonoBehaviour
         yield return new WaitForSeconds(.1f);
 
         foreach (TocaObject toca in tocas)
+        {
             toca.InitalizeTocaobject();
+        }
 
         foreach (TocaObject toca in tocas)
         {

@@ -66,7 +66,7 @@ public class CameraController : MonoBehaviour
     {
         if (!Main.Instance.CanCameraMove)
             return;
-
+        
         // the incoming x is in pixel
         Target_X_Pixel -= x;
         Target_X_Pixel = Mathf.Clamp(Target_X_Pixel, x_Min * POSTOPIXEL, x_Max * POSTOPIXEL);

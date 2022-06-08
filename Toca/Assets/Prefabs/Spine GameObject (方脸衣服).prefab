@@ -444,12 +444,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TocaSave:
-    x: -11.35
-    y: 0.85
-    ObjectID: 31816
-    Attaching: 1
-    ParentObjectID: 32394
-    ParentBaseID: 31476
+    x: 0
+    y: 0
+    ObjectID: -1
+    Attaching: 0
+    ParentObjectID: 0
+    ParentBaseID: 0
     My_CharacterData:
       ID_mianju: 0
       ID_maozi: 0

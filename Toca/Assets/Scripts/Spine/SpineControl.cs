@@ -42,7 +42,7 @@ public class SpineControl : TocaFunction
 
     public float HipOffset;
 
-    private AttachmentControl Maozi, Kouzhao, Glasses, Mianju, Ershi, Meimao, Bizi, Zui, Yanjing, Toufa, Toufahoumian, Jiaodongxi, shenti, youshou, zuoshou, youtui, zuotui, Tou;
+    private AttachmentControl Maozi, Kouzhao, Glasses, Mianju, Ershi, Meimao, Bizi, Zui, Yanjing, Toufa, Toufahoumian, Jiaodongxi, shenti, youshou, zuoshou, youtui, zuotui, Tou, BiaoQing;
 
     private const int LeftHandIndex = 1, RightHandIndex = 2, LegIndex = 3, FaceIndex = 4;
     public bool OnTrack, ArrivedTarget;
@@ -138,9 +138,18 @@ public class SpineControl : TocaFunction
         ac = new AttachmentControl("xin3", MySkeleton, "");
         ac = new AttachmentControl("xin2", MySkeleton, "");
         ac = new AttachmentControl("xin1", MySkeleton, "");
-        ac = new AttachmentControl("biaoqing1", MySkeleton, "");
+        BiaoQing = new AttachmentControl("biaoqing1", MySkeleton, "");
         ac = new AttachmentControl("bianse1", MySkeleton, "");
         ac = new AttachmentControl("texiao", MySkeleton, "");
+
+        // add a click callback to open emote panel
+        TouchControl tc = (TouchControl)TocaObject.GetTocaFunction<TouchControl>();
+        tc.ClickCallBacks.Add(OnClick);
+    }
+
+    private void OnClick()
+    {
+        EmoteControl.Instance.SetActive(!EmoteControl.Instance.Active, GlobalParameter.Instance.GamePosToScreenPos(transform.position + Vector3.up * 2), this);
     }
 
     private Bone B7, B8, B9, B10, B11, B12;
@@ -258,13 +267,15 @@ public class SpineControl : TocaFunction
 
     public void SetOpenMouse()
     {
+        if (EmoteShowing)
+            return;
         Zui.SetAttachment();
         Jiaodongxi.SetAttachment("mouth1");
     }
 
     public void SetDefaultMouse()
     {
-        if (!Eating)
+        if (!Eating && !EmoteShowing)
         {
             SkeletonAnimation.AnimationState.ClearTrack(FaceIndex);// . SetAnimation(FaceIndex, Eat, false);
             Zui.SetAttachment(1);
@@ -423,7 +434,7 @@ public class SpineControl : TocaFunction
 
         while (true)
         {
-            if (!Sleeping && !Eating)
+            if (!Sleeping && !Eating && !EmoteShowing)
             {
                 Yanjing.SetAttachment("biyan");
                 yield return new WaitForSeconds(.3f);
@@ -465,5 +476,15 @@ public class SpineControl : TocaFunction
     {
         MySkeleton.FindSlot("toufahoumian").SetColor(color);
         MySkeleton.FindSlot("toufa1").SetColor(color);
+    }
+
+    private bool EmoteShowing;
+    public void SetBiaoqing(string biaoqing)
+    {
+        BiaoQing.SetAttachment(biaoqing);
+        Yanjing.SetAttachment();
+        Bizi.SetAttachment();
+        Zui.SetAttachment();
+        EmoteShowing = true;
     }
 }

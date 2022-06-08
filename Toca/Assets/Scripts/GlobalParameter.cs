@@ -23,6 +23,11 @@ public class GlobalParameter : MonoBehaviour
         m_Instance = this;
     }
 
+    public Vector3 GamePosToScreenPos(Vector3 worldPos)
+    {
+        return Camera.main.WorldToScreenPoint(worldPos);
+    }
+
     public Vector3 ScreenPosToGamePos(Vector3 inputPosition)
     {
         Vector3 pos = inputPosition;
