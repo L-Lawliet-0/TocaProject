@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -40,6 +40,8 @@ public class TrackControl : TocaFunction
 
     public void PositionChange(Vector3 pos)
     {
+        if (CharacterTrack.Instance.LOCK)
+            return;
         float xDiff = pos.x - PositionSave.x;
         PositionOffset += xDiff;
         PositionOffset = Mathf.Clamp(PositionOffset, -OffsetRange, OffsetRange);
@@ -49,6 +51,8 @@ public class TrackControl : TocaFunction
 
     public void DeTouch()
     {
+        if (CharacterTrack.Instance.LOCK)
+            return;
         if (PositionOffset < -OffsetRange / 2)
             CharacterTrack.Instance.SwapPage(false);
         else if (PositionOffset > OffsetRange / 2)
@@ -79,6 +83,15 @@ public class TrackControl : TocaFunction
             CharacterShadowLeft.transform.localPosition = new Vector3(-CameraController.Instance.CamWidth, -1.5f);
             CharacterShadowRight.transform.localPosition = new Vector3(CameraController.Instance.CamWidth, -1.5f);
 
+            OffsetRange = CameraController.Instance.CamWidth / 4;
+            if (m_BaseControl.Attachments.Count > 7)
+            {
+                int add = m_BaseControl.Attachments.Count - 7;
+                CharacterShadowLeft.localPosition -= Vector3.right * add * 3.5f / 2;
+                CharacterShadowRight.localPosition += Vector3.right * add * 3.5f / 2;
+                OffsetRange = CameraController.Instance.CamWidth / 4 + add * 3.5f / 2;
+            }
+
             List<FindControl> finds = new List<FindControl>(m_BaseControl.Attachments.Keys);
 
             // sort finds based on their horizontal positions
@@ -94,7 +107,16 @@ public class TrackControl : TocaFunction
                 Vector3 newPos = new Vector3(startPos + i * 3.5f, m_BaseControl.transform.position.y, GlobalParameter.Depth);
                 ((SpineControl)mc.TocaObject.GetTocaFunction<SpineControl>()).ArrivedTarget = false;
                 mc.UpdateTargetPosition(newPos);
-                Debug.LogError(newPos);
+            }
+
+            // update character data
+            // only update when player remove one or add one to the track
+            if (Mathf.Abs(CountCache - m_BaseControl.Attachments.Count) == 1)
+            {
+                List<TocaObject> all = new List<TocaObject>();
+                foreach (FindControl fc in finds)
+                    all.Add(fc.TocaObject);
+                CharacterTrack.Instance.UpdateCharacters(all);
             }
         }
         CountCache = m_BaseControl.Attachments.Count;

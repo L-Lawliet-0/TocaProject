@@ -95,6 +95,12 @@ public class BaseControl : TocaFunction
         VisibleDatas = new List<FindControl>();
     }
 
+    private TrackControl TrackControl;
+    private void Start()
+    {
+        TrackControl = (TrackControl)TocaObject.GetTocaFunction<TrackControl>();
+    }
+
     private void Update()
     {
         foreach (KeyValuePair<FindControl, AttachData> pair in Attachments)
@@ -188,6 +194,9 @@ public class BaseControl : TocaFunction
 
     public bool CanbeSnapped(FindControl finder)
     {
+        if (TrackControl && CharacterTrack.Instance.LOCK)
+            return false;
+
         // if previous layer has not opened basecontrol
         OpenControl[] opens = GetComponentsInParent<OpenControl>();
         foreach (OpenControl o in opens)

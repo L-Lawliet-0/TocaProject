@@ -14,6 +14,8 @@ public class CharacterTrack : MonoBehaviour
     public int CurrentActiveGroup; // the index of the active 
     public Sprite TrackSprite;
 
+    public bool LOCK; // when locking disable certain action
+
     private void Awake()
     {
         m_Instance = this;
@@ -40,6 +42,10 @@ public class CharacterTrack : MonoBehaviour
     /// <param name="left"></param>
     public void SwapPage(bool left)
     {
+        if (LOCK)
+            return;
+        LOCK = true;
+        RearrangeDatas();
         PassingHelper pass = new PassingHelper();
         pass.IsLeft = left;
         if (left)
@@ -52,6 +58,7 @@ public class CharacterTrack : MonoBehaviour
             pass.newIndex = CurrentActiveGroup + 1 > Characters.Count - 1 ? 0 : CurrentActiveGroup + 1;
             pass.Shadow = TrackControl.Instance.CharacterShadowRight;
         }
+        CurrentActiveGroup = pass.newIndex;
 
         StartCoroutine("SpawnHelper2", pass);
     }
@@ -160,6 +167,8 @@ public class CharacterTrack : MonoBehaviour
         {
             passing.Shadow.GetChild(i).gameObject.SetActive(true);
         }
+
+        LOCK = false;
     }
 
     /// <summary>
@@ -168,7 +177,12 @@ public class CharacterTrack : MonoBehaviour
     /// <param name="index"></param>
     public void SpawnCharacters(int index)
     {
+        if (LOCK)
+            return;
+        LOCK = true;
+        RearrangeDatas();
         CurrentActiveGroup = index;
+        CurrentActiveGroup = Mathf.Clamp(CurrentActiveGroup, 0, Characters.Count);
         StartCoroutine("SpawnHelper", index);
     }
 
@@ -221,6 +235,26 @@ public class CharacterTrack : MonoBehaviour
         }
 
         TrackControl.Instance.CharacterIn();
+        LOCK = false;
+    }
+
+    public void UpdateCharacters(List<TocaObject> tocas)
+    {
+        Characters[CurrentActiveGroup].Clear();
+        foreach (TocaObject toca in tocas)
+        {
+            Characters[CurrentActiveGroup].Add(toca.TocaSave.My_CharacterData);
+        }
+
+        if (Characters[CurrentActiveGroup].Count <= 0)
+        {
+            if (Characters.Count > 1)
+            {
+                //int temp = CurrentActiveGroup;
+                Characters.RemoveAt(CurrentActiveGroup);
+                SwapPage(false);
+            }
+        }
     }
 
     private void Update()
@@ -243,7 +277,6 @@ public class CharacterTrack : MonoBehaviour
         if (active)
         {
             SpawnCharacters(0);
-            TrackControl.Instance.CharacterIn();
         }
         else
         {
@@ -288,5 +321,29 @@ public class CharacterTrack : MonoBehaviour
     // This section defines page logic
 
     public const int CountPerpage = 7; // standard count per page
+
+    public void RearrangeDatas()
+    {
+        List<CharacterData> all = new List<CharacterData>();
+        for (int i = 0; i < Characters.Count; i++)
+        {
+            for (int j = 0; j < Characters[i].Count; j++)
+            {
+                all.Add(Characters[i][j]);
+            }
+        }
+
+        Characters.Clear();
+        List<CharacterData> temp = new List<CharacterData>();
+        for (int i = 0; i < all.Count; i++)
+        {
+            temp.Add(all[i]);
+            if (temp.Count >= 7 || i == all.Count - 1)
+            {
+                Characters.Add(temp);
+                temp = new List<CharacterData>();
+            }
+        }
+    }
 
 }

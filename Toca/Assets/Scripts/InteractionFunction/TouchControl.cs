@@ -48,6 +48,9 @@ public class TouchControl : TocaFunction
         EmoteControl.Instance.SetActive(false, EmoteControl.Instance.transform.position, null);
         if (!CallbackOnly)
         {
+            if (Find && Find.CurrentAttachment && CharacterTrack.Instance.LOCK && Find.CurrentAttachment.TocaObject.GetTocaFunction<TrackControl>())
+                return;
+
             if (Find)
                 Find.TryDetach();
             if (Selection)
