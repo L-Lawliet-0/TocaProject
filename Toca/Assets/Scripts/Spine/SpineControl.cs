@@ -149,6 +149,11 @@ public class SpineControl : TocaFunction
 
     private void OnClick()
     {
+        if (!EmoteControl.Instance.Active)
+        {
+            if (GetComponentInParent<TrackControl>())
+                return;
+        }
         EmoteControl.Instance.SetActive(!EmoteControl.Instance.Active, GlobalParameter.Instance.GamePosToScreenPos(transform.position + Vector3.up * 2), this);
     }
 
@@ -262,13 +267,13 @@ public class SpineControl : TocaFunction
         else if (Eating)
             Yanjing.SetAttachment(27);
         else
-            Yanjing.SetAttachment(1);
+            Yanjing.SetAttachment(TocaObject.TocaSave.My_CharacterData.ID_yanjing);
     }
 
     public void SetOpenMouse()
     {
         if (EmoteShowing)
-            return;
+            CancelBiaoqing();
         Zui.SetAttachment();
         Jiaodongxi.SetAttachment("mouth1");
     }
@@ -278,7 +283,7 @@ public class SpineControl : TocaFunction
         if (!Eating && !EmoteShowing)
         {
             SkeletonAnimation.AnimationState.ClearTrack(FaceIndex);// . SetAnimation(FaceIndex, Eat, false);
-            Zui.SetAttachment(1);
+            Zui.SetAttachment(TocaObject.TocaSave.My_CharacterData.ID_zui);
             Jiaodongxi.SetAttachment();
         }
     }
@@ -396,6 +401,7 @@ public class SpineControl : TocaFunction
     private GameObject sleepFX;
     public void Sleep(Vector3 fxPos)
     {
+        CancelBiaoqing();
         shenti.SetAttachment();
         youshou.SetAttachment();
         zuoshou.SetAttachment();
@@ -486,5 +492,14 @@ public class SpineControl : TocaFunction
         Bizi.SetAttachment();
         Zui.SetAttachment();
         EmoteShowing = true;
+    }
+
+    public void CancelBiaoqing()
+    {
+        BiaoQing.SetAttachment();
+        SetDefaultYanJing();
+        Bizi.SetAttachment(TocaObject.TocaSave.My_CharacterData.ID_bizi);
+        SetDefaultMouse();
+        EmoteShowing = false;
     }
 }

@@ -16,23 +16,32 @@ public class TocaObjectsLoader : MonoBehaviour
 
     private void Awake()
     {
-        if (Application.isPlaying)
-        {
-            // find all sprite renderers and reset their layers
+        m_Instance = this;
+    }
 
-            m_Instance = this;
-            TocaObjectsPool = new Dictionary<int, TocaObject>();
-            TocaObject[] all = FindObjectsOfType<TocaObject>();
-            PublicPool = new List<TocaObject>();
-            foreach (TocaObject toca in all)
+    public void InitializeGame()
+    {
+        TocaObjectsPool = new Dictionary<int, TocaObject>();
+        TocaObject[] all = FindObjectsOfType<TocaObject>();
+        PublicPool = new List<TocaObject>();
+        foreach (TocaObject toca in all)
+        {
+            if (!toca.GetComponentInParent<TrackControl>())
             {
-                if (!toca.GetComponentInParent<TrackControl>())
-                {
-                    PublicPool.Add(toca);
+                PublicPool.Add(toca);
+                if (!TocaObjectsPool.ContainsKey(toca.TocaSave.ObjectID))
                     TocaObjectsPool.Add(toca.TocaSave.ObjectID, toca);
-                }
             }
-            Initialized = false;
+        }
+        StartCoroutine("Init");
+    }
+
+    private IEnumerator Init()
+    {
+        yield return new WaitForSeconds(.1f);
+        foreach (KeyValuePair<int, TocaObject> pair in TocaObjectsPool)
+        {
+            pair.Value.InitalizeTocaobject();
         }
     }
 
@@ -54,27 +63,6 @@ public class TocaObjectsLoader : MonoBehaviour
             InitializeAllTocaObjects();
             INITDATA = false;
         }
-
-        if (Application.isPlaying && !Initialized)
-        {
-            /*
-            foreach (KeyValuePair<int, TocaObject> pair in TocaObjectsPool)
-            {
-                pair.Value.InitalizeTocaobject();
-            }
-            */
-            StartCoroutine("Init");
-            Initialized = true;
-        }
     }
-
-    private IEnumerator Init()
-    {
-        
-        yield return new WaitForSeconds(.1f);
-        foreach (KeyValuePair<int, TocaObject> pair in TocaObjectsPool)
-        {
-            pair.Value.InitalizeTocaobject();
-        }
-    }
+    
 }

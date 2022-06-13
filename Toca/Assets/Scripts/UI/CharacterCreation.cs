@@ -342,6 +342,7 @@ public class CharacterCreation : MonoBehaviour
 
     private void fushiButtonCallback(int index)
     {
+        SpineUI.Instance.SkinIndex = index;
         SpineUI.Instance.ChangeSkin(index);
         for (int i = 0; i < fushiRoot.childCount; i++)
         {
@@ -368,6 +369,42 @@ public class CharacterCreation : MonoBehaviour
     {
         8, 9, 24
     };
+
+    public void SetPanelData(CharacterData data)
+    {
+        ButtonCallback("mianju", data.ID_mianju);
+        ButtonCallback("maozi", data.ID_maozi);
+        ButtonCallback("glasses", data.ID_glasses);
+        ButtonCallback("kouzhao", data.ID_kouzhao);
+        lianButtonCallback("yanjing", data.ID_yanjing);
+        lianButtonCallback("bizi", data.ID_bizi);
+        lianButtonCallback("zui", data.ID_zui);
+        SetSkinColor(data.ID_skinColor);
+        SetHairColor(data.ID_hairColor);
+        fushiButtonCallback(data.ID_skin);
+        SetHead(data.ID_tou);
+
+        toufaButtonCallback("toufa", data.ID_toufa);
+    }
+
+    public void GetPanelData(CharacterData data)
+    {
+        // read from
+        data.ID_mianju = SpineUI.Instance.mianju.ID;
+        data.ID_maozi = SpineUI.Instance.maozi.ID;
+        data.ID_glasses = SpineUI.Instance.glasses.ID;
+        data.ID_kouzhao = SpineUI.Instance.kouzhao.ID;
+        data.ID_yanjing = SpineUI.Instance.yanjing.ID;
+        data.ID_bizi = SpineUI.Instance.bizi.ID;
+        data.ID_zui = SpineUI.Instance.zui.ID;
+        data.ID_toufa = SpineUI.Instance.toufa.ID;
+        data.ID_toufahoumian = SpineUI.Instance.toufahoumian.ID;
+        data.ID_tou = SpineUI.Instance.GetHead();
+
+        data.ID_skin = SpineUI.Instance.SkinIndex;
+        data.ID_skinColor = SpineUI.Instance.SkinColorIndex;
+        data.ID_hairColor = SpineUI.Instance.HairColorIndex;
+    }
 
     private void toufaButtonCallback(string key, int index)
     {
@@ -504,6 +541,7 @@ public class CharacterCreation : MonoBehaviour
 
     public void SetSkinColor(int colorIndex)
     {
+        SpineUI.Instance.SkinColorIndex = colorIndex;
         SpineUI.Instance.SetSkinColor(SkinColors[colorIndex]);
         for (int i = 0; i < skinColorRoot.childCount; i++)
         {
@@ -513,6 +551,7 @@ public class CharacterCreation : MonoBehaviour
 
     public void SetHairColor(int colorIndex)
     {
+        SpineUI.Instance.HairColorIndex = colorIndex;
         SpineUI.Instance.SetHairColor(HairColors[colorIndex]);
         ResetHairElements();
         for (int i = 0; i < hairColorRoot.childCount; i++)

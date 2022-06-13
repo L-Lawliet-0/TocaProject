@@ -19,6 +19,8 @@ public class TocaObject : MonoBehaviour
         public int ParentObjectID; // the toca object this current object is attaching
         public int ParentBaseID; // the basecontrol this current object is attaching
 
+        public int PrefabID; // the id of the prefab used by this object
+
         public CharacterData My_CharacterData; // if this object is spine object, load from character data
     }
     public ObjectSaveData TocaSave;

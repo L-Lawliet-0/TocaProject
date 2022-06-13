@@ -462,6 +462,7 @@ MonoBehaviour:
       ID_toufahoumian: 0
       ID_hairColor: 0
       ID_skinColor: 0
+      ID_skin: 0
       ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}

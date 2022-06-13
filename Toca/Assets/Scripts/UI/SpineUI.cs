@@ -12,6 +12,7 @@ public class SpineUI : MonoBehaviour
 
     public Dictionary<string, AttachmentControl> Pairs;
     public SkeletonGraphic SkeletonGraphic;
+    public int SkinColorIndex, HairColorIndex, SkinIndex;
 
     private void Awake()
     {

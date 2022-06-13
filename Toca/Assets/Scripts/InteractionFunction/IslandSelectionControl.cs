@@ -18,6 +18,7 @@ public class IslandSelectionControl : TocaFunction
 
     public void Click()
     {
+        LoadingCtrl.Instance.FocusPosition = transform.position;
         LoadingCtrl.Instance.LoadScene(SceneIndex);
         StartCoroutine("HouseShake");
     }

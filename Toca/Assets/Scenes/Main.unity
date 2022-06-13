@@ -757,6 +757,7 @@ MonoBehaviour:
   Loading: 0
   CurrentShowingObject: {fileID: 1242017113}
   PendingObject: {fileID: 0}
+  FocusPosition: {x: 0, y: 0, z: 0}
 --- !u!225 &230760811
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -881,6 +882,7 @@ MonoBehaviour:
       ID_toufahoumian: 0
       ID_hairColor: 0
       ID_skinColor: 0
+      ID_skin: 0
       ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
@@ -930,6 +932,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9132767, y: 0.9794903}
   m_EdgeRadius: 0
+--- !u!1 &390139002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 390139003}
+  m_Layer: 0
+  m_Name: fix
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &390139003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390139002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 7.68, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 467237382}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &396293541
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,7 +1504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &467237379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1581,16 +1614,17 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467237378}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 50}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -7.68, z: 50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1993671128}
   - {fileID: 1459749154}
   - {fileID: 1625563155}
   - {fileID: 280550758}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  - {fileID: 1200946610}
+  m_Father: {fileID: 390139003}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &467237383
 MonoBehaviour:
@@ -3315,6 +3349,168 @@ Transform:
   m_Father: {fileID: 1625563155}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1200946609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1200946610}
+  - component: {fileID: 1200946616}
+  - component: {fileID: 1200946615}
+  - component: {fileID: 1200946614}
+  - component: {fileID: 1200946613}
+  - component: {fileID: 1200946612}
+  - component: {fileID: 1200946611}
+  m_Layer: 9
+  m_Name: colliderReference (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1200946610
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200946609}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.44, y: 6.43, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1796416440}
+  m_Father: {fileID: 467237382}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1200946611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200946609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61ca83455d9d2914a8f4c216c6edeb3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TocaObject: {fileID: 0}
+  SceneIndex: 4
+  IslandAnimation: {fileID: 467237379}
+  HouseAnim: {fileID: 11400000, guid: 2fc1e342b80fc8746b449fa5c0be6005, type: 2}
+--- !u!114 &1200946612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200946609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e2d13486c6a421687d3b0925f1e144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TocaObject: {fileID: 0}
+  CallbackOnly: 0
+--- !u!114 &1200946613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200946609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36171f0ffe981451ebcf43ad9accadc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TocaObject: {fileID: 0}
+  DefaultObjectLayer: 0
+--- !u!114 &1200946614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200946609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43930d37a3abd4b05b2e3600cf18804b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TocaSave:
+    x: 0
+    y: 0
+    ObjectID: 0
+    Attaching: 0
+    ParentObjectID: 0
+    ParentBaseID: 0
+    My_CharacterData:
+      ID_mianju: 0
+      ID_maozi: 0
+      ID_glasses: 0
+      ID_kouzhao: 0
+      ID_yanjing: 0
+      ID_bizi: 0
+      ID_zui: 0
+      ID_toufa: 0
+      ID_toufahoumian: 0
+      ID_hairColor: 0
+      ID_skinColor: 0
+      ID_skin: 0
+      ID_tou: 
+  AllFunctions: []
+  Bottom: {fileID: 0}
+--- !u!114 &1200946615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200946609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde59cbae14b03a4896477f66105b6d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  INIT: 0
+  Tota: 1
+  Touch: 0
+  Selection: 0
+  Move: 0
+  Base: 0
+  Find: 0
+  Open: 0
+--- !u!61 &1200946616
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200946609}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.09951913, y: 0.5577667}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.7146823, y: 3.623323}
+  m_EdgeRadius: 0
 --- !u!1 &1242017113
 GameObject:
   m_ObjectHideFlags: 0
@@ -4187,7 +4383,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1417878567
 RectTransform:
@@ -4469,6 +4665,7 @@ MonoBehaviour:
       ID_toufahoumian: 0
       ID_hairColor: 0
       ID_skinColor: 0
+      ID_skin: 0
       ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
@@ -4810,6 +5007,7 @@ MonoBehaviour:
       ID_toufahoumian: 0
       ID_hairColor: 0
       ID_skinColor: 0
+      ID_skin: 0
       ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
@@ -5119,6 +5317,7 @@ MonoBehaviour:
       ID_toufahoumian: 0
       ID_hairColor: 0
       ID_skinColor: 0
+      ID_skin: 0
       ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}
@@ -5380,7 +5579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Canvas: {fileID: 1417878567}
   OpeningAnimation: {fileID: 1242017114}
-  SceneSelection: {fileID: 467237379}
+  SceneSelection: {fileID: 390139003}
   MainButton: {fileID: 597725568}
   HomeButton: {fileID: 436757515}
 --- !u!114 &1629565151
@@ -5723,6 +5922,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1796416439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1796416440}
+  m_Layer: 0
+  m_Name: Bottom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1796416440
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796416439}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.04710102, y: -1.2538953, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1200946610}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1856108481
 GameObject:
   m_ObjectHideFlags: 0
@@ -6033,6 +6262,7 @@ MonoBehaviour:
       ID_toufahoumian: 0
       ID_hairColor: 0
       ID_skinColor: 0
+      ID_skin: 0
       ID_tou: 
   AllFunctions: []
   Bottom: {fileID: 0}

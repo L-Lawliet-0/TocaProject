@@ -16,7 +16,7 @@ public class Main : MonoBehaviour
     public Transform Canvas;
 
     public SkeletonAnimation OpeningAnimation;
-    public SkeletonAnimation SceneSelection;
+    public Transform SceneSelection;
     public GameObject MainButton, HomeButton;
 
     private void Awake()

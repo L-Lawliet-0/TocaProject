@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.Experimental.Rendering.Universal;
+using System.Runtime.Serialization.Formatters.Binary;
 
 [ExecuteInEditMode]
 public class OneTimerTool : MonoBehaviour
@@ -15,7 +16,11 @@ public class OneTimerTool : MonoBehaviour
         {
             //ResetLayers();
             //GroupObjectsWithAttachingBase();
-            AutoSetObjectsBase();
+            //AutoSetObjectsBase();
+            //GroupSaveableObjects();
+            //RenameChildren();
+            //AssignPrefabID();
+            //SaveSceneData();
             //FindObjectsNameWithComponent();
             //GroupFindControlWithoutBases();
             //GroupBases();
@@ -340,6 +345,70 @@ public class OneTimerTool : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
            transform.GetChild(i).localPosition = startLocal + new Vector3(238 * (i % 5), -248 * (i / 5));
+        }
+    }
+
+    private void GroupSaveableObjects()
+    {
+        TocaObject[] tocas = FindObjectsOfType<TocaObject>(true);
+        foreach (TocaObject toca in tocas)
+        {
+            if (toca.GetComponentInChildren<FindControl>(true) && toca.GetComponentInChildren<MoveControl>(true))
+            {
+                toca.transform.SetParent(TargetParent);
+            }
+        }
+    }
+
+    private void RenameChildren()
+    {
+        int startName = 247;
+
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            int name = startName + i;
+            transform.GetChild(i).name = name.ToString();
+        }
+    }
+
+    private void AssignPrefabID()
+    {
+        int startID = 1;
+
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).GetComponent<TocaObject>().TocaSave.PrefabID = startID + i;
+        }
+    }
+
+    public string fileName;
+    private void SaveSceneData()
+    {
+        // create save
+        List<TocaObject.ObjectSaveData> datas = new List<TocaObject.ObjectSaveData>();
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            datas.Add(transform.GetChild(i).GetComponent<TocaObject>().TocaSave);
+        }
+
+        string dataPath = Application.persistentDataPath + "/" + fileName;
+
+        using (Stream file = File.Open(dataPath, FileMode.OpenOrCreate))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            bf.Serialize(file, datas);
+        }
+    }
+
+    private List<TocaObject.ObjectSaveData> LoadFromFile()
+    {
+        // if (!File.Exists(Application.persistentDataPath + "/save"))
+            
+
+        using (Stream file = File.Open(Application.persistentDataPath + "/save", FileMode.Open))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            return bf.Deserialize(file) as List<TocaObject.ObjectSaveData>;
         }
     }
 }

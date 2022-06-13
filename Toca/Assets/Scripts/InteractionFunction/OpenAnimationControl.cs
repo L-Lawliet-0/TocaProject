@@ -12,6 +12,9 @@ public class OpenAnimationControl : TocaFunction
     private OpenControl Oc;
     public float AnimationSpeed = 1;
 
+    public bool DelayOpen = true;
+    public bool DelayClose = true;
+
     private void Awake()
     {
         BaseSaves = new List<Transform>();
@@ -32,7 +35,7 @@ public class OpenAnimationControl : TocaFunction
         track.Reverse = false;
         track.TimeScale = AnimationSpeed;
 
-        FinishClose();
+        FinishOpen();
 
         if (Oc.OpenObj)
         {
@@ -48,7 +51,10 @@ public class OpenAnimationControl : TocaFunction
             }
         }
 
-        Invoke("FinishClose", OpenAnimation.Animation.Duration / track.TimeScale);
+        if (DelayOpen)
+            Invoke("FinishOpen", OpenAnimation.Animation.Duration / track.TimeScale);
+        else
+            FinishOpen();
     }
 
 
@@ -59,7 +65,6 @@ public class OpenAnimationControl : TocaFunction
         track.Reverse = true;
         track.TimeScale = AnimationSpeed;
 
-        /*
         FinishClose();
         
         if (Oc.OpenObj)
@@ -74,8 +79,21 @@ public class OpenAnimationControl : TocaFunction
                 }
             }
         }
-        Invoke("FinishClose", OpenAnimation.Animation.Duration / track.TimeScale);
-        */
+
+        if (DelayClose)
+            Invoke("FinishClose", OpenAnimation.Animation.Duration / track.TimeScale);
+        else
+            FinishClose();
+    }
+
+    private void FinishOpen()
+    {
+        foreach (Transform tran in BaseSaves)
+        {
+            tran.SetParent(Oc.OpenObj.transform);
+            tran.gameObject.SetActive(true);
+        }
+        BaseSaves.Clear();
     }
 
     private void FinishClose()
@@ -83,7 +101,7 @@ public class OpenAnimationControl : TocaFunction
         foreach (Transform tran in BaseSaves)
         {
             tran.SetParent(Oc.OpenObj.transform);
-            tran.gameObject.SetActive(true);
+            tran.gameObject.SetActive(false);
         }
         BaseSaves.Clear();
     }
