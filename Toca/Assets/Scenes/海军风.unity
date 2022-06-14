@@ -1251,6 +1251,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &115074765
@@ -3125,6 +3126,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &275762147
@@ -3459,6 +3461,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &280697881
@@ -3620,6 +3623,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &288989365
@@ -4145,6 +4149,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &330678069
@@ -4230,6 +4235,8 @@ MonoBehaviour:
   TargetParent: {fileID: 336460538}
   PSBtemplate: {fileID: 0}
   BigBase: {fileID: 0}
+  startID: 168
+  fileName: haijunfeng
 --- !u!4 &336460538
 Transform:
   m_ObjectHideFlags: 0
@@ -4320,8 +4327,9 @@ Transform:
   - {fileID: 2050344515}
   - {fileID: 2091831783}
   - {fileID: 2117572317}
+  - {fileID: 462746436}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &347372679
 GameObject:
@@ -4689,6 +4697,8 @@ MonoBehaviour:
   TargetParent: {fileID: 80126184}
   PSBtemplate: {fileID: 0}
   BigBase: {fileID: 0}
+  startID: 0
+  fileName: 
 --- !u!1 &370345287
 GameObject:
   m_ObjectHideFlags: 0
@@ -4991,6 +5001,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &392384976
@@ -5470,6 +5481,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &410361397
@@ -6128,6 +6140,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &413944989
@@ -6233,6 +6246,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &417080513
@@ -6410,6 +6424,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &419333032
@@ -6600,6 +6615,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &423351601
@@ -7005,6 +7021,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &432686616
@@ -7358,6 +7375,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &459948965
@@ -7490,7 +7508,7 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 161736
     ParentBaseID: 163254
-    PrefabID: 0
+    PrefabID: -50
     My_CharacterData:
       ID_mianju: 0
       ID_maozi: 0
@@ -7505,6 +7523,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &462746431
@@ -7668,7 +7687,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 462746425}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.09, y: 8.13, z: 50}
+  m_LocalPosition: {x: -11.09, y: 8.13, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 2112001416}
@@ -7682,8 +7701,8 @@ Transform:
   - {fileID: 2015723315}
   - {fileID: 821596355}
   - {fileID: 179928241}
-  m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_Father: {fileID: 336460538}
+  m_RootOrder: 79
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &466974696 stripped
 Transform:
@@ -7773,6 +7792,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &467748597
@@ -10315,6 +10335,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &597638911
@@ -10994,6 +11015,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &650679365
@@ -11099,6 +11121,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &656236125
@@ -11286,6 +11309,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &660501418
@@ -11576,6 +11600,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &674772596
@@ -12145,6 +12170,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &760228364
@@ -13445,6 +13471,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &901740733
@@ -13919,6 +13946,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &954707268
@@ -14039,6 +14067,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &978232756
@@ -15568,6 +15597,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1066887514
@@ -15854,6 +15884,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1078327631
@@ -16011,6 +16042,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1082137740
@@ -16427,6 +16459,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1148972812
@@ -16535,6 +16568,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1153506024
@@ -17746,6 +17780,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1238479254
@@ -18144,6 +18179,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1246323553
@@ -18301,6 +18337,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1248250994
@@ -18938,6 +18975,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1279556304
@@ -19881,6 +19919,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1347430496
@@ -20203,6 +20242,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1375476358
@@ -20558,6 +20598,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1396579570
@@ -20690,6 +20731,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1405151936
@@ -21583,6 +21625,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1455448569
@@ -21981,6 +22024,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1491438082
@@ -22168,6 +22212,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1501079505
@@ -22625,6 +22670,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1518588749
@@ -23634,6 +23680,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1570732884
@@ -23974,6 +24021,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1594018715
@@ -24789,6 +24837,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1709310859
@@ -25500,6 +25549,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1756930325
@@ -25646,6 +25696,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1770576591
@@ -25975,6 +26026,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1790685754
@@ -26346,6 +26398,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1801194175
@@ -26517,6 +26570,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1812654649
@@ -26819,6 +26873,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1877544416
@@ -27335,6 +27390,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1903878233
@@ -29017,6 +29073,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &2055508593
@@ -29204,6 +29261,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &2064677115

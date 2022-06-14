@@ -26,6 +26,8 @@ public class OneTimerTool : MonoBehaviour
             //GroupBases();
             //CreateUIitems();
             //RearrangeUIChildren();
+            GenerateNewTrackData();
+            GenerateNewSelectionData();
             EXECUTE = false;
         }    
     }
@@ -371,13 +373,15 @@ public class OneTimerTool : MonoBehaviour
         }
     }
 
+    public int startID;
     private void AssignPrefabID()
     {
-        int startID = 1;
-
         for (int i = 0; i < transform.childCount; i++)
         {
-            transform.GetChild(i).GetComponent<TocaObject>().TocaSave.PrefabID = startID + i;
+            if (transform.GetChild(i).GetComponent<SpineControl>())
+                transform.GetChild(i).GetComponent<TocaObject>().TocaSave.PrefabID = SaveManager.CharacterID;
+            else
+                transform.GetChild(i).GetComponent<TocaObject>().TocaSave.PrefabID = startID + i;
         }
     }
 
@@ -409,6 +413,40 @@ public class OneTimerTool : MonoBehaviour
         {
             BinaryFormatter bf = new BinaryFormatter();
             return bf.Deserialize(file) as List<TocaObject.ObjectSaveData>;
+        }
+    }
+
+    private void GenerateNewTrackData()
+    {
+        // generate 7 characters at the start of the game
+        List<List<CharacterData>> Characters = new List<List<CharacterData>>();
+        for (int i = 0; i < 1; i++)
+        {
+            List<CharacterData> d = new List<CharacterData>();
+            for (int j = 0; j < 7; j++)
+            {
+                CharacterData temp = new CharacterData();
+                temp.RandomizeData();
+                d.Add(temp);
+            }
+            Characters.Add(d);
+        }
+
+        using (Stream file = File.Open(Application.persistentDataPath + "/CharacterTrack", FileMode.OpenOrCreate))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            bf.Serialize(file, Characters);
+        }
+    }
+
+    private void GenerateNewSelectionData()
+    {
+        CharacterData[] datas = new CharacterData[7];
+
+        using (Stream file = File.Open(Application.persistentDataPath + "/CharacterCreation", FileMode.OpenOrCreate))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            bf.Serialize(file, datas);
         }
     }
 }

@@ -21,18 +21,16 @@ public class CharacterTrack : MonoBehaviour
         m_Instance = this;
 
         // initalize characters
-        Characters = new List<List<CharacterData>>();
-        for (int i = 0; i < 3; i++)
-        {
-            List<CharacterData> d = new List<CharacterData>();
-            for (int j = 0; j < 7; j++)
-            {
-                CharacterData temp = new CharacterData();
-                temp.RandomizeData();
-                d.Add(temp);
-            }
-            Characters.Add(d);
-        }
+    }
+
+    private void Start()
+    {
+        Characters = SaveManager.LoadTrackData();
+    }
+
+    public void SaveData()
+    {
+        SaveManager.SaveTrackData(Characters);
     }
 
     /// <summary>
@@ -59,6 +57,7 @@ public class CharacterTrack : MonoBehaviour
             pass.Shadow = TrackControl.Instance.CharacterShadowRight;
         }
         CurrentActiveGroup = pass.newIndex;
+        CurrentActiveGroup = Mathf.Clamp(CurrentActiveGroup, 0, Characters.Count);
 
         StartCoroutine("SpawnHelper2", pass);
     }
@@ -93,6 +92,8 @@ public class CharacterTrack : MonoBehaviour
             toca.TocaSave.y = passing.Shadow.GetChild(i).position.y;
 
             toca.transform.position = new Vector3(0, -100); // so it is out of player view
+
+            toca.TocaSave.ObjectID = toca.GetHashCode();
         }
 
         yield return new WaitForSeconds(.1f);
@@ -215,6 +216,7 @@ public class CharacterTrack : MonoBehaviour
                 toca.TocaSave.y = rightPos.y;
             }
             toca.transform.position = new Vector3(0, 100);
+            toca.TocaSave.ObjectID = toca.GetHashCode();
         }
 
         yield return new WaitForSeconds(.1f);
@@ -240,6 +242,9 @@ public class CharacterTrack : MonoBehaviour
 
     public void UpdateCharacters(List<TocaObject> tocas)
     {
+        if (LOCK)
+            return;
+
         Characters[CurrentActiveGroup].Clear();
         foreach (TocaObject toca in tocas)
         {
@@ -344,6 +349,33 @@ public class CharacterTrack : MonoBehaviour
                 temp = new List<CharacterData>();
             }
         }
+
+        if (Characters.Count == 0)
+            Characters.Add(new List<CharacterData>());
     }
 
+    public void AddData(CharacterData data)
+    {
+        if (Characters.Count == 0)
+            Characters.Add(new List<CharacterData>());
+        Characters[0].Add(data);
+        RearrangeDatas();
+        SaveManager.SaveTrackData(Characters);
+    }
+
+    public void TryUpdateTrack(CharacterData data)
+    {
+        for (int i = 0; i < Characters.Count; i++)
+        {
+            for (int j = 0; j < Characters[i].Count; j++)
+            {
+                if (Characters[i][j].UNIQUE_ID == data.UNIQUE_ID)
+                {
+                    Characters[i][j] = data;
+                }
+            }
+        }
+
+        SaveManager.SaveTrackData(Characters);
+    }
 }

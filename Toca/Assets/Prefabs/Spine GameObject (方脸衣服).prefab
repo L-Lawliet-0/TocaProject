@@ -446,10 +446,11 @@ MonoBehaviour:
   TocaSave:
     x: 0
     y: 0
-    ObjectID: -1
+    ObjectID: 0
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    PrefabID: -50
     My_CharacterData:
       ID_mianju: 0
       ID_maozi: 0
@@ -464,6 +465,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1415042910460678073

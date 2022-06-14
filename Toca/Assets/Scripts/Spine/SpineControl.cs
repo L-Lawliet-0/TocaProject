@@ -466,6 +466,16 @@ public class SpineControl : TocaFunction
         Toufahoumian.SetAttachment(cd.ID_toufahoumian);
         SetSkinColor(CharacterCreation.SkinColors[cd.ID_skinColor]);
         SetHairColor(CharacterCreation.HairColors[cd.ID_hairColor]);
+        SetSkin(cd.ID_skin);
+
+        MySkeleton.SetAttachment("maozi40", cd.ID_toufa == 40 ? "maozi40" : null);
+        MySkeleton.SetAttachment("hudeijie", cd.ID_toufa == 24 ? "hudeijie" : null);
+    }
+
+    public void SetSkin(int index)
+    {
+        MySkeleton.ClearSkin();
+        MySkeleton.SetSkin("fushi" + index);
     }
 
     public void SetSkinColor(Color color)

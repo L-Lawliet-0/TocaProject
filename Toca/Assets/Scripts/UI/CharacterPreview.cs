@@ -66,6 +66,9 @@ public class CharacterPreview : MonoBehaviour
         ChangeSkin(data.ID_skin);
 
         tou.SetAttachment(data.ID_tou);
+
+        Skeleton.SetAttachment("maozi40", data.ID_toufa == 40 ? "maozi40" : null);
+        Skeleton.SetAttachment("hudeijie", data.ID_toufa == 24 ? "hudeijie" : null);
     }
 
     public void ChangeSkin(int index)

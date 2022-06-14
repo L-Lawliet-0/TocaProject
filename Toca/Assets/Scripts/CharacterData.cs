@@ -10,6 +10,8 @@ public class CharacterData // inheirt mono behaviour so that object can be saved
     public int ID_skin;
     public string ID_tou;
 
+    public int UNIQUE_ID;
+
     // initalize data
     public void InitData()
     {

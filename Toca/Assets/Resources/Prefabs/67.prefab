@@ -132,6 +132,7 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 26438
     ParentBaseID: 19538
+    PrefabID: 0
     My_CharacterData:
       ID_mianju: 0
       ID_maozi: 0
@@ -146,6 +147,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &890106413372110506
@@ -571,7 +573,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f25b724791283664fb49a2cb44b811df, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

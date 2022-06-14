@@ -800,7 +800,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280550757}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: 14.32, z: 0}
+  m_LocalPosition: {x: 6.7, y: 13.956, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2045814375}
@@ -821,8 +821,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TocaObject: {fileID: 0}
   Island: {fileID: 467237379}
-  SunToMoon: {fileID: 11400000, guid: 473433e76dd2dd14cb7a666426bd9279, type: 2}
-  MoonToSun: {fileID: 11400000, guid: e60f0b327fa6fed4b94736ef51d276f7, type: 2}
+  SunToMoon: {fileID: 11400000, guid: 1d1f253421532a64bbc5c53e373809f5, type: 2}
+  MoonToSun: {fileID: 11400000, guid: 5f62646219e0aae4e972b60bb07b3cb9, type: 2}
 --- !u!114 &280550760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -870,6 +870,7 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    PrefabID: 0
     My_CharacterData:
       ID_mianju: 0
       ID_maozi: 0
@@ -884,6 +885,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &280550763
@@ -3449,6 +3451,7 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    PrefabID: 0
     My_CharacterData:
       ID_mianju: 0
       ID_maozi: 0
@@ -3463,6 +3466,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1200946615
@@ -3587,7 +3591,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9c3b3c11ba3f6f40b1526808fd457b7, type: 2}
+  - {fileID: 2100000, guid: 2e1c83adbdfdc4243bb3e7a05ae868e1, type: 2}
+  - {fileID: 2100000, guid: b9c4b167c88cb5e478c34c4cfd91e0ea, type: 2}
+  - {fileID: 2100000, guid: 2e1c83adbdfdc4243bb3e7a05ae868e1, type: 2}
+  - {fileID: 2100000, guid: b9c4b167c88cb5e478c34c4cfd91e0ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4653,6 +4660,7 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    PrefabID: 0
     My_CharacterData:
       ID_mianju: 0
       ID_maozi: 0
@@ -4667,6 +4675,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1459749158
@@ -4995,6 +5004,7 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    PrefabID: 0
     My_CharacterData:
       ID_mianju: 0
       ID_maozi: 0
@@ -5009,6 +5019,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1588790869
@@ -5305,6 +5316,7 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    PrefabID: 0
     My_CharacterData:
       ID_mianju: 0
       ID_maozi: 0
@@ -5319,6 +5331,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1625563159
@@ -5400,6 +5413,7 @@ GameObject:
   - component: {fileID: 1629565143}
   - component: {fileID: 1629565150}
   - component: {fileID: 1629565151}
+  - component: {fileID: 1629565152}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5495,7 +5509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 225680232c5cc47b89d83b6652bf2209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TouchMode: 0
+  TouchMode: 1
   InSelection: 0
   LastScreenPosition: {x: 0, y: 0}
   SelectedObject: {fileID: 0}
@@ -5601,6 +5615,18 @@ MonoBehaviour:
   CurrentActiveGroup: 0
   TrackSprite: {fileID: 21300000, guid: f497c4a1e44c9974fb1c9e37d78202bb, type: 3}
   LOCK: 0
+--- !u!114 &1629565152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629565142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c310a925615bd743bde1e003978081f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1657372769
 GameObject:
   m_ObjectHideFlags: 0
@@ -6084,6 +6110,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1856108481}
   m_CullTransparentMesh: 1
+--- !u!1 &1899767833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1899767835}
+  - component: {fileID: 1899767834}
+  m_Layer: 0
+  m_Name: onetimertool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1899767834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899767833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f07200694d6824d7d997aca7d466630a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EXECUTE: 0
+  TargetParent: {fileID: 0}
+  PSBtemplate: {fileID: 0}
+  BigBase: {fileID: 0}
+  startID: 0
+  fileName: 
+--- !u!4 &1899767835
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899767833}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1939965039
 GameObject:
   m_ObjectHideFlags: 0
@@ -6250,6 +6325,7 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    PrefabID: 0
     My_CharacterData:
       ID_mianju: 0
       ID_maozi: 0
@@ -6264,6 +6340,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &1993671132

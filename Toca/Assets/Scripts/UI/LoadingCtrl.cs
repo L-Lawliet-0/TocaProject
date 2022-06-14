@@ -50,6 +50,7 @@ public class LoadingCtrl : MonoBehaviour
             SaveManager.SaveCurrentScene(Application.persistentDataPath + "/haijunfeng");
         else if (CurrentScene == 3)
             SaveManager.SaveCurrentScene(Application.persistentDataPath + "/nanhaifang");
+        CharacterTrack.Instance.SaveData();
 
         CurrentScene = -1;
 
@@ -184,13 +185,18 @@ public class LoadingCtrl : MonoBehaviour
         {
             foreach (TocaObject.ObjectSaveData data in datas)
             {
-                GameObject prefab = Resources.Load<GameObject>("Prefabs/" + data.PrefabID);
+                GameObject prefab;
+                if (data.PrefabID == SaveManager.CharacterID)
+                    prefab = CharacterTrack.Instance.CharacterPrefab;
+                else
+                    prefab = Resources.Load<GameObject>("Prefabs/" + data.PrefabID);
                 GameObject obj = Instantiate(prefab); // load objects from resource folder
                 obj.GetComponent<TocaObject>().TocaSave = data;
             }
         }
 
-        TocaObjectsLoader.Instance.InitializeGame();
+        if (TocaObjectsLoader.Instance)
+            TocaObjectsLoader.Instance.InitializeGame();
 
         // scene is done loading, 
 

@@ -22,11 +22,11 @@ public class CharacterSelectionCtrl : MonoBehaviour
     private void Awake()
     {
         m_Instance = this;
-        Datas = new CharacterData[7];
     }
 
     private void Start()
     {
+        Datas = SaveManager.LoadCreationData();
         Invoke("Init", .5f);
     }
 
@@ -131,13 +131,21 @@ public class CharacterSelectionCtrl : MonoBehaviour
         if (active)
             ReturnButton.onClick.AddListener(() => SetCreationMode(false));
         else
+        {
             ReturnButton.onClick.AddListener(() => ReturnHome());
+        }
 
         if (!active && Datas[CurrentIndex] != null)
         {
             // read data from character creation
             CharacterCreation.Instance.GetPanelData(Datas[CurrentIndex]);
+
+            // only need to update character just edited
+            SaveManager.Instance.TryUpdateSceneData(Datas[CurrentIndex]);
+            CharacterTrack.Instance.TryUpdateTrack(Datas[CurrentIndex]);
         }
+
+        SaveManager.SaveCreationData(Datas);
 
         // update character preview element
         for (int i = 0; i < Datas.Length; i++)
@@ -158,6 +166,10 @@ public class CharacterSelectionCtrl : MonoBehaviour
             // there is not current data, create a new character
             Datas[index] = new CharacterData();
             Datas[index].RandomizeData();
+            Datas[index].UNIQUE_ID = Datas[index].GetHashCode();
+
+            // when creating a new data, add the corresponding data to track data
+            CharacterTrack.Instance.AddData(Datas[index]);
         }
         else
         {
