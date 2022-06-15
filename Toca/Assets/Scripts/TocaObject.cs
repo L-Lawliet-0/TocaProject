@@ -40,12 +40,14 @@ public class TocaObject : MonoBehaviour
     }
 
     // based on the current save, initalize the toca object
-    public void InitalizeTocaobject()
+    public void InitalizeTocaobject(TocaObject attach = null)
     {
         transform.position = new Vector3(TocaSave.x, TocaSave.y, GlobalParameter.Depth);
-        if (TocaSave.Attaching && TocaObjectsLoader.Instance && TocaObjectsLoader.Instance.TocaObjectsPool.ContainsKey(TocaSave.ParentObjectID))
+        if (TocaSave.Attaching && ( attach || (TocaObjectsLoader.Instance && TocaObjectsLoader.Instance.TocaObjectsPool.ContainsKey(TocaSave.ParentObjectID))))
         {
-            TocaObject toca = TocaObjectsLoader.Instance.TocaObjectsPool[TocaSave.ParentObjectID];
+            TocaObject toca = attach;
+            if (!toca)
+                toca = TocaObjectsLoader.Instance.TocaObjectsPool[TocaSave.ParentObjectID];
             List<TocaFunction> functions = toca.GetTocaFunctions<BaseControl>();
             foreach (BaseControl function in functions)
             {

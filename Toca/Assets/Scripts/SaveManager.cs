@@ -20,7 +20,8 @@ public class SaveManager : MonoBehaviour
             "/haijunfeng",
             "/nanhaifang",
             "/CharacterTrack",
-            "/CharacterCreation"
+            "/CharacterCreation",
+            "/TrackProps"
         };
 
         // test
@@ -48,12 +49,21 @@ public class SaveManager : MonoBehaviour
         }
     }
 
-    public static List<List<CharacterData>> LoadTrackData()
+    public static void SaveTrackProps(List<TocaObject.ObjectSaveData> datas)
+    {
+        using (Stream file = File.Open(Application.persistentDataPath + "/TrackProps", FileMode.Open))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            bf.Serialize(file, datas);
+        }
+    }
+
+    public static List<List<TocaObject.ObjectSaveData>> LoadTrackData()
     {
         using (Stream file = File.Open(Application.persistentDataPath + "/CharacterTrack", FileMode.Open))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            return bf.Deserialize(file) as List<List<CharacterData>>;
+            return bf.Deserialize(file) as List<List<TocaObject.ObjectSaveData>>;
         }
     }
 
@@ -75,7 +85,7 @@ public class SaveManager : MonoBehaviour
         }
     }
 
-    public static void SaveTrackData(List<List<CharacterData>> datas)
+    public static void SaveTrackData(List<List<TocaObject.ObjectSaveData>> datas)
     {
         using (Stream file = File.Open(Application.persistentDataPath + "/CharacterTrack", FileMode.Open))
         {

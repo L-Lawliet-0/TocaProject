@@ -142,6 +142,7 @@ public class SpineControl : TocaFunction
         ac = new AttachmentControl("bianse1", MySkeleton, "");
         ac = new AttachmentControl("texiao", MySkeleton, "");
 
+
         // add a click callback to open emote panel
         TouchControl tc = (TouchControl)TocaObject.GetTocaFunction<TouchControl>();
         tc.ClickCallBacks.Add(OnClick);
@@ -217,6 +218,7 @@ public class SpineControl : TocaFunction
                 break;
             case Animations.Stand:
                 track = SkeletonAnimation.AnimationState.SetAnimation(LegIndex, Stand, false);
+                track.TimeScale = 2;
                 SetControlValue(leftLegControl, 1);
                 SetControlValue(rightLegControl, 1);
                 LeftLegControl.Active = false;
@@ -224,7 +226,8 @@ public class SpineControl : TocaFunction
                 SkeletonAnimation.AnimationState.Complete += HandleLeg;
                 break;
             case Animations.Sit:
-                SkeletonAnimation.AnimationState.SetAnimation(LegIndex, Sit, false);
+                track = SkeletonAnimation.AnimationState.SetAnimation(LegIndex, Sit, false);
+                track.TimeScale = 2;
                 SetControlValue(leftLegControl, 1);
                 SetControlValue(rightLegControl, 1);
                 LeftLegControl.Active = false;
@@ -497,7 +500,30 @@ public class SpineControl : TocaFunction
     private bool EmoteShowing;
     public void SetBiaoqing(string biaoqing)
     {
+        if (Eating)
+            return; // don't change biaoqing if eating
         BiaoQing.SetAttachment(biaoqing);
+        if (biaoqing.Equals("nanshou"))
+        {
+            MySkeleton.SetAttachment("bianse1", "lvlian");
+            MySkeleton.SetAttachment("texiao", "tu");
+        }
+        else if (biaoqing.Equals("shengqi"))
+        {
+            MySkeleton.SetAttachment("bianse1", "honglian");
+            MySkeleton.SetAttachment("texiao", null);
+        }
+        else if (biaoqing.Equals("jingkong"))
+        {
+            MySkeleton.SetAttachment("bianse1", "lanlian");
+            MySkeleton.SetAttachment("texiao", null);
+        }
+        else
+        {
+            MySkeleton.SetAttachment("bianse1", null);
+            MySkeleton.SetAttachment("texiao", null);
+        }
+
         Yanjing.SetAttachment();
         Bizi.SetAttachment();
         Zui.SetAttachment();
@@ -507,6 +533,8 @@ public class SpineControl : TocaFunction
     public void CancelBiaoqing()
     {
         BiaoQing.SetAttachment();
+        MySkeleton.SetAttachment("bianse1", null);
+        MySkeleton.SetAttachment("texiao", null);
         SetDefaultYanJing();
         Bizi.SetAttachment(TocaObject.TocaSave.My_CharacterData.ID_bizi);
         SetDefaultMouse();

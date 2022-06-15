@@ -17,6 +17,8 @@ public class CharacterSelectionCtrl : MonoBehaviour
 
     public Button ReturnButton;
 
+    public const int MaxCharacters = 20;
+
     public ScrollRect m_ScrollRect;
 
     private void Awake()
@@ -44,41 +46,58 @@ public class CharacterSelectionCtrl : MonoBehaviour
             return;
         }
 
+        float unitLength = 1f / (MaxCharacters - 1);
+
         if (!m_ScrollRect.Dragging)
         {
             float value = m_ScrollRect.horizontalNormalizedPosition;
-            float dis = float.MaxValue;
             float target = -1;
+            int activeIndex = 0;
 
             if (m_ScrollRect.velocity.x > 0)
             {
-                for (int i = 6; i >= 0; i--)
+                for (int i = MaxCharacters; i >= 0; i--)
                 {
-                    float temp = i * .16666f;
+                    float temp = i * unitLength;
                     if (temp <= value)
                     {
                         target = temp;
+                        activeIndex = i;
                         break;
                     }
                 }
                 if (target == -1)
+                {
                     target = 0;
+                    activeIndex = 0;
+                }
             }
             else
             {
-                for (int i = 0; i < 7; i++)
+                for (int i = 0; i < MaxCharacters; i++)
                 {
-                    float temp = i * .16666f;
+                    float temp = i * unitLength;
                     if (temp >= value)
                     {
                         target = temp;
+                        activeIndex = i;
                         break;
                     }
                 }
                 if (target == -1)
+                {
                     target = 1;
+                    activeIndex = MaxCharacters - 1;
+                }
             }
             target = Mathf.Clamp01(target);
+
+            for (int i = 0; i < Cells.Length; i++)
+            {
+                Cells[i].GetChild(0).GetComponent<Button>().interactable = i == activeIndex;
+                Cells[i].GetChild(1).GetComponent<Button>().interactable = i == activeIndex;
+            }
+
             SpeedLimitReached = false;
 
             m_ScrollRect.scrollSensitivity = 0;
@@ -90,7 +109,8 @@ public class CharacterSelectionCtrl : MonoBehaviour
     private IEnumerator Reenable(float target)
     {
         float currentValue = m_ScrollRect.horizontalNormalizedPosition;
-        float counter = Mathf.Abs(target - currentValue) * 3600 / m_ScrollRect.velocity.x;
+        float counter = Mathf.Abs(target - currentValue) * 11400 / Mathf.Abs(m_ScrollRect.velocity.x);
+        counter = Mathf.Min(counter, 2); // max 1 second of move time
         float maxC = counter;
         float mult = 1 / maxC;
         while (counter > 0)
@@ -110,6 +130,11 @@ public class CharacterSelectionCtrl : MonoBehaviour
     private void Init()
     {
         SetCreationMode(false);
+        for (int i = 0; i < Cells.Length; i++)
+        {
+            Cells[i].GetChild(0).GetComponent<Button>().interactable = i == 0;
+            Cells[i].GetChild(1).GetComponent<Button>().interactable = i == 0;
+        }
     }
 
     public void ReturnHome()

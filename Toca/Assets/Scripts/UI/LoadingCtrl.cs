@@ -50,7 +50,18 @@ public class LoadingCtrl : MonoBehaviour
             SaveManager.SaveCurrentScene(Application.persistentDataPath + "/haijunfeng");
         else if (CurrentScene == 3)
             SaveManager.SaveCurrentScene(Application.persistentDataPath + "/nanhaifang");
-        CharacterTrack.Instance.SaveData();
+
+        if (CurrentScene == 1 || CurrentScene == 2 || CurrentScene == 3)
+        {
+            SunControl sc = FindObjectOfType<SunControl>();
+            if (sc && sc.IsDay != IslandSunControl.Instance.IsDay)
+                IslandSunControl.Instance.OnClick();
+
+            CharacterTrack.Instance.SavePropsData(true);
+            CharacterTrack.Instance.SaveData();
+        }
+
+        CharacterTrack.Instance.DestroyCharacters();
 
         CurrentScene = -1;
 
@@ -213,6 +224,9 @@ public class LoadingCtrl : MonoBehaviour
             CharacterTrack.Instance.SetTrackElement(true);
             CharacterTrack.Instance.SetTrack(false);
             Main.Instance.HomeButton.SetActive(true);
+
+            if (!IslandSunControl.Instance.IsDay)
+                CameraController.Instance.Sun.SwitchTime();
         }
         else
             yield return new WaitForSeconds(1f);

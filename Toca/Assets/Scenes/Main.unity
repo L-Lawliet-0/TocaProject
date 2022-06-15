@@ -820,6 +820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TocaObject: {fileID: 0}
+  IsDay: 0
   Island: {fileID: 467237379}
   SunToMoon: {fileID: 11400000, guid: 1d1f253421532a64bbc5c53e373809f5, type: 2}
   MoonToSun: {fileID: 11400000, guid: 5f62646219e0aae4e972b60bb07b3cb9, type: 2}
@@ -4533,10 +4534,10 @@ RectTransform:
   m_Father: {fileID: 230760807}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 394, y: 394}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -200, y: 200}
+  m_SizeDelta: {x: 197, y: 197}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1453632309
 MonoBehaviour:
@@ -5509,7 +5510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 225680232c5cc47b89d83b6652bf2209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TouchMode: 1
+  TouchMode: 0
   InSelection: 0
   LastScreenPosition: {x: 0, y: 0}
   SelectedObject: {fileID: 0}
@@ -5662,7 +5663,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 350, y: 350}
+  m_SizeDelta: {x: 175, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1657372771
 MonoBehaviour:

@@ -28,6 +28,7 @@ public class OneTimerTool : MonoBehaviour
             //RearrangeUIChildren();
             GenerateNewTrackData();
             GenerateNewSelectionData();
+            GenerateNewTrackSaveData();
             EXECUTE = false;
         }    
     }
@@ -419,15 +420,17 @@ public class OneTimerTool : MonoBehaviour
     private void GenerateNewTrackData()
     {
         // generate 7 characters at the start of the game
-        List<List<CharacterData>> Characters = new List<List<CharacterData>>();
+        List<List<TocaObject.ObjectSaveData>> Characters = new List<List<TocaObject.ObjectSaveData>>();
         for (int i = 0; i < 1; i++)
         {
-            List<CharacterData> d = new List<CharacterData>();
-            for (int j = 0; j < 7; j++)
+            List<TocaObject.ObjectSaveData> d = new List<TocaObject.ObjectSaveData>();
+            for (int j = 0; j < 6; j++)
             {
+                TocaObject.ObjectSaveData toca = new TocaObject.ObjectSaveData();
                 CharacterData temp = new CharacterData();
                 temp.RandomizeData();
-                d.Add(temp);
+                toca.My_CharacterData = temp;
+                d.Add(toca);
             }
             Characters.Add(d);
         }
@@ -441,9 +444,20 @@ public class OneTimerTool : MonoBehaviour
 
     private void GenerateNewSelectionData()
     {
-        CharacterData[] datas = new CharacterData[7];
+        CharacterData[] datas = new CharacterData[CharacterSelectionCtrl.MaxCharacters];
 
         using (Stream file = File.Open(Application.persistentDataPath + "/CharacterCreation", FileMode.OpenOrCreate))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            bf.Serialize(file, datas);
+        }
+    }
+
+    private void GenerateNewTrackSaveData()
+    {
+        List<TocaObject.ObjectSaveData> datas = new List<TocaObject.ObjectSaveData>();
+
+        using (Stream file = File.Open(Application.persistentDataPath + "/TrackProps", FileMode.OpenOrCreate))
         {
             BinaryFormatter bf = new BinaryFormatter();
             bf.Serialize(file, datas);
