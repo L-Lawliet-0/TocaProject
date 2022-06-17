@@ -20,15 +20,17 @@ public class OneTimerTool : MonoBehaviour
             //GroupSaveableObjects();
             //RenameChildren();
             //AssignPrefabID();
-            //SaveSceneData();
+            SaveSceneData();
             //FindObjectsNameWithComponent();
             //GroupFindControlWithoutBases();
             //GroupBases();
             //CreateUIitems();
             //RearrangeUIChildren();
-            GenerateNewTrackData();
-            GenerateNewSelectionData();
-            GenerateNewTrackSaveData();
+            //GenerateNewTrackData();
+            //GenerateNewSelectionData();
+            //GenerateNewTrackSaveData();
+            //InitializeSingleObjectSave();
+            //ReAssignPrefabsID();
             EXECUTE = false;
         }    
     }
@@ -427,6 +429,7 @@ public class OneTimerTool : MonoBehaviour
             for (int j = 0; j < 6; j++)
             {
                 TocaObject.ObjectSaveData toca = new TocaObject.ObjectSaveData();
+                toca.PrefabID = SaveManager.CharacterID;
                 CharacterData temp = new CharacterData();
                 temp.RandomizeData();
                 toca.My_CharacterData = temp;
@@ -461,6 +464,23 @@ public class OneTimerTool : MonoBehaviour
         {
             BinaryFormatter bf = new BinaryFormatter();
             bf.Serialize(file, datas);
+        }
+    }
+
+    private void InitializeSingleObjectSave()
+    {
+        TocaObject toca = GetComponent<TocaObject>();
+        toca.TocaSave.ObjectID = toca.GetHashCode();
+        toca.TocaSave.x = toca.transform.position.x;
+        toca.TocaSave.y = toca.transform.position.y;
+    }
+
+    private void ReAssignPrefabsID()
+    {
+        for (int i = 1; i < 347; i++)
+        {
+            GameObject obj = Resources.Load<GameObject>("Prefabs/" + i.ToString());
+            obj.GetComponent<TocaObject>().TocaSave.PrefabID = i;
         }
     }
 }

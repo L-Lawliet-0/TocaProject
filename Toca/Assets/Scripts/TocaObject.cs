@@ -21,6 +21,8 @@ public class TocaObject : MonoBehaviour
 
         public int PrefabID; // the id of the prefab used by this object
 
+        public float LastModifiedTime; // the time of the last interaction time
+
         public CharacterData My_CharacterData; // if this object is spine object, load from character data
     }
     public ObjectSaveData TocaSave;
@@ -43,6 +45,8 @@ public class TocaObject : MonoBehaviour
     public void InitalizeTocaobject(TocaObject attach = null)
     {
         transform.position = new Vector3(TocaSave.x, TocaSave.y, GlobalParameter.Depth);
+        if (attach)
+            transform.position = new Vector3(attach.transform.position.x, attach.transform.position.y, GlobalParameter.Depth);
         if (TocaSave.Attaching && ( attach || (TocaObjectsLoader.Instance && TocaObjectsLoader.Instance.TocaObjectsPool.ContainsKey(TocaSave.ParentObjectID))))
         {
             TocaObject toca = attach;

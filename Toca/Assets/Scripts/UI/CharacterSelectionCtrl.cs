@@ -137,10 +137,14 @@ public class CharacterSelectionCtrl : MonoBehaviour
         }
     }
 
+    public int PreScene;
     public void ReturnHome()
     {
         gameObject.SetActive(false);
-        Main.Instance.MainMenuButton();
+        if (PreScene == -1)
+            Main.Instance.MainMenuButton();
+        else
+            LoadingCtrl.Instance.LoadSceneFromScene(PreScene);
     }
 
     public Transform[] Cells;
@@ -203,5 +207,17 @@ public class CharacterSelectionCtrl : MonoBehaviour
 
         SetCreationMode(true);
         CharacterCreation.Instance.SetPanelData(Datas[index]);
+    }
+
+    public static HashSet<int> GetIDs()
+    {
+        CharacterData[] datas = SaveManager.LoadCreationData();
+        HashSet<int> returnValues = new HashSet<int>();
+        foreach (CharacterData cd in datas)
+        {
+            if (cd != null) // null check
+                returnValues.Add(cd.UNIQUE_ID);
+        }
+        return returnValues;
     }
 }

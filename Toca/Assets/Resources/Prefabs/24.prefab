@@ -58,6 +58,7 @@ MonoBehaviour:
     IsMouth: 0
     IsEye: 0
     IsHanger: 0
+    IsBody: 0
     MyStackType: 0
   SnapWithHuman: 0
   SnapWithProp: 1
@@ -236,6 +237,8 @@ MonoBehaviour:
     Attaching: 0
     ParentObjectID: 0
     ParentBaseID: 0
+    PrefabID: 24
+    LastModifiedTime: 0
     My_CharacterData:
       ID_mianju: 0
       ID_maozi: 0
@@ -250,6 +253,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &2866231470465678317
@@ -548,6 +552,7 @@ MonoBehaviour:
   IsFood: 0
   IsGlasses: 0
   IsHang: 0
+  IsCloth: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0

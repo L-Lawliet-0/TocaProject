@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class SelectionControl : TocaFunction
 {
@@ -54,6 +55,9 @@ public class SelectionControl : TocaFunction
 
         if (FXonSelection)
             FXpointer = Instantiate(FXonSelection, transform.position, Quaternion.identity, transform);
+
+        // unit size : minutes 
+        TocaObject.TocaSave.LastModifiedTime = DateTime.Now.DayOfYear * 24 * 60 + DateTime.Now.Hour * 60 + DateTime.Now.Minute;
     }
 
     public void OnDeselect()

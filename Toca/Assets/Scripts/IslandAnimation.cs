@@ -11,5 +11,9 @@ public class IslandAnimation : MonoBehaviour
     private void Start()
     {
         GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(1, LoopAnimations[0], true);
+
+        Skeleton skeleton = GetComponent<SkeletonAnimation>().skeleton;
+        skeleton.SetAttachment("biyan", null);
+        skeleton.SetAttachment("daxiao", null);
     }
 }

@@ -1,5 +1,111 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1124059967227352031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2494620600092806695}
+  - component: {fileID: 4147431323305824789}
+  - component: {fileID: 6111430090325869442}
+  m_Layer: 7
+  m_Name: Body_Cloth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2494620600092806695
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124059967227352031}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1415042910460678064}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4147431323305824789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124059967227352031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6641f802414704d5298de7e9cbd96126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TocaObject: {fileID: 0}
+  MyBaseAttributes:
+    Parameters: 
+    InheirtLayer: 0
+    BookStand: 0
+    BrushStand: 0
+    HaveCover: 0
+    IsChair: 0
+    IsLeftHand: 0
+    IsRightHand: 0
+    IsMouth: 0
+    IsEye: 0
+    IsHanger: 0
+    IsBody: 1
+    IsCloth: 0
+    MyStackType: 0
+  SnapWithHuman: 0
+  SnapWithProp: 1
+  HumanHorizontalSnapType: 0
+  HumanVerticalSnapType: 0
+  PropHorizontalSnapType: 0
+  PropVerticalSnapType: 0
+  VisibleDatas: []
+  SnapLimit: 0
+  LayerCache: 0
+  HumanPointSnap: {fileID: 0}
+  PropPointSnap: {fileID: 0}
+  MaxObjectWidth: 3.4028235e+38
+  MaxObjectHeight: 3.4028235e+38
+  IgnoreLimit: 1
+  IsHand: 0
+  BaseID: 0
+  Cover: {fileID: 0}
+  Cover2: {fileID: 0}
+  Covers: []
+  SpineControl: {fileID: 0}
+--- !u!61 &6111430090325869442
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124059967227352031}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 3.609425}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.7618942, y: 7.1292124}
+  m_EdgeRadius: 0
 --- !u!1 &1415042909934663640
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,6 +381,7 @@ Transform:
   - {fileID: 1415042910972796318}
   - {fileID: 1415042910722719466}
   - {fileID: 1415042911783632793}
+  - {fileID: 2494620600092806695}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -305,26 +412,30 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9e10f14ddd9933340b88e5b04c2bffa7, type: 2}
-  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
-  - {fileID: 2100000, guid: 001a920a89b39e74d882411802f596b3, type: 2}
-  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
-  - {fileID: 2100000, guid: 001a920a89b39e74d882411802f596b3, type: 2}
   - {fileID: 2100000, guid: f1c9a0495fa9d294faea4d977d15e569, type: 2}
+  - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
+  - {fileID: 2100000, guid: f1c9a0495fa9d294faea4d977d15e569, type: 2}
+  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
+  - {fileID: 2100000, guid: 9e10f14ddd9933340b88e5b04c2bffa7, type: 2}
+  - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
+  - {fileID: 2100000, guid: f1c9a0495fa9d294faea4d977d15e569, type: 2}
+  - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
+  - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
   - {fileID: 2100000, guid: 001a920a89b39e74d882411802f596b3, type: 2}
   - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
-  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
   - {fileID: 2100000, guid: 9e10f14ddd9933340b88e5b04c2bffa7, type: 2}
-  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
+  - {fileID: 2100000, guid: 487e372e235da1f49894dd0b678f0da8, type: 2}
+  - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
+  - {fileID: 2100000, guid: 487e372e235da1f49894dd0b678f0da8, type: 2}
+  - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
+  - {fileID: 2100000, guid: f1c9a0495fa9d294faea4d977d15e569, type: 2}
   - {fileID: 2100000, guid: 9e10f14ddd9933340b88e5b04c2bffa7, type: 2}
+  - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
   - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
   - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
   - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
-  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
   - {fileID: 2100000, guid: 001a920a89b39e74d882411802f596b3, type: 2}
-  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
-  - {fileID: 2100000, guid: 001a920a89b39e74d882411802f596b3, type: 2}
-  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
+  - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -397,6 +508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TocaObject: {fileID: 0}
+  BodyBase: {fileID: 4147431323305824789}
   LeftHandRaise: {fileID: 11400000, guid: 97da25a0b0c21dd498a8376e4696fa6b, type: 2}
   LeftHandDrop: {fileID: 11400000, guid: ba2d7bd10c0ff03469ffc368aaacf12f, type: 2}
   RightHandRaise: {fileID: 11400000, guid: fedbd261db5166d42ab8682d096cf5df, type: 2}
@@ -411,6 +523,9 @@ MonoBehaviour:
   OnTrack: 0
   ArrivedTarget: 0
   Sleeping: 0
+  Xing: {fileID: 11400000, guid: a46ab044040272d4581da073e49198aa, type: 2}
+  Xin: {fileID: 11400000, guid: 4d929620980dcc044af098fea99fbe7d, type: 2}
+  Han: {fileID: 11400000, guid: f9f6928017b11904b9d452996c964049, type: 2}
 --- !u!114 &1415042910460678071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,6 +566,7 @@ MonoBehaviour:
     ParentObjectID: 0
     ParentBaseID: 0
     PrefabID: -50
+    LastModifiedTime: 0
     My_CharacterData:
       ID_mianju: 0
       ID_maozi: 0
@@ -703,6 +819,8 @@ MonoBehaviour:
     IsMouth: 1
     IsEye: 0
     IsHanger: 0
+    IsBody: 0
+    IsCloth: 0
     MyStackType: 0
   SnapWithHuman: 0
   SnapWithProp: 1
@@ -942,6 +1060,8 @@ MonoBehaviour:
     IsMouth: 0
     IsEye: 0
     IsHanger: 0
+    IsBody: 0
+    IsCloth: 0
     MyStackType: 0
   SnapWithHuman: 0
   SnapWithProp: 1
@@ -1295,6 +1415,7 @@ MonoBehaviour:
   IsFood: 0
   IsGlasses: 0
   IsHang: 0
+  IsCloth: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -1419,6 +1540,8 @@ MonoBehaviour:
     IsMouth: 0
     IsEye: 0
     IsHanger: 0
+    IsBody: 0
+    IsCloth: 0
     MyStackType: 0
   SnapWithHuman: 0
   SnapWithProp: 1
@@ -1540,6 +1663,8 @@ MonoBehaviour:
     IsMouth: 0
     IsEye: 1
     IsHanger: 0
+    IsBody: 0
+    IsCloth: 0
     MyStackType: 0
   SnapWithHuman: 0
   SnapWithProp: 1

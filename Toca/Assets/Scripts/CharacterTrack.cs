@@ -124,6 +124,56 @@ public class CharacterTrack : MonoBehaviour
         StartCoroutine("SpawnHelper2", pass);
     }
 
+    public class InteractionSort : Comparer<TocaObject.ObjectSaveData>
+    {
+        public override int Compare(TocaObject.ObjectSaveData x, TocaObject.ObjectSaveData y)
+        {
+            return (int)(y.LastModifiedTime - x.LastModifiedTime);
+        }
+    }
+
+    public class SelfDressSort : Comparer<TocaObject.ObjectSaveData>
+    {
+        private HashSet<int> IDs;
+        public SelfDressSort(HashSet<int> ids)
+        {
+            IDs = ids;
+        }
+
+        public override int Compare(TocaObject.ObjectSaveData x, TocaObject.ObjectSaveData y)
+        {
+            if (IDs.Contains(x.My_CharacterData.UNIQUE_ID))
+                return -1;
+            else if (IDs.Contains(y.My_CharacterData.UNIQUE_ID))
+                return 1;
+            return 0;
+        }
+    }
+
+    public class RoundHeadFirst : Comparer<TocaObject.ObjectSaveData>
+    {
+        public override int Compare(TocaObject.ObjectSaveData x, TocaObject.ObjectSaveData y)
+        {
+            if (x.My_CharacterData.ID_tou.Equals("tou2"))
+                return -1;
+            if (y.My_CharacterData.ID_tou.Equals("tou2"))
+                return 1;
+            return 0;
+        }
+    }
+
+    public class SquareHeadFirst : Comparer<TocaObject.ObjectSaveData>
+    {
+        public override int Compare(TocaObject.ObjectSaveData x, TocaObject.ObjectSaveData y)
+        {
+            if (x.My_CharacterData.ID_tou.Equals("tou"))
+                return -1;
+            if (y.My_CharacterData.ID_tou.Equals("tou"))
+                return 1;
+            return 0;
+        }
+    }
+
     private class PassingHelper
     {
         public int newIndex;
@@ -429,11 +479,110 @@ public class CharacterTrack : MonoBehaviour
         open_Cg.alpha = active ? 0 : 1;
     }
 
+    public void SortCharacters(int method)
+    {
+        if (LOCK)
+            return; // dont sort if locked
+
+        LOCK = true;
+
+        Comparer<TocaObject.ObjectSaveData> comparer = null;
+        switch (method)
+        {
+            case 0:
+                comparer = new InteractionSort();
+                break;
+            case 1:
+                comparer = new SelfDressSort(CharacterSelectionCtrl.GetIDs());
+                break;
+            case 2:
+                comparer = new RoundHeadFirst();
+                break;
+            case 3:
+                comparer = new SquareHeadFirst();
+                break;
+        }
+
+        RearrangeDatas(comparer);
+        CurrentActiveGroup = 0;
+        StartCoroutine("SpawnHelper3");
+    }
+
+    private IEnumerator SpawnHelper3()
+    {
+        // detach all first
+        List<TocaObject> olds = TrackControl.Instance.DetachAllAttachments();
+        List<TocaObject> tocas = new List<TocaObject>();
+
+        float startPos = TrackControl.Instance.transform.position.x - (Characters[CurrentActiveGroup].Count - 1) * 3.5f / 2;
+
+        for (int i = 0; i < Characters[CurrentActiveGroup].Count; i++)
+        {
+            GameObject character = Instantiate(CharacterPrefab);
+            TocaObject toca = character.GetComponent<TocaObject>();
+            toca.TocaSave = Characters[CurrentActiveGroup][i];
+            tocas.Add(toca);
+
+            toca.TocaSave.x = startPos + i * 3.5f;
+            toca.TocaSave.y = TrackControl.Instance.m_BaseControl.transform.position.y;
+
+            toca.TocaSave.Attaching = false;
+
+            toca.transform.position = new Vector3(0, -100); // so it is out of player view
+
+            if (toca.TocaSave.ObjectID == 0)
+                toca.TocaSave.ObjectID = toca.GetHashCode();
+        }
+
+        SpawnProps(tocas);
+
+        yield return new WaitForSeconds(.1f);
+
+        foreach (TocaObject toca in tocas)
+        {
+            toca.InitalizeTocaobject();
+            toca.transform.SetParent(Track);
+            // disable character first
+            ((MoveControl)toca.GetTocaFunction<MoveControl>()).TargetPosition = toca.transform.position;
+            toca.gameObject.SetActive(false);
+        }
+
+        foreach (TocaObject toca in GeneratedProps)
+        {
+            foreach (TocaObject par in tocas)
+            {
+                if (par.TocaSave.ObjectID == toca.TocaSave.ParentObjectID)
+                {
+                    toca.InitalizeTocaobject(par);
+                    break;
+                }
+            }
+        }
+
+        // disable shadow and enable characters
+        foreach (TocaObject toca in tocas)
+        {
+            toca.gameObject.SetActive(true);
+            // attach it to track control and reset layer
+            LayerControl lc = (LayerControl)toca.GetTocaFunction<LayerControl>();
+            FindControl fc = (FindControl)toca.GetTocaFunction<FindControl>();
+            fc.CurrentAttachment = TrackControl.Instance.m_BaseControl;
+            fc.Attach(TrackControl.Instance.m_BaseControl);
+            lc.ResetLayer(false);
+        }
+
+        // destroy old characters
+        foreach (TocaObject toca in olds)
+            Destroy(toca.gameObject);
+
+        LOCK = false;
+    }
+
     // This section defines page logic
 
     public const int CountPerpage = 6; // standard count per page
 
-    public void RearrangeDatas()
+    public void RearrangeDatas(Comparer<TocaObject.ObjectSaveData> comparer = null)
     {
         List<TocaObject.ObjectSaveData> all = new List<TocaObject.ObjectSaveData>();
         for (int i = 0; i < Characters.Count; i++)
@@ -446,6 +595,10 @@ public class CharacterTrack : MonoBehaviour
 
         Characters.Clear();
         List<TocaObject.ObjectSaveData> temp = new List<TocaObject.ObjectSaveData>();
+
+        if (comparer != null)
+            all.Sort(comparer);
+
         for (int i = 0; i < all.Count; i++)
         {
             temp.Add(all[i]);
@@ -463,6 +616,7 @@ public class CharacterTrack : MonoBehaviour
     public void AddData(CharacterData data)
     {
         TocaObject.ObjectSaveData toca = new TocaObject.ObjectSaveData();
+        toca.PrefabID = -50;
         toca.My_CharacterData = data;
         if (Characters.Count == 0)
             Characters.Add(new List<TocaObject.ObjectSaveData>());
@@ -485,5 +639,97 @@ public class CharacterTrack : MonoBehaviour
         }
 
         SaveData();
+    }
+
+    /// <summary>
+    /// add character datas from other scene into the track
+    /// </summary>
+    /// <param name="thisScene"></param>
+    public void AddDataFromOtherScene(int thisScene)
+    {
+        for (int i = 1; i < 4; i++)
+        {
+            if (i != thisScene) // don't add any data from this scene
+            {
+                List<TocaObject.ObjectSaveData> datas = new List<TocaObject.ObjectSaveData>();
+                if (i == 1)
+                    datas = SaveManager.LoadFromFile(Application.persistentDataPath + "/gongzhufang");
+                else if (i == 2)
+                    datas = SaveManager.LoadFromFile(Application.persistentDataPath + "/haijunfeng");
+                else if (i == 3)
+                    datas = SaveManager.LoadFromFile(Application.persistentDataPath + "/nanhaifang");
+
+                // add datas to characters
+                foreach (TocaObject.ObjectSaveData data in datas)
+                {
+                    if (data.PrefabID == SaveManager.CharacterID)
+                        Characters[0].Add(data);
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// assuming scene data is up to date
+    /// remove character data from other scene if it stays in this scene
+    /// remove character data from the track if it's in any scene
+    /// </summary>
+    /// <param name="thisScene"></param>
+    public void TrimData(int thisScene)
+    {
+        List<TocaObject.ObjectSaveData> characters = new List<TocaObject.ObjectSaveData>();
+        List<TocaObject.ObjectSaveData> sceneData = new List<TocaObject.ObjectSaveData>();
+        if (thisScene == 1)
+            sceneData = SaveManager.LoadFromFile(Application.persistentDataPath + "/gongzhufang");
+        else if (thisScene == 2)
+            sceneData = SaveManager.LoadFromFile(Application.persistentDataPath + "/haijunfeng");
+        else if (thisScene == 3)
+            sceneData = SaveManager.LoadFromFile(Application.persistentDataPath + "/nanhaifang");
+
+        foreach (TocaObject.ObjectSaveData data in sceneData)
+        {
+            if (data.PrefabID == SaveManager.CharacterID)
+                characters.Add(data);
+        }
+
+        for (int i = 1; i < 4; i++)
+        {
+            if (i != thisScene) // don't add any data from this scene
+            {
+                List<TocaObject.ObjectSaveData> datas;
+                string path = "";
+                if (i == 1)
+                    path = Application.persistentDataPath + "/gongzhufang";
+                else if (i == 2)
+                    path = Application.persistentDataPath + "/haijunfeng";
+                else if (i == 3)
+                    path =  Application.persistentDataPath + "/nanhaifang";
+                datas = SaveManager.LoadFromFile(path);
+
+                // traverse data and remove data
+                for (int j = datas.Count - 1; j >= 0; j--)
+                {
+                    if (CompareID(datas[j], characters))
+                    {
+                        datas.RemoveAt(j);
+                    }
+                }
+
+                SaveManager.SaveToFile(path, datas);
+            }
+        }
+    }
+
+    public bool CompareID(TocaObject.ObjectSaveData d, List<TocaObject.ObjectSaveData> list)
+    {
+        if (d.PrefabID != SaveManager.CharacterID)
+            return false;
+
+        foreach(TocaObject.ObjectSaveData to in list)
+        {
+            if (to.My_CharacterData.UNIQUE_ID == d.My_CharacterData.UNIQUE_ID)
+                return true;
+        }
+        return false;
     }
 }

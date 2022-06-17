@@ -203,6 +203,8 @@ public class LoadingCtrl : MonoBehaviour
                     prefab = Resources.Load<GameObject>("Prefabs/" + data.PrefabID);
                 GameObject obj = Instantiate(prefab); // load objects from resource folder
                 obj.GetComponent<TocaObject>().TocaSave = data;
+
+                obj.transform.position = new Vector3(data.x, data.y, GlobalParameter.Depth);
             }
         }
 
@@ -212,7 +214,11 @@ public class LoadingCtrl : MonoBehaviour
         // scene is done loading, 
 
         LoadingFill.fillAmount = 1;
-        yield return new WaitForSeconds(.5f);
+
+        if (sceneIndex == 2)
+            yield return new WaitForSeconds(3);
+        else
+            yield return new WaitForSeconds(.5f);
 
         // scene finished
         // initialize scene data
@@ -229,7 +235,10 @@ public class LoadingCtrl : MonoBehaviour
                 CameraController.Instance.Sun.SwitchTime();
         }
         else
+        {
+            CharacterSelectionCtrl.Instance.PreScene = CurrentScene;
             yield return new WaitForSeconds(1f);
+        }
 
         if (sceneIndex == 1)
             GlobalParameter.Instance.GlobalLight.intensity = .75f;
@@ -240,5 +249,37 @@ public class LoadingCtrl : MonoBehaviour
 
         Loading = false;
         CurrentScene = sceneIndex;
+    }
+
+    public void LoadSceneFromScene(int newScene)
+    {
+        if (Loading)
+            return;
+        LoadingFill.fillAmount = 0;
+        Loading = true;
+
+        if (CurrentScene == 1)
+            SaveManager.SaveCurrentScene(Application.persistentDataPath + "/gongzhufang");
+        else if (CurrentScene == 2)
+            SaveManager.SaveCurrentScene(Application.persistentDataPath + "/haijunfeng");
+        else if (CurrentScene == 3)
+            SaveManager.SaveCurrentScene(Application.persistentDataPath + "/nanhaifang");
+
+        if (CurrentScene == 1 || CurrentScene == 2 || CurrentScene == 3)
+        {
+            SunControl sc = FindObjectOfType<SunControl>();
+            if (sc && sc.IsDay != IslandSunControl.Instance.IsDay)
+                IslandSunControl.Instance.OnClick();
+
+            CharacterTrack.Instance.SavePropsData(true);
+            CharacterTrack.Instance.SaveData();
+        }
+
+        CharacterTrack.Instance.DestroyCharacters();
+
+        CharacterTrack.Instance.SetTrackElement(false);
+        Main.Instance.HomeButton.SetActive(false);
+
+        StartCoroutine("LoadScene1", newScene);
     }
 }

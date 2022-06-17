@@ -16,6 +16,7 @@ public class SpineControl : TocaFunction
     private const string rightLeg = "youtui", rightLegControl = "youtuikongzhi";
     private string[] AllControls;
     private LimbControl[] AllLimbControls;
+    public BaseControl BodyBase;
 
     public AnimationReferenceAsset LeftHandRaise,
         LeftHandDrop,
@@ -42,7 +43,7 @@ public class SpineControl : TocaFunction
 
     public float HipOffset;
 
-    private AttachmentControl Maozi, Kouzhao, Glasses, Mianju, Ershi, Meimao, Bizi, Zui, Yanjing, Toufa, Toufahoumian, Jiaodongxi, shenti, youshou, zuoshou, youtui, zuotui, Tou, BiaoQing;
+    private AttachmentControl Maozi, Kouzhao, Glasses, Mianju, Ershi, Meimao, Bizi, Zui, Yanjing, Toufa, Toufahoumian, Jiaodongxi, shenti, youshou, zuoshou, youtui, zuotui, Tou, BiaoQing, han7, han6, han5, han4, han3, han2, xing4, xing3, xing2, xing1, xin3, xin2, xin1;
 
     private const int LeftHandIndex = 1, RightHandIndex = 2, LegIndex = 3, FaceIndex = 4;
     public bool OnTrack, ArrivedTarget;
@@ -125,19 +126,19 @@ public class SpineControl : TocaFunction
 
         // Set attachments that not being used to inactive state for now
         AttachmentControl ac = new AttachmentControl("1han", MySkeleton, "");
-        ac = new AttachmentControl("7han", MySkeleton, "");
-        ac = new AttachmentControl("6han", MySkeleton, "");
-        ac = new AttachmentControl("5han", MySkeleton, "");
-        ac = new AttachmentControl("4han", MySkeleton, "");
-        ac = new AttachmentControl("3han", MySkeleton, "");
-        ac = new AttachmentControl("2han", MySkeleton, "");
-        ac = new AttachmentControl("4xing", MySkeleton, "");
-        ac = new AttachmentControl("3xing", MySkeleton, "");
-        ac = new AttachmentControl("2xing", MySkeleton, "");
-        ac = new AttachmentControl("1xing", MySkeleton, "");
-        ac = new AttachmentControl("xin3", MySkeleton, "");
-        ac = new AttachmentControl("xin2", MySkeleton, "");
-        ac = new AttachmentControl("xin1", MySkeleton, "");
+        han7 = new AttachmentControl("7han", MySkeleton, "");
+        han6 = new AttachmentControl("6han", MySkeleton, "");
+        han5 = new AttachmentControl("5han", MySkeleton, "");
+        han4 = new AttachmentControl("4han", MySkeleton, "");
+        han3 = new AttachmentControl("3han", MySkeleton, "");
+        han2 = new AttachmentControl("2han", MySkeleton, "");
+        xing4 = new AttachmentControl("4xing", MySkeleton, "");
+        xing3 = new AttachmentControl("3xing", MySkeleton, "");
+        xing2 = new AttachmentControl("2xing", MySkeleton, "");
+        xing1 = new AttachmentControl("1xing", MySkeleton, "");
+        xin3 = new AttachmentControl("xin3", MySkeleton, "");
+        xin2 = new AttachmentControl("xin2", MySkeleton, "");
+        xin1 = new AttachmentControl("xin1", MySkeleton, "");
         BiaoQing = new AttachmentControl("biaoqing1", MySkeleton, "");
         ac = new AttachmentControl("bianse1", MySkeleton, "");
         ac = new AttachmentControl("texiao", MySkeleton, "");
@@ -475,6 +476,23 @@ public class SpineControl : TocaFunction
         MySkeleton.SetAttachment("hudeijie", cd.ID_toufa == 24 ? "hudeijie" : null);
     }
 
+    public int SwapSkin(int newIndex)
+    {
+        int returnValue = TocaObject.TocaSave.My_CharacterData.ID_skin;
+        TocaObject.TocaSave.My_CharacterData.ID_skin = newIndex;
+        SetSkin(newIndex);
+
+        BodyBase.IgnoreLimit = false;
+        Invoke("EnableBodyBase", 1);
+
+        return returnValue;
+    }
+
+    private void EnableBodyBase()
+    {
+        BodyBase.IgnoreLimit = true;
+    }
+
     public void SetSkin(int index)
     {
         MySkeleton.ClearSkin();
@@ -497,12 +515,35 @@ public class SpineControl : TocaFunction
         MySkeleton.FindSlot("toufa1").SetColor(color);
     }
 
+    private void SetParticleNull()
+    {
+        han7.SetAttachment();
+        han6.SetAttachment();
+        han5.SetAttachment();
+        han4.SetAttachment();
+        han3.SetAttachment();
+        han2.SetAttachment();
+        xing4.SetAttachment();
+        xing3.SetAttachment();
+        xing2.SetAttachment();
+        xing1.SetAttachment();
+        xin3.SetAttachment();
+        xin2.SetAttachment();
+        xin1.SetAttachment();
+    }
+
     private bool EmoteShowing;
+    public AnimationReferenceAsset Xing, Xin, Han;
     public void SetBiaoqing(string biaoqing)
     {
         if (Eating)
             return; // don't change biaoqing if eating
         BiaoQing.SetAttachment(biaoqing);
+        AttachmentControl ac;
+       
+        SkeletonAnimation.AnimationState.ClearTrack(10);
+        SetParticleNull();
+
         if (biaoqing.Equals("nanshou"))
         {
             MySkeleton.SetAttachment("bianse1", "lvlian");
@@ -517,6 +558,32 @@ public class SpineControl : TocaFunction
         {
             MySkeleton.SetAttachment("bianse1", "lanlian");
             MySkeleton.SetAttachment("texiao", null);
+            han7.SetAttachment("7han");
+            han6.SetAttachment("6han");
+            han5.SetAttachment("5han");
+            han4.SetAttachment("4han");
+            han3.SetAttachment("3han"); 
+            han2.SetAttachment("2han");
+            SkeletonAnimation.AnimationState.SetAnimation(10, Han, true);
+        }
+        else if (biaoqing.Equals("xingxingyan"))
+        {
+            MySkeleton.SetAttachment("bianse1", null);
+            MySkeleton.SetAttachment("texiao", null);
+            xing4.SetAttachment("4xing");
+            xing3.SetAttachment("3xing");
+            xing2.SetAttachment("2xing");
+            xing1.SetAttachment("1xing");
+            SkeletonAnimation.AnimationState.SetAnimation(10, Xing, true);
+        }
+        else if (biaoqing.Equals("chan"))
+        {
+            MySkeleton.SetAttachment("bianse1", null);
+            MySkeleton.SetAttachment("texiao", null);
+            xin3.SetAttachment("xin3");
+            xin2.SetAttachment("xin2");
+            xin1.SetAttachment("xin1");
+            SkeletonAnimation.AnimationState.SetAnimation(10, Xin, true);
         }
         else
         {
@@ -532,6 +599,8 @@ public class SpineControl : TocaFunction
 
     public void CancelBiaoqing()
     {
+        SkeletonAnimation.AnimationState.ClearTrack(10);
+        SetParticleNull();
         BiaoQing.SetAttachment();
         MySkeleton.SetAttachment("bianse1", null);
         MySkeleton.SetAttachment("texiao", null);

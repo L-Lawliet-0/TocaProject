@@ -268,6 +268,7 @@ MonoBehaviour:
   IsFood: 0
   IsGlasses: 0
   IsHang: 0
+  IsCloth: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -445,6 +446,7 @@ MonoBehaviour:
     ParentObjectID: 30804
     ParentBaseID: 33180
     PrefabID: 0
+    LastModifiedTime: 0
     My_CharacterData:
       ID_mianju: 0
       ID_maozi: 0

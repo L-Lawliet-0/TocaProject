@@ -324,7 +324,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 106296790}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1629565151}
+        m_TargetAssemblyTypeName: CharacterTrack, Assembly-CSharp
+        m_MethodName: SortCharacters
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &106296790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,6 +534,8 @@ MonoBehaviour:
     IsMouth: 0
     IsEye: 0
     IsHanger: 0
+    IsBody: 0
+    IsCloth: 0
     MyStackType: 0
   SnapWithHuman: 1
   SnapWithProp: 0
@@ -624,7 +638,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 170621503}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 230760810}
+        m_TargetAssemblyTypeName: LoadingCtrl, Assembly-CSharp
+        m_MethodName: LoadSceneFromScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &170621503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -872,6 +898,7 @@ MonoBehaviour:
     ParentObjectID: 0
     ParentBaseID: 0
     PrefabID: 0
+    LastModifiedTime: 0
     My_CharacterData:
       ID_mianju: 0
       ID_maozi: 0
@@ -2288,7 +2315,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 636867630}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1629565151}
+        m_TargetAssemblyTypeName: CharacterTrack, Assembly-CSharp
+        m_MethodName: SortCharacters
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &636867630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2484,7 +2523,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 840750772}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1629565151}
+        m_TargetAssemblyTypeName: CharacterTrack, Assembly-CSharp
+        m_MethodName: SortCharacters
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &840750772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2605,7 +2656,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 902281633}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1629565151}
+        m_TargetAssemblyTypeName: CharacterTrack, Assembly-CSharp
+        m_MethodName: SortCharacters
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &902281633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3453,6 +3516,7 @@ MonoBehaviour:
     ParentObjectID: 0
     ParentBaseID: 0
     PrefabID: 0
+    LastModifiedTime: 0
     My_CharacterData:
       ID_mianju: 0
       ID_maozi: 0
@@ -4662,6 +4726,7 @@ MonoBehaviour:
     ParentObjectID: 0
     ParentBaseID: 0
     PrefabID: 0
+    LastModifiedTime: 0
     My_CharacterData:
       ID_mianju: 0
       ID_maozi: 0
@@ -5006,6 +5071,7 @@ MonoBehaviour:
     ParentObjectID: 0
     ParentBaseID: 0
     PrefabID: 0
+    LastModifiedTime: 0
     My_CharacterData:
       ID_mianju: 0
       ID_maozi: 0
@@ -5318,6 +5384,7 @@ MonoBehaviour:
     ParentObjectID: 0
     ParentBaseID: 0
     PrefabID: 0
+    LastModifiedTime: 0
     My_CharacterData:
       ID_mianju: 0
       ID_maozi: 0
@@ -5496,8 +5563,8 @@ MonoBehaviour:
   - {fileID: 6798003848160925916, guid: 64bf5ec6110a0e940be85ca7aa76e1ea, type: 3}
   ToastSausage: {fileID: 9149718665536924187, guid: 669c22db5ae43ea479418f3e6fe8d955, type: 3}
   ToastCarrot: {fileID: 4347449639473275717, guid: cda4f87d3a6a26f4f98b96b80ac5d890, type: 3}
-  ChickenToast: {fileID: 0}
-  ChickenBread: {fileID: 0}
+  ChickenToast: {fileID: 3515646371088402725, guid: 03a5974211e723c4899f411d94357847, type: 3}
+  ChickenBread: {fileID: 8522820320351487573, guid: c25fd67dbaefcb149ad3452bf9a26462, type: 3}
 --- !u!114 &1629565146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6327,6 +6394,7 @@ MonoBehaviour:
     ParentObjectID: 0
     ParentBaseID: 0
     PrefabID: 0
+    LastModifiedTime: 0
     My_CharacterData:
       ID_mianju: 0
       ID_maozi: 0

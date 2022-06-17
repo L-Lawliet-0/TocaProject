@@ -49,6 +49,15 @@ public class SaveManager : MonoBehaviour
         }
     }
 
+    public static void SaveToFile(string dataPath, List<TocaObject.ObjectSaveData> data)
+    {
+        using (Stream file = File.Open(dataPath, FileMode.Open))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            bf.Serialize(file, data);
+        }
+    }
+
     public static void SaveTrackProps(List<TocaObject.ObjectSaveData> datas)
     {
         using (Stream file = File.Open(Application.persistentDataPath + "/TrackProps", FileMode.Open))

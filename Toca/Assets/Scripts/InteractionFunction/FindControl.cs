@@ -14,6 +14,7 @@ public class FindControl : TocaFunction
     public bool IsFood;
     public bool IsGlasses; // is this glasses
     public bool IsHang; // is this object hangable
+    public bool IsCloth; // is this object cloth
     public BaseControl CurrentAttachment; // the base this object is currently attaching
     public BaseControl BasePreview;
     public bool Arrived;

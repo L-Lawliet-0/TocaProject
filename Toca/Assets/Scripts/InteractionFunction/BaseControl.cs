@@ -19,7 +19,9 @@ public class BaseControl : TocaFunction
                     IsRightHand, // is this base right hand
                     IsMouth, // is this base mouse 
                     IsEye, // is this base eye
-                    IsHanger;
+                    IsHanger,
+                    IsBody,
+                    IsCloth;
 
         public enum StackType
         {
@@ -195,6 +197,24 @@ public class BaseControl : TocaFunction
     public bool CanbeSnapped(FindControl finder)
     {
         if (TrackControl && CharacterTrack.Instance.LOCK)
+            return false;
+
+        if (MyBaseAttributes.IsBody) // only cloth
+        {
+            if (!IgnoreLimit)
+                return false;
+            if (finder.IsCloth)
+            {
+                return !((ClothControl)finder.TocaObject.GetTocaFunction<ClothControl>()).Stacking;
+            }
+            else
+                return false;
+        }
+
+        if (MyBaseAttributes.IsCloth)
+            return finder.IsCloth && Attachments.Count < SnapLimit;
+
+        if (finder.IsCloth && (!((ClothControl)finder.TocaObject.GetTocaFunction<ClothControl>()).Stacking && (MyBaseAttributes.IsLeftHand || MyBaseAttributes.IsRightHand)))
             return false;
 
         // if previous layer has not opened basecontrol
