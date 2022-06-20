@@ -24,6 +24,7 @@ public class EmoteControl : MonoBehaviour
 
     public void SetActive(bool active, Vector3 headPos, SpineControl spine)
     {
+        Debug.LogError(active);
         if (Active != active && !Showing)
         {
             CurrentSpine = spine;
@@ -73,5 +74,12 @@ public class EmoteControl : MonoBehaviour
                     break;
             }
         }
+    }
+
+    public void EmoteCheck(Vector3 inputPos)
+    {
+        Debug.LogError(Vector2.Distance(inputPos, transform.position));
+        if (Vector2.Distance(inputPos, transform.position) > 500)
+            SetActive(false, transform.position, null);
     }
 }

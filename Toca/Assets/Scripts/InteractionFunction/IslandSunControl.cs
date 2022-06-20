@@ -29,10 +29,12 @@ public class IslandSunControl : TocaFunction
         tc.ClickCallBacks.Add(OnClick);
     }
 
+    public IslandAnimation IslandAnimation;
     public void OnClick()
     {
         if (!Transiting)
         {
+            IslandAnimation.GetComponent<SkeletonAnimation>().Skeleton.SetAttachment("xingxing", "xingxing");
             Transiting = true;
 
             TrackEntry track;

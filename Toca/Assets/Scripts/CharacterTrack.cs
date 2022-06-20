@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterTrack : MonoBehaviour
 {
@@ -18,6 +19,10 @@ public class CharacterTrack : MonoBehaviour
 
     public bool LOCK; // when locking disable certain action
 
+    Comparer<TocaObject.ObjectSaveData> CurrentComparer;
+    public Image[] SortButtons;
+    public Sprite Selected, Unselected;
+
     private void Awake()
     {
         m_Instance = this;
@@ -31,6 +36,9 @@ public class CharacterTrack : MonoBehaviour
 
         // load bunch of datas from track props
         TrackProps = SaveManager.LoadFromFile(Application.persistentDataPath + "/TrackProps");
+
+        CurrentComparer = new InteractionSort();
+        RearrangeDatas(CurrentComparer);
     }
 
     public void SaveData()
@@ -99,29 +107,55 @@ public class CharacterTrack : MonoBehaviour
     /// to left or to the right
     /// </summary>
     /// <param name="left"></param>
-    public void SwapPage(bool left)
+    public bool SwapPage(bool left)
     {
         if (LOCK)
-            return;
+            return false;
         LOCK = true;
         SavePropsData(false);
-        RearrangeDatas();
+        RearrangeDatas(CurrentComparer);
         PassingHelper pass = new PassingHelper();
         pass.IsLeft = left;
+
+        int max = Characters.Count - 1;
+        for (int i = 0; i < PageActive.Count; i++)
+        {
+            if (!PageActive[i])
+            {
+                max = i - 1;
+                break;
+            }
+        }
+
+       
+
         if (left)
         {
-            pass.newIndex = CurrentActiveGroup - 1 < 0 ? Characters.Count - 1 : CurrentActiveGroup - 1;
+            if (CurrentActiveGroup - 1 < 0)
+            {
+                CurrentActiveGroup = Mathf.Clamp(CurrentActiveGroup, 0, Characters.Count); // clamp active group
+                LOCK = false;
+                return false;
+            }
+            pass.newIndex = CurrentActiveGroup - 1;
             pass.Shadow = TrackControl.Instance.CharacterShadowLeft;
         }
         else
         {
-            pass.newIndex = CurrentActiveGroup + 1 > Characters.Count - 1 ? 0 : CurrentActiveGroup + 1;
+            if (CurrentActiveGroup + 1 > max)
+            {
+                CurrentActiveGroup = Mathf.Clamp(CurrentActiveGroup, 0, Characters.Count); // clamp active group
+                LOCK = false;
+                return false;
+            }
+            pass.newIndex = CurrentActiveGroup + 1;
             pass.Shadow = TrackControl.Instance.CharacterShadowRight;
         }
         CurrentActiveGroup = pass.newIndex;
         CurrentActiveGroup = Mathf.Clamp(CurrentActiveGroup, 0, Characters.Count);
 
         StartCoroutine("SpawnHelper2", pass);
+        return true;
     }
 
     public class InteractionSort : Comparer<TocaObject.ObjectSaveData>
@@ -134,7 +168,7 @@ public class CharacterTrack : MonoBehaviour
 
     public class SelfDressSort : Comparer<TocaObject.ObjectSaveData>
     {
-        private HashSet<int> IDs;
+        public HashSet<int> IDs;
         public SelfDressSort(HashSet<int> ids)
         {
             IDs = ids;
@@ -142,6 +176,11 @@ public class CharacterTrack : MonoBehaviour
 
         public override int Compare(TocaObject.ObjectSaveData x, TocaObject.ObjectSaveData y)
         {
+            if (IDs.Contains(x.My_CharacterData.UNIQUE_ID) && IDs.Contains(y.My_CharacterData.UNIQUE_ID))
+            {
+                return (int)(y.LastModifiedTime - x.LastModifiedTime);
+            }
+
             if (IDs.Contains(x.My_CharacterData.UNIQUE_ID))
                 return -1;
             else if (IDs.Contains(y.My_CharacterData.UNIQUE_ID))
@@ -154,6 +193,11 @@ public class CharacterTrack : MonoBehaviour
     {
         public override int Compare(TocaObject.ObjectSaveData x, TocaObject.ObjectSaveData y)
         {
+            if (x.My_CharacterData.ID_tou.Equals("tou2") && y.My_CharacterData.ID_tou.Equals("tou2"))
+            {
+                return (int)(y.LastModifiedTime - x.LastModifiedTime);
+            }
+
             if (x.My_CharacterData.ID_tou.Equals("tou2"))
                 return -1;
             if (y.My_CharacterData.ID_tou.Equals("tou2"))
@@ -166,6 +210,11 @@ public class CharacterTrack : MonoBehaviour
     {
         public override int Compare(TocaObject.ObjectSaveData x, TocaObject.ObjectSaveData y)
         {
+            if (x.My_CharacterData.ID_tou.Equals("tou") && y.My_CharacterData.ID_tou.Equals("tou"))
+            {
+                return (int)(y.LastModifiedTime - x.LastModifiedTime);
+            }
+
             if (x.My_CharacterData.ID_tou.Equals("tou"))
                 return -1;
             if (y.My_CharacterData.ID_tou.Equals("tou"))
@@ -310,7 +359,7 @@ public class CharacterTrack : MonoBehaviour
         if (LOCK)
             return;
         LOCK = true;
-        RearrangeDatas();
+        RearrangeDatas(CurrentComparer);
         CurrentActiveGroup = index;
         CurrentActiveGroup = Mathf.Clamp(CurrentActiveGroup, 0, Characters.Count);
         StartCoroutine("SpawnHelper", index);
@@ -405,7 +454,7 @@ public class CharacterTrack : MonoBehaviour
             {
                 //int temp = CurrentActiveGroup;
                 Characters.RemoveAt(CurrentActiveGroup);
-                SwapPage(false);
+                SwapPage(CurrentActiveGroup > 0);
             }
         }
     }
@@ -503,9 +552,32 @@ public class CharacterTrack : MonoBehaviour
                 break;
         }
 
+        if (CurrentComparer != null && comparer.GetType() == CurrentComparer.GetType())
+        {
+            LOCK = false;
+            return;
+        }
+
         RearrangeDatas(comparer);
+        CurrentComparer = comparer;
+        for (int i = 0; i < SortButtons.Length; i++)
+        {
+            SortButtons[i].sprite = i == method ? Selected : Unselected;
+        }
         CurrentActiveGroup = 0;
         StartCoroutine("SpawnHelper3");
+    }
+
+    public void ForceSort()
+    {
+        Comparer<TocaObject.ObjectSaveData> comparer = new SelfDressSort(CharacterSelectionCtrl.GetIDs());
+        RearrangeDatas(comparer);
+        CurrentComparer = comparer;
+        for (int i = 0; i < SortButtons.Length; i++)
+        {
+            SortButtons[i].sprite = i == 1 ? Selected : Unselected;
+        }
+        CurrentActiveGroup = 0;
     }
 
     private IEnumerator SpawnHelper3()
@@ -582,8 +654,12 @@ public class CharacterTrack : MonoBehaviour
 
     public const int CountPerpage = 6; // standard count per page
 
+    public List<bool> PageActive;
+
     public void RearrangeDatas(Comparer<TocaObject.ObjectSaveData> comparer = null)
     {
+        PageActive = new List<bool>();
+        bool pageActive = true;
         List<TocaObject.ObjectSaveData> all = new List<TocaObject.ObjectSaveData>();
         for (int i = 0; i < Characters.Count; i++)
         {
@@ -599,18 +675,49 @@ public class CharacterTrack : MonoBehaviour
         if (comparer != null)
             all.Sort(comparer);
 
+        bool reached = true;
+        if (comparer != null && comparer.GetType() != typeof(InteractionSort))
+            reached = false;
+
         for (int i = 0; i < all.Count; i++)
         {
+            if (!reached)
+            {
+                bool condition = false;
+                if (comparer.GetType() == typeof(SelfDressSort) && !((SelfDressSort)comparer).IDs.Contains(all[i].My_CharacterData.UNIQUE_ID))
+                    condition = true;
+                else if (comparer.GetType() == typeof(RoundHeadFirst) && !all[i].My_CharacterData.ID_tou.Equals("tou2"))
+                    condition = true;
+                else if (comparer.GetType() == typeof(SquareHeadFirst) && !all[i].My_CharacterData.ID_tou.Equals("tou"))
+                    condition = true;
+
+                if (condition)
+                {
+                    reached = true;
+                    pageActive = false;
+                    if (temp.Count > 0 || Characters.Count == 0)
+                    {
+                        Characters.Add(temp);
+                        temp = new List<TocaObject.ObjectSaveData>();
+                        PageActive.Add(true);
+                    }
+                }
+            }
+
             temp.Add(all[i]);
             if (temp.Count >= CountPerpage || i == all.Count - 1)
             {
                 Characters.Add(temp);
                 temp = new List<TocaObject.ObjectSaveData>();
+                PageActive.Add(pageActive);
             }
         }
 
         if (Characters.Count == 0)
+        {
             Characters.Add(new List<TocaObject.ObjectSaveData>());
+            PageActive.Add(true);
+        }
     }
 
     public void AddData(CharacterData data)
@@ -621,7 +728,7 @@ public class CharacterTrack : MonoBehaviour
         if (Characters.Count == 0)
             Characters.Add(new List<TocaObject.ObjectSaveData>());
         Characters[0].Add(toca);
-        RearrangeDatas();
+        RearrangeDatas(CurrentComparer);
         SaveData();
     }
 
@@ -663,7 +770,9 @@ public class CharacterTrack : MonoBehaviour
                 foreach (TocaObject.ObjectSaveData data in datas)
                 {
                     if (data.PrefabID == SaveManager.CharacterID)
+                    {
                         Characters[0].Add(data);
+                    }
                 }
             }
         }
@@ -716,6 +825,36 @@ public class CharacterTrack : MonoBehaviour
                 }
 
                 SaveManager.SaveToFile(path, datas);
+            }
+        }
+
+        // removed character data from the track
+        string[] paths = new string[]
+        {
+            Application.persistentDataPath + "/gongzhufang",
+            Application.persistentDataPath + "/haijunfeng",
+            Application.persistentDataPath + "/nanhaifang"
+        };
+        List<TocaObject.ObjectSaveData> sceneCharacters = new List<TocaObject.ObjectSaveData>();
+        foreach (string path in paths)
+        {
+            List<TocaObject.ObjectSaveData> temp = SaveManager.LoadFromFile(path);
+            foreach (TocaObject.ObjectSaveData data in temp)
+            {
+                if (data.PrefabID == SaveManager.CharacterID)
+                    sceneCharacters.Add(data);
+            }
+        }
+
+        // trim character data
+        for (int i = 0; i < Characters.Count; i++)
+        {
+            for (int j = Characters[i].Count - 1; j >= 0; j --)
+            {
+                if (CompareID(Characters[i][j], sceneCharacters))
+                {
+                    Characters[i].RemoveAt(j);
+                }
             }
         }
     }

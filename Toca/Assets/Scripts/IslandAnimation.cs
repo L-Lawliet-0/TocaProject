@@ -15,5 +15,6 @@ public class IslandAnimation : MonoBehaviour
         Skeleton skeleton = GetComponent<SkeletonAnimation>().skeleton;
         skeleton.SetAttachment("biyan", null);
         skeleton.SetAttachment("daxiao", null);
+        skeleton.SetAttachment("xingxing", null);
     }
 }

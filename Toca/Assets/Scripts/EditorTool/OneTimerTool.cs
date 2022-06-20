@@ -10,6 +10,8 @@ public class OneTimerTool : MonoBehaviour
 {
     public bool EXECUTE;
 
+    public CharacterData[] CharacterReferences;
+
     void Update()
     {
         if (EXECUTE)
@@ -31,6 +33,7 @@ public class OneTimerTool : MonoBehaviour
             //GenerateNewTrackSaveData();
             //InitializeSingleObjectSave();
             //ReAssignPrefabsID();
+            //InitRef();
             EXECUTE = false;
         }    
     }
@@ -430,9 +433,7 @@ public class OneTimerTool : MonoBehaviour
             {
                 TocaObject.ObjectSaveData toca = new TocaObject.ObjectSaveData();
                 toca.PrefabID = SaveManager.CharacterID;
-                CharacterData temp = new CharacterData();
-                temp.RandomizeData();
-                toca.My_CharacterData = temp;
+                toca.My_CharacterData = CharacterReferences[j];
                 d.Add(toca);
             }
             Characters.Add(d);
@@ -473,6 +474,11 @@ public class OneTimerTool : MonoBehaviour
         toca.TocaSave.ObjectID = toca.GetHashCode();
         toca.TocaSave.x = toca.transform.position.x;
         toca.TocaSave.y = toca.transform.position.y;
+
+        if (toca.TocaSave.PrefabID == SaveManager.CharacterID && toca.TocaSave.My_CharacterData.UNIQUE_ID == 0)
+        {
+            toca.TocaSave.My_CharacterData.UNIQUE_ID = toca.TocaSave.My_CharacterData.GetHashCode();
+        }
     }
 
     private void ReAssignPrefabsID()
@@ -481,6 +487,16 @@ public class OneTimerTool : MonoBehaviour
         {
             GameObject obj = Resources.Load<GameObject>("Prefabs/" + i.ToString());
             obj.GetComponent<TocaObject>().TocaSave.PrefabID = i;
+        }
+    }
+
+    private void InitRef()
+    {
+        for (int i = 0; i < 12; i++)
+        {
+            //CharacterReferences[i].ID_skinColor -= 1;
+            //CharacterReferences[i].ID_hairColor -= 1;
+            CharacterReferences[i].UNIQUE_ID = CharacterReferences[i].GetHashCode();
         }
     }
 }

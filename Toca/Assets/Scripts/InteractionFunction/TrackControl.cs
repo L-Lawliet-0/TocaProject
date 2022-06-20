@@ -53,10 +53,14 @@ public class TrackControl : TocaFunction
     {
         if (CharacterTrack.Instance.LOCK)
             return;
-        if (PositionOffset < -OffsetRange / 2)
-            CharacterTrack.Instance.SwapPage(false);
-        else if (PositionOffset > OffsetRange / 2)
-            CharacterTrack.Instance.SwapPage(true);
+        if (PositionOffset < -OffsetRange / 2 && CharacterTrack.Instance.SwapPage(false))
+        {
+
+        }
+        else if (PositionOffset > OffsetRange / 2 && CharacterTrack.Instance.SwapPage(true))
+        {
+
+        }
         else
             StartCoroutine("OffsetToZero");
     }

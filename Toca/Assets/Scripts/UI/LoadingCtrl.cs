@@ -51,6 +51,8 @@ public class LoadingCtrl : MonoBehaviour
         else if (CurrentScene == 3)
             SaveManager.SaveCurrentScene(Application.persistentDataPath + "/nanhaifang");
 
+        CharacterTrack.Instance.TrimData(CurrentScene); // trim data
+
         if (CurrentScene == 1 || CurrentScene == 2 || CurrentScene == 3)
         {
             SunControl sc = FindObjectOfType<SunControl>();
@@ -61,13 +63,15 @@ public class LoadingCtrl : MonoBehaviour
             CharacterTrack.Instance.SaveData();
         }
 
-        CharacterTrack.Instance.DestroyCharacters();
+        
 
         CurrentScene = -1;
 
         StartCoroutine("FadeLoadingScreen", true);
         while (!LoadingScreenShowing)
             yield return null;
+
+        CharacterTrack.Instance.DestroyCharacters();
 
         // set object in hierarchy
         if (CurrentShowingObject)
@@ -173,6 +177,9 @@ public class LoadingCtrl : MonoBehaviour
         while (!LoadingScreenShowing)
             yield return null;
 
+        CharacterTrack.Instance.DestroyCharacters();
+        CharacterTrack.Instance.SetTrackElement(false);
+
         if (CurrentShowingObject)
             CurrentShowingObject.SetActive(false);
 
@@ -191,6 +198,8 @@ public class LoadingCtrl : MonoBehaviour
             datas = SaveManager.LoadFromFile(Application.persistentDataPath + "/haijunfeng");
         else if (sceneIndex == 3)
             datas = SaveManager.LoadFromFile(Application.persistentDataPath + "/nanhaifang");
+
+        CharacterTrack.Instance.AddDataFromOtherScene(sceneIndex);
 
         if (datas != null)
         {
@@ -249,8 +258,15 @@ public class LoadingCtrl : MonoBehaviour
 
         Loading = false;
         CurrentScene = sceneIndex;
+
+        if (OpenTrack)
+        {
+            OpenTrack = true;
+            CharacterTrack.Instance.SetTrack(true);
+        }
     }
 
+    private bool OpenTrack = false;
     public void LoadSceneFromScene(int newScene)
     {
         if (Loading)
@@ -265,6 +281,8 @@ public class LoadingCtrl : MonoBehaviour
         else if (CurrentScene == 3)
             SaveManager.SaveCurrentScene(Application.persistentDataPath + "/nanhaifang");
 
+        CharacterTrack.Instance.TrimData(CurrentScene);
+
         if (CurrentScene == 1 || CurrentScene == 2 || CurrentScene == 3)
         {
             SunControl sc = FindObjectOfType<SunControl>();
@@ -274,11 +292,11 @@ public class LoadingCtrl : MonoBehaviour
             CharacterTrack.Instance.SavePropsData(true);
             CharacterTrack.Instance.SaveData();
         }
-
-        CharacterTrack.Instance.DestroyCharacters();
-
-        CharacterTrack.Instance.SetTrackElement(false);
+        
         Main.Instance.HomeButton.SetActive(false);
+        CharacterTrack.Instance.ForceSort();
+
+        OpenTrack = true;
 
         StartCoroutine("LoadScene1", newScene);
     }

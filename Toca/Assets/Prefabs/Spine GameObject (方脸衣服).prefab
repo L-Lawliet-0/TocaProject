@@ -59,6 +59,7 @@ MonoBehaviour:
     IsHanger: 0
     IsBody: 1
     IsCloth: 0
+    IsClothHang: 0
     MyStackType: 0
   SnapWithHuman: 0
   SnapWithProp: 1
@@ -412,30 +413,20 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f1c9a0495fa9d294faea4d977d15e569, type: 2}
-  - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
-  - {fileID: 2100000, guid: f1c9a0495fa9d294faea4d977d15e569, type: 2}
+  - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
   - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
-  - {fileID: 2100000, guid: 9e10f14ddd9933340b88e5b04c2bffa7, type: 2}
-  - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
-  - {fileID: 2100000, guid: f1c9a0495fa9d294faea4d977d15e569, type: 2}
-  - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
-  - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
-  - {fileID: 2100000, guid: 001a920a89b39e74d882411802f596b3, type: 2}
-  - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
-  - {fileID: 2100000, guid: 9e10f14ddd9933340b88e5b04c2bffa7, type: 2}
-  - {fileID: 2100000, guid: 487e372e235da1f49894dd0b678f0da8, type: 2}
-  - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
-  - {fileID: 2100000, guid: 487e372e235da1f49894dd0b678f0da8, type: 2}
-  - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
-  - {fileID: 2100000, guid: f1c9a0495fa9d294faea4d977d15e569, type: 2}
-  - {fileID: 2100000, guid: 9e10f14ddd9933340b88e5b04c2bffa7, type: 2}
   - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
   - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
   - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
-  - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
-  - {fileID: 2100000, guid: 001a920a89b39e74d882411802f596b3, type: 2}
+  - {fileID: 2100000, guid: 9e10f14ddd9933340b88e5b04c2bffa7, type: 2}
+  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
   - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
+  - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
+  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
+  - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
+  - {fileID: 2100000, guid: f1c9a0495fa9d294faea4d977d15e569, type: 2}
+  - {fileID: 2100000, guid: 9e10f14ddd9933340b88e5b04c2bffa7, type: 2}
+  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -821,6 +812,7 @@ MonoBehaviour:
     IsHanger: 0
     IsBody: 0
     IsCloth: 0
+    IsClothHang: 0
     MyStackType: 0
   SnapWithHuman: 0
   SnapWithProp: 1
@@ -1062,6 +1054,7 @@ MonoBehaviour:
     IsHanger: 0
     IsBody: 0
     IsCloth: 0
+    IsClothHang: 0
     MyStackType: 0
   SnapWithHuman: 0
   SnapWithProp: 1
@@ -1542,6 +1535,7 @@ MonoBehaviour:
     IsHanger: 0
     IsBody: 0
     IsCloth: 0
+    IsClothHang: 0
     MyStackType: 0
   SnapWithHuman: 0
   SnapWithProp: 1
@@ -1665,6 +1659,7 @@ MonoBehaviour:
     IsHanger: 0
     IsBody: 0
     IsCloth: 0
+    IsClothHang: 0
     MyStackType: 0
   SnapWithHuman: 0
   SnapWithProp: 1

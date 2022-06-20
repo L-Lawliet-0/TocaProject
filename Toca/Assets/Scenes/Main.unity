@@ -357,7 +357,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8c684b8ee46cad248b57fac5ac64e0b1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df3817dec8971954ab186c048ded507c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -536,6 +536,7 @@ MonoBehaviour:
     IsHanger: 0
     IsBody: 0
     IsCloth: 0
+    IsClothHang: 0
     MyStackType: 0
   SnapWithHuman: 1
   SnapWithProp: 0
@@ -850,6 +851,7 @@ MonoBehaviour:
   Island: {fileID: 467237379}
   SunToMoon: {fileID: 11400000, guid: 1d1f253421532a64bbc5c53e373809f5, type: 2}
   MoonToSun: {fileID: 11400000, guid: 5f62646219e0aae4e972b60bb07b3cb9, type: 2}
+  IslandAnimation: {fileID: 467237383}
 --- !u!114 &280550760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2348,7 +2350,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8c684b8ee46cad248b57fac5ac64e0b1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df3817dec8971954ab186c048ded507c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2556,7 +2558,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8c684b8ee46cad248b57fac5ac64e0b1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df3817dec8971954ab186c048ded507c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5577,7 +5579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 225680232c5cc47b89d83b6652bf2209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TouchMode: 0
+  TouchMode: 1
   InSelection: 0
   LastScreenPosition: {x: 0, y: 0}
   SelectedObject: {fileID: 0}
@@ -5683,6 +5685,14 @@ MonoBehaviour:
   CurrentActiveGroup: 0
   TrackSprite: {fileID: 21300000, guid: f497c4a1e44c9974fb1c9e37d78202bb, type: 3}
   LOCK: 0
+  SortButtons:
+  - {fileID: 902281633}
+  - {fileID: 636867630}
+  - {fileID: 106296790}
+  - {fileID: 840750772}
+  Selected: {fileID: 21300000, guid: 8c684b8ee46cad248b57fac5ac64e0b1, type: 3}
+  Unselected: {fileID: 21300000, guid: df3817dec8971954ab186c048ded507c, type: 3}
+  PageActive: 
 --- !u!114 &1629565152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6208,6 +6218,189 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EXECUTE: 0
+  CharacterReferences:
+  - ID_mianju: -1
+    ID_maozi: -1
+    ID_glasses: -1
+    ID_kouzhao: -1
+    ID_yanjing: 17
+    ID_bizi: 14
+    ID_zui: 1
+    ID_toufa: 17
+    ID_toufahoumian: -1
+    ID_hairColor: 9
+    ID_skinColor: 0
+    ID_skin: 7
+    ID_tou: tou2
+    UNIQUE_ID: 1745211648
+  - ID_mianju: -1
+    ID_maozi: -1
+    ID_glasses: -1
+    ID_kouzhao: -1
+    ID_yanjing: 13
+    ID_bizi: 24
+    ID_zui: 9
+    ID_toufa: 24
+    ID_toufahoumian: -1
+    ID_hairColor: 19
+    ID_skinColor: 7
+    ID_skin: 24
+    ID_tou: tou2
+    UNIQUE_ID: -1046954496
+  - ID_mianju: -1
+    ID_maozi: -1
+    ID_glasses: -1
+    ID_kouzhao: -1
+    ID_yanjing: 9
+    ID_bizi: 4
+    ID_zui: 6
+    ID_toufa: 28
+    ID_toufahoumian: -1
+    ID_hairColor: 18
+    ID_skinColor: 4
+    ID_skin: 22
+    ID_tou: tou2
+    UNIQUE_ID: 455846656
+  - ID_mianju: -1
+    ID_maozi: -1
+    ID_glasses: -1
+    ID_kouzhao: -1
+    ID_yanjing: 11
+    ID_bizi: 3
+    ID_zui: 10
+    ID_toufa: 37
+    ID_toufahoumian: -1
+    ID_hairColor: 23
+    ID_skinColor: 21
+    ID_skin: 9
+    ID_tou: tou
+    UNIQUE_ID: 1958647808
+  - ID_mianju: -1
+    ID_maozi: -1
+    ID_glasses: -1
+    ID_kouzhao: -1
+    ID_yanjing: 14
+    ID_bizi: 9
+    ID_zui: 5
+    ID_toufa: 27
+    ID_toufahoumian: -1
+    ID_hairColor: 16
+    ID_skinColor: 7
+    ID_skin: 10
+    ID_tou: tou2
+    UNIQUE_ID: -620082176
+  - ID_mianju: -1
+    ID_maozi: -1
+    ID_glasses: -1
+    ID_kouzhao: -1
+    ID_yanjing: 17
+    ID_bizi: 14
+    ID_zui: 14
+    ID_toufa: 36
+    ID_toufahoumian: -1
+    ID_hairColor: 10
+    ID_skinColor: 0
+    ID_skin: 37
+    ID_tou: tou
+    UNIQUE_ID: 882718976
+  - ID_mianju: -1
+    ID_maozi: 16
+    ID_glasses: 3
+    ID_kouzhao: -1
+    ID_yanjing: 15
+    ID_bizi: 5
+    ID_zui: 29
+    ID_toufa: 39
+    ID_toufahoumian: -1
+    ID_hairColor: 24
+    ID_skinColor: 6
+    ID_skin: 29
+    ID_tou: tou
+    UNIQUE_ID: -1909447168
+  - ID_mianju: -1
+    ID_maozi: -1
+    ID_glasses: -1
+    ID_kouzhao: 1
+    ID_yanjing: 18
+    ID_bizi: 8
+    ID_zui: 23
+    ID_toufa: 11
+    ID_toufahoumian: -1
+    ID_hairColor: 5
+    ID_skinColor: 1
+    ID_skin: 20
+    ID_tou: tou2
+    UNIQUE_ID: -406646016
+  - ID_mianju: -1
+    ID_maozi: -1
+    ID_glasses: -1
+    ID_kouzhao: -1
+    ID_yanjing: 17
+    ID_bizi: 5
+    ID_zui: 3
+    ID_toufa: 21
+    ID_toufahoumian: -1
+    ID_hairColor: 23
+    ID_skinColor: 1
+    ID_skin: 21
+    ID_tou: tou2
+    UNIQUE_ID: 1096155136
+  - ID_mianju: -1
+    ID_maozi: -1
+    ID_glasses: 4
+    ID_kouzhao: -1
+    ID_yanjing: 19
+    ID_bizi: 3
+    ID_zui: 15
+    ID_toufa: 14
+    ID_toufahoumian: -1
+    ID_hairColor: 7
+    ID_skinColor: 13
+    ID_skin: 30
+    ID_tou: tou
+    UNIQUE_ID: 771197696
+  - ID_mianju: -1
+    ID_maozi: -1
+    ID_glasses: 7
+    ID_kouzhao: -1
+    ID_yanjing: 30
+    ID_bizi: 14
+    ID_zui: 9
+    ID_toufa: 16
+    ID_toufahoumian: -1
+    ID_hairColor: 13
+    ID_skinColor: 2
+    ID_skin: 23
+    ID_tou: tou2
+    UNIQUE_ID: -2020968448
+  - ID_mianju: -1
+    ID_maozi: 6
+    ID_glasses: -1
+    ID_kouzhao: -1
+    ID_yanjing: 5
+    ID_bizi: 17
+    ID_zui: 13
+    ID_toufa: 32
+    ID_toufahoumian: -1
+    ID_hairColor: 4
+    ID_skinColor: 6
+    ID_skin: 14
+    ID_tou: tou
+    UNIQUE_ID: -518167296
+  - ID_mianju: 0
+    ID_maozi: 0
+    ID_glasses: 0
+    ID_kouzhao: 0
+    ID_yanjing: 0
+    ID_bizi: 0
+    ID_zui: 0
+    ID_toufa: 0
+    ID_toufahoumian: 0
+    ID_hairColor: 0
+    ID_skinColor: 0
+    ID_skin: 0
+    ID_tou: 
+    UNIQUE_ID: 0
   TargetParent: {fileID: 0}
   PSBtemplate: {fileID: 0}
   BigBase: {fileID: 0}

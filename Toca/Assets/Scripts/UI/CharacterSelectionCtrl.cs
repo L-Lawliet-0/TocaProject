@@ -129,6 +129,7 @@ public class CharacterSelectionCtrl : MonoBehaviour
 
     private void Init()
     {
+        CurrentIndex = -1;
         SetCreationMode(false);
         for (int i = 0; i < Cells.Length; i++)
         {
@@ -164,7 +165,7 @@ public class CharacterSelectionCtrl : MonoBehaviour
             ReturnButton.onClick.AddListener(() => ReturnHome());
         }
 
-        if (!active && Datas[CurrentIndex] != null)
+        if (!active && CurrentIndex != -1 && Datas[CurrentIndex] != null)
         {
             // read data from character creation
             CharacterCreation.Instance.GetPanelData(Datas[CurrentIndex]);
@@ -182,8 +183,13 @@ public class CharacterSelectionCtrl : MonoBehaviour
             Cells[i].GetChild(0).gameObject.SetActive(Datas[i] == null);
             Cells[i].GetChild(1).gameObject.SetActive(Datas[i] != null);
             if (Datas[i] != null)
+            {
                 Cells[i].GetChild(1).GetComponent<CharacterPreview>().UpdateCharacter(Datas[i]);
+            }
         }
+
+        if (CurrentIndex == -1)
+            CurrentIndex = 0;
     }
 
     private int CurrentIndex;

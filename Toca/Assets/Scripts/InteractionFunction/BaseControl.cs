@@ -21,7 +21,8 @@ public class BaseControl : TocaFunction
                     IsEye, // is this base eye
                     IsHanger,
                     IsBody,
-                    IsCloth;
+                    IsCloth,
+                    IsClothHang; 
 
         public enum StackType
         {
@@ -211,8 +212,16 @@ public class BaseControl : TocaFunction
                 return false;
         }
 
+        if (MyBaseAttributes.IsClothHang && finder.IsCloth)
+        {
+            return Attachments.Count < SnapLimit && !((ClothControl)finder.TocaObject.GetTocaFunction<ClothControl>()).Stacking;
+        }
+
         if (MyBaseAttributes.IsCloth)
-            return finder.IsCloth && Attachments.Count < SnapLimit;
+        {
+            FindControl fc = (FindControl)TocaObject.GetTocaFunction<FindControl>();
+            return finder.IsCloth && Attachments.Count < SnapLimit && (!fc.CurrentAttachment || !fc.CurrentAttachment.MyBaseAttributes.IsClothHang);
+        }
 
         if (finder.IsCloth && (!((ClothControl)finder.TocaObject.GetTocaFunction<ClothControl>()).Stacking && (MyBaseAttributes.IsLeftHand || MyBaseAttributes.IsRightHand)))
             return false;

@@ -36,6 +36,9 @@ public class ClothControl : TocaFunction
                 toca.TocaSave.ObjectID = toca.GetHashCode();
             }
         }
+
+        if (m_FindControl.CurrentAttachment && m_FindControl.CurrentAttachment.MyBaseAttributes.IsClothHang && ClothFolded)
+            ExpandCloth();
     }
 
     public void OnSelection()
@@ -47,17 +50,23 @@ public class ClothControl : TocaFunction
     public void OnDeselection()
     {
         FoldCloth();
+        if (m_FindControl.CurrentAttachment && m_FindControl.CurrentAttachment.MyBaseAttributes.IsClothHang)
+            ExpandCloth();
     }
 
     public void FoldCloth()
     {
         ClothFolded = true;
         m_SpriteRenderer.sprite = Resources.Load<Sprite>("Cloth/" + ClothIndex.ToString());
+        Destroy(GetComponent<PolygonCollider2D>());
+        gameObject.AddComponent<PolygonCollider2D>();
     }
 
     public void ExpandCloth()
     {
         ClothFolded = false;
-        m_SpriteRenderer.sprite = Resources.Load<Sprite>("fushi/fushi" + ClothIndex.ToString());
+        m_SpriteRenderer.sprite = Resources.Load<Sprite>("clothhang/f" + ClothIndex.ToString());
+        Destroy(GetComponent<PolygonCollider2D>());
+        gameObject.AddComponent<PolygonCollider2D>();
     }
 }

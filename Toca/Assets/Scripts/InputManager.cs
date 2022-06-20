@@ -208,6 +208,7 @@ public class InputManager : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
+                    EmoteControl.Instance.EmoteCheck(Input.mousePosition);
                     LastScreenPosition = Input.mousePosition;
                     UpdateCamera = (SelectedObject == null || (!SelectedObject.TocaObject.GetTocaFunction<SelectionControl>() && SelectedObject.PositionChangeCallBacksV3.Count == 0));
                     //if (SelectedObject)
@@ -266,6 +267,8 @@ public class InputManager : MonoBehaviour
                 {
                     TouchInfo info = new TouchInfo(touch);
                     Touches.Add(touch.fingerId, info);
+
+                    EmoteControl.Instance.EmoteCheck(touch.position);
                 }
             }
 

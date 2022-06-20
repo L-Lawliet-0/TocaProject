@@ -75,7 +75,6 @@ public class TocaObject : MonoBehaviour
         {
             if (TocaSave.My_CharacterData.ID_mianju == 0)
             {
-                TocaSave.My_CharacterData = new CharacterData();
                 TocaSave.My_CharacterData.InitData();
             }
             sc.LoadCharacter();

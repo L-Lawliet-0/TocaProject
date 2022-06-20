@@ -383,6 +383,7 @@ MonoBehaviour:
     IsHanger: 0
     IsBody: 0
     IsCloth: 0
+    IsClothHang: 0
     MyStackType: 0
   SnapWithHuman: 0
   SnapWithProp: 1
