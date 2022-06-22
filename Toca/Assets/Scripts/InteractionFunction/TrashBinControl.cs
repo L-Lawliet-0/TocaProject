@@ -54,6 +54,7 @@ public class TrashBinControl : TocaFunction
                 moveKeys[i].transform.localScale -= Time.deltaTime * Vector3.one * 5;
                 if (moveKeys[i].transform.localScale.x < .01f)
                 {
+                    SoundManager.Instance.PlaySFX(7, true, TocaObject.transform.position);
                     Destroy(moveKeys[i].TocaObject.gameObject);
                     Trashes.Remove(moveKeys[i]);
                     FindControl fc = (FindControl)moveKeys[i].TocaObject.GetTocaFunction<FindControl>();

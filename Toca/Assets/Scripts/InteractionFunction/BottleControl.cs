@@ -84,6 +84,8 @@ public class BottleControl : StateControl
 
             if (!Shaking && (Mouth || CupCollider))
             {
+                if (Mouth)
+                    SoundManager.Instance.PlaySFX(6, true, TocaObject.transform.position);
                 Shaking = true;
                 StartCoroutine("Shake");
             }

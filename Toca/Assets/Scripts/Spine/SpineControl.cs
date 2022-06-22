@@ -156,7 +156,7 @@ public class SpineControl : TocaFunction
             if (GetComponentInParent<TrackControl>())
                 return;
         }
-        EmoteControl.Instance.SetActive(!EmoteControl.Instance.Active, GlobalParameter.Instance.GamePosToScreenPos(transform.position + Vector3.up * 2), this);
+        EmoteControl.Instance.SetActive(!EmoteControl.Instance.Active, GlobalParameter.Instance.GamePosToScreenPos(transform.position), this);
     }
 
     private Bone B7, B8, B9, B10, B11, B12;
@@ -239,6 +239,7 @@ public class SpineControl : TocaFunction
                 // set corresponding attachment to true
                 if (Eating)
                     break;
+                SoundManager.Instance.PlaySFX(3, true, TocaObject.transform.position);
                 Eating = true;
                 SetOpenMouse();
                 SkeletonAnimation.AnimationState.Complete += HandleEat;
@@ -403,8 +404,10 @@ public class SpineControl : TocaFunction
 
     public bool Sleeping = false;
     private GameObject sleepFX;
+    private GameObject sleepSFX;
     public void Sleep(Vector3 fxPos)
     {
+        sleepSFX = SoundManager.Instance.PlaySFX(0, false, TocaObject.transform.position);
         CancelBiaoqing();
         shenti.SetAttachment();
         youshou.SetAttachment();
@@ -420,6 +423,7 @@ public class SpineControl : TocaFunction
 
     public void WakeUp()
     {
+        Destroy(sleepSFX);
         shenti.SetAttachment("shenti");
         youshou.SetAttachment("youshou");
         zuoshou.SetAttachment("zuoshou");

@@ -11,6 +11,9 @@ public class OpenControl : TocaFunction
     public delegate void VoidDelegate();
     public event VoidDelegate OnOpening, OnClosing;
 
+    public int SFXopenindex = -1;
+    public int SFXcloseindex = -1;
+
     private void Start()
     {
         // register open and close event on touch control
@@ -39,6 +42,9 @@ public class OpenControl : TocaFunction
         if (Basecontrol)
             Basecontrol.IgnoreLimit = true;
         OnOpening?.Invoke();
+
+        if (SFXopenindex != -1)
+            SoundManager.Instance.PlaySFX(SFXopenindex, true, TocaObject.transform.position);
     }
 
     public void OnClose()
@@ -51,5 +57,8 @@ public class OpenControl : TocaFunction
         if (Basecontrol)
             Basecontrol.IgnoreLimit = false;
         OnClosing?.Invoke();
+
+        if (SFXcloseindex != -1)
+            SoundManager.Instance.PlaySFX(SFXcloseindex, true, TocaObject.transform.position);
     }
 }

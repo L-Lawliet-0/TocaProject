@@ -70,6 +70,7 @@ public class FloatControl : TocaFunction
                 FindControl fc = (FindControl)moveKeys[i].TocaObject.GetTocaFunction<FindControl>();
                 if (fc.Arrived)
                 {
+                    SoundManager.Instance.PlaySFX(33, true, TocaObject.transform.position);
                     Floaters[moveKeys[i]].Arrived = true;
                     Floaters[moveKeys[i]].ArrivedPos = BaseControl.CalculateTargetPos(fc, BaseControl.Attachments[fc]); //moveKeys[i].transform.position;
                     StartCoroutine("DelayCreate", moveKeys[i]);

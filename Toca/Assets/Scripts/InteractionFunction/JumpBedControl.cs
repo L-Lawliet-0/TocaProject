@@ -68,6 +68,7 @@ public class JumpBedControl : TocaFunction
             {
                 pair.Value.Velocity = Random.Range(BounceForceMin, BounceForceMax);
                 m_SpriteRenderer.sprite = Jumped_Sprite;
+                SoundManager.Instance.PlaySFX(30, true, TocaObject.transform.position);
                 CancelInvoke();
                 Invoke("SwapBack", .3f);
             }

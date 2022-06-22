@@ -85,6 +85,8 @@ public class LoadingCtrl : MonoBehaviour
         Main.Instance.HomeButton.SetActive(false);
         SceneManager.LoadScene(5);
 
+        SoundManager.Instance.PlayBGM(5);
+
         // fake loading
         while (LoadingFill.fillAmount < .99f)
         {
@@ -98,6 +100,7 @@ public class LoadingCtrl : MonoBehaviour
             yield return null;
 
         Loading = false;
+       
     }
 
     /// <summary>
@@ -114,6 +117,8 @@ public class LoadingCtrl : MonoBehaviour
 
     private IEnumerator FadeLoadingScreen(bool active)
     {
+        if (active)
+            SoundManager.Instance.StopBGM();
         int sign = active ? 1 : -1;
         float counter = 2;
         float speed = 1 / counter;
@@ -141,7 +146,6 @@ public class LoadingCtrl : MonoBehaviour
         // move the center to the center and expand the screen
         Vector3 scaleSave = Main.Instance.SceneSelection.transform.localScale;
         Vector3 direction = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, GlobalParameter.Depth)) - FocusPosition;
-        Debug.LogError(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, GlobalParameter.Depth)));
         
         direction.z = 0;
 
@@ -201,6 +205,8 @@ public class LoadingCtrl : MonoBehaviour
 
         CharacterTrack.Instance.AddDataFromOtherScene(sceneIndex);
 
+        List<TocaObject> tocas = new List<TocaObject>();
+
         if (datas != null)
         {
             foreach (TocaObject.ObjectSaveData data in datas)
@@ -214,8 +220,12 @@ public class LoadingCtrl : MonoBehaviour
                 obj.GetComponent<TocaObject>().TocaSave = data;
 
                 obj.transform.position = new Vector3(data.x, data.y, GlobalParameter.Depth);
+
+                tocas.Add(obj.GetComponent<TocaObject>());
             }
         }
+
+        CharacterTrack.Instance.SpawnProps(tocas);
 
         if (TocaObjectsLoader.Instance)
             TocaObjectsLoader.Instance.InitializeGame();
@@ -264,6 +274,8 @@ public class LoadingCtrl : MonoBehaviour
             OpenTrack = true;
             CharacterTrack.Instance.SetTrack(true);
         }
+
+        SoundManager.Instance.PlayBGM(sceneIndex);
     }
 
     private bool OpenTrack = false;

@@ -211,6 +211,7 @@ public class CharacterSelectionCtrl : MonoBehaviour
             
         }
 
+        SoundManager.Instance.UISfx(19);
         SetCreationMode(true);
         CharacterCreation.Instance.SetPanelData(Datas[index]);
     }

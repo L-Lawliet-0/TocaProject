@@ -5,6 +5,7 @@ using UnityEngine;
 public class ParticleControl : TocaFunction
 {
     public ParticleSystem ParticleSystem;
+    private GameObject SFX;
     void Start()
     {
         GetComponent<TouchControl>().ClickCallBacks.Add(Click);
@@ -18,6 +19,11 @@ public class ParticleControl : TocaFunction
 
         ParticleSystem.loop = !ParticleSystem.loop;
         if (ParticleSystem.loop)
+        {
             ParticleSystem.Play();
+            SFX = SoundManager.Instance.PlaySFX(29, false, TocaObject.transform.position);
+        }
+        else
+            Destroy(SFX);
     }
 }

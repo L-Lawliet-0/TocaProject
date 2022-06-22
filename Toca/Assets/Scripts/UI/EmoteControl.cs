@@ -18,13 +18,12 @@ public class EmoteControl : MonoBehaviour
     {
         if (Active && CurrentSpine)
         {
-            transform.position = GlobalParameter.Instance.GamePosToScreenPos(CurrentSpine.transform.position + Vector3.up * 2);
+            transform.position = GlobalParameter.Instance.GamePosToScreenPos(CurrentSpine.transform.position + Vector3.up * 3);
         }
     }
 
     public void SetActive(bool active, Vector3 headPos, SpineControl spine)
     {
-        Debug.LogError(active);
         if (Active != active && !Showing)
         {
             CurrentSpine = spine;
@@ -78,7 +77,6 @@ public class EmoteControl : MonoBehaviour
 
     public void EmoteCheck(Vector3 inputPos)
     {
-        Debug.LogError(Vector2.Distance(inputPos, transform.position));
         if (Vector2.Distance(inputPos, transform.position) > 500)
             SetActive(false, transform.position, null);
     }

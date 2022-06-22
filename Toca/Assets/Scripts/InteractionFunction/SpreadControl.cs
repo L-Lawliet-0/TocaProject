@@ -9,6 +9,8 @@ public class SpreadControl : StateControl
     private Transform FXref;
     private bool InControl;
 
+    private GameObject SFX;
+
     private void Awake()
     {
         // assume bottle is in standing pose, calcualte the top reference position
@@ -23,17 +25,26 @@ public class SpreadControl : StateControl
         base.RegisterStateEvent();
     }
 
+    private void Update()
+    {
+        if (SFX)
+            SFX.transform.position = TocaObject.transform.position;
+    }
+
     public override void OnSelection()
     {
         ForceEnd();
         InControl = true;
         StopAllCoroutines();
         StartCoroutine("SelectionLoop");
+
+        SFX = SoundManager.Instance.PlaySFX(20, false, TocaObject.transform.position);
     }
 
     public override void OnDeselect()
     {
         InControl = false;
+        Destroy(SFX);
     }
 
     private IEnumerator SelectionLoop()

@@ -140,6 +140,7 @@ public class CharacterCreation : MonoBehaviour
             ActiveIndex = index;
             // open left side
             StartCoroutine("Shift",index);
+            SoundManager.Instance.UISfx(17);
         }
     }
 
@@ -607,5 +608,10 @@ public class CharacterCreation : MonoBehaviour
         }
 
         btn.transform.localScale = Vector3.one;
+    }
+
+    public void UIsfx(int index)
+    {
+        SoundManager.Instance.UISfx(index);
     }
 }

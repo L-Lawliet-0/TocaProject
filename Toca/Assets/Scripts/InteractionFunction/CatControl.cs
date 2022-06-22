@@ -22,6 +22,18 @@ public class CatControl : TocaFunction
         SetMouth(false);
     }
 
+    private void Start()
+    {
+        TouchControl tc = (TouchControl)TocaObject.GetTocaFunction<TouchControl>();
+        tc.TouchCallBacks.Add(Scream);
+        tc.ClickCallBacks.Add(Scream);
+    }
+
+    public void Scream()
+    {
+        SoundManager.Instance.PlaySFX(27, true, TocaObject.transform.position);
+    }
+
     private void OnEnable()
     {
         for (int i = 0; i < RandomAnimations.Length; i++)

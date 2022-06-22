@@ -50,6 +50,7 @@ public class CombineControl : TocaFunction
                 Combined = true;
 
                 GlobalParameter.Instance.CreateObject(GlobalParameter.Instance.GetCombinePrefab(MyType, cc.MyType), transform.position);
+                SoundManager.Instance.PlaySFX(32, true, TocaObject.transform.position);
 
                 Destroy(cc.TocaObject.gameObject);
                 Destroy(gameObject);

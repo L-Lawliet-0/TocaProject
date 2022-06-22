@@ -22,5 +22,6 @@ public class GenerationControl : TocaFunction
         CurrentCount++;
 
         GlobalParameter.Instance.CreateObject(CandyPrefabs[Random.Range(0, CandyPrefabs.Length)], transform.position);
+        SoundManager.Instance.PlaySFX(25, true, TocaObject.transform.position);
     }
 }

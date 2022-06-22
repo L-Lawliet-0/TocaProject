@@ -53,7 +53,7 @@ public class CharacterTrack : MonoBehaviour
 
         foreach (TocaObject toca in tocas)
         {
-            if (toca.TocaSave.ObjectID != 0 && toca.TocaSave.PrefabID > 0)
+            if (toca.TocaSave.ObjectID != 0 && toca.TocaSave.PrefabID > 0 && !CompareObjectID(toca.TocaSave, TrackProps))
             {
                 TocaObject.ObjectSaveData data = toca.TocaSave;
                 data.x = toca.transform.position.x;
@@ -76,7 +76,17 @@ public class CharacterTrack : MonoBehaviour
             SaveManager.SaveTrackProps(TrackProps);
     }
 
-    private void SpawnProps(List<TocaObject> characters)
+    public bool CompareObjectID(TocaObject.ObjectSaveData d, List<TocaObject.ObjectSaveData> list)
+    {
+        foreach (TocaObject.ObjectSaveData to in list)
+        {
+            if (to.ObjectID == d.ObjectID)
+                return true;
+        }
+        return false;
+    }
+
+    public void SpawnProps(List<TocaObject> characters)
     {
         HashSet<int> ids = new HashSet<int>();
         foreach (TocaObject toca in characters)
@@ -85,7 +95,8 @@ public class CharacterTrack : MonoBehaviour
         }
 
         GeneratedProps = new List<TocaObject>();
-        
+
+        HashSet<int> propIds = new HashSet<int>();
         for (int i = TrackProps.Count - 1; i >= 0; i--)
         {
             if (ids.Contains(TrackProps[i].ParentObjectID))
@@ -96,9 +107,33 @@ public class CharacterTrack : MonoBehaviour
                 obj.GetComponent<TocaObject>().TocaSave = TrackProps[i];
                 GeneratedProps.Add(obj.GetComponent<TocaObject>());
 
+                propIds.Add(TrackProps[i].ObjectID);
+
                 // remove it from the list
                 TrackProps.RemoveAt(i);
             }
+        }
+
+        while (propIds.Count > 0)
+        {
+            HashSet<int> temp = new HashSet<int>();
+            for (int i = TrackProps.Count - 1; i >= 0; i--)
+            {
+                if (propIds.Contains(TrackProps[i].ParentObjectID))
+                {
+                    // create props
+                    GameObject prefab = Resources.Load<GameObject>("Prefabs/" + TrackProps[i].PrefabID);
+                    GameObject obj = Instantiate(prefab); // load objects from resource folder
+                    obj.GetComponent<TocaObject>().TocaSave = TrackProps[i];
+                    GeneratedProps.Add(obj.GetComponent<TocaObject>());
+
+                    temp.Add(TrackProps[i].ObjectID);
+
+                    // remove it from the list
+                    TrackProps.RemoveAt(i);
+                }
+            }
+            propIds = temp;
         }
     }
 
@@ -162,6 +197,9 @@ public class CharacterTrack : MonoBehaviour
     {
         public override int Compare(TocaObject.ObjectSaveData x, TocaObject.ObjectSaveData y)
         {
+            if (y.LastModifiedTime == x.LastModifiedTime)
+                return x.My_CharacterData.UNIQUE_ID - y.My_CharacterData.UNIQUE_ID;
+
             return (int)(y.LastModifiedTime - x.LastModifiedTime);
         }
     }
@@ -177,9 +215,7 @@ public class CharacterTrack : MonoBehaviour
         public override int Compare(TocaObject.ObjectSaveData x, TocaObject.ObjectSaveData y)
         {
             if (IDs.Contains(x.My_CharacterData.UNIQUE_ID) && IDs.Contains(y.My_CharacterData.UNIQUE_ID))
-            {
-                return (int)(y.LastModifiedTime - x.LastModifiedTime);
-            }
+                return x.My_CharacterData.UNIQUE_ID - y.My_CharacterData.UNIQUE_ID;
 
             if (IDs.Contains(x.My_CharacterData.UNIQUE_ID))
                 return -1;
@@ -194,9 +230,7 @@ public class CharacterTrack : MonoBehaviour
         public override int Compare(TocaObject.ObjectSaveData x, TocaObject.ObjectSaveData y)
         {
             if (x.My_CharacterData.ID_tou.Equals("tou2") && y.My_CharacterData.ID_tou.Equals("tou2"))
-            {
-                return (int)(y.LastModifiedTime - x.LastModifiedTime);
-            }
+                return x.My_CharacterData.UNIQUE_ID - y.My_CharacterData.UNIQUE_ID;
 
             if (x.My_CharacterData.ID_tou.Equals("tou2"))
                 return -1;
@@ -211,9 +245,7 @@ public class CharacterTrack : MonoBehaviour
         public override int Compare(TocaObject.ObjectSaveData x, TocaObject.ObjectSaveData y)
         {
             if (x.My_CharacterData.ID_tou.Equals("tou") && y.My_CharacterData.ID_tou.Equals("tou"))
-            {
-                return (int)(y.LastModifiedTime - x.LastModifiedTime);
-            }
+                return x.My_CharacterData.UNIQUE_ID - y.My_CharacterData.UNIQUE_ID;
 
             if (x.My_CharacterData.ID_tou.Equals("tou"))
                 return -1;
@@ -273,18 +305,7 @@ public class CharacterTrack : MonoBehaviour
             toca.gameObject.SetActive(false);
         }
 
-        foreach (TocaObject toca in GeneratedProps)
-        {
-            foreach (TocaObject par in tocas)
-            {
-                if (par.TocaSave.ObjectID == toca.TocaSave.ParentObjectID)
-                {
-                    toca.InitalizeTocaobject(par);
-                    break;
-                }
-            }
-        }
-
+        StartCoroutine("InitProps", tocas);
 
         // set toca to base children
 
@@ -350,6 +371,57 @@ public class CharacterTrack : MonoBehaviour
         LOCK = false;
     }
 
+    private bool allinited(bool[] arr)
+    {
+        foreach (bool value in arr)
+        {
+            if (!value)
+                return false;
+        }
+        return true;
+    }
+
+    private IEnumerator InitProps(List<TocaObject> tocas)
+    {
+        bool[] initAll = new bool[GeneratedProps.Count];
+
+        for (int i = 0; i < GeneratedProps.Count; i ++)
+        {
+            foreach (TocaObject par in tocas)
+            {
+                if (par.TocaSave.ObjectID == GeneratedProps[i].TocaSave.ParentObjectID)
+                {
+                    GeneratedProps[i].InitalizeTocaobject(par);
+                    initAll[i] = true;
+                    break;
+                }
+            }
+        }
+
+        yield return new WaitForSeconds(.1f);
+
+        while (!allinited(initAll))
+        {
+            for (int i = 0; i < GeneratedProps.Count; i++)
+            {
+                if (!initAll[i])
+                {
+                    foreach (TocaObject par in GeneratedProps)
+                    {
+                        if (par.TocaSave.ObjectID == GeneratedProps[i].TocaSave.ParentObjectID)
+                        {
+                            GeneratedProps[i].InitalizeTocaobject(par);
+                            initAll[i] = true;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            yield return new WaitForSeconds(.1f);
+        }
+    }
+
     /// <summary>
     /// spwan a group of spine characters into the scene
     /// </summary>
@@ -411,17 +483,7 @@ public class CharacterTrack : MonoBehaviour
             toca.InitalizeTocaobject();
         }
 
-        foreach (TocaObject toca in GeneratedProps)
-        {
-            foreach (TocaObject par in tocas)
-            {
-                if (par.TocaSave.ObjectID == toca.TocaSave.ParentObjectID)
-                {
-                    toca.InitalizeTocaobject(par);
-                    break;
-                }
-            }
-        }
+        StartCoroutine("InitProps", tocas);
 
         foreach (TocaObject toca in tocas)
         {
@@ -558,6 +620,7 @@ public class CharacterTrack : MonoBehaviour
             return;
         }
 
+        SavePropsData(false);
         RearrangeDatas(comparer);
         CurrentComparer = comparer;
         for (int i = 0; i < SortButtons.Length; i++)
@@ -619,17 +682,7 @@ public class CharacterTrack : MonoBehaviour
             toca.gameObject.SetActive(false);
         }
 
-        foreach (TocaObject toca in GeneratedProps)
-        {
-            foreach (TocaObject par in tocas)
-            {
-                if (par.TocaSave.ObjectID == toca.TocaSave.ParentObjectID)
-                {
-                    toca.InitalizeTocaobject(par);
-                    break;
-                }
-            }
-        }
+        StartCoroutine("InitProps", tocas);
 
         // disable shadow and enable characters
         foreach (TocaObject toca in tocas)

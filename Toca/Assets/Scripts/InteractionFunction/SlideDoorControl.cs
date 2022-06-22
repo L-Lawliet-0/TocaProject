@@ -41,6 +41,7 @@ public class SlideDoorControl : TocaFunction
     {
         if (Sliding)
             return;
+        SoundManager.Instance.PlaySFX(1, true, TocaObject.transform.position);
         Sliding = true;
         if (m_SlideStatus == SlideStatus.Close)
         {

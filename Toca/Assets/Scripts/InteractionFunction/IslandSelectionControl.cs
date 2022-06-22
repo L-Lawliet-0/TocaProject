@@ -18,6 +18,8 @@ public class IslandSelectionControl : TocaFunction
 
     public void Click()
     {
+        if (!LoadingCtrl.Instance.Loading)
+            SoundManager.Instance.PlaySFX(8, true, transform.position);
         LoadingCtrl.Instance.FocusPosition = transform.position;
         LoadingCtrl.Instance.LoadScene(SceneIndex);
         StartCoroutine("HouseShake");

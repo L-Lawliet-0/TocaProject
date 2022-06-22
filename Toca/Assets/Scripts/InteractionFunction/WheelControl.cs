@@ -5,6 +5,7 @@ using UnityEngine;
 public class WheelControl : MonoBehaviour
 {
     private bool Rotating;
+    public bool PauseBGM = false;
 
     private void Start()
     {
@@ -15,6 +16,14 @@ public class WheelControl : MonoBehaviour
     public void Flip()
     {
         Rotating = !Rotating;
+
+        if (PauseBGM)
+        {
+            if (Rotating)
+                SoundManager.Instance.BackGroundMusic.UnPause();
+            else
+                SoundManager.Instance.BackGroundMusic.Pause();
+        }
     }
 
     private void Update()

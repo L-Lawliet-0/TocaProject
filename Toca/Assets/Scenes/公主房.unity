@@ -453,6 +453,8 @@ MonoBehaviour:
   OpenObj: {fileID: 833216666}
   CloseObj: {fileID: 346565387}
   Basecontrol: {fileID: 0}
+  SFXopenindex: -1
+  SFXcloseindex: -1
 --- !u!114 &5677434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4428,6 +4430,8 @@ MonoBehaviour:
   OpenObj: {fileID: 1591950337}
   CloseObj: {fileID: 1104160766}
   Basecontrol: {fileID: 0}
+  SFXopenindex: 22
+  SFXcloseindex: 21
 --- !u!114 &65698328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4518,7 +4522,7 @@ MonoBehaviour:
   TrackIndex: 0
   AnimationSpeed: 1
   DelayOpen: 0
-  DelayClose: 0
+  DelayClose: 1
 --- !u!1 &68682822
 GameObject:
   m_ObjectHideFlags: 0
@@ -7853,6 +7857,8 @@ MonoBehaviour:
   OpenObj: {fileID: 1390536514}
   CloseObj: {fileID: 242960920}
   Basecontrol: {fileID: 0}
+  SFXopenindex: 22
+  SFXcloseindex: 21
 --- !u!114 &142206551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7943,7 +7949,7 @@ MonoBehaviour:
   TrackIndex: 3
   AnimationSpeed: 3
   DelayOpen: 0
-  DelayClose: 0
+  DelayClose: 1
 --- !u!1 &143854954
 GameObject:
   m_ObjectHideFlags: 0
@@ -14545,6 +14551,8 @@ MonoBehaviour:
   OpenObj: {fileID: 1954278474}
   CloseObj: {fileID: 2028538411}
   Basecontrol: {fileID: 0}
+  SFXopenindex: -1
+  SFXcloseindex: -1
 --- !u!114 &269167052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22205,6 +22213,8 @@ MonoBehaviour:
   OpenObj: {fileID: 491016044}
   CloseObj: {fileID: 106705520}
   Basecontrol: {fileID: 0}
+  SFXopenindex: -1
+  SFXcloseindex: -1
 --- !u!114 &426821728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60372,6 +60382,8 @@ MonoBehaviour:
   OpenObj: {fileID: 1113111793}
   CloseObj: {fileID: 871975896}
   Basecontrol: {fileID: 0}
+  SFXopenindex: 24
+  SFXcloseindex: 23
 --- !u!114 &1098575627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62099,6 +62111,8 @@ MonoBehaviour:
   OpenObj: {fileID: 1146192274}
   CloseObj: {fileID: 108359548}
   Basecontrol: {fileID: 0}
+  SFXopenindex: 24
+  SFXcloseindex: 23
 --- !u!114 &1115077312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63625,6 +63639,8 @@ MonoBehaviour:
   OpenObj: {fileID: 559554749}
   CloseObj: {fileID: 2047778205}
   Basecontrol: {fileID: 0}
+  SFXopenindex: 24
+  SFXcloseindex: 23
 --- !u!114 &1132700275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69175,6 +69191,8 @@ MonoBehaviour:
   OpenObj: {fileID: 1854394141}
   CloseObj: {fileID: 822613238}
   Basecontrol: {fileID: 0}
+  SFXopenindex: 22
+  SFXcloseindex: 21
 --- !u!114 &1235671705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69265,7 +69283,7 @@ MonoBehaviour:
   TrackIndex: 2
   AnimationSpeed: 3
   DelayOpen: 0
-  DelayClose: 0
+  DelayClose: 1
 --- !u!1 &1237781219
 GameObject:
   m_ObjectHideFlags: 0
@@ -69672,7 +69690,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1238840532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.3, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1750964835}
@@ -70014,6 +70032,8 @@ MonoBehaviour:
   OpenObj: {fileID: 1586922007}
   CloseObj: {fileID: 820917941}
   Basecontrol: {fileID: 0}
+  SFXopenindex: -1
+  SFXcloseindex: -1
 --- !u!114 &1243346764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71678,7 +71698,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289575599}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.3, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 110025470}
@@ -73968,6 +73988,8 @@ MonoBehaviour:
   OpenObj: {fileID: 2087396390}
   CloseObj: {fileID: 1215416440}
   Basecontrol: {fileID: 0}
+  SFXopenindex: 22
+  SFXcloseindex: 21
 --- !u!114 &1320931594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74058,7 +74080,7 @@ MonoBehaviour:
   TrackIndex: 1
   AnimationSpeed: 3
   DelayOpen: 0
-  DelayClose: 0
+  DelayClose: 1
 --- !u!1 &1321635519
 GameObject:
   m_ObjectHideFlags: 0
@@ -76097,6 +76119,8 @@ MonoBehaviour:
   OpenObj: {fileID: 1692791200}
   CloseObj: {fileID: 493952708}
   Basecontrol: {fileID: 1566720401}
+  SFXopenindex: 12
+  SFXcloseindex: 12
 --- !u!114 &1364478040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78045,6 +78069,8 @@ MonoBehaviour:
   OpenObj: {fileID: 2007102619}
   CloseObj: {fileID: 1501996072}
   Basecontrol: {fileID: 0}
+  SFXopenindex: 15
+  SFXcloseindex: 14
 --- !u!114 &1392914120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81358,6 +81384,8 @@ MonoBehaviour:
   OpenObj: {fileID: 3212524}
   CloseObj: {fileID: 2137310432}
   Basecontrol: {fileID: 0}
+  SFXopenindex: 24
+  SFXcloseindex: 23
 --- !u!114 &1469415837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92767,6 +92795,8 @@ MonoBehaviour:
   OpenObj: {fileID: 90163958}
   CloseObj: {fileID: 998140323}
   Basecontrol: {fileID: 0}
+  SFXopenindex: 22
+  SFXcloseindex: 21
 --- !u!114 &1723017696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92857,7 +92887,7 @@ MonoBehaviour:
   TrackIndex: 4
   AnimationSpeed: 3
   DelayOpen: 0
-  DelayClose: 0
+  DelayClose: 1
 --- !u!1 &1725004921
 GameObject:
   m_ObjectHideFlags: 0
@@ -99286,6 +99316,8 @@ MonoBehaviour:
   OpenObj: {fileID: 722179432}
   CloseObj: {fileID: 116135829}
   Basecontrol: {fileID: 0}
+  SFXopenindex: -1
+  SFXcloseindex: -1
 --- !u!114 &1852575094
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -58,9 +58,16 @@ public class TocaObject : MonoBehaviour
                 if (function.BaseID == TocaSave.ParentBaseID)
                 {
                     // found the mother fucker
-                    ((FindControl)GetTocaFunction<FindControl>()).BasePreview = function;
-                    ((FindControl)GetTocaFunction<FindControl>()).TryAttach();
+                    FindControl fc = ((FindControl)GetTocaFunction<FindControl>());
+
+                    fc.BasePreview = function;
+                    fc.TryAttach();
                     //function.Attach((FindControl)GetTocaFunction<FindControl>());
+                    if (attach && fc.CurrentAttachment)
+                    {
+                        transform.position = fc.CurrentAttachment.CalculateTargetPos(fc, fc.CurrentAttachment.Attachments[fc]);
+                        Debug.LogError("Pause!");
+                    }
 
                     LayerControl lc = (LayerControl)GetTocaFunction<LayerControl>();
                     if (lc)

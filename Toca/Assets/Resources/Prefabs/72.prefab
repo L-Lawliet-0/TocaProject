@@ -51,6 +51,7 @@ MonoBehaviour:
   IsFood: 0
   IsGlasses: 0
   IsHang: 0
+  IsCloth: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0
@@ -115,6 +116,7 @@ GameObject:
   - component: {fileID: 7428818517771253826}
   - component: {fileID: 7428818517771253832}
   - component: {fileID: 7428818517771253825}
+  - component: {fileID: 845958163851220072}
   m_Layer: 9
   m_Name: 72
   m_TagString: Untagged
@@ -227,6 +229,8 @@ MonoBehaviour:
     Attaching: 1
     ParentObjectID: 200148
     ParentBaseID: 205202
+    PrefabID: 0
+    LastModifiedTime: 0
     My_CharacterData:
       ID_mianju: 0
       ID_maozi: 0
@@ -241,6 +245,7 @@ MonoBehaviour:
       ID_skinColor: 0
       ID_skin: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &7428818517771253837
@@ -387,3 +392,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TocaObject: {fileID: 0}
+--- !u!114 &845958163851220072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7428818517771253844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c240874c4f3bbc740a0aa73fd5fbf326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

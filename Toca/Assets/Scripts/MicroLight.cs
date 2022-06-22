@@ -8,6 +8,9 @@ public class MicroLight : TocaFunction
     private BaseControl BaseControl;
     private Light2D Light2D;
     private bool Blinking;
+
+    private GameObject SFX;
+
     private void Awake()
     {
         Light2D = GetComponent<Light2D>();
@@ -26,6 +29,7 @@ public class MicroLight : TocaFunction
         {
             Blinking = true;
             StartCoroutine("Blink");
+            SFX = SoundManager.Instance.PlaySFX(11, false, TocaObject.transform.position);
         }
         else if (Blinking && BaseControl.Attachments.Count == 0)
         {
@@ -35,6 +39,7 @@ public class MicroLight : TocaFunction
 
     private void StopBlink()
     {
+        Destroy(SFX);
         StopAllCoroutines();
         Blinking = false;
         Light2D.enabled = false;

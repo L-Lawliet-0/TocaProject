@@ -14,10 +14,12 @@ public class CameraController : MonoBehaviour
 
     public float CamWidth;
 
-    private const float MaxSpeed = 20;
+    private const float MaxSpeed = 40;
     private float Speed = MaxSpeed;
     public float POSTOPIXEL;
     public float Width_Half;
+
+    private float acceleration;
 
     private void Awake()
     {
@@ -68,8 +70,15 @@ public class CameraController : MonoBehaviour
             return;
         
         // the incoming x is in pixel
+        if (acceleration > 0)
+        {
+            Target_X_Pixel = transform.position.x * POSTOPIXEL;
+            acceleration = 0;
+        }
         Target_X_Pixel -= x;
         Target_X_Pixel = Mathf.Clamp(Target_X_Pixel, x_Min * POSTOPIXEL, x_Max * POSTOPIXEL);
+
+        Speed = Mathf.Abs(x) / POSTOPIXEL / Time.deltaTime;
 
         if (Sun)
         {
@@ -88,26 +97,23 @@ public class CameraController : MonoBehaviour
         {
             int sign = transform.position.x > target ? -1 : 1;
 
-            Speed -= Time.deltaTime * 10;
-            //Speed = Mathf.Max(2, Speed);
             float delta = Time.deltaTime * Speed * sign;
+            Speed -= acceleration * Time.deltaTime;
             transform.position += Vector3.right * delta;
-            //CharacterTrack.Instance.Track.position += Vector3.right * delta;
 
             int afterSign = transform.position.x > target ? -1 : 1;
 
-            if (sign != afterSign || Speed <= 0)
+            if (sign != afterSign)
             {
-                if (sign != afterSign)
+                transform.position = new Vector3(target, transform.position.y);
+
+                if (Speed > 0 && acceleration == 0)
                 {
-                    float diff = target - transform.position.x;
-                    //CharacterTrack.Instance.Track.position += Vector3.right * diff;
-                    transform.position = new Vector3(target, transform.position.y);
+                    Speed = Mathf.Clamp(Speed, 0, 40);
+                    acceleration = Speed;
+                    target += Speed * (Speed / acceleration) / 2 * sign;
+                    Target_X_Pixel = Mathf.Clamp(target * POSTOPIXEL, x_Min * POSTOPIXEL, x_Max * POSTOPIXEL);
                 }
-                else
-                    Target_X_Pixel = transform.position.x * POSTOPIXEL;
-                // reset speed after destination
-                Speed = MaxSpeed;
             }
         }
     }

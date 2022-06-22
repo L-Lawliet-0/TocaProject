@@ -58,6 +58,8 @@ public class SelectionControl : TocaFunction
 
         // unit size : minutes 
         TocaObject.TocaSave.LastModifiedTime = DateTime.Now.DayOfYear * 24 * 60 + DateTime.Now.Hour * 60 + DateTime.Now.Minute;
+
+        SoundManager.Instance.PlaySFX(16, true, TocaObject.transform.position);
     }
 
     public void OnDeselect()
@@ -67,6 +69,8 @@ public class SelectionControl : TocaFunction
 
         StopAllCoroutines();
         //StartCoroutine("ScaleDown");
+
+        SoundManager.Instance.PlaySFX(16, true, TocaObject.transform.position);
     }
 
     private void OnDisable()

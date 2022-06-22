@@ -20,6 +20,7 @@ public class ReplaceControl : TocaFunction
         if (!Replaced)
         {
             Replaced = true;
+            SoundManager.Instance.PlaySFX(26, true, TocaObject.transform.position);
 
             // play effect
             GameObject fx = Instantiate(GlobalParameter.Instance.RunTimeEffects[4], transform.position, Quaternion.identity);

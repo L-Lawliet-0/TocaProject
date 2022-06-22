@@ -21,6 +21,7 @@ public class StewControl : TocaFunction
 
     public float SteamGap = 1;
     private float Counter;
+    private GameObject SFX;
     /// <summary>
     /// the dictionary contains the movecontrol and float, which indicated the angle used in sine wave function
     /// </summary>
@@ -36,7 +37,10 @@ public class StewControl : TocaFunction
         if (!GeneratingSteam)
         {
             if (BaseControl.Attachments.Count > 0)
+            {
                 GeneratingSteam = true;
+                SFX = SoundManager.Instance.PlaySFX(31, false, TocaObject.transform.position);
+            }
         }
         else
         {
@@ -55,7 +59,10 @@ public class StewControl : TocaFunction
             }
 
             if (BaseControl.Attachments.Count <= 0)
+            {
                 GeneratingSteam = false;
+                Destroy(SFX);
+            }
         }
 
         for (int i = SteamDatas.Count - 1; i >= 0; i--)

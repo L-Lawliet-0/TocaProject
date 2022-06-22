@@ -26,6 +26,8 @@ public class ClothControl : TocaFunction
     {
         if (m_FindControl.CurrentAttachment && m_FindControl.CurrentAttachment.MyBaseAttributes.IsBody)
         {
+            SoundManager.Instance.PlaySFX(13, true, TocaObject.transform.position);
+
             Destroy(gameObject);
             SpineControl sc = (SpineControl)m_FindControl.CurrentAttachment.TocaObject.GetTocaFunction<SpineControl>();
             int value = sc.SwapSkin(ClothIndex);

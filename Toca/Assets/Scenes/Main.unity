@@ -2197,6 +2197,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1629565153}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: UISfx
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &597725571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2709,6 +2721,133 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 902281630}
   m_CullTransparentMesh: 1
+--- !u!1 &983736063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 983736065}
+  - component: {fileID: 983736064}
+  m_Layer: 0
+  m_Name: BGM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &983736064
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983736063}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5b57e947e663ce145bd1bbb73e2f4ed8, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &983736065
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983736063}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1629565149}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1015044415
 GameObject:
   m_ObjectHideFlags: 0
@@ -3333,6 +3472,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1629565153}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: UISfx
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -5484,6 +5635,7 @@ GameObject:
   - component: {fileID: 1629565150}
   - component: {fileID: 1629565151}
   - component: {fileID: 1629565152}
+  - component: {fileID: 1629565153}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5646,6 +5798,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2130397831}
+  - {fileID: 983736065}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5705,6 +5858,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c310a925615bd743bde1e003978081f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1629565153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629565142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3460da51d447742a1072a285341389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BackGroundMusic: {fileID: 983736064}
+  BGMs:
+  - {fileID: 8300000, guid: 5b57e947e663ce145bd1bbb73e2f4ed8, type: 3}
+  - {fileID: 8300000, guid: 1b9511a7e36ff6b4fb75d4f8fd7c9549, type: 3}
+  - {fileID: 8300000, guid: 1713d02105821904099cf84722acd7a4, type: 3}
+  - {fileID: 8300000, guid: d24c28e764039c94b8202a63b353b3cc, type: 3}
+  - {fileID: 8300000, guid: a0312998cb0e0bd48936ec98149e146a, type: 3}
+  - {fileID: 8300000, guid: 2c3af9562bd955c4f950ab895a9b1210, type: 3}
+  SFXs:
+  - {fileID: 8300000, guid: 417166b6a74e4dd4fa8dc3c2cd9079a9, type: 3}
+  - {fileID: 8300000, guid: b7b09501d5354cf4191cea96513ca91e, type: 3}
+  - {fileID: 8300000, guid: ec66b1b9ccd44654a8c97e9da4991520, type: 3}
+  - {fileID: 8300000, guid: c51a6db3f8624ed44bce7fec579ebc87, type: 3}
+  - {fileID: 8300000, guid: 20d8a765a3a1948489add2ab22abc446, type: 3}
+  - {fileID: 8300000, guid: 0873c87acad9cee42b5ca9bfdb30abf6, type: 3}
+  - {fileID: 8300000, guid: 898092cdbd74c294ebbe995d1be3a798, type: 3}
+  - {fileID: 8300000, guid: 03020bd36fdb051489fce270065c6b4f, type: 3}
+  - {fileID: 8300000, guid: 31197f84c4d92444c959784e3a166137, type: 3}
+  - {fileID: 8300000, guid: 73dcff11017260f4f9b76c8d9aae31fc, type: 3}
+  - {fileID: 8300000, guid: 2771414a3dfa05c4ea2cf31b8a0a7d27, type: 3}
+  - {fileID: 8300000, guid: 1947f63d6f6a0c6468fce9391ea5525a, type: 3}
+  - {fileID: 8300000, guid: 1063677d9cd50ea4ca9f2e18b86cd470, type: 3}
+  - {fileID: 8300000, guid: d2263b8edd70c5648aa414cf973d9a99, type: 3}
+  - {fileID: 8300000, guid: c48b3dd0201f5db44b4a218e8f976e44, type: 3}
+  - {fileID: 8300000, guid: 2c9820cb36b2096408a05c1e2163adec, type: 3}
+  - {fileID: 8300000, guid: 330dbdbb2adb74f48aa0c8373e7e8814, type: 3}
+  - {fileID: 8300000, guid: 3016b825081ff184382af3d0a758fe6a, type: 3}
+  - {fileID: 8300000, guid: c413714e743ac2f4e8a51c959ce1bd0a, type: 3}
+  - {fileID: 8300000, guid: 0a13e1a507f4b7a4d830b6919206cd17, type: 3}
+  - {fileID: 8300000, guid: b020a29e6055ed44f8b9ee2666611615, type: 3}
+  - {fileID: 8300000, guid: c07efe0aace707545ab8d57592d15b1a, type: 3}
+  - {fileID: 8300000, guid: 860af0c3491837440aeab80cddd465e9, type: 3}
+  - {fileID: 8300000, guid: c0bcb50aedf89c94e919be76e1ce2387, type: 3}
+  - {fileID: 8300000, guid: b86d6188c2ea11143a8496add91ed881, type: 3}
+  - {fileID: 8300000, guid: e633955e80ef6574fb582383daf5e357, type: 3}
+  - {fileID: 8300000, guid: ff206c05abea4f0459441a657a4d1075, type: 3}
+  - {fileID: 8300000, guid: 3a6c51ef833173d488adb4e401a7a395, type: 3}
+  - {fileID: 8300000, guid: 2e954b78fcd1839479b5e1b578307ca4, type: 3}
+  - {fileID: 8300000, guid: c537e24b3cad9564f9ab37db833fa4eb, type: 3}
+  - {fileID: 8300000, guid: c008f92540723fe4b9780ff43472eb4d, type: 3}
+  - {fileID: 8300000, guid: 6c08f5da9b8d4d24ea9642e405647348, type: 3}
+  - {fileID: 8300000, guid: d3aa3b50db2d1554e8e3ec04557fc1a0, type: 3}
+  - {fileID: 8300000, guid: e31ac13b8bd66ac43a72906ba12f7452, type: 3}
+  SFXprefab: {fileID: 1748131868738448531, guid: 40dd7c6c120f0e74193c31e500219d48, type: 3}
 --- !u!1 &1657372769
 GameObject:
   m_ObjectHideFlags: 0

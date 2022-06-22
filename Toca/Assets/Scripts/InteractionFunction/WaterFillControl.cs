@@ -31,6 +31,7 @@ public class WaterFillControl : TocaFunction
     {
         if (Filled)
         {
+            SoundManager.Instance.PlaySFX(6, true, TocaObject.transform.position);
             Filled = false;
             StartCoroutine("ClearCup");       
         }
@@ -56,6 +57,7 @@ public class WaterFillControl : TocaFunction
 
     private IEnumerator FillCup()
     {
+        SoundManager.Instance.PlaySFX(2, true, TocaObject.transform.position);
         float initX = .3f;
         float time = 1f;
         float x_speed = (TargetWidth - initX) / time;
