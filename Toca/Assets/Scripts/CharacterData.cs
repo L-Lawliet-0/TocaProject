@@ -8,6 +8,7 @@ public class CharacterData // inheirt mono behaviour so that object can be saved
     public int ID_mianju, ID_maozi, ID_glasses, ID_kouzhao, ID_yanjing, ID_bizi, ID_zui, ID_toufa, ID_toufahoumian;
     public int ID_hairColor, ID_skinColor;
     public int ID_skin;
+    public int ID_meimao;
     public string ID_tou;
 
     public int UNIQUE_ID;
@@ -16,7 +17,7 @@ public class CharacterData // inheirt mono behaviour so that object can be saved
     public void InitData()
     {
         ID_mianju = ID_maozi = ID_glasses = ID_kouzhao = -1;
-        ID_yanjing = ID_bizi = ID_zui = ID_toufa = 1;
+        ID_yanjing = ID_bizi = ID_zui = ID_toufa = ID_meimao = 1;
         ID_skin = 0;
         ID_tou = "tou";
         ID_toufahoumian = -1;
@@ -28,6 +29,7 @@ public class CharacterData // inheirt mono behaviour so that object can be saved
         ID_yanjing = Random.Range(1, 33);
         ID_bizi = Random.Range(1, 32);
         ID_zui = Random.Range(1, 29);
+        ID_meimao = Random.Range(1, 25);
         ID_toufa = Random.Range(1, 41);
         ID_tou = Random.Range(0f, 1f) < .5f ? "tou" : "tou2";
         ID_toufahoumian = -1;

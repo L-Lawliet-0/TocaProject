@@ -14,6 +14,8 @@ public class TrackControl : TocaFunction
     public float PositionOffset; // the position offset of the track
     public float OffsetRange;
 
+    public bool LOCK = false;
+
     private void Awake()
     {
         m_Instance = this;
@@ -130,6 +132,15 @@ public class TrackControl : TocaFunction
     {
         CountCache = -1;
         Update();
+
+        CancelInvoke("Release");
+        LOCK = true;
+        Invoke("Release", 2);
+    }
+
+    private void Release()
+    {
+        LOCK = false;
     }
 
     public void CharacterOut()
@@ -160,6 +171,10 @@ public class TrackControl : TocaFunction
             ((SpineControl)mc.TocaObject.GetTocaFunction<SpineControl>()).ArrivedTarget = false;
             mc.UpdateTargetPosition(rightPos);
         }
+
+        CancelInvoke("Release");
+        LOCK = true;
+        Invoke("Release", 2);
     }
 
     public class Xcompare : Comparer<FindControl>

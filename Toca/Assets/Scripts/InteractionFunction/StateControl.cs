@@ -11,7 +11,7 @@ public class StateControl : TocaFunction
     {
         //transform.eulerAngles = Vector3.zero;
 
-        if (FindControl && FindControl.CurrentAttachment) //&& FindControl.CurrentAttachment.MyBaseAttributes.HaveCover)
+        if (FindControl && FindControl.CurrentAttachment && !TocaObject.GetTocaFunction<HandPivotControl>()) //&& FindControl.CurrentAttachment.MyBaseAttributes.HaveCover)
         {
             FindControl.CurrentAttachment.RecalculateSnapPos(FindControl);
             FindControl.Arrived = false;

@@ -469,6 +469,7 @@ public class SpineControl : TocaFunction
         Yanjing.SetAttachment(cd.ID_yanjing);
         Bizi.SetAttachment(cd.ID_bizi);
         Zui.SetAttachment(cd.ID_zui);
+        Meimao.SetAttachment(cd.ID_meimao);
         Tou.SetAttachment(cd.ID_tou);
         Toufa.SetAttachment(cd.ID_toufa);
         Toufahoumian.SetAttachment(cd.ID_toufahoumian);
@@ -598,6 +599,7 @@ public class SpineControl : TocaFunction
         Yanjing.SetAttachment();
         Bizi.SetAttachment();
         Zui.SetAttachment();
+        Meimao.SetAttachment();
         EmoteShowing = true;
     }
 
@@ -610,6 +612,7 @@ public class SpineControl : TocaFunction
         MySkeleton.SetAttachment("texiao", null);
         SetDefaultYanJing();
         Bizi.SetAttachment(TocaObject.TocaSave.My_CharacterData.ID_bizi);
+        Meimao.SetAttachment(TocaObject.TocaSave.My_CharacterData.ID_meimao);
         SetDefaultMouse();
         EmoteShowing = false;
     }

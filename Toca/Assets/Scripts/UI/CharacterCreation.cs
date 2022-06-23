@@ -13,7 +13,7 @@ public class CharacterCreation : MonoBehaviour
     public GameObject ResetPrefab;
 
     public Transform glassesRoot, kouzhaoRoot, maoziRoot, mianjuRoot;
-    public Transform yanjingRoot, biziRoot, zuiRoot;
+    public Transform yanjingRoot, biziRoot, zuiRoot, meimaoRoot;
     public Transform toufaRoot;
     public Transform skinColorRoot, hairColorRoot;
 
@@ -228,12 +228,14 @@ public class CharacterCreation : MonoBehaviour
         YellowDict.Add("yanjing", yanjingRoot);
         YellowDict.Add("bizi", biziRoot);
         YellowDict.Add("zui", zuiRoot);
+        YellowDict.Add("meimao", meimaoRoot);
 
         InitalizeContent(41, "fushi", fushiRoot, fushiPrefab, 395, 436, false);
 
         InitalizeContent(33, "yanjing", yanjingRoot, lianPrefab, 395, 323, false);
         InitalizeContent(32, "bizi", biziRoot, lianPrefab, 395, 323, false);
         InitalizeContent(29, "zui", zuiRoot, lianPrefab, 395, 323, false);
+        InitalizeContent(24, "meimao", meimaoRoot, lianPrefab, 395, 323, false);
 
         SetYellowSubpage(0);
 
@@ -288,7 +290,7 @@ public class CharacterCreation : MonoBehaviour
 
             if (itemPrefix.Equals("fushi"))
                 rect.GetComponent<Button>().onClick.AddListener(() => fushiButtonCallback(input));
-            else if (itemPrefix.Equals("yanjing") || itemPrefix.Equals("bizi") || itemPrefix.Equals("zui"))
+            else if (itemPrefix.Equals("yanjing") || itemPrefix.Equals("bizi") || itemPrefix.Equals("zui") || itemPrefix.Equals("meimao"))
                 rect.GetComponent<Button>().onClick.AddListener(() => lianButtonCallback(itemPrefix, input));
             else if (itemPrefix.Equals("toufa"))
                 rect.GetComponent<Button>().onClick.AddListener(() => toufaButtonCallback(itemPrefix, input));
@@ -305,6 +307,7 @@ public class CharacterCreation : MonoBehaviour
                 {
                     Image img = rect.GetChild(0).GetComponent<Image>();
                     Sprite sprite = Resources.Load<Sprite>(itemPrefix + "/" + itemPrefix + input.ToString());
+                    
                     img.sprite = sprite;
 
                     rect = rect.GetChild(0).GetComponent<RectTransform>();
@@ -380,6 +383,7 @@ public class CharacterCreation : MonoBehaviour
         lianButtonCallback("yanjing", data.ID_yanjing);
         lianButtonCallback("bizi", data.ID_bizi);
         lianButtonCallback("zui", data.ID_zui);
+        lianButtonCallback("meimao", data.ID_meimao);
         SetSkinColor(data.ID_skinColor);
         SetHairColor(data.ID_hairColor);
         fushiButtonCallback(data.ID_skin);
@@ -398,6 +402,7 @@ public class CharacterCreation : MonoBehaviour
         data.ID_yanjing = SpineUI.Instance.yanjing.ID;
         data.ID_bizi = SpineUI.Instance.bizi.ID;
         data.ID_zui = SpineUI.Instance.zui.ID;
+        data.ID_meimao = SpineUI.Instance.meimao.ID;
         data.ID_toufa = SpineUI.Instance.toufa.ID;
         data.ID_toufahoumian = SpineUI.Instance.toufahoumian.ID;
         data.ID_tou = SpineUI.Instance.GetHead();

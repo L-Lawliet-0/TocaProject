@@ -890,6 +890,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -1134,6 +1135,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -1739,6 +1741,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -2226,6 +2229,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -2628,6 +2632,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -3263,6 +3268,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -3684,6 +3690,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -3863,6 +3870,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -5068,6 +5076,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -5591,6 +5600,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -6027,6 +6037,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -6565,6 +6576,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -6759,6 +6771,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -7076,6 +7089,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -7346,6 +7360,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -7535,6 +7550,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -8355,6 +8371,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -8616,6 +8633,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -8776,6 +8794,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -9291,6 +9310,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -9637,6 +9657,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -10189,6 +10210,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -10347,6 +10369,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -10438,6 +10461,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -11057,6 +11081,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -12016,6 +12041,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -12289,6 +12315,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -12617,6 +12644,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -13155,6 +13183,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -13945,6 +13974,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -14191,6 +14221,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -14350,6 +14381,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -15084,6 +15116,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -15532,6 +15565,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -17218,6 +17252,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -17824,6 +17859,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -17983,6 +18019,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -18958,6 +18995,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -19488,6 +19526,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -20179,6 +20218,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -21068,6 +21108,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -21393,6 +21434,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -22231,6 +22273,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -22440,6 +22483,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -23028,6 +23072,7 @@ MonoBehaviour:
       ID_hairColor: 13
       ID_skinColor: 2
       ID_skin: 23
+      ID_meimao: 16
       ID_tou: tou2
       UNIQUE_ID: 138124544
   AllFunctions: []
@@ -23150,10 +23195,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
   - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
   - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
+  - {fileID: 2100000, guid: f1c9a0495fa9d294faea4d977d15e569, type: 2}
+  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
   - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
+  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
+  - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
   - {fileID: 2100000, guid: f1c9a0495fa9d294faea4d977d15e569, type: 2}
   - {fileID: 2100000, guid: 9e10f14ddd9933340b88e5b04c2bffa7, type: 2}
-  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23571,6 +23619,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -23919,6 +23968,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -24083,6 +24133,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -24405,6 +24456,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -24733,6 +24785,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -25204,6 +25257,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -25626,6 +25680,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -25784,6 +25839,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -26221,6 +26277,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -26414,6 +26471,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -27467,6 +27525,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -27802,6 +27861,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -28370,6 +28430,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -29680,6 +29741,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -29802,6 +29864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseBGM: 1
+  RotationSpeed: 90
 --- !u!114 &1194478255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30232,6 +30295,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -30513,6 +30577,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -31015,6 +31080,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -31257,6 +31323,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -31600,6 +31667,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -31922,6 +31990,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -32350,6 +32419,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -33081,6 +33151,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -33696,6 +33767,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -34064,6 +34136,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -34223,6 +34296,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -34524,6 +34598,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -35801,6 +35876,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -36016,6 +36092,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -36226,6 +36303,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -36942,6 +37020,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -37464,6 +37543,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -37862,6 +37942,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -38428,6 +38509,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -39393,6 +39475,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -39552,6 +39635,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -40408,6 +40492,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -40962,6 +41047,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -41208,6 +41294,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -41548,6 +41635,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -41656,6 +41744,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -41988,6 +42077,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -42515,6 +42605,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -42768,6 +42859,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -43664,6 +43756,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -44124,6 +44217,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -44973,6 +45067,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -45337,6 +45432,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -45706,6 +45802,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -46043,6 +46140,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -46368,6 +46466,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -47197,6 +47296,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -47632,6 +47732,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -47999,6 +48100,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -48208,6 +48310,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -48668,6 +48771,7 @@ MonoBehaviour:
       ID_hairColor: 4
       ID_skinColor: 6
       ID_skin: 14
+      ID_meimao: 22
       ID_tou: tou
       UNIQUE_ID: -518167296
   AllFunctions: []
@@ -48752,10 +48856,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
   - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
   - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
+  - {fileID: 2100000, guid: f1c9a0495fa9d294faea4d977d15e569, type: 2}
+  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
   - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
+  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
+  - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
   - {fileID: 2100000, guid: f1c9a0495fa9d294faea4d977d15e569, type: 2}
   - {fileID: 2100000, guid: 9e10f14ddd9933340b88e5b04c2bffa7, type: 2}
-  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -49127,6 +49234,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -49367,6 +49475,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -50111,6 +50220,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -50522,6 +50632,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -50966,6 +51077,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -51413,6 +51525,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -51626,6 +51739,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -52208,6 +52322,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -53404,6 +53519,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -54356,6 +54472,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -54647,6 +54764,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -55303,6 +55421,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []

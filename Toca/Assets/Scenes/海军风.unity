@@ -478,6 +478,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -835,6 +836,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -1362,6 +1364,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -2110,6 +2113,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -3016,6 +3020,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -3308,6 +3313,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -3593,6 +3599,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -4228,6 +4235,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -4808,6 +4816,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -6066,6 +6075,7 @@ MonoBehaviour:
       ID_hairColor: 7
       ID_skinColor: 13
       ID_skin: 30
+      ID_meimao: 12
       ID_tou: tou
       UNIQUE_ID: 771197696
   AllFunctions: []
@@ -6140,20 +6150,22 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
-  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
   - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
   - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
-  - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
-  - {fileID: 2100000, guid: 9e10f14ddd9933340b88e5b04c2bffa7, type: 2}
+  - {fileID: 2100000, guid: 001a920a89b39e74d882411802f596b3, type: 2}
   - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
-  - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
-  - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
-  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
-  - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
+  - {fileID: 2100000, guid: 001a920a89b39e74d882411802f596b3, type: 2}
   - {fileID: 2100000, guid: f1c9a0495fa9d294faea4d977d15e569, type: 2}
-  - {fileID: 2100000, guid: 9e10f14ddd9933340b88e5b04c2bffa7, type: 2}
   - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
+  - {fileID: 2100000, guid: 001a920a89b39e74d882411802f596b3, type: 2}
+  - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
+  - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
+  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
+  - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
+  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
+  - {fileID: 2100000, guid: 001a920a89b39e74d882411802f596b3, type: 2}
+  - {fileID: 2100000, guid: f1c9a0495fa9d294faea4d977d15e569, type: 2}
+  - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6716,6 +6728,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -7053,6 +7066,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -7345,6 +7359,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -7600,6 +7615,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -8474,6 +8490,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -8957,6 +8974,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -9869,6 +9887,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -10353,6 +10372,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -10648,6 +10668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseBGM: 0
+  RotationSpeed: 90
 --- !u!60 &413944985
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -11111,6 +11132,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -11218,6 +11240,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -11397,6 +11420,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -11589,6 +11613,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -11853,7 +11878,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: db0c78af0d4cede498b8e54758c7c6e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -11985,7 +12010,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &430029023
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12201,6 +12226,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -12483,6 +12509,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -12869,6 +12896,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -13365,6 +13393,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -13611,6 +13640,7 @@ MonoBehaviour:
       ID_hairColor: 23
       ID_skinColor: 1
       ID_skin: 21
+      ID_meimao: 21
       ID_tou: tou2
       UNIQUE_ID: 858082560
   AllFunctions: []
@@ -13723,20 +13753,22 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
-  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
   - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
   - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
-  - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
-  - {fileID: 2100000, guid: 9e10f14ddd9933340b88e5b04c2bffa7, type: 2}
+  - {fileID: 2100000, guid: 001a920a89b39e74d882411802f596b3, type: 2}
   - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
-  - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
-  - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
-  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
-  - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
+  - {fileID: 2100000, guid: 001a920a89b39e74d882411802f596b3, type: 2}
   - {fileID: 2100000, guid: f1c9a0495fa9d294faea4d977d15e569, type: 2}
-  - {fileID: 2100000, guid: 9e10f14ddd9933340b88e5b04c2bffa7, type: 2}
   - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
+  - {fileID: 2100000, guid: 001a920a89b39e74d882411802f596b3, type: 2}
+  - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
+  - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
+  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
+  - {fileID: 2100000, guid: 315af82abbd310149a11247ddc4d15ea, type: 2}
+  - {fileID: 2100000, guid: 8533f37f1d4915e4c91b4c854cfaad8f, type: 2}
+  - {fileID: 2100000, guid: 001a920a89b39e74d882411802f596b3, type: 2}
+  - {fileID: 2100000, guid: f1c9a0495fa9d294faea4d977d15e569, type: 2}
+  - {fileID: 2100000, guid: eab27be8150184442be14337aaafce8b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14016,6 +14048,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -14123,6 +14156,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -15170,6 +15204,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -15387,6 +15422,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -15798,7 +15834,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 7d639a09ba5bc4c4c9a60d948590f3ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -15877,6 +15913,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -16243,6 +16280,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -16626,6 +16664,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -17154,6 +17193,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -17720,6 +17760,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -18326,6 +18367,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -18687,6 +18729,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -19052,6 +19095,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -19307,6 +19351,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -19677,6 +19722,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -20286,6 +20332,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -20525,6 +20572,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -20670,8 +20718,6 @@ GameObject:
   - component: {fileID: 650679365}
   - component: {fileID: 650679364}
   - component: {fileID: 650679363}
-  - component: {fileID: 650679362}
-  - component: {fileID: 650679361}
   m_Layer: 0
   m_Name: "\u82B1\u6D12"
   m_TagString: Untagged
@@ -20747,39 +20793,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &650679361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 650679358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2121eeb87cf184e67829e30606de2011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TocaObject: {fileID: 0}
-  Opening: 0
-  OpenObj: {fileID: 1741815938}
-  CloseObj: {fileID: 430029022}
-  Basecontrol: {fileID: 0}
-  SFXopenindex: -1
-  SFXcloseindex: -1
---- !u!114 &650679362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 650679358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37e2d13486c6a421687d3b0925f1e144, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TocaObject: {fileID: 0}
-  CallbackOnly: 0
 --- !u!114 &650679363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20828,6 +20841,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -21044,6 +21058,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -21151,6 +21166,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -21515,6 +21531,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -22519,6 +22536,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -22802,6 +22820,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -23157,6 +23176,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -23820,6 +23840,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -24125,6 +24146,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -24360,6 +24382,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -24767,6 +24790,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -25154,6 +25178,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -25966,6 +25991,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -26281,6 +26307,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -27115,6 +27142,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -27538,6 +27566,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -27757,6 +27786,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -28059,6 +28089,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -28833,6 +28864,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -30121,6 +30153,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -30416,6 +30449,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -30575,6 +30609,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -31020,6 +31055,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -31329,6 +31365,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -32129,6 +32166,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -32333,6 +32371,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -32443,6 +32482,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -33507,6 +33547,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -33930,6 +33971,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -34197,6 +34239,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -34439,6 +34482,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -34738,6 +34782,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -35150,6 +35195,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -35913,6 +35959,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -36108,6 +36155,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -36359,6 +36407,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -36672,6 +36721,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -36831,6 +36881,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -37964,6 +38015,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -38632,6 +38684,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -38884,6 +38937,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -39279,6 +39333,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -40018,6 +40073,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -40633,6 +40689,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -41018,6 +41075,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -41600,6 +41658,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -41889,6 +41948,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -42373,6 +42433,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -42604,6 +42665,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -43881,6 +43943,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -44229,6 +44292,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -44914,6 +44978,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -45021,6 +45086,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -45182,6 +45248,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -45835,6 +45902,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -46512,6 +46580,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -46763,6 +46832,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -47139,6 +47209,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -47480,6 +47551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseBGM: 0
+  RotationSpeed: 90
 --- !u!60 &1570732880
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -47931,6 +48003,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -48427,6 +48500,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -48652,6 +48726,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -48974,6 +49049,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -49341,6 +49417,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -49597,6 +49674,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -49866,6 +49944,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -50821,6 +50900,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -51251,6 +51331,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -51546,6 +51627,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -52100,6 +52182,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -52471,6 +52554,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -52747,6 +52831,7 @@ GameObject:
   - component: {fileID: 1741815941}
   - component: {fileID: 1741815940}
   - component: {fileID: 1741815939}
+  - component: {fileID: 1741815942}
   m_Layer: 9
   m_Name: Open
   m_TagString: Untagged
@@ -52809,6 +52894,20 @@ Transform:
   m_Father: {fileID: 650679359}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1741815942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741815938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c255cadb31721040878025e87431f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TocaObject: {fileID: 0}
+  ParticleSystem: {fileID: 2037097152}
 --- !u!1 &1754315790
 GameObject:
   m_ObjectHideFlags: 0
@@ -53046,6 +53145,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -53291,6 +53391,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -53633,6 +53734,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -53792,6 +53894,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -54165,6 +54268,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -54460,6 +54564,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -54728,6 +54833,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -54891,6 +54997,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -55203,6 +55310,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -55791,6 +55899,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -56016,6 +56125,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -56336,6 +56446,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -56900,6 +57011,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -57875,6 +57987,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -58995,6 +59108,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -59547,6 +59661,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -59958,6 +60073,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3586351222638409032, guid: 1f4be9bdd4d423743bdf60de4845ea3f, type: 3}
   m_PrefabInstance: {fileID: 2037097150}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &2037097152 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3586351222638409033, guid: 1f4be9bdd4d423743bdf60de4845ea3f, type: 3}
+  m_PrefabInstance: {fileID: 2037097150}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2038886821
 GameObject:
   m_ObjectHideFlags: 0
@@ -60057,6 +60177,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -60481,6 +60602,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -60747,6 +60869,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -61117,6 +61240,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -62208,6 +62332,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -62864,6 +62989,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -63720,6 +63846,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -64299,6 +64426,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
@@ -65013,6 +65141,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []

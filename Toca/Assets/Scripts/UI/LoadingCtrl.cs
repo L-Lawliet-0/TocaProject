@@ -34,8 +34,12 @@ public class LoadingCtrl : MonoBehaviour
 
     public void LoadUIElement(GameObject pendingObject)
     {
-        if (Loading)
+        if (Loading || (CameraController.Instance.Sun && CameraController.Instance.Sun.Switching))
             return;
+
+        if (CameraController.Instance.Sun)
+            CameraController.Instance.Sun.Switching = true;
+
         Loading = true;
         LoadingFill.fillAmount = 0;
         PendingObject = pendingObject;
@@ -53,11 +57,13 @@ public class LoadingCtrl : MonoBehaviour
 
         CharacterTrack.Instance.TrimData(CurrentScene); // trim data
 
+        bool switchTime = false;
+
         if (CurrentScene == 1 || CurrentScene == 2 || CurrentScene == 3)
         {
             SunControl sc = FindObjectOfType<SunControl>();
             if (sc && sc.IsDay != IslandSunControl.Instance.IsDay)
-                IslandSunControl.Instance.OnClick();
+                switchTime = true;
 
             CharacterTrack.Instance.SavePropsData(true);
             CharacterTrack.Instance.SaveData();
@@ -95,6 +101,9 @@ public class LoadingCtrl : MonoBehaviour
         }
         LoadingFill.fillAmount = 1;
 
+        if (switchTime)
+            IslandSunControl.Instance.OnClick();
+
         StartCoroutine("FadeLoadingScreen", false);
         while (LoadingScreenShowing)
             yield return null;
@@ -108,7 +117,7 @@ public class LoadingCtrl : MonoBehaviour
     /// </summary>
     public void LoadScene(int index)
     {
-        if (Loading)
+        if (Loading || IslandSunControl.Instance.Transiting)
             return; // dont do loading if it's already loading
         LoadingFill.fillAmount = 0;
         Loading = true;
@@ -234,8 +243,8 @@ public class LoadingCtrl : MonoBehaviour
 
         LoadingFill.fillAmount = 1;
 
-        if (sceneIndex == 2)
-            yield return new WaitForSeconds(3);
+        if (sceneIndex >= 1 && sceneIndex <= 3)
+            yield return new WaitForSeconds(2);
         else
             yield return new WaitForSeconds(.5f);
 

@@ -147,6 +147,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []

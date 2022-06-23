@@ -8,7 +8,7 @@ public class SpineUI : MonoBehaviour
 {
     private static SpineUI m_Instance;
     public static SpineUI Instance { get { return m_Instance; } }
-    public AttachmentControl mianju, maozi, glasses, kouzhao, yanjing, bizi, zui, tou, toufa, toufahoumian;
+    public AttachmentControl mianju, maozi, glasses, kouzhao, yanjing, bizi, zui, tou, toufa, toufahoumian, meimao;
 
     public Dictionary<string, AttachmentControl> Pairs;
     public SkeletonGraphic SkeletonGraphic;
@@ -29,6 +29,7 @@ public class SpineUI : MonoBehaviour
         yanjing = new AttachmentControl("yanjing", skeleton, "yanjing");
         bizi = new AttachmentControl("bizi", skeleton, "bizi");
         zui = new AttachmentControl("zui2", skeleton, "zui");
+        meimao = new AttachmentControl("meimao", skeleton, "meimao");
         tou = new AttachmentControl("tou", skeleton, "");
         toufa = new AttachmentControl("toufa1", skeleton, "toufa");
         toufahoumian = new AttachmentControl("toufahoumian", skeleton, "toufahoumian");
@@ -47,6 +48,7 @@ public class SpineUI : MonoBehaviour
         Pairs.Add("bizi", bizi);
         Pairs.Add("zui", zui);
         Pairs.Add("toufa", toufa);
+        Pairs.Add("meimao", meimao);
 
         SetSkinColor(CharacterCreation.SkinColors[0]);
         SetHairColor(CharacterCreation.HairColors[0]);

@@ -9,6 +9,7 @@ public class ClothControl : TocaFunction
     private SpriteRenderer m_SpriteRenderer;
     private FindControl m_FindControl;
     private BaseControl m_BaseControl;
+    private MoveControl m_MoveControl;
 
     public bool Stacking { get { return m_BaseControl.Attachments.Count > 0 || (m_FindControl.CurrentAttachment && m_FindControl.CurrentAttachment.MyBaseAttributes.IsCloth); } }
 
@@ -20,6 +21,7 @@ public class ClothControl : TocaFunction
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         m_FindControl = (FindControl)TocaObject.GetTocaFunction<FindControl>();
         m_BaseControl = (BaseControl)TocaObject.GetTocaFunction<BaseControl>();
+        m_MoveControl = (MoveControl)TocaObject.GetTocaFunction<MoveControl>();
     }
 
     private void Update()
@@ -39,8 +41,13 @@ public class ClothControl : TocaFunction
             }
         }
 
-        if (m_FindControl.CurrentAttachment && m_FindControl.CurrentAttachment.MyBaseAttributes.IsClothHang && ClothFolded)
-            ExpandCloth();
+        if (m_FindControl.CurrentAttachment && m_FindControl.CurrentAttachment.MyBaseAttributes.IsClothHang)
+        {
+            if (ClothFolded)
+                ExpandCloth();
+
+            m_MoveControl.UpdateTargetPosition(m_FindControl.CurrentAttachment.transform.position - Vector3.up * m_SpriteRenderer.sprite.bounds.extents.y * .7f + Vector3.up * .1f);
+        }
     }
 
     public void OnSelection()

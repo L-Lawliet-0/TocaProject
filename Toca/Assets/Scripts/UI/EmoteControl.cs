@@ -27,7 +27,8 @@ public class EmoteControl : MonoBehaviour
         if (Active != active && !Showing)
         {
             CurrentSpine = spine;
-            transform.position = headPos;
+            if (active)
+                transform.position = headPos;
             Showing = true;
             Active = active;
             StartCoroutine("SetActiveHelper");

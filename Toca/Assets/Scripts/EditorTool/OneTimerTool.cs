@@ -22,13 +22,13 @@ public class OneTimerTool : MonoBehaviour
             //GroupSaveableObjects();
             //RenameChildren();
             //AssignPrefabID();
-            SaveSceneData();
+            //SaveSceneData();
             //FindObjectsNameWithComponent();
             //GroupFindControlWithoutBases();
             //GroupBases();
             //CreateUIitems();
             //RearrangeUIChildren();
-            //GenerateNewTrackData();
+            GenerateNewTrackData();
             //GenerateNewSelectionData();
             //GenerateNewTrackSaveData();
             //InitializeSingleObjectSave();

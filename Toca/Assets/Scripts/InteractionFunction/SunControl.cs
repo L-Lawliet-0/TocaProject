@@ -46,6 +46,7 @@ public class SunControl : TocaFunction
         if (!Switching)
         {
             Switching = true;
+            IsDay = !IsDay;
             StartCoroutine("Switch");
         }
     }
@@ -53,14 +54,14 @@ public class SunControl : TocaFunction
     private IEnumerator Switch()
     {
         Color currentColor = GlobalParameter.Instance.GlobalLight.color;
-        Color targetColor = IsDay ? NightColor : DayColor;
+        Color targetColor = IsDay ? DayColor : NightColor;
         float angle = 90;
         float counter = 0;
         bool switched = false;
 
-        float sign = IsDay ? -1 : 1;
-        Color dayColor = IsDay ? Color.white : new Color(1, 1, 1, 0);
-        Color nightColor = IsDay ? new Color(1, 1, 1, 0) : Color.white;
+        float sign = IsDay ? 1 : -1;
+        Color dayColor = IsDay ? new Color(1, 1, 1, 0) : Color.white;
+        Color nightColor = IsDay ? Color.white : new Color(1, 1, 1, 0);
 
         while (angle > -270)
         {
@@ -71,8 +72,8 @@ public class SunControl : TocaFunction
             if (angle < 0 && !switched)
             {
                 switched = true;
-                Sun.SetActive(!IsDay);
-                Moon.SetActive(IsDay);
+                Sun.SetActive(IsDay);
+                Moon.SetActive(!IsDay);
                 angle = -180;
             }
 
@@ -85,7 +86,6 @@ public class SunControl : TocaFunction
         }
 
         GlobalParameter.Instance.GlobalLight.color = targetColor;
-        IsDay = !IsDay;
         Switching = false;
 
         if (IsDay)

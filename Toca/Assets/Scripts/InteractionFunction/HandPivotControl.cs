@@ -16,6 +16,14 @@ public class HandPivotControl : TocaFunction
         InHand = false;
     }
 
+    private void OnEnable()
+    {
+        if (InHand)
+            SetInHand();
+        else
+            SetOut();
+    }
+
     private void Update()
     {
         if (!InHand && Find.CurrentAttachment && (Find.CurrentAttachment.MyBaseAttributes.IsLeftHand || Find.CurrentAttachment.MyBaseAttributes.IsRightHand))
@@ -30,6 +38,7 @@ public class HandPivotControl : TocaFunction
         if (InHand && myTimer > 0)
         {
             Find.CurrentAttachment.Attachments[Find].Timer = 2;
+            Debug.LogError(transform.localScale.x);
             if (transform.localScale.x > 0)
                 Move.UpdateTargetPosition(Find.CurrentAttachment.transform.position - Find.TocaObject.Bottom.localPosition);
             else

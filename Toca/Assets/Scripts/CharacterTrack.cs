@@ -535,6 +535,9 @@ public class CharacterTrack : MonoBehaviour
 
     public void SetTrack(bool active)
     {
+        if (TrackControl.Instance.LOCK)
+            return;
+
         TrackControl.Instance.m_BaseControl.IgnoreLimit = active;
         StartCoroutine("FadeCanvas", active);
 

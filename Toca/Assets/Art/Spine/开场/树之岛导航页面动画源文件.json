@@ -1,10 +1,10 @@
 {
 "skeleton": {
-	"hash": "bY+0qMR5heQ",
+	"hash": "fG7bnq4XaHc",
 	"spine": "4.0.64",
-	"x": -1500.89,
+	"x": -1552.63,
 	"y": -0.88,
-	"width": 3012,
+	"width": 3063.74,
 	"height": 1538,
 	"images": "C:/Users/Administrator/Desktop/新建文件夹/images/images5/",
 	"audio": "C:/Users/Administrator/Desktop"
@@ -401,9 +401,16 @@
 	{ "name": "shu91", "bone": "bone28", "attachment": "shu91" },
 	{ "name": "caocong", "bone": "bone6", "attachment": "caocong" },
 	{ "name": "shitou1", "bone": "bone6", "attachment": "shitou1" },
-	{ "name": "root", "bone": "root", "attachment": "root" }
+	{ "name": "root", "bone": "root", "attachment": "root" },
+	{ "name": "feiji11", "bone": "root", "attachment": "feiji11" }
 ],
 "path": [
+	{
+		"name": "feiji11",
+		"order": 1,
+		"bones": [ "bone57" ],
+		"target": "feiji11"
+	},
 	{
 		"name": "root",
 		"bones": [ "bone95" ],
@@ -1057,6 +1064,15 @@
 					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
 					"width": 88,
 					"height": 75
+				}
+			},
+			"feiji11": {
+				"feiji11": {
+					"type": "path",
+					"closed": true,
+					"lengths": [ 3157.07, 4196.84, 6659.75, 8486.29 ],
+					"vertexCount": 12,
+					"vertices": [ -2498.53, 1416.46, -1551.59, 1411.13, -604.65, 1405.81, 1085.31, 1343.08, 1604.87, 1393.39, 2124.43, 1443.71, 2149.46, 1923.88, 1625.87, 1968.83, 1102.28, 2013.79, 239.93, 2133.19, -831.31, 2111.64, -1785.13, 2092.46 ]
 				}
 			},
 			"hu": {
@@ -4101,6 +4117,17 @@
 					{},
 					{ "time": 0.1667, "x": -0.68, "y": 0.31 },
 					{ "time": 0.3333 }
+				]
+			}
+		}
+	},
+	"feiji": {
+		"path": {
+			"feiji11": {
+				"position": [
+					{ "value": -0.01 },
+					{ "time": 2.3333, "value": 0.3623 },
+					{ "time": 2.5, "value": 0.99 }
 				]
 			}
 		}

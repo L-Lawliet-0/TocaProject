@@ -108,7 +108,7 @@ public class BaseControl : TocaFunction
     {
         foreach (KeyValuePair<FindControl, AttachData> pair in Attachments)
         {
-            if (pair.Value.mc && !GlobalParameter.UpdateMovement(this))
+            if (pair.Value.mc && !GlobalParameter.UpdateMovement(this) && !MyBaseAttributes.IsClothHang)
             {
                 
                 // recalculate if this base has cover

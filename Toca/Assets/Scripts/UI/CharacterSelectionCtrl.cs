@@ -175,6 +175,9 @@ public class CharacterSelectionCtrl : MonoBehaviour
             CharacterTrack.Instance.TryUpdateTrack(Datas[CurrentIndex]);
         }
 
+        if (!active)
+            SoundManager.Instance.UISfx(19);
+
         SaveManager.SaveCreationData(Datas);
 
         // update character preview element

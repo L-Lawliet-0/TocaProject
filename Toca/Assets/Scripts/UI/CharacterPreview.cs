@@ -11,7 +11,7 @@ public class CharacterPreview : MonoBehaviour
 {
     private SkeletonGraphic SkeletonGraphic;
     private Skeleton Skeleton;
-    public AttachmentControl mianju, maozi, glasses, kouzhao, yanjing, bizi, zui, tou, toufa, toufahoumian;
+    public AttachmentControl mianju, maozi, glasses, kouzhao, yanjing, bizi, zui, tou, toufa, toufahoumian, meimao;
 
     private void Start()
     {
@@ -28,6 +28,7 @@ public class CharacterPreview : MonoBehaviour
         tou = new AttachmentControl("tou", Skeleton, "");
         toufa = new AttachmentControl("toufa1", Skeleton, "toufa");
         toufahoumian = new AttachmentControl("toufahoumian", Skeleton, "toufahoumian");
+        meimao = new AttachmentControl("meimao", Skeleton, "meimao");
 
         AttachmentControl ac = new AttachmentControl("1han", Skeleton, "");
         ac = new AttachmentControl("7han", Skeleton, "");
@@ -60,6 +61,7 @@ public class CharacterPreview : MonoBehaviour
         zui.SetAttachment(data.ID_zui);
         toufa.SetAttachment(data.ID_toufa);
         toufahoumian.SetAttachment(data.ID_toufahoumian);
+        meimao.SetAttachment(data.ID_meimao);
 
         SetSkinColor(CharacterCreation.SkinColors[data.ID_skinColor]);
         SetHairColor(CharacterCreation.HairColors[data.ID_hairColor]);

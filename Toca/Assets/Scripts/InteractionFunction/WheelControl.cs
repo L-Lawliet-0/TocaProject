@@ -6,6 +6,7 @@ public class WheelControl : MonoBehaviour
 {
     private bool Rotating;
     public bool PauseBGM = false;
+    public float RotationSpeed = 90;
 
     private void Start()
     {
@@ -29,6 +30,6 @@ public class WheelControl : MonoBehaviour
     private void Update()
     {
         if (Rotating)
-            transform.eulerAngles += Vector3.forward * 90 * Time.deltaTime;
+            transform.eulerAngles += Vector3.forward * RotationSpeed * Time.deltaTime;
     }
 }

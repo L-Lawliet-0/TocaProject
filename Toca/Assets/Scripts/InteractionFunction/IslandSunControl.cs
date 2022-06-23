@@ -8,7 +8,7 @@ using Spine.Unity;
 public class IslandSunControl : TocaFunction
 {
     private int counter = 2;
-    private bool Transiting;
+    public bool Transiting;
     public bool IsDay;
     public SkeletonAnimation Island;
     public AnimationReferenceAsset SunToMoon, MoonToSun;
@@ -49,16 +49,15 @@ public class IslandSunControl : TocaFunction
                 track = Island.AnimationState.SetAnimation(counter++, MoonToSun, false);
                 duration = MoonToSun.Animation.Duration;
             }
-
+            IsDay = !IsDay;
 
             if (gameObject.activeInHierarchy)
                 StartCoroutine("ColorLerp", duration / track.TimeScale);
             else
             {
                 Transiting = false;
-                Color targetColor = IsDay ? GlobalParameter.Instance.LightColor_Night : GlobalParameter.Instance.LightColor_Day;
+                Color targetColor = IsDay ? GlobalParameter.Instance.LightColor_Day : GlobalParameter.Instance.LightColor_Night;
                 GlobalParameter.Instance.GlobalLight.color = targetColor;
-                IsDay = !IsDay;
             }
         }
     }
@@ -66,7 +65,7 @@ public class IslandSunControl : TocaFunction
     private IEnumerator ColorLerp(float time)
     {
         float timeSave = time;
-        Color targetColor = IsDay ? GlobalParameter.Instance.LightColor_Night : GlobalParameter.Instance.LightColor_Day;
+        Color targetColor = IsDay ? GlobalParameter.Instance.LightColor_Day : GlobalParameter.Instance.LightColor_Night;
         Color currentColor = GlobalParameter.Instance.GlobalLight.color;
 
         while (time > 0)
@@ -78,6 +77,6 @@ public class IslandSunControl : TocaFunction
 
         Transiting = false;
         GlobalParameter.Instance.GlobalLight.color = targetColor;
-        IsDay = !IsDay;
+       
     }
 }

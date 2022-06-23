@@ -12,7 +12,7 @@ public class Main : MonoBehaviour
 {
     private static Main m_Instance;
     public static Main Instance { get { return m_Instance; } }
-    public bool CanCameraMove { get { return !LoadingCtrl.Instance.LoadingScreenShowing && (!LoadingCtrl.Instance.CurrentShowingObject || !LoadingCtrl.Instance.CurrentShowingObject.activeInHierarchy); } }
+    public bool CanCameraMove { get { return !LoadingCtrl.Instance.LoadingScreenShowing && (!LoadingCtrl.Instance.CurrentShowingObject || !LoadingCtrl.Instance.CurrentShowingObject.activeInHierarchy) && !TrackControl.Instance.LOCK; } }
     public Transform Canvas;
 
     public SkeletonAnimation OpeningAnimation;
