@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5687626621555743362}
   - component: {fileID: 5687626621555743361}
   - component: {fileID: 5687626621555743360}
+  - component: {fileID: 723168312506648454}
   m_Layer: 9
   m_Name: 192
   m_TagString: Untagged
@@ -131,6 +132,7 @@ MonoBehaviour:
     ParentObjectID: 161000
     ParentBaseID: 160226
     PrefabID: 0
+    LastModifiedTime: 0
     My_CharacterData:
       ID_mianju: 0
       ID_maozi: 0
@@ -144,7 +146,9 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
+      UNIQUE_ID: 0
   AllFunctions: []
   Bottom: {fileID: 0}
 --- !u!114 &5687626621555743364
@@ -248,6 +252,18 @@ MonoBehaviour:
   InstantGo: 0
   Shaked: 0
   CurrentMoveMode: 0
+--- !u!114 &723168312506648454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5687626621555743373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c646e58b709c684bb15a569e19f2135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5687626622306055501
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,6 +315,7 @@ MonoBehaviour:
   IsFood: 0
   IsGlasses: 0
   IsHang: 0
+  IsCloth: 0
   CurrentAttachment: {fileID: 0}
   BasePreview: {fileID: 0}
   Arrived: 0

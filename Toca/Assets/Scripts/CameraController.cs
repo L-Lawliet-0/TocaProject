@@ -78,7 +78,10 @@ public class CameraController : MonoBehaviour
         Target_X_Pixel -= x;
         Target_X_Pixel = Mathf.Clamp(Target_X_Pixel, x_Min * POSTOPIXEL, x_Max * POSTOPIXEL);
 
-        Speed = Mathf.Abs(x) / POSTOPIXEL / Time.deltaTime;
+        float temp = Mathf.Abs(x) / POSTOPIXEL / Time.deltaTime;
+        Speed = Mathf.Max(temp, Speed);
+        Speed = Mathf.Clamp(Speed, 0, 40);
+
     }
 
     private void Update()

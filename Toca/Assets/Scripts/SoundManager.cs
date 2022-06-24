@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class SoundManager : MonoBehaviour
 
     public AudioClip[] BGMs;
     public AudioClip[] SFXs;
+
+    public float[] Volume_BGMs;
+    public float[] Volume_SFXs;
 
     public GameObject SFXprefab;
 
@@ -28,6 +32,7 @@ public class SoundManager : MonoBehaviour
     public void PlayBGM(int index)
     {
         BackGroundMusic.clip = BGMs[index];
+        BackGroundMusic.volume = Volume_BGMs[index];
         StartCoroutine("EnableAudio", BackGroundMusic);
     }
 
@@ -68,6 +73,7 @@ public class SoundManager : MonoBehaviour
         AudioSource audio = obj.GetComponent<AudioSource>();
         audio.loop = !autoDestroy;
         audio.clip = SFXs[index];
+        audio.volume = SFXoverrideVolume;//Volume_SFXs[index];
 
         audio.Play();
 
@@ -80,5 +86,20 @@ public class SoundManager : MonoBehaviour
     public void UISfx(int index)
     {
         PlaySFX(index, true, transform.position);
+    }
+
+    public Text VolumeText, VolumeText_SFX;
+    public float SFXoverrideVolume = 1;
+
+    public void OnVolumeChange(float value)
+    {
+        VolumeText.text = value.ToString();
+        BackGroundMusic.volume = value;
+    }
+
+    public void OnVolumeChange2(float value)
+    {
+        VolumeText_SFX.text = value.ToString();
+        SFXoverrideVolume = value;
     }
 }

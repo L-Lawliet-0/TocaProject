@@ -42,7 +42,7 @@ public class TrackControl : TocaFunction
 
     public void PositionChange(Vector3 pos)
     {
-        if (CharacterTrack.Instance.LOCK)
+        if (CharacterTrack.Instance.LOCK || LOCK)
             return;
         float xDiff = pos.x - PositionSave.x;
         PositionOffset += xDiff;
@@ -53,7 +53,7 @@ public class TrackControl : TocaFunction
 
     public void DeTouch()
     {
-        if (CharacterTrack.Instance.LOCK)
+        if (CharacterTrack.Instance.LOCK || LOCK)
             return;
         if (PositionOffset < -OffsetRange / 2 && CharacterTrack.Instance.SwapPage(false))
         {
@@ -135,7 +135,7 @@ public class TrackControl : TocaFunction
 
         CancelInvoke("Release");
         LOCK = true;
-        Invoke("Release", 2);
+        Invoke("Release", 1.75f);
     }
 
     private void Release()
@@ -174,7 +174,7 @@ public class TrackControl : TocaFunction
 
         CancelInvoke("Release");
         LOCK = true;
-        Invoke("Release", 2);
+        Invoke("Release", 1.75f);
     }
 
     public class Xcompare : Comparer<FindControl>

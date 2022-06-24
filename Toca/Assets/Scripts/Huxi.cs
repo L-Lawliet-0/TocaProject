@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Huxi : MonoBehaviour
 {
-    private void Start()
+    private void OnEnable()
     {
         StartCoroutine("huxi");
     }
@@ -25,7 +25,7 @@ public class Huxi : MonoBehaviour
 
         while (true)
         {
-            transform.localScale = Vector3.one * 1 + Vector3.one * Mathf.Sin(counter) * .25f; 
+            transform.localScale = Vector3.one * 1 + Vector3.one * Mathf.Sin(counter) * .1f; 
             counter += Time.deltaTime;
             yield return null;
         }

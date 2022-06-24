@@ -51027,8 +51027,8 @@ MonoBehaviour:
   OpenObj: {fileID: 904410688}
   CloseObj: {fileID: 408982542}
   Basecontrol: {fileID: 0}
-  SFXopenindex: -1
-  SFXcloseindex: -1
+  SFXopenindex: 24
+  SFXcloseindex: 23
 --- !u!114 &2040049728
 MonoBehaviour:
   m_ObjectHideFlags: 0

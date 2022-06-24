@@ -315,7 +315,8 @@ public class LoadingCtrl : MonoBehaviour
         }
         
         Main.Instance.HomeButton.SetActive(false);
-        CharacterTrack.Instance.ForceSort();
+        if (newScene != 4)
+            CharacterTrack.Instance.ForceSort();
 
         OpenTrack = true;
 

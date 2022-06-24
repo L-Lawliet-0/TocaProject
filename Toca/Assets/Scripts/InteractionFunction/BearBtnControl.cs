@@ -33,6 +33,8 @@ public class BearBtnControl : TocaFunction
             if (Active)
                 StartCoroutine("RandomMove", i);
         }
+
+        SoundManager.Instance.PlaySFX(10, true, TocaObject.transform.position);
     }
 
     private IEnumerator SetLight(int index)

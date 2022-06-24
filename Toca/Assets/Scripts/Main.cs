@@ -17,6 +17,7 @@ public class Main : MonoBehaviour
 
     public SkeletonAnimation OpeningAnimation;
     public Transform SceneSelection;
+    public Transform TotaLogo;
     public GameObject MainButton, HomeButton;
 
     private void Awake()
@@ -44,8 +45,16 @@ public class Main : MonoBehaviour
         // get camera width and height
         OpeningAnimation.transform.localScale = new Vector3(CameraController.Instance.Width_Half * 2 / 30 , 1, 1);
         SceneSelection.transform.localScale = new Vector3(CameraController.Instance.Width_Half * 2 / 30, 1, 1);
+        TotaLogo.transform.localScale = new Vector3(CameraController.Instance.Width_Half * 2 / 30, 1, 1);
+        Invoke("Swap", 3);
 
         //LoadingCtrl.Instance.LoadUIElement(OpeningAnimation.gameObject);
+    }
+
+    public void Swap()
+    {
+        TotaLogo.gameObject.SetActive(false);
+        OpeningAnimation.transform.gameObject.SetActive(true);
     }
 
     private void Update()
@@ -63,6 +72,7 @@ public class Main : MonoBehaviour
 
     public void MainMenuButton()
     {
+        SoundManager.Instance.UISfx(10);
         LoadingCtrl.Instance.LoadUIElement(SceneSelection.gameObject);
     }
 }

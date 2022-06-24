@@ -14,6 +14,8 @@ public class ClawControl : TocaFunction
     public Transform GiftSpawnPos;
     public GameObject[] GiftPool;
 
+    private GameObject SFX;
+
     private bool AutoRunning = false;
 
     void Start()
@@ -31,6 +33,8 @@ public class ClawControl : TocaFunction
     {
         if (AutoRunning)
             return;
+        if (!SFX)
+            SFX = SoundManager.Instance.PlaySFX(34, false, TocaObject.transform.position);
         AutoRunning = true;
         if (DetachOnClick.parent == transform)
             DetachOnClick.parent = null;
@@ -59,6 +63,8 @@ public class ClawControl : TocaFunction
     {
         if (AutoRunning)
             return;
+        if (!SFX)
+            SFX = SoundManager.Instance.PlaySFX(34, false, TocaObject.transform.position);
         PositionLastFrame = pos;
         if (DetachOnClick.parent == transform)
             DetachOnClick.parent = null;
@@ -116,5 +122,8 @@ public class ClawControl : TocaFunction
         GlobalParameter.Instance.CreateObject(GiftPool[Random.Range(0, GiftPool.Length)], GiftSpawnPos.position);
 
         AutoRunning = false;
+
+        Destroy(SFX);
+        SoundManager.Instance.PlaySFX(35, true, TocaObject.transform.position);
     }
 }
