@@ -159,7 +159,10 @@ public class CharacterSelectionCtrl : MonoBehaviour
         ReturnButton.onClick.RemoveAllListeners();
         // add listener
         if (active)
+        {
             ReturnButton.onClick.AddListener(() => SetCreationMode(false));
+            CharacterCreation.Instance.ForcePanel();
+        }
         else
         {
             ReturnButton.onClick.AddListener(() => ReturnHome());

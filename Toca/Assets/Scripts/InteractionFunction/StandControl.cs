@@ -26,8 +26,7 @@ public class StandControl : StateControl
         BaseControl = (BaseControl)TocaObject.GetTocaFunction<BaseControl>();
         LayerControl = (LayerControl)TocaObject.GetTocaFunction<LayerControl>();
         HeightFix = (FindControl.ObjectHeight - FindControl.ObjectWidth) / 2;
-
-        Invoke("OnDeselect", 2);
+        //Invoke("OnDeselect", 1);
     }
 
     private void Update()
@@ -58,6 +57,12 @@ public class StandControl : StateControl
         }
     }
 
+    public void ForceDown()
+    {
+        StopAllCoroutines();
+        StartCoroutine("StandDown");
+    }
+
     private bool ShouldObjectStand()
     {
         if (BaseControl && BaseControl.Attachments.Count > 0)
@@ -79,23 +84,26 @@ public class StandControl : StateControl
 
     private IEnumerator StandUp(bool resetLayer = false)
     {
-        if (DownSign > 0)
+        if (!TrackControl.Instance.LOCK && !CharacterTrack.Instance.LOCK)
         {
-            while (GlobalParameter.ClampAngle(transform.eulerAngles.z) < StandReferenceAngle)
+            if (DownSign > 0)
             {
-                transform.eulerAngles -= DownSign * Vector3.forward * Time.deltaTime * 720;
-                yield return null;
+                while (GlobalParameter.ClampAngle(transform.eulerAngles.z) < StandReferenceAngle)
+                {
+                    transform.eulerAngles -= DownSign * Vector3.forward * Time.deltaTime * 720;
+                    yield return null;
+                }
+            }
+            else
+            {
+                while (GlobalParameter.ClampAngle(transform.eulerAngles.z) > StandReferenceAngle)
+                {
+                    transform.eulerAngles -= DownSign * Vector3.forward * Time.deltaTime * 720;
+                    yield return null;
+                }
             }
         }
-        else
-        {
-            while (GlobalParameter.ClampAngle(transform.eulerAngles.z) > StandReferenceAngle)
-            {
-                transform.eulerAngles -= DownSign * Vector3.forward * Time.deltaTime * 720;
-                yield return null;
-            }
-        }
-        
+
         transform.eulerAngles = Vector3.zero;
 
         //transform.position += Vector3.up * HeightFix;
@@ -112,25 +120,28 @@ public class StandControl : StateControl
 
     private IEnumerator StandDown()
     {
-        if (DownSign > 0)
+        if (!TrackControl.Instance.LOCK && !CharacterTrack.Instance.LOCK)
         {
-            while (GlobalParameter.ClampAngle(transform.eulerAngles.z) < TargetDownAngle)
+            if (DownSign > 0)
             {
-                transform.eulerAngles += DownSign * Vector3.forward * Time.deltaTime * 720;
-                yield return null;
+                while (GlobalParameter.ClampAngle(transform.eulerAngles.z) < TargetDownAngle)
+                {
+                    transform.eulerAngles += DownSign * Vector3.forward * Time.deltaTime * 720;
+                    yield return null;
+                }
+            }
+            else
+            {
+                if (transform.eulerAngles.z == 0)
+                    transform.eulerAngles = new Vector3(0, 0, -1);
+                while (GlobalParameter.ClampAngle(transform.eulerAngles.z) > TargetDownAngle)
+                {
+                    transform.eulerAngles += DownSign * Vector3.forward * Time.deltaTime * 720;
+                    yield return null;
+                }
             }
         }
-        else
-        {
-            if (transform.eulerAngles.z == 0)
-                transform.eulerAngles = new Vector3(0, 0, -1);
-            while (GlobalParameter.ClampAngle(transform.eulerAngles.z) > TargetDownAngle)
-            {
-                transform.eulerAngles += DownSign * Vector3.forward * Time.deltaTime * 720;
-                yield return null;
-            }
-        }
-        
+
         transform.eulerAngles = Vector3.forward * TargetDownAngle;
 
         //transform.position -= Vector3.up * HeightFix;
@@ -139,6 +150,7 @@ public class StandControl : StateControl
         while (!FindControl.Arrived)
             yield return null;
 
+        Debug.LogError("here");
         ForceEnd(true);
 
         if (BaseControl)

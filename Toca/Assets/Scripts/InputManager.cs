@@ -162,6 +162,9 @@ public class InputManager : MonoBehaviour
     private bool UpdateCamera;
     private void Update()
     {
+        if (LoadingCtrl.Instance.Loading) // don't detect any input while loading
+            return;
+
         if (!TouchMode)
         {
             if (!InSelection)

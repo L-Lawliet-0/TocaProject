@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "fG7bnq4XaHc",
+	"hash": "FdU4iWNkSM8",
 	"spine": "4.0.64",
 	"x": -1552.63,
 	"y": -0.88,
@@ -311,6 +311,8 @@
 	{ "name": "hua8", "bone": "bone148", "attachment": "hua8" },
 	{ "name": "yizi1", "bone": "bone160", "attachment": "yizi1" },
 	{ "name": "fangzi", "bone": "bone9", "attachment": "fangzi" },
+	{ "name": "deng6", "bone": "bone9", "attachment": "deng6" },
+	{ "name": "fangzi6", "bone": "bone68", "attachment": "fangzi6" },
 	{ "name": "shu70", "bone": "bone92", "attachment": "shu70" },
 	{ "name": "shu69", "bone": "bone144", "attachment": "shu69" },
 	{ "name": "shu68", "bone": "bone107", "attachment": "shu68" },
@@ -322,7 +324,6 @@
 	{ "name": "shu88", "bone": "bone73", "attachment": "shu88" },
 	{ "name": "caocong13", "bone": "bone77", "attachment": "caocong13" },
 	{ "name": "shu87", "bone": "bone72", "attachment": "shu87" },
-	{ "name": "fangzi6", "bone": "bone68", "attachment": "fangzi6" },
 	{ "name": "caocong12", "bone": "bone7", "attachment": "caocong12" },
 	{ "name": "hua9", "bone": "bone6", "attachment": "hua9" },
 	{ "name": "shu86", "bone": "bone54", "attachment": "shu86" },
@@ -338,10 +339,7 @@
 	{ "name": "shu61", "bone": "bone65", "attachment": "shu61" },
 	{ "name": "caocong11", "bone": "bone69", "attachment": "caocong11" },
 	{ "name": "fangzi4", "bone": "bone", "attachment": "fangzi4" },
-	{ "name": "shu60", "bone": "bone74", "attachment": "shu60" },
 	{ "name": "shu59", "bone": "bone75", "attachment": "shu59" },
-	{ "name": "shu58", "bone": "bone70", "attachment": "shu58" },
-	{ "name": "shu57", "bone": "bone71", "attachment": "shu57" },
 	{ "name": "fangzi3", "bone": "bone2", "attachment": "fangzi3" },
 	{ "name": "caocong10", "bone": "bone17", "attachment": "caocong10" },
 	{ "name": "deng7", "bone": "bone68", "attachment": "deng7" },
@@ -353,7 +351,6 @@
 	{ "name": "caocong8", "bone": "bone15", "attachment": "caocong8" },
 	{ "name": "caocong7", "bone": "bone29", "attachment": "caocong7" },
 	{ "name": "shu54", "bone": "bone23", "attachment": "shu54" },
-	{ "name": "caocong6", "bone": "bone18", "attachment": "caocong6" },
 	{ "name": "shitou", "bone": "bone6", "attachment": "shitou" },
 	{ "name": "hu", "bone": "bone16", "attachment": "hu" },
 	{ "name": "shan", "bone": "bone11", "attachment": "shan" },
@@ -384,12 +381,15 @@
 	{ "name": "deng10", "bone": "bone13", "attachment": "deng10" },
 	{ "name": "deng9", "bone": "bone12", "attachment": "deng9" },
 	{ "name": "deng8", "bone": "bone", "attachment": "deng8" },
-	{ "name": "deng6", "bone": "bone9", "attachment": "deng6" },
 	{ "name": "deng5", "bone": "bone14", "attachment": "deng5" },
 	{ "name": "deng4", "bone": "bone6", "attachment": "deng4" },
 	{ "name": "deng3", "bone": "bone3", "attachment": "deng3" },
 	{ "name": "deng2", "bone": "bone57", "attachment": "deng2" },
 	{ "name": "deng1", "bone": "bone33", "attachment": "deng1" },
+	{ "name": "caocong6", "bone": "bone18", "attachment": "caocong6" },
+	{ "name": "shu58", "bone": "bone70", "attachment": "shu58" },
+	{ "name": "shu57", "bone": "bone71", "attachment": "shu57" },
+	{ "name": "shu60", "bone": "bone74", "attachment": "shu60" },
 	{ "name": "xingxing", "bone": "bone6", "attachment": "xingxing" },
 	{ "name": "yueliang", "bone": "bone95", "attachment": "taiyang" },
 	{ "name": "daxiao", "bone": "bone95", "attachment": "daxiao" },
@@ -4126,8 +4126,8 @@
 			"feiji11": {
 				"position": [
 					{ "value": -0.01 },
-					{ "time": 2.3333, "value": 0.3623 },
-					{ "time": 2.5, "value": 0.99 }
+					{ "time": 16.6667, "value": 0.3623 },
+					{ "time": 16.8333, "value": 0.99 }
 				]
 			}
 		}

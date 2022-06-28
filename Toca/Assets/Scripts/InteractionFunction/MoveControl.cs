@@ -188,7 +188,7 @@ public class MoveControl : TocaFunction
 
     private IEnumerator TrackShake()
     {
-        yield return null;
+        yield return new WaitForSeconds(.3f);
         SpineControl sc = (SpineControl)TocaObject.GetTocaFunction<SpineControl>();
         float rotationCounter = .1f; // 
         int rotationSign = 1;

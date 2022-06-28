@@ -49,7 +49,7 @@ public class CharacterCreation : MonoBehaviour
         public bool Moving; // this panel is either moving from left to right or right to left
 
         public float TargetAlpha, CurrentAlpha;
-        private CanvasGroup[] canvasGroups;
+        public CanvasGroup[] canvasGroups;
 
         public MajorPanel(Transform cp, Transform label)
         {
@@ -141,6 +141,26 @@ public class CharacterCreation : MonoBehaviour
             // open left side
             StartCoroutine("Shift",index);
             SoundManager.Instance.UISfx(17);
+        }
+    }
+
+    public void ForcePanel()
+    {
+        ActiveIndex = 0;
+        AllPanels[0].Open = true;
+        AllPanels[0].TargetAlpha = 1;
+        AllPanels[0].ContentPanel.localPosition = AllPanels[0].OpenPos;
+        AllPanels[0].Label.localPosition = AllPanels[0].l_OpenPos;
+        foreach (CanvasGroup cg in AllPanels[0].canvasGroups)
+            cg.alpha = 1;
+        for (int i = 1; i < AllPanels.Length; i++)
+        {
+            AllPanels[i].Open = false;
+            AllPanels[i].TargetAlpha = 0;
+            AllPanels[i].ContentPanel.localPosition = AllPanels[i].ClosePos;
+            AllPanels[i].Label.localPosition = AllPanels[i].l_ClosePos;
+            foreach (CanvasGroup cg in AllPanels[i].canvasGroups)
+                cg.alpha = 0;
         }
     }
 

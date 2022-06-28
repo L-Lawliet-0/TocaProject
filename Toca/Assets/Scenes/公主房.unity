@@ -68885,6 +68885,7 @@ MonoBehaviour:
   BigBase: {fileID: 0}
   startID: 1
   fileName: gongzhufang
+  TestClip: {fileID: 0}
 --- !u!1 &1227953332
 GameObject:
   m_ObjectHideFlags: 0
@@ -75586,6 +75587,7 @@ MonoBehaviour:
   BigBase: {fileID: 62648138}
   startID: 0
   fileName: 
+  TestClip: {fileID: 0}
 --- !u!114 &1350107164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81477,6 +81479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TocaObject: {fileID: 0}
+  FallFloor: {fileID: 534890221}
   X_Random_Min: 0
   X_Random_Max: 2
   Y_Random_Min: -1
@@ -89215,6 +89218,11 @@ MonoBehaviour:
   - {fileID: 1638062937}
   Nights:
   - {fileID: 629744229}
+  ActiveRanges:
+  - -23.341
+  - -14.45
+  - 36.17
+  - 46.01
 --- !u!114 &1653752861
 MonoBehaviour:
   m_ObjectHideFlags: 0

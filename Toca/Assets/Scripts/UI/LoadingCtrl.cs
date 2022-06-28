@@ -256,7 +256,8 @@ public class LoadingCtrl : MonoBehaviour
             CameraController.Instance.ResetWidth(SceneWidth[sceneIndex]);
 
             CharacterTrack.Instance.SetTrackElement(true);
-            CharacterTrack.Instance.SetTrack(false);
+            if (!OpenTrack)
+                CharacterTrack.Instance.SetTrack(false);
             Main.Instance.HomeButton.SetActive(true);
 
             if (!IslandSunControl.Instance.IsDay)
@@ -278,9 +279,10 @@ public class LoadingCtrl : MonoBehaviour
         Loading = false;
         CurrentScene = sceneIndex;
 
-        if (OpenTrack)
+        if (OpenTrack && sceneIndex >= 1 && sceneIndex <= 3)
         {
-            OpenTrack = true;
+            Debug.LogError("set track true");
+            OpenTrack = false;
             CharacterTrack.Instance.SetTrack(true);
         }
 

@@ -8581,6 +8581,7 @@ MonoBehaviour:
   BigBase: {fileID: 0}
   startID: 168
   fileName: haijunfeng
+  TestClip: {fileID: 0}
 --- !u!4 &336460538
 Transform:
   m_ObjectHideFlags: 0
@@ -9391,6 +9392,7 @@ MonoBehaviour:
   BigBase: {fileID: 0}
   startID: 0
   fileName: 
+  TestClip: {fileID: 0}
 --- !u!1 &370345287
 GameObject:
   m_ObjectHideFlags: 0
@@ -21478,6 +21480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TocaObject: {fileID: 0}
+  FallFloor: {fileID: 0}
   X_Random_Min: -2
   X_Random_Max: 0
   Y_Random_Min: -1
@@ -40737,6 +40740,13 @@ MonoBehaviour:
   Moon: {fileID: 2010887399}
   Days: []
   Nights: []
+  ActiveRanges:
+  - -35.8
+  - -17.02
+  - -6.62
+  - -2.29
+  - 22.28
+  - 35.56
 --- !u!4 &1347430498
 Transform:
   m_ObjectHideFlags: 0
@@ -41986,6 +41996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TocaObject: {fileID: 0}
+  FallFloor: {fileID: 0}
   X_Random_Min: -2
   X_Random_Max: 0
   Y_Random_Min: -1
@@ -43349,7 +43360,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.18, y: 0.78}
+    oldSize: {x: 0.94, y: 0.62}
     newSize: {x: 0.89, y: 0.7}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -60059,6 +60070,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3586351222638409033, guid: 1f4be9bdd4d423743bdf60de4845ea3f, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586351222638409033, guid: 1f4be9bdd4d423743bdf60de4845ea3f, type: 3}
       propertyPath: VelocityModule.x.scalar
       value: 1
       objectReference: {fileID: 0}
@@ -60199,7 +60214,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.18, y: 0.78}
+    oldSize: {x: 0.94, y: 0.62}
     newSize: {x: 0.89, y: 0.7}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -63294,7 +63309,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.18, y: 0.78}
+    oldSize: {x: 0.94, y: 0.62}
     newSize: {x: 0.89, y: 0.7}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

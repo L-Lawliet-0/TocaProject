@@ -13,6 +13,8 @@ public class SunControl : TocaFunction
     public GameObject Sun, Moon;
     public SpriteRenderer[] Days, Nights;
 
+    public float[] ActiveRanges;
+
     private void Start()
     {
         TouchControl tc = (TouchControl)TocaObject.GetTocaFunction<TouchControl>();
@@ -29,12 +31,18 @@ public class SunControl : TocaFunction
         }
     }
 
-    public void UpdateMajorX(float x)
+    private void Update()
     {
-        CenterPoint.position += x * Vector3.right;
-        float min = CameraController.Instance.transform.position.x - CameraController.Instance.Width_Half;
-        float max = CameraController.Instance.transform.position.x + CameraController.Instance.Width_Half;
-        float clamp = Mathf.Clamp(CenterPoint.position.x, min + 2, max - 2);
+        UpdateMajorX();
+    }
+
+    public void UpdateMajorX()
+    {
+        float min = -CameraController.Instance.testWidthValue / 2 + 2;
+        float max = CameraController.Instance.testWidthValue / 2 - 2;
+
+
+        float clamp = Mathf.Lerp(min, max, CameraController.Instance.GetCameraOffset());
         CenterPoint.position = new Vector3(clamp, CenterPoint.position.y, CenterPoint.position.z);
         if (!Switching)
             transform.position = CenterPoint.position + new Vector3(Radius * Mathf.Cos(90 * Mathf.Deg2Rad), Radius * Mathf.Sin(90 * Mathf.Deg2Rad));
@@ -45,6 +53,16 @@ public class SunControl : TocaFunction
     {
         if (!Switching)
         {
+            bool pass = false;
+            for (int i = 0; i < ActiveRanges.Length; i+=2)
+            {
+                if (transform.position.x >= ActiveRanges[i] && transform.position.x <= ActiveRanges[i + 1])
+                    pass = true;
+            }
+
+            if (!pass)
+                return;
+
             Switching = true;
             IsDay = !IsDay;
             StartCoroutine("Switch");

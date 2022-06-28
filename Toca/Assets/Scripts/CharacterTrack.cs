@@ -107,6 +107,8 @@ public class CharacterTrack : MonoBehaviour
                 obj.GetComponent<TocaObject>().TocaSave = TrackProps[i];
                 GeneratedProps.Add(obj.GetComponent<TocaObject>());
 
+                obj.transform.position = new Vector3(0, 500, 50);//out of screen
+
                 propIds.Add(TrackProps[i].ObjectID);
 
                 // remove it from the list
@@ -292,7 +294,7 @@ public class CharacterTrack : MonoBehaviour
                 toca.TocaSave.ObjectID = toca.GetHashCode();
         }
 
-        SpawnProps(tocas);
+        
 
         yield return new WaitForSeconds(.1f);
 
@@ -304,9 +306,7 @@ public class CharacterTrack : MonoBehaviour
             ((MoveControl)toca.GetTocaFunction<MoveControl>()).TargetPosition = toca.transform.position;
             toca.gameObject.SetActive(false);
         }
-
-        StartCoroutine("InitProps", tocas);
-
+       
         // set toca to base children
 
         // update position offset to give a page swapping effect
@@ -344,6 +344,7 @@ public class CharacterTrack : MonoBehaviour
             fc.Attach(TrackControl.Instance.m_BaseControl);
             lc.ResetLayer(false);
         }
+
         for (int i = 0; i < passing.Shadow.childCount; i++)
         {
             passing.Shadow.GetChild(i).gameObject.SetActive(false);
@@ -368,6 +369,15 @@ public class CharacterTrack : MonoBehaviour
             passing.Shadow.GetChild(i).gameObject.SetActive(true);
         }
 
+        SpawnProps(tocas);
+
+        yield return null;
+
+        PropLock = true;
+        StartCoroutine("InitProps", tocas);
+        while (PropLock)
+            yield return null;
+
         LOCK = false;
     }
 
@@ -381,12 +391,14 @@ public class CharacterTrack : MonoBehaviour
         return true;
     }
 
+    private bool PropLock = false;
     private IEnumerator InitProps(List<TocaObject> tocas)
     {
         bool[] initAll = new bool[GeneratedProps.Count];
 
         for (int i = 0; i < GeneratedProps.Count; i ++)
         {
+            //((MoveControl)GeneratedProps[i].GetTocaFunction<MoveControl>()).InstantGo = true;
             foreach (TocaObject par in tocas)
             {
                 if (par.TocaSave.ObjectID == GeneratedProps[i].TocaSave.ParentObjectID)
@@ -410,6 +422,17 @@ public class CharacterTrack : MonoBehaviour
                     {
                         if (par.TocaSave.ObjectID == GeneratedProps[i].TocaSave.ParentObjectID)
                         {
+                            if (par.GetTocaFunction<StandControl>() || par.GetComponent<StandControl>())
+                            {
+                                StandControl stand = (StandControl)par.GetTocaFunction<StandControl>();
+                                if (!stand)
+                                    stand = par.GetComponent<StandControl>();
+                                if (stand.BaseControl)
+                                {
+                                    stand.BaseControl.gameObject.SetActive(true);
+                                    stand.ForceDown();
+                                }
+                            }
                             GeneratedProps[i].InitalizeTocaobject(par);
                             initAll[i] = true;
                             break;
@@ -420,6 +443,8 @@ public class CharacterTrack : MonoBehaviour
 
             yield return new WaitForSeconds(.1f);
         }
+
+        PropLock = false;
     }
 
     /// <summary>
@@ -428,6 +453,7 @@ public class CharacterTrack : MonoBehaviour
     /// <param name="index"></param>
     public void SpawnCharacters(int index)
     {
+        Debug.LogError("not lock 2");
         if (LOCK)
             return;
         LOCK = true;
@@ -435,6 +461,7 @@ public class CharacterTrack : MonoBehaviour
         CurrentActiveGroup = index;
         CurrentActiveGroup = Mathf.Clamp(CurrentActiveGroup, 0, Characters.Count);
         StartCoroutine("SpawnHelper", index);
+        Debug.LogError("not lock 3");
     }
 
     private IEnumerator SpawnHelper(int index)
@@ -483,7 +510,11 @@ public class CharacterTrack : MonoBehaviour
             toca.InitalizeTocaobject();
         }
 
+        PropLock = true;
         StartCoroutine("InitProps", tocas);
+
+        while (PropLock)
+            yield return null;
 
         foreach (TocaObject toca in tocas)
         {
@@ -524,6 +555,9 @@ public class CharacterTrack : MonoBehaviour
     private void Update()
     {
         //Track.transform.position = new Vector3(CameraController.Instance.transform.position.x, Track.transform.position.y, Track.transform.position.z);
+        Debug.LogError("Length : " + Characters.Count);
+        for (int i = 0; i < Characters.Count; i++)
+            Debug.LogError(Characters[i].Count);
     }
 
     public void SetTrackElement(bool active)
@@ -538,12 +572,14 @@ public class CharacterTrack : MonoBehaviour
         if (TrackControl.Instance.LOCK)
             return;
 
+        Debug.LogError("not lock");
         TrackControl.Instance.m_BaseControl.IgnoreLimit = active;
         StartCoroutine("FadeCanvas", active);
 
         if (active)
         {
             SpawnCharacters(0);
+            SoundManager.Instance.UISfx(9);
         }
         else
         {
@@ -561,6 +597,7 @@ public class CharacterTrack : MonoBehaviour
 
     private IEnumerator FadeCanvas(bool active)
     {
+        Debug.LogError("not lock1");
         int menuSign = active ? 1 : -1;
         int openSign = active ? -1 : 1;
 
@@ -595,7 +632,7 @@ public class CharacterTrack : MonoBehaviour
 
     public void SortCharacters(int method)
     {
-        if (LOCK)
+        if (LOCK || TrackControl.Instance.LOCK)
             return; // dont sort if locked
 
         LOCK = true;
@@ -650,6 +687,11 @@ public class CharacterTrack : MonoBehaviour
     {
         // detach all first
         List<TocaObject> olds = TrackControl.Instance.DetachAllAttachments();
+
+        // destroy old characters
+        foreach (TocaObject toca in olds)
+            Destroy(toca.gameObject);
+
         List<TocaObject> tocas = new List<TocaObject>();
 
         float startPos = TrackControl.Instance.transform.position.x - (Characters[CurrentActiveGroup].Count - 1) * 3.5f / 2;
@@ -684,9 +726,7 @@ public class CharacterTrack : MonoBehaviour
             ((MoveControl)toca.GetTocaFunction<MoveControl>()).TargetPosition = toca.transform.position;
             toca.gameObject.SetActive(false);
         }
-
-        StartCoroutine("InitProps", tocas);
-
+        
         // disable shadow and enable characters
         foreach (TocaObject toca in tocas)
         {
@@ -699,9 +739,12 @@ public class CharacterTrack : MonoBehaviour
             lc.ResetLayer(false);
         }
 
-        // destroy old characters
-        foreach (TocaObject toca in olds)
-            Destroy(toca.gameObject);
+        PropLock = true;
+        StartCoroutine("InitProps", tocas);
+        while (PropLock)
+            yield return null;
+
+        
 
         LOCK = false;
     }

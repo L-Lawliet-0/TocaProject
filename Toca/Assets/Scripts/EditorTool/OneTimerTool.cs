@@ -28,12 +28,13 @@ public class OneTimerTool : MonoBehaviour
             //GroupBases();
             //CreateUIitems();
             //RearrangeUIChildren();
-            GenerateNewTrackData();
+            //GenerateNewTrackData();
             //GenerateNewSelectionData();
             //GenerateNewTrackSaveData();
             //InitializeSingleObjectSave();
             //ReAssignPrefabsID();
             //InitRef();
+            GetAdjustedVolume();
             EXECUTE = false;
         }    
     }
@@ -498,5 +499,31 @@ public class OneTimerTool : MonoBehaviour
             //CharacterReferences[i].ID_hairColor -= 1;
             CharacterReferences[i].UNIQUE_ID = CharacterReferences[i].GetHashCode();
         }
+    }
+
+    public AudioClip TestClip;
+    public float CalculateClipLoudness(AudioClip testClip)
+    {
+        int sampleSize = testClip.frequency;
+        Debug.LogError(sampleSize);
+        float[] datas = new float[sampleSize];
+        bool vv = testClip.GetData(datas, sampleSize);
+
+        float loudness = 0;
+        foreach (float value in datas)
+        {
+            loudness += Mathf.Abs(value);
+        }
+
+        loudness /= sampleSize;
+
+        return loudness;
+    }
+
+    public void GetAdjustedVolume()
+    {
+        float referenceVolume = 0.03049393f;
+        float thisVolume = CalculateClipLoudness(TestClip);
+        Debug.LogError(.5f * (referenceVolume / thisVolume));
     }
 }

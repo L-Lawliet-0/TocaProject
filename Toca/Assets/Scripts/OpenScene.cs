@@ -10,6 +10,7 @@ public class OpenScene : MonoBehaviour
 
     private void Start()
     {
+        LoadingCtrl.Instance.CurrentShowingObject = Main.Instance.OpeningAnimation.gameObject;
         GetComponent<SkeletonAnimation>().AnimationState.AddAnimation(0, Loop, true, 0);
 
         StartCoroutine("Feiji");

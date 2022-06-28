@@ -73,33 +73,70 @@ public class SoundManager : MonoBehaviour
         AudioSource audio = obj.GetComponent<AudioSource>();
         audio.loop = !autoDestroy;
         audio.clip = SFXs[index];
-        audio.volume = SFXoverrideVolume;//Volume_SFXs[index];
+        audio.volume = Volume_SFXs[index];
 
         audio.Play();
 
         if (autoDestroy)
-            Destroy(obj, audio.clip.length);
+            Destroy(obj, audio.clip.length * 2);
 
         return obj;
     }
 
     public void UISfx(int index)
     {
-        PlaySFX(index, true, transform.position);
+        PlaySFX(index, true, transform.position + Vector3.up);
+        if (index == 10)
+            Debug.LogError(LoadingCtrl.Instance.Loading); // don't play any sfx when loading 
     }
 
-    public Text VolumeText, VolumeText_SFX;
+    public Transform BTNparent;
+    private string clipName = "";
+    private int Aindex = 0;
+    private int AllIndex = 0;
+    public Text VolumeText;
     public float SFXoverrideVolume = 1;
+    public Sprite Black, White;
 
     public void OnVolumeChange(float value)
     {
-        VolumeText.text = value.ToString();
-        BackGroundMusic.volume = value;
+        SFXoverrideVolume = value;
+
+        BackGroundMusic.volume = SFXoverrideVolume;
+
+        RefreshText();
     }
 
-    public void OnVolumeChange2(float value)
+    public void ChangeClip(int index)
     {
-        VolumeText_SFX.text = value.ToString();
-        SFXoverrideVolume = value;
+        AudioClip clip;
+        Aindex = index;
+        AllIndex = index;
+        if (index < 6)
+            clip = BGMs[index];
+        else
+        {
+            clip = SFXs[index - 6];
+            Aindex = index - 6;
+        }
+
+        clipName = clip.name;
+
+        BackGroundMusic.clip = clip;
+        BackGroundMusic.volume = SFXoverrideVolume;
+        BackGroundMusic.Play();
+
+        RefreshText();
+
+        for (int i = 0; i < 42; i++)
+        {
+            BTNparent.GetChild(i).GetComponent<Image>().sprite = i == index ? Black : White;
+        }
+    }
+
+    private void RefreshText()
+    {
+        VolumeText.text = clipName;
+        BTNparent.GetChild(AllIndex).GetChild(0).GetComponent<Text>().text = SFXoverrideVolume.ToString();
     }
 }

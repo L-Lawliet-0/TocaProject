@@ -78,7 +78,7 @@ public class CameraController : MonoBehaviour
         Target_X_Pixel -= x;
         Target_X_Pixel = Mathf.Clamp(Target_X_Pixel, x_Min * POSTOPIXEL, x_Max * POSTOPIXEL);
 
-        float temp = Mathf.Abs(x) / POSTOPIXEL / Time.deltaTime;
+        float temp = Mathf.Abs(x) / POSTOPIXEL / Time.deltaTime / 4;
         Speed = Mathf.Max(temp, Speed);
         Speed = Mathf.Clamp(Speed, 0, 40);
 
@@ -86,6 +86,9 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
+        if (!Main.Instance.CanCameraMove)
+            return;
+
         // converted pixel into position
         float target = Target_X_Pixel / POSTOPIXEL;
 
@@ -113,11 +116,6 @@ public class CameraController : MonoBehaviour
                 }
             }
 
-            if (Sun)
-            {
-                //float dif = x / POSTOPIXEL;
-                Sun.UpdateMajorX(delta * 2);
-            }
         }
     }
 
@@ -125,5 +123,11 @@ public class CameraController : MonoBehaviour
     {
         Target_X_Pixel = 0;
         transform.position = new Vector3(0, 7.68f);
+    }
+
+    public float GetCameraOffset()
+    {
+        float value = (transform.position.x - x_Min) / (x_Max - x_Min);
+        return value;
     }
 }

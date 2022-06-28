@@ -11589,6 +11589,7 @@ MonoBehaviour:
   BigBase: {fileID: 0}
   startID: 247
   fileName: nanhaifang
+  TestClip: {fileID: 0}
 --- !u!4 &492670124
 Transform:
   m_ObjectHideFlags: 0
@@ -42500,6 +42501,11 @@ MonoBehaviour:
   Moon: {fileID: 964206920}
   Days: []
   Nights: []
+  ActiveRanges:
+  - -45.67
+  - -35.47
+  - -29.54
+  - -14.77
 --- !u!4 &1736271853
 Transform:
   m_ObjectHideFlags: 0
@@ -42508,7 +42514,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1736271851}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31.02, y: 12, z: 50}
+  m_LocalPosition: {x: 31.02, y: 13.5, z: 50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1138516457}
@@ -45690,6 +45696,7 @@ MonoBehaviour:
   BigBase: {fileID: 0}
   startID: 0
   fileName: 
+  TestClip: {fileID: 0}
 --- !u!114 &1873440215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46942,7 +46949,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921304579}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.02, y: 4, z: 50}
+  m_LocalPosition: {x: 31.02, y: 5.5, z: 50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

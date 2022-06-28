@@ -66,7 +66,6 @@ public class TocaObject : MonoBehaviour
                     if (attach && fc.CurrentAttachment)
                     {
                         transform.position = fc.CurrentAttachment.CalculateTargetPos(fc, fc.CurrentAttachment.Attachments[fc]);
-                        Debug.LogError("Pause!");
                     }
 
                     LayerControl lc = (LayerControl)GetTocaFunction<LayerControl>();
@@ -86,7 +85,13 @@ public class TocaObject : MonoBehaviour
             }
             sc.LoadCharacter();
         }
+
+        StandControl stand = (StandControl)GetTocaFunction<StandControl>();
+
+        if (stand)
+            stand.OnDeselect();
     }
+
 
     public TocaFunction[] AllFunctions;
     public Transform Bottom;

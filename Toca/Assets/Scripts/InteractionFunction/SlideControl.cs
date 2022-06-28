@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SlideControl : TocaFunction
 {
+    public BaseControl FallFloor;
     public float X_Random_Min = 0, X_Random_Max = 2, Y_Random_Min = -1, Y_Random_Max = 0;
     private class SlideData
     {
@@ -84,7 +85,7 @@ public class SlideControl : TocaFunction
 
             if (Vector3.Distance(mc.TargetPosition, mc.transform.position) < .1f)
             {
-                if (Sliders[f].TrackIndex == SlideTrack.childCount - 1)
+                if (Sliders[f].TrackIndex >= SlideTrack.childCount - 1)
                 {
                     remove.Add(f);
                 }
@@ -122,6 +123,8 @@ public class SlideControl : TocaFunction
             TouchControl tc = (TouchControl)f.TocaObject.GetTocaFunction<TouchControl>();
             if (tc)
             {
+                if (FallFloor)
+                    f.BasePreview = FallFloor;
                 tc.OnTouch(tc.TocaObject.transform.position);
                 tc.OnDeTouch();
             }

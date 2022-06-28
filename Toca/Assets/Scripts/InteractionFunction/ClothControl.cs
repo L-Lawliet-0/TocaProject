@@ -13,6 +13,12 @@ public class ClothControl : TocaFunction
 
     public bool Stacking { get { return m_BaseControl.Attachments.Count > 0 || (m_FindControl.CurrentAttachment && m_FindControl.CurrentAttachment.MyBaseAttributes.IsCloth); } }
 
+    private void Awake()
+    {
+        GetComponentInChildren<BaseControl>().PropHorizontalSnapType = BaseControl.SnapType.PointSnap;
+        GetComponentInChildren<BaseControl>().PropVerticalSnapType = BaseControl.SnapType.PointSnap;
+    }
+
     private void Start()
     {
         TouchControl tc = (TouchControl)TocaObject.GetTocaFunction<TouchControl>();
