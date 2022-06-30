@@ -179,7 +179,7 @@ public class LoadingCtrl : MonoBehaviour
         Main.Instance.SceneSelection.localScale = scaleSave;
     }
 
-    private int CurrentScene = -1; // the current scene index
+    public int CurrentScene = -1; // the current scene index
     private IEnumerator LoadScene1(int sceneIndex)
     {
         StartCoroutine("FadeLoadingScreen",true);
@@ -287,6 +287,8 @@ public class LoadingCtrl : MonoBehaviour
         }
 
         SoundManager.Instance.PlayBGM(sceneIndex);
+
+        AdsManager.Instance.ShowAds();
     }
 
     private bool OpenTrack = false;

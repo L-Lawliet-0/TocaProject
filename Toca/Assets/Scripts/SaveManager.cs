@@ -28,15 +28,15 @@ public class SaveManager : MonoBehaviour
         // overwrite data
         foreach (string str in fileNames)
         {
-            //if (!File.Exists(Application.persistentDataPath + str))
-            //{
+            if (!File.Exists(Application.persistentDataPath + str))
+            {
                 WWW loadWWW = new WWW(Application.streamingAssetsPath + str);
                 while (!loadWWW.isDone)
                 {
                     // wait this shit
                 }
                 File.WriteAllBytes(Application.persistentDataPath + str, loadWWW.bytes);
-            //}
+            }
         }
     }
 

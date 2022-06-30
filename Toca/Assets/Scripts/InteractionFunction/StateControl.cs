@@ -15,7 +15,6 @@ public class StateControl : TocaFunction
         {
             FindControl.CurrentAttachment.RecalculateSnapPos(FindControl);
             FindControl.Arrived = false;
-            Debug.LogError("recalculate");
         }
 
         if (LayerControl && resetLayer)

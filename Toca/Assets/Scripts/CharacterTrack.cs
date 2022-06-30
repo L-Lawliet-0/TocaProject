@@ -337,6 +337,8 @@ public class CharacterTrack : MonoBehaviour
         foreach (TocaObject toca in tocas)
         {
             toca.gameObject.SetActive(true);
+            for (int i = 0; i < 3; i++)
+                Instantiate(GlobalParameter.Instance.RunTimeEffects[6], toca.transform.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f)), Quaternion.identity);
             // attach it to track control and reset layer
             LayerControl lc = (LayerControl)toca.GetTocaFunction<LayerControl>();
             FindControl fc = (FindControl)toca.GetTocaFunction<FindControl>();
@@ -453,7 +455,6 @@ public class CharacterTrack : MonoBehaviour
     /// <param name="index"></param>
     public void SpawnCharacters(int index)
     {
-        Debug.LogError("not lock 2");
         if (LOCK)
             return;
         LOCK = true;
@@ -461,7 +462,6 @@ public class CharacterTrack : MonoBehaviour
         CurrentActiveGroup = index;
         CurrentActiveGroup = Mathf.Clamp(CurrentActiveGroup, 0, Characters.Count);
         StartCoroutine("SpawnHelper", index);
-        Debug.LogError("not lock 3");
     }
 
     private IEnumerator SpawnHelper(int index)
@@ -555,9 +555,9 @@ public class CharacterTrack : MonoBehaviour
     private void Update()
     {
         //Track.transform.position = new Vector3(CameraController.Instance.transform.position.x, Track.transform.position.y, Track.transform.position.z);
-        Debug.LogError("Length : " + Characters.Count);
-        for (int i = 0; i < Characters.Count; i++)
-            Debug.LogError(Characters[i].Count);
+        //Debug.LogError("Length : " + Characters.Count);
+        //for (int i = 0; i < Characters.Count; i++)
+        //    Debug.LogError(Characters[i].Count);
     }
 
     public void SetTrackElement(bool active)
@@ -572,7 +572,6 @@ public class CharacterTrack : MonoBehaviour
         if (TrackControl.Instance.LOCK)
             return;
 
-        Debug.LogError("not lock");
         TrackControl.Instance.m_BaseControl.IgnoreLimit = active;
         StartCoroutine("FadeCanvas", active);
 
@@ -597,7 +596,6 @@ public class CharacterTrack : MonoBehaviour
 
     private IEnumerator FadeCanvas(bool active)
     {
-        Debug.LogError("not lock1");
         int menuSign = active ? 1 : -1;
         int openSign = active ? -1 : 1;
 
@@ -731,6 +729,8 @@ public class CharacterTrack : MonoBehaviour
         foreach (TocaObject toca in tocas)
         {
             toca.gameObject.SetActive(true);
+            for (int i = 0; i < 3; i++)
+                Instantiate(GlobalParameter.Instance.RunTimeEffects[6], toca.transform.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f)), Quaternion.identity);
             // attach it to track control and reset layer
             LayerControl lc = (LayerControl)toca.GetTocaFunction<LayerControl>();
             FindControl fc = (FindControl)toca.GetTocaFunction<FindControl>();
@@ -853,6 +853,7 @@ public class CharacterTrack : MonoBehaviour
     /// <param name="thisScene"></param>
     public void AddDataFromOtherScene(int thisScene)
     {
+        List<TocaObject.ObjectSaveData> characters = new List<TocaObject.ObjectSaveData>();
         for (int i = 1; i < 4; i++)
         {
             if (i != thisScene) // don't add any data from this scene
@@ -871,8 +872,41 @@ public class CharacterTrack : MonoBehaviour
                     if (data.PrefabID == SaveManager.CharacterID)
                     {
                         Characters[0].Add(data);
+                        characters.Add(data);
                     }
                 }
+            }
+        }
+
+        for (int i = 1; i < 4; i++)
+        {
+            if (i != thisScene) // don't add any data from this scene
+            {
+                List<TocaObject.ObjectSaveData> datas = new List<TocaObject.ObjectSaveData>();
+                if (i == 1)
+                    datas = SaveManager.LoadFromFile(Application.persistentDataPath + "/gongzhufang");
+                else if (i == 2)
+                    datas = SaveManager.LoadFromFile(Application.persistentDataPath + "/haijunfeng");
+                else if (i == 3)
+                    datas = SaveManager.LoadFromFile(Application.persistentDataPath + "/nanhaifang");
+
+                // add datas to characters
+
+                bool find = false;
+
+                do
+                {
+                    find = false;
+                    foreach (TocaObject.ObjectSaveData data in datas)
+                    {
+                        if (!TrackProps.Contains(data) && CompareParent(data, characters))
+                        {
+                            TrackProps.Add(data);
+                            characters.Add(data);
+                            find = true;
+                        }
+                    }
+                } while (find);
             }
         }
     }
@@ -956,6 +990,111 @@ public class CharacterTrack : MonoBehaviour
                 }
             }
         }
+
+        Debug.LogError("this step");
+
+        // the goal is to assign proptrack
+        SavePropsData(false);
+        List<List<TocaObject.ObjectSaveData>> allDatas = new List<List<TocaObject.ObjectSaveData>>();
+        for (int i = 1; i < 4; i++)
+        {
+            string path = "";
+            if (i == 1)
+                path = Application.persistentDataPath + "/gongzhufang";
+            else if (i == 2)
+                path = Application.persistentDataPath + "/haijunfeng";
+            else if (i == 3)
+                path = Application.persistentDataPath + "/nanhaifang";
+            allDatas.Add(SaveManager.LoadFromFile(path));
+        }
+
+        Debug.LogError(allDatas.Count);
+
+        // remove object if this stays in the current scene
+        if (thisScene >= 1 && thisScene <= 3)
+        {
+            for (int i = 1; i < 4; i++)
+            {
+                if (i != thisScene)
+                {
+                    for (int j = allDatas[i - 1].Count - 1; j >= 0; j--)
+                    {
+                        if (CompareObjectID(allDatas[i - 1][j], allDatas[thisScene - 1]))
+                            allDatas[i - 1].RemoveAt(j);
+                    }
+                }
+            }
+        }
+       
+
+        // remove object if it's in the track prop
+        for (int i = 0; i < allDatas.Count; i++)
+        {
+            for (int j = allDatas[i].Count - 1; j >= 0; j--)
+            {
+                if (CompareObjectID(allDatas[i][j], TrackProps))
+                {
+                    allDatas[i].RemoveAt(j);
+                }
+            }
+        }
+
+        // reassign objects in track props
+        List<TocaObject.ObjectSaveData> remove = new List<TocaObject.ObjectSaveData>();
+        List<List<TocaObject.ObjectSaveData>> addDatas = new List<List<TocaObject.ObjectSaveData>>();
+
+        for (int i = 0; i < allDatas.Count; i++)
+        {
+            addDatas.Add(new List<TocaObject.ObjectSaveData>());
+            for (int j = 0; j < allDatas[i].Count; j++)
+            {
+                if (allDatas[i][j].PrefabID == SaveManager.CharacterID)
+                {
+                    List<TocaObject.ObjectSaveData> values = GetMatchDatas(new List<TocaObject.ObjectSaveData>() { allDatas[i][j] });
+                    remove.AddRange(values);
+                    addDatas[i].AddRange(values);
+                }
+            }
+        }
+
+        
+
+        foreach (TocaObject.ObjectSaveData data in remove)
+            TrackProps.Remove(data);
+
+        for (int i = 0; i < allDatas.Count; i++)
+        {
+            allDatas[i].AddRange(addDatas[i]);
+            string path = "";
+            if (i == 0)
+                path = Application.persistentDataPath + "/gongzhufang";
+            else if (i == 1)
+                path = Application.persistentDataPath + "/haijunfeng";
+            else if (i == 2)
+                path = Application.persistentDataPath + "/nanhaifang";
+            SaveManager.SaveToFile(path, allDatas[i]);
+        }
+    }
+
+    public List<TocaObject.ObjectSaveData> GetMatchDatas(List<TocaObject.ObjectSaveData> parents)
+    {
+        List<TocaObject.ObjectSaveData> values = new List<TocaObject.ObjectSaveData>();
+        bool find;
+        do
+        {
+            find = false;
+            foreach (TocaObject.ObjectSaveData data in TrackProps)
+            {
+                if (!parents.Contains(data) && CompareParent(data, parents))
+                {
+                    values.Add(data);
+                    parents.Add(data);
+                    find = true;
+                }
+            }
+        } while (find);
+
+        return values;
     }
 
     public bool CompareID(TocaObject.ObjectSaveData d, List<TocaObject.ObjectSaveData> list)
@@ -968,6 +1107,20 @@ public class CharacterTrack : MonoBehaviour
             if (to.My_CharacterData.UNIQUE_ID == d.My_CharacterData.UNIQUE_ID)
                 return true;
         }
+        return false;
+    }
+
+    public bool CompareParent(TocaObject.ObjectSaveData d, List<TocaObject.ObjectSaveData> list)
+    {
+        if (!d.Attaching)
+            return false;
+
+        foreach (TocaObject.ObjectSaveData to in list)
+        {
+            if (to.ObjectID == d.ParentObjectID)
+                return true;
+        }
+
         return false;
     }
 }

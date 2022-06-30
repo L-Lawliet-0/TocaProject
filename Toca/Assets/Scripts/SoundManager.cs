@@ -86,8 +86,6 @@ public class SoundManager : MonoBehaviour
     public void UISfx(int index)
     {
         PlaySFX(index, true, transform.position + Vector3.up);
-        if (index == 10)
-            Debug.LogError(LoadingCtrl.Instance.Loading); // don't play any sfx when loading 
     }
 
     public Transform BTNparent;
