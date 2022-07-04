@@ -39,7 +39,7 @@ public class AdsManager : MonoBehaviour
             LoadInterstitial();
 
             // test shit
-            MaxSdk.ShowMediationDebugger();
+            // MaxSdk.ShowMediationDebugger();
         };
 
         MaxSdk.SetSdkKey("nhUsCTMqDF3ccTbS-2SusTcHmaiTZH8K-cBAAX_Oo2_ObbsZdIRUn3mXdT4BmDWkrhv_EuN0xNPWzF4bTW4KZr");
@@ -67,6 +67,7 @@ public class AdsManager : MonoBehaviour
     // every 3 mintues in the four scenes
     public void ShowAds()
     {
+        return;
         if (MaxSdk.IsInterstitialReady(adUnitId))
         {
             string adPlacements = "zhuangban";

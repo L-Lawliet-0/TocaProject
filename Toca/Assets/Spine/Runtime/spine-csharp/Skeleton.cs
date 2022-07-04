@@ -479,13 +479,13 @@ namespace Spine {
 			skin = newSkin;
 			UpdateCache();
 		}
-		
+
 		/// <summary>
 		/// clear skin attachments
 		/// </summary>
 		public void ClearSkin()
 		{
-			if (skin!= null)
+			if (skin != null)
 			{
 				Slot[] slots = this.slots.Items;
 				for (int i = 0, n = this.slots.Count; i < n; i++)

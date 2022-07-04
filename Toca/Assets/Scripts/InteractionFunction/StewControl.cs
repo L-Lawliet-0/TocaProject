@@ -54,7 +54,8 @@ public class StewControl : TocaFunction
                 steam.SteamFX = Instantiate(GlobalParameter.Instance.RunTimeEffects[3], transform.position, Quaternion.identity);
                 steam.BaseX = steam.SteamFX.transform.position.x;
                 steam.Timer = 0;
-                steam.frequency = Random.Range(.5f, 1.5f);
+                steam.frequency = Random.Range(.2f, 1f);
+                steam.Angle = Random.Range(0f, 1f) < .5f ? 0 : 180;
                 SteamDatas.Add(steam);
             }
 
@@ -72,9 +73,14 @@ public class StewControl : TocaFunction
             s.Angle += Time.deltaTime * 360;
 
             float x = s.BaseX + Mathf.Sin(s.Angle * Mathf.Deg2Rad) * s.frequency;
-            float y = s.SteamFX.transform.position.y + Time.deltaTime * 5;
+            float y = s.SteamFX.transform.position.y + Time.deltaTime * 3;
             float z = s.SteamFX.transform.position.z;
             s.SteamFX.transform.position = new Vector3(x, y, z);
+
+            SpriteRenderer sr = s.SteamFX.GetComponent<SpriteRenderer>();
+            sr.size -= Time.deltaTime * Vector2.one * .5f;
+            sr.size = sr.size.x < 0 ? new Vector2(0, sr.size.y) : sr.size;
+            sr.size = sr.size.y < 0 ? new Vector2(sr.size.x, 0) : sr.size;
 
             if (s.Timer > 2)
             {

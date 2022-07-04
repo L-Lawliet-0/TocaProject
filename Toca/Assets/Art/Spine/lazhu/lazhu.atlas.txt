@@ -1,0 +1,9 @@
+lazhu.png
+size:2729,2444
+filter:Linear,Linear
+pma:true
+222
+bounds:2599,2230,128,212
+333
+bounds:2,2,2440,2595
+rotate:90

@@ -1,5 +1,55 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3746148730770305949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3442316783682041163}
+  - component: {fileID: 3738032009542381940}
+  m_Layer: 9
+  m_Name: spread
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3442316783682041163
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3746148730770305949}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.386, y: 0.358, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7428818517771253835}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3738032009542381940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3746148730770305949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dd61b49758a78447ab8f01cba9423ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TocaObject: {fileID: 0}
+  Fogs:
+  - {fileID: 21300000, guid: b2602c93416d9674bac020c23ed59b0c, type: 3}
+  - {fileID: 21300000, guid: 97720b1dbd256104195212074fc7c874, type: 3}
+  - {fileID: 21300000, guid: a8816476571770e4fa0e0a45236a7da9, type: 3}
+  - {fileID: 21300000, guid: 71650e27b78e3df4eb655cc67faf2ae0, type: 3}
+  Right: 1
 --- !u!1 &7428818517745409807
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,6 +186,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7428818517745409806}
+  - {fileID: 3442316783682041163}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -244,6 +295,7 @@ MonoBehaviour:
       ID_hairColor: 0
       ID_skinColor: 0
       ID_skin: 0
+      ID_meimao: 0
       ID_tou: 
       UNIQUE_ID: 0
   AllFunctions: []
