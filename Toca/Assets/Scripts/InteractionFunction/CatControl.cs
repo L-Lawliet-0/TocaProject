@@ -15,6 +15,7 @@ public class CatControl : TocaFunction
 
     public AnimationReferenceAsset Eat;
     private AttachmentControl Mouth;
+    public GameObject EatFX;
 
     private void Awake()
     {
@@ -64,6 +65,10 @@ public class CatControl : TocaFunction
         TrackEntry track = SkeletonAnimation.AnimationState.SetAnimation(RandomAnimations.Length, Eat , false);
         track.TimeScale = 2;
         SkeletonAnimation.AnimationState.Complete += HandleEat;
+
+        GameObject obj = Instantiate(EatFX);
+        Destroy(obj, 1);
+        obj.transform.position = transform.GetChild(2).position;
     }
 
     public void HandleEat(TrackEntry track)

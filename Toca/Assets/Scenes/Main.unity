@@ -12866,6 +12866,11 @@ MonoBehaviour:
   - {fileID: 5471454777650279552, guid: 4d075e32027218d4081402e748244d09, type: 3}
   - {fileID: 6798003848160925916, guid: 64bf5ec6110a0e940be85ca7aa76e1ea, type: 3}
   - {fileID: 2706460179528866709, guid: d0af45d7a4d50d04a8fe95500f036ec4, type: 3}
+  MusicSymbols:
+  - {fileID: 21300000, guid: 177042585d6d8c148a08446be5a15f6a, type: 3}
+  - {fileID: 21300000, guid: 8ba1d52852defec44b29b593b1271003, type: 3}
+  - {fileID: 21300000, guid: 502bdbad0434ff1469ca1af4f59afb6d, type: 3}
+  - {fileID: 21300000, guid: f858ddeba72e81d45adad08c34d75e17, type: 3}
   ToastSausage: {fileID: 9149718665536924187, guid: 669c22db5ae43ea479418f3e6fe8d955, type: 3}
   ToastCarrot: {fileID: 4347449639473275717, guid: cda4f87d3a6a26f4f98b96b80ac5d890, type: 3}
   ChickenToast: {fileID: 3515646371088402725, guid: 03a5974211e723c4899f411d94357847, type: 3}

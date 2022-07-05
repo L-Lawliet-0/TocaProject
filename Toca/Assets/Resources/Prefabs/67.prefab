@@ -308,6 +308,7 @@ MonoBehaviour:
   AnimationGaps: 05000000030000000700000007000000
   Loopables: 01000101
   Eat: {fileID: 11400000, guid: 142b931e2ed8b6344ad28a94efc9f290, type: 2}
+  EatFX: {fileID: 5471454777650279552, guid: 46d7e4e1c0365d84d91c3fb0be1576a3, type: 3}
 --- !u!1 &890106413421146506
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,7 +580,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: f25b724791283664fb49a2cb44b811df, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

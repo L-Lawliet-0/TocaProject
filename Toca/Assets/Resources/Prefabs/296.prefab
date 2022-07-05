@@ -227,7 +227,6 @@ GameObject:
   - component: {fileID: 6905463997167657410}
   - component: {fileID: 6905463997167657421}
   - component: {fileID: 6905463997167657420}
-  - component: {fileID: 1966680002030595886}
   m_Layer: 9
   m_Name: 296
   m_TagString: Untagged
@@ -457,22 +456,3 @@ MonoBehaviour:
   InstantGo: 0
   Shaked: 0
   CurrentMoveMode: 0
---- !u!114 &1966680002030595886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6905463997167657417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2121eeb87cf184e67829e30606de2011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TocaObject: {fileID: 0}
-  Opening: 0
-  OpenObj: {fileID: 0}
-  CloseObj: {fileID: 0}
-  Basecontrol: {fileID: 0}
-  SFXopenindex: -1
-  SFXcloseindex: -1

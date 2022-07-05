@@ -16,6 +16,7 @@ public class GlobalParameter : MonoBehaviour
     public Light2D GlobalLight;
 
     public GameObject[] RunTimeEffects;
+    public Sprite[] MusicSymbols;
 
 
     private void Awake()
