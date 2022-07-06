@@ -60,7 +60,7 @@ public class SunControl : TocaFunction
                     pass = true;
             }
 
-            if (!pass)
+            if (!pass && !LoadingCtrl.Instance.Loading)
                 return;
 
             Switching = true;
@@ -116,5 +116,8 @@ public class SunControl : TocaFunction
             SetSpritesColor(Days, new Color(1, 1, 1, 0));
             SetSpritesColor(Nights, Color.white);
         }
+
+        Sun.SetActive(IsDay);
+        Moon.SetActive(!IsDay);
     }
 }

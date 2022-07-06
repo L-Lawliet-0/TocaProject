@@ -114,7 +114,7 @@ public class GlobalParameter : MonoBehaviour
     {
         // create a fx at spawn position
         GameObject fx = Instantiate(RunTimeEffects[4], pos, Quaternion.identity);
-        Destroy(fx, 1f);
+        Destroy(fx, 2f);
 
         // make the object
         GameObject obj = Instantiate(prefab, pos, Quaternion.identity);

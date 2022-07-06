@@ -67,7 +67,6 @@ public class AdsManager : MonoBehaviour
     // every 3 mintues in the four scenes
     public void ShowAds()
     {
-        return;
         if (MaxSdk.IsInterstitialReady(adUnitId))
         {
             string adPlacements = "zhuangban";

@@ -1043,8 +1043,8 @@ ParticleSystem:
           inWeight: 0
           outWeight: 0.282648
         - serializedVersion: 3
-          time: 0.09172782
-          value: 0.6898155
+          time: 0.23308524
+          value: 0.43055344
           inSlope: 1.2388926
           outSlope: 1.2388926
           tangentMode: 0
@@ -1489,7 +1489,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 21300000, guid: 4bb433ff36ac1a642888ed44cdfd9e3d, type: 3}
+    - sprite: {fileID: 21300000, guid: c48d97883552da140a3127147389e9b5, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:

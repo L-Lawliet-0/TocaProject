@@ -575,6 +575,9 @@ public class CharacterTrack : MonoBehaviour
         TrackControl.Instance.m_BaseControl.IgnoreLimit = active;
         StartCoroutine("FadeCanvas", active);
 
+        TrackControl.Instance.CharacterShadowLeft.gameObject.SetActive(active);
+        TrackControl.Instance.CharacterShadowRight.gameObject.SetActive(active);
+
         if (active)
         {
             SpawnCharacters(0);
