@@ -27,6 +27,7 @@ public class Main : MonoBehaviour
 
     private void Start()
     {
+        Application.targetFrameRate = 120;
         // screen setting
         Screen.autorotateToLandscapeLeft = true;
         Screen.autorotateToLandscapeRight = true;
