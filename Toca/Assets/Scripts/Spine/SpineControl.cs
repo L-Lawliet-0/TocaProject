@@ -541,7 +541,7 @@ public class SpineControl : TocaFunction
     public AnimationReferenceAsset Xing, Xin, Han;
     public void SetBiaoqing(string biaoqing)
     {
-        if (Eating)
+        if (Eating || Sleeping)
             return; // don't change biaoqing if eating
         BiaoQing.SetAttachment(biaoqing);
         AttachmentControl ac;

@@ -22,12 +22,8 @@ public class AdsManager : MonoBehaviour
             Initialized = true;
 
             // privacy
-            // MaxSdk.SetIsAgeRestrictedUser(true);
+            MaxSdk.SetIsAgeRestrictedUser(true);
             // MaxSdk.SetDoNotSell(true);
-
-#if UNITY_ANDROID
-            MaxSdk.UserService.ShowConsentDialog();
-#endif
 
             MaxSdkCallbacks.Interstitial.OnAdLoadedEvent += OnInterstitialLoadedEvent;
             MaxSdkCallbacks.Interstitial.OnAdLoadFailedEvent += OnInterstitialLoadFailedEvent;

@@ -30,19 +30,12 @@ public class SaveManager : MonoBehaviour
         {
             if (!File.Exists(Application.persistentDataPath + str))
             {
-                if (Application.platform == RuntimePlatform.OSXEditor || Application.platform == RuntimePlatform.IPhonePlayer || Application.platform == RuntimePlatform.OSXPlayer)
+                WWW loadWWW = new WWW(Application.streamingAssetsPath + str);
+                while (!loadWWW.isDone)
                 {
-                    File.Copy(Application.streamingAssetsPath + str, Application.persistentDataPath + str);
+                    // wait this shit
                 }
-                else
-                {
-                    WWW loadWWW = new WWW(Application.streamingAssetsPath + str);
-                    while (!loadWWW.isDone)
-                    {
-                        // wait this shit
-                    }
-                    File.WriteAllBytes(Application.persistentDataPath + str, loadWWW.bytes);
-                }
+                File.WriteAllBytes(Application.persistentDataPath + str, loadWWW.bytes);
             }
         }
     }

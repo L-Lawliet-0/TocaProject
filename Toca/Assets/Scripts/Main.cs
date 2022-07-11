@@ -44,9 +44,9 @@ public class Main : MonoBehaviour
 
         // scale opening animation
         // get camera width and height
-        OpeningAnimation.transform.localScale = new Vector3(CameraController.Instance.Width_Half * 2 / 30 , 1, 1);
-        SceneSelection.transform.localScale = new Vector3(CameraController.Instance.Width_Half * 2 / 30, 1, 1);
-        TotaLogo.transform.localScale = new Vector3(CameraController.Instance.Width_Half * 2 / 30, 1, 1);
+        OpeningAnimation.transform.localScale = new Vector3(Mathf.Max(1, CameraController.Instance.Width_Half * 2 / 30) , 1, 1);
+        SceneSelection.transform.localScale = new Vector3(Mathf.Max(1, CameraController.Instance.Width_Half * 2 / 30), 1, 1);
+        TotaLogo.transform.localScale = new Vector3(Mathf.Max(1, CameraController.Instance.Width_Half * 2 / 30), 1, 1);
         Invoke("Swap", 3);
 
         //LoadingCtrl.Instance.LoadUIElement(OpeningAnimation.gameObject);

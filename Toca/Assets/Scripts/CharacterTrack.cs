@@ -587,6 +587,7 @@ public class CharacterTrack : MonoBehaviour
         {
             SavePropsData(false);
             TrackControl.Instance.CharacterOut();
+            SoundManager.Instance.UISfx(9);
         }
     }
 

@@ -34,6 +34,7 @@ public class SunControl : TocaFunction
     private void Update()
     {
         UpdateMajorX();
+        gameObject.layer = InActiveRange() ? LayerMask.NameToLayer("Selection") : LayerMask.NameToLayer("Default");
     }
 
     public void UpdateMajorX()
@@ -48,20 +49,24 @@ public class SunControl : TocaFunction
             transform.position = CenterPoint.position + new Vector3(Radius * Mathf.Cos(90 * Mathf.Deg2Rad), Radius * Mathf.Sin(90 * Mathf.Deg2Rad));
     }
 
+    private bool InActiveRange()
+    {
+        bool pass = false;
+        for (int i = 0; i < ActiveRanges.Length; i += 2)
+        {
+            if (transform.position.x >= ActiveRanges[i] && transform.position.x <= ActiveRanges[i + 1])
+                pass = true;
+        }
+
+        return pass;
+    }
+
     // switch from night to day or day to night
     public void SwitchTime()
     {
         if (!Switching)
         {
-            bool pass = false;
-            for (int i = 0; i < ActiveRanges.Length; i+=2)
-            {
-                if (transform.position.x >= ActiveRanges[i] && transform.position.x <= ActiveRanges[i + 1])
-                    pass = true;
-            }
-
-            if (!pass && !LoadingCtrl.Instance.Loading)
-                return;
+            
 
             Switching = true;
             IsDay = !IsDay;
