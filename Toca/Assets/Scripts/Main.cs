@@ -19,6 +19,7 @@ public class Main : MonoBehaviour
     public Transform SceneSelection;
     public Transform TotaLogo;
     public GameObject MainButton, HomeButton;
+    public GameObject PrivacyButton;
 
     private void Awake()
     {
@@ -56,6 +57,7 @@ public class Main : MonoBehaviour
     {
         TotaLogo.gameObject.SetActive(false);
         OpeningAnimation.transform.gameObject.SetActive(true);
+        PrivacyButton.SetActive(true);
     }
 
     private void Update()
@@ -75,5 +77,11 @@ public class Main : MonoBehaviour
     {
         SoundManager.Instance.UISfx(10);
         LoadingCtrl.Instance.LoadUIElement(SceneSelection.gameObject);
+        PrivacyButton.SetActive(false);
+    }
+
+    public void OpenPrivacy()
+    {
+        Application.OpenURL("https://totagame.github.io/");
     }
 }

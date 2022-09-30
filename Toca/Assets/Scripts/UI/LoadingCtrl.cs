@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
 
 public class LoadingCtrl : MonoBehaviour
 {
@@ -326,4 +327,125 @@ public class LoadingCtrl : MonoBehaviour
 
         StartCoroutine("LoadScene1", newScene);
     }
+
+    public IList<string> LetterCombinations(string digits)
+    {
+        Dictionary<char, char[]> Map = new Dictionary<char, char[]>();
+        Map.Add('2', new char[] { 'a', 'b', 'c' });
+        Map.Add('3', new char[] { 'd', 'e', 'f' });
+        Map.Add('4', new char[] { 'g', 'h', 'i' });
+        Map.Add('5', new char[] { 'j', 'k', 'l' });
+        Map.Add('6', new char[] { 'm', 'n', 'o' });
+        Map.Add('7', new char[] { 'p', 'q', 'r', 's' });
+        Map.Add('8', new char[] { 't', 'u', 'v' });
+        Map.Add('9', new char[] { 'w', 'x', 'y', 'z' });
+
+        List<string> values = new List<string>();
+
+        if (digits.Length > 0)
+            Append(Map, "", values, digits, 0);
+
+        return values;
+    }
+
+    private void Append(Dictionary<char, char[]> map, string result, List<string> returnValues, string digits, int index)
+    {
+        if (index >= digits.Length)
+        {
+            returnValues.Add(result);
+            return;
+        }
+
+        char digit = digits[index];
+        char[] list = map[digit];
+
+        foreach (char letter in list)
+        {
+            result += letter;
+            Append(map, result, returnValues, digits, index + 1);
+            result = result.Substring(0, result.Length - 1);
+        }
+    }
+
+    public bool IsBoomerang(int[][] points)
+    {
+        // case where x are all equal
+        if (points[0][0] == points[1][0] && points[1][0] == points[2][0])
+            return false;
+
+        // check all points distinct
+        if (ComparePoint(points[0], points[1]))
+            return false;
+        if (ComparePoint(points[1], points[2]))
+            return false;
+        if (ComparePoint(points[0], points[2]))
+            return false;
+
+        float slope1, slope2, slope3;
+
+        if (points[1][0] == points[0][0])
+            return true;
+        else
+            slope1 = (float)(points[1][1] - points[0][1]) / (float)(points[1][0] - points[0][0]);
+
+        if (points[2][0] == points[0][0])
+            return true;
+        else
+            slope2 = (float)(points[2][1] - points[0][1]) / (float)(points[2][0] - points[0][0]);
+
+        if (points[2][0] == points[1][0])
+            return true;
+        else
+            slope3 = (float)(points[2][1] - points[1][1]) / (float)(points[2][0] - points[1][0]);
+
+        return Math.Abs(slope1) != Math.Abs(slope2) || Math.Abs(slope2) != Math.Abs(slope3) || Math.Abs(slope1) != Math.Abs(slope3);
+    }
+
+    public bool ComparePoint(int[] p1, int[] p2)
+    {
+        return p1[0] == p2[0] && p1[1] == p1[1];
+    }
+
+    public class MyCalendarThree
+    {
+        private List<(int, int)> Ranges;
+        private List<int> Counts;
+        public MyCalendarThree()
+        {
+            Ranges = new List<(int, int)>();
+            Counts = new List<int>();
+        }
+
+        public int Book(int start, int end)
+        {
+            Counts.Add(1);
+
+            for (int i = 0; i < Ranges.Count; i++)
+            {
+                // iterate through the ranges
+                if (InRange((start, end), Ranges[i]))
+                {
+                    Counts[i]++;
+                    Counts[Counts.Count - 1]++;
+                }
+            }
+
+            Ranges.Add((start, end));
+            int max = Counts[0];
+            foreach (int count in Counts)
+            {
+                if (count > max)
+                    max = count;
+            }
+            return max;
+        }
+
+        // does two range have itersection
+        private bool InRange((int, int) t1, (int, int) t2)
+        {
+           
+            return !(t2.Item1 >= t1.Item2 || t1.Item1 >= t2.Item2);
+        }
+    }
+
 }

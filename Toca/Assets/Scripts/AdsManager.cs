@@ -17,6 +17,15 @@ public class AdsManager : MonoBehaviour
 
     private void Start()
     {
+        // call android function
+        AndroidJavaClass jc = new AndroidJavaClass("com.huawei.drmdemo.MainActivity");
+        if (jc != null)
+        {
+            jc.Call("onCreate");
+            Debug.LogError("created");
+        }
+
+
         MaxSdkCallbacks.OnSdkInitializedEvent += (MaxSdkBase.SdkConfiguration sdkConfiguration) => {
             // AppLovin SDK is initialized, start loading ads
             Initialized = true;
