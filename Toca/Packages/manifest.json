@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.esotericsoftware.spine.urp-shaders": "file:C:/Users/zhang/Downloads/com.esotericsoftware.spine.urp-shaders-4.0-2019.1",
+    "com.esotericsoftware.spine.urp-shaders": "file:/Users/wangluolezhi/Downloads/com.esotericsoftware.spine.urp-shaders-4.1-2019.1",
     "com.unity.2d.animation": "5.1.1",
     "com.unity.2d.pixel-perfect": "4.0.1",
     "com.unity.2d.psdimporter": "4.3.0",
@@ -22,7 +22,6 @@
     "com.unity.modules.animation": "1.0.0",
     "com.unity.modules.assetbundle": "1.0.0",
     "com.unity.modules.audio": "1.0.0",
-    "com.unity.modules.autostreaming": "1.0.0",
     "com.unity.modules.cloth": "1.0.0",
     "com.unity.modules.director": "1.0.0",
     "com.unity.modules.imageconversion": "1.0.0",

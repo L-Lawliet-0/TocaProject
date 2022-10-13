@@ -28,6 +28,7 @@ public class SaveManager : MonoBehaviour
         // overwrite data
         foreach (string str in fileNames)
         {
+            
             if (!File.Exists(Application.persistentDataPath + str))
             {
                 WWW loadWWW = new WWW(Application.streamingAssetsPath + str);
@@ -37,6 +38,7 @@ public class SaveManager : MonoBehaviour
                 }
                 File.WriteAllBytes(Application.persistentDataPath + str, loadWWW.bytes);
             }
+            //File.Copy(Application.streamingAssetsPath + str, Application.persistentDataPath + str, true);
         }
     }
 

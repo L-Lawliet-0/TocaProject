@@ -2,6 +2,7 @@ fileFormatVersion: 2
 guid: 1e381660d5516464eb552f6cf9f597e3
 labels:
 - al_max
+- al_max_export_path-MaxSdk/Mediation/ByteDance
 - al_max_export_path-MaxSdk\Mediation\ByteDance
 folderAsset: yes
 DefaultImporter:

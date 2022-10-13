@@ -18,12 +18,14 @@ public class AdsManager : MonoBehaviour
     private void Start()
     {
         // call android function
+        /*
         AndroidJavaClass jc = new AndroidJavaClass("com.huawei.drmdemo.MainActivity");
         if (jc != null)
         {
             jc.Call("onCreate");
             Debug.LogError("created");
         }
+        */
 
 
         MaxSdkCallbacks.OnSdkInitializedEvent += (MaxSdkBase.SdkConfiguration sdkConfiguration) => {
@@ -72,6 +74,7 @@ public class AdsManager : MonoBehaviour
     // every 3 mintues in the four scenes
     public void ShowAds()
     {
+        Debug.LogError("Calling show ads");
         if (MaxSdk.IsInterstitialReady(adUnitId))
         {
             string adPlacements = "zhuangban";
@@ -82,6 +85,7 @@ public class AdsManager : MonoBehaviour
             else if (LoadingCtrl.Instance.CurrentScene == 3)
                 adPlacements = "nanhaifang";
             MaxSdk.ShowInterstitial(adUnitId, adPlacements);
+            Debug.LogError("ads ready");
         }
 
         Counter = 180;
