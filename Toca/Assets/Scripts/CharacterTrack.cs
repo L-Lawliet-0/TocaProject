@@ -457,6 +457,7 @@ public class CharacterTrack : MonoBehaviour
     {
         if (LOCK)
             return;
+
         LOCK = true;
         RearrangeDatas(CurrentComparer);
         CurrentActiveGroup = index;
@@ -632,7 +633,7 @@ public class CharacterTrack : MonoBehaviour
         open_Cg.alpha = active ? 0 : 1;
     }
 
-    public void SortCharacters(int method)
+    public void SortCharacters(int method, bool Run)
     {
         if (LOCK || TrackControl.Instance.LOCK)
             return; // dont sort if locked
@@ -670,7 +671,16 @@ public class CharacterTrack : MonoBehaviour
             SortButtons[i].sprite = i == method ? Selected : Unselected;
         }
         CurrentActiveGroup = 0;
-        StartCoroutine("SpawnHelper3");
+
+        if (Run)
+            StartCoroutine("SpawnHelper3");
+        else
+            LOCK = false;
+    }
+
+    public void SortCharacters(int method)
+    {
+        SortCharacters(method, true);
     }
 
     public void ForceSort()
@@ -828,6 +838,7 @@ public class CharacterTrack : MonoBehaviour
         TocaObject.ObjectSaveData toca = new TocaObject.ObjectSaveData();
         toca.PrefabID = -50;
         toca.My_CharacterData = data;
+        //toca.ObjectID = toca.GetHashCode();
         if (Characters.Count == 0)
             Characters.Add(new List<TocaObject.ObjectSaveData>());
         Characters[0].Add(toca);
@@ -1126,5 +1137,18 @@ public class CharacterTrack : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void LogInfo()
+    {
+        for (int i = 0; i <Characters.Count; i++)
+        {
+            Debug.LogError("!!! " + i + " : " + Characters[i].Count);
+        }
+
+        for (int i = 0; i < PageActive.Count; i++)
+        {
+            Debug.LogError("!!! " + PageActive[i]);
+        }
     }
 }

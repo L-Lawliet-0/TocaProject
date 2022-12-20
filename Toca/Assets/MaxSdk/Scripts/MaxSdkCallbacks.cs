@@ -118,7 +118,7 @@ public class MaxSdkCallbacks : MonoBehaviour
         }
 
         /**
-         * Fired when an rewarded ad is displayed (may not be received by Unity until the rewarded ad closes).
+         * Fired when an interstitial ad is displayed (may not be received by Unity until the interstitial ad closes).
          */
         public static event Action<string, MaxSdkBase.AdInfo> OnAdDisplayedEvent
         {
@@ -351,7 +351,7 @@ public class MaxSdkCallbacks : MonoBehaviour
         }
 
         /**
-         * Fired when an rewarded ad is displayed (may not be received by Unity until the rewarded ad closes).
+         * Fired when a rewarded ad is displayed (may not be received by Unity until the rewarded ad closes).
          */
         public static event Action<string, MaxSdkBase.AdInfo> OnAdDisplayedEvent
         {
@@ -482,7 +482,8 @@ public class MaxSdkCallbacks : MonoBehaviour
         }
 
         /**
-         * Fired when an rewarded ad is displayed (may not be received by Unity until the rewarded ad closes).
+         * Fired when a rewarded interstitial ad is displayed (may not be received by Unity until
+         * the rewarded interstitial ad closes).
          */
         public static event Action<string, MaxSdkBase.AdInfo> OnAdDisplayedEvent
         {

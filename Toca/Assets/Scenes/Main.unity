@@ -12426,6 +12426,7 @@ MonoBehaviour:
   CharacterShadowLeft: {fileID: 95124413}
   CharacterShadowRight: {fileID: 1547346945}
   m_BaseControl: {fileID: 0}
+  CountCache: 0
   PositionOffset: 0
   OffsetRange: 0
   LOCK: 0

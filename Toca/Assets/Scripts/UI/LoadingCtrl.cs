@@ -70,8 +70,6 @@ public class LoadingCtrl : MonoBehaviour
             CharacterTrack.Instance.SaveData();
         }
 
-        
-
         CurrentScene = -1;
 
         StartCoroutine("FadeLoadingScreen", true);
@@ -256,7 +254,9 @@ public class LoadingCtrl : MonoBehaviour
             CameraController.Instance.Sun = FindObjectOfType<SunControl>();
             CameraController.Instance.ResetWidth(SceneWidth[sceneIndex]);
 
+            TrackControl.Instance.Reset();
             CharacterTrack.Instance.SetTrackElement(true);
+
             if (!OpenTrack)
                 CharacterTrack.Instance.SetTrack(false);
             Main.Instance.HomeButton.SetActive(true);
@@ -269,6 +269,8 @@ public class LoadingCtrl : MonoBehaviour
             CharacterSelectionCtrl.Instance.PreScene = CurrentScene;
             yield return new WaitForSeconds(1f);
         }
+
+        
 
         if (sceneIndex == 1)
             GlobalParameter.Instance.GlobalLight.intensity = .75f;

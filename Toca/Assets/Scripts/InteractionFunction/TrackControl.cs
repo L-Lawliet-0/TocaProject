@@ -6,7 +6,7 @@ public class TrackControl : TocaFunction
 {
     public Transform CharacterShadowLeft, CharacterShadowRight;
     public BaseControl m_BaseControl;
-    private int CountCache;
+    public int CountCache;
 
     private static TrackControl m_Instance;
     public static TrackControl Instance { get { return m_Instance; } }
@@ -125,6 +125,11 @@ public class TrackControl : TocaFunction
                 CharacterTrack.Instance.UpdateCharacters(all);
             }
         }
+        CountCache = m_BaseControl.Attachments.Count;
+    }
+
+    public void Reset()
+    {
         CountCache = m_BaseControl.Attachments.Count;
     }
 
